@@ -1,0 +1,309 @@
+﻿<%@ Import namespace="SPKTCore.Core.Domain"%>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH1.master.cs" Inherits="MXH.MXH1" %>
+<%@ Register src="~/Accounts/UserControl/LoginDesign.ascx" tagname="LoginDesign" tagprefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            height: 24px;
+        }
+        .style4C:\Users\li\Downloads\TLCN\SPKT2\SPKTWeb\Accounts\Register.aspx
+        {
+            width: 558px;
+            height: 35px;
+        }
+        .style5
+        {
+            width: 20%;
+            height: 29px;
+        }
+        .style6
+        {
+            height: 29px;
+            width: 10%;
+        }
+        .style7
+        {
+            width: 10%;
+            height: 29px;
+        }
+        .buttonlink a
+        {
+            color:Black;
+        }
+        .buttonlink a:visited
+        {
+            color:Black;
+        }
+        .buttonlink a:hover
+        {
+            color:Red;
+        }
+        .search
+        {
+            border-bottom-color:#0066CC;
+            border-bottom-style:solid;
+            border-bottom-width:1px;
+            Font-Size:Large;
+            Width:267px ;
+            font-family:Times New Roman;
+        }
+        .closeLoginPanel
+        {
+            font-family: Verdana, Helvetica, Arial, sans-serif;
+            line-height: 17px;
+            font-size: 11px;
+            font-weight: bold;
+
+            position: absolute;
+            top:8px;
+            right: 10px;
+        }
+
+        .closeLoginPanel a
+        {
+            background-color: #6699CC; 
+            cursor: pointer;
+            color: #FFFFFF; 
+            text-align: center; 
+            text-decoration: none; 
+            padding: 5px;
+        }
+
+
+        .style14
+        {
+            height: 29px;
+            width: 60%;
+        }
+        .main
+        {
+            float:right;
+            width:80%;
+        }
+        .mainleft
+        {
+            float:left;
+            width:20%;
+            border: 1px solid #CCCCC;
+        }
+    </style>
+    
+   
+</head>
+<body style="margin: 0;background-image:url('/Image/body-bg2.png'); background-repeat:repeat">
+<script type="text/javascript">
+    xinha_editors = null;
+    xinha_editors = xinha_editors ? xinha_editors : [];
+</script>
+<form id="form1" runat="server">
+	<div style=" width: 80%;margin-left: 10%;height: 77px; background-image:url('/Image/bn2.jpg'); background-repeat:repeat; background-color: #000066;">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblUserName" runat="server" ForeColor="White" Text="[LoginChaoban]"></asp:Label>	
+	</div>
+	<div style=" width: 80%;margin-left: 10%; height: 19px; background-image: url('/Image/block_topbg.gif'); background-repeat: repeat;">
+        <asp:Label ID="Label1" runat="server" Text="  "></asp:Label>
+        &nbsp;<asp:LinkButton ID="lbt_DangKy" runat="server">Đăng Ký</asp:LinkButton>
+        <asp:Label ID="Label2" runat="server" Text="  |"></asp:Label>
+        <asp:LinkButton ID="lbt_DangNhap" runat="server" onclick="lbt_DangNhap_Click">Đăng Nhập</asp:LinkButton>
+        <asp:Panel ID="loginPanel" runat="server" Style="display: none">
+            <div class="closeLoginPanel">
+                <a onclick="document.body.click(); return false;" title="Fermer">X</a>
+            </div>
+            <uc1:LoginDesign ID="LoginDesign1" runat="server" />
+        </asp:Panel>
+              
+	</div>
+    <div style=" width: 80%;margin-left: 10%;background-image:url('/Image/block_topbg.gif'); height: 65px;">
+        <table class="style1">
+            <tr>
+                <td class="style7">
+                    </td>
+                <td class="style14">
+                    <asp:Panel ID="Panel1" runat="server" BorderColor="#336699" BorderStyle="Solid" 
+                        BorderWidth="1px" Height="25px" 
+                BackImageUrl="~/Image/main_menu_bg.jpg" style="margin-left: 0px" Width="100%" 
+                        HorizontalAlign="Center">
+                        &nbsp;<asp:LinkButton ID="lbt_TinMoi" runat="server" CssClass ="buttonlink" >Tin mới</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton5" runat="server" CssClass ="buttonlink">Thông báo</asp:LinkButton>
+                        &nbsp;&nbsp; |&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton6" runat="server" CssClass ="buttonlink">Đọc Báo</asp:LinkButton>
+                        &nbsp;&nbsp; |&nbsp;&nbsp; <asp:LinkButton ID="LinkButton7" runat="server">Thông tin trường</asp:LinkButton>
+                    </asp:Panel>
+                </td>
+                <td class="style5" align="right">
+                    <asp:TextBox ID="asbCity" runat="server" BorderStyle="Solid" BorderWidth="1px" 
+                        Width="170px" BorderColor="#3366FF"></asp:TextBox>
+                </td>
+                <td class="style6">
+                    
+                    <asp:Button ID="bt_TimKiem" runat="server" BackColor="#9999FF" 
+                        BorderColor="#0066FF" BorderStyle="Solid" BorderWidth="1px" ForeColor="Black" 
+                        Text="Tìm Kiếm" Width="70px" Font-Bold="True" Font-Names="Constantia" 
+                        Height="20px" onclick="bt_TimKiem_Click" />
+                    
+                </td>
+            </tr>
+            </table>
+    </div>
+	<div style=" width: 80%; height:auto;margin-left: 10%;  background-color: #FFFFFF;  margin-top: 0px;" >
+		
+	    <asp:ContentPlaceHolder ID="Main" runat="server">
+        </asp:ContentPlaceHolder>	
+		
+	</div>
+
+	<div style=" width: 80%;margin-left: 10%; height: 42px; background-image: url('/Image/block_topbg.gif'); background-repeat: repeat;">
+		
+	</div>
+	
+</form>
+<script type="text/javascript">
+    // You must set _editor_url to the URL (including trailing slash) where
+    // where xinha is installed, it's highly recommended to use an absolute URL
+    //  eg: _editor_url = "/path/to/xinha/";
+    // You may try a relative URL if you wish]
+    //  eg: _editor_url = "../";
+    // in this example we do a little regular expression to find the absolute path.
+    //_editor_url  = document.location.href.replace(/examples\/.*/, '')
+    _editor_url = "SPKTWeb/Xinha/";
+    _editor_lang = "en";      // And the language we need to use in the editor.
+  </script>
+
+  <!-- Load up the actual editor core -->
+  <script type="text/javascript" src="~/SPKTWeb/Xinha/htmlarea.js"></script>
+
+  <script type="text/javascript">
+      //xinha_editors = null;
+      xinha_init = null;
+      xinha_config = null;
+      xinha_plugins = null;
+
+      // This contains the names of textareas we will make into Xinha editors
+      xinha_init = xinha_init ? xinha_init : function () {
+          /** STEP 1 ***************************************************************
+          * First, what are the plugins you will be using in the editors on this
+          * page.  List all the plugins you will need, even if not all the editors
+          * will use all the plugins.
+          ************************************************************************/
+
+          xinha_plugins = xinha_plugins ? xinha_plugins :
+      [
+        'CharacterMap', 'SpellChecker', 'Linker'
+      ];
+          // THIS BIT OF JAVASCRIPT LOADS THE PLUGINS, NO TOUCHING  :)
+          if (!Xinha.loadPlugins(xinha_plugins, xinha_init)) return;
+
+          /** STEP 2 ***************************************************************
+          * Now, what are the names of the textareas you will be turning into
+          * editors?
+          ************************************************************************/
+
+          //      xinha_editors = xinha_editors ? xinha_editors :
+          //      [
+          //        'ctl00_PageContent_txtIntroduction'
+          //      ];
+
+          /** STEP 3 ***************************************************************
+          * We create a default configuration to be used by all the editors.
+          * If you wish to configure some of the editors differently this will be
+          * done in step 4.
+          *
+          * If you want to modify the default config you might do something like this.
+          *
+          *   xinha_config = new Xinha.Config();
+          *   xinha_config.width  = 640;
+          *   xinha_config.height = 420;
+          *
+          *************************************************************************/
+
+          xinha_config = xinha_config ? xinha_config : new Xinha.Config();
+          xinha_config.fullPage = true;
+          xinha_config.width = 600;
+          xinha_config.height = 300;
+          xinha_config.CharacterMap.mode = 'panel';
+          xinha_config.toolbar =
+         [
+           ["popupeditor"],
+           ["separator", "formatblock", "fontname", "fontsize"],
+           ["separator", "bold", "italic", "underline", "strikethrough"],
+          //["separator","fontname","fontsize","bold","italic","underline","strikethrough"],
+           ["separator", "forecolor", "hilitecolor", "textindicator"],
+           ["separator", "subscript", "superscript"],
+           ["separator", "linebreak", "justifyleft", "justifycenter", "justifyright", "justifyfull"],
+           ["separator", "insertorderedlist", "insertunorderedlist", "outdent", "indent"],
+           ["separator", "inserthorizontalrule", "createlink", "insertimage", "inserttable"],
+           ["separator", "linebreak", "undo", "redo"],
+           ["separator", "selectall", "print"], (Xinha.is_gecko ? [] : ["cut", "copy", "paste", "overwrite", "saveas"]),
+           ["separator", "killword", "clearfonts", "removeformat", "toggleborders", "splitblock", "lefttoright", "righttoleft"],
+           ["separator", "htmlmode", "showhelp", "about"]
+         ];
+          /*
+          // We can load an external stylesheet like this - NOTE : YOU MUST GIVE AN ABSOLUTE URL
+          //  otherwise it won't work!
+          xinha_config.stylistLoadStylesheet(document.location.href.replace(/[^\/]*\.html/, 'stylist.css'));
+
+          // Or we can load styles directly
+          xinha_config.stylistLoadStyles('p.red_text { color:red }');
+
+          // If you want to provide "friendly" names you can do so like
+          // (you can do this for stylistLoadStylesheet as well)
+          xinha_config.stylistLoadStyles('p.pink_text { color:pink }', {'p.pink_text' : 'Pretty Pink'});
+          */
+          /** STEP 3 ***************************************************************
+          * We first create editors for the textareas.
+          *
+          * You can do this in two ways, either
+          *
+          *   xinha_editors   = Xinha.makeEditors(xinha_editors, xinha_config, xinha_plugins);
+          *
+          * if you want all the editor objects to use the same set of plugins, OR;
+          *
+          *   xinha_editors = Xinha.makeEditors(xinha_editors, xinha_config);
+          *   xinha_editors['myTextArea'].registerPlugins(['Stylist','FullScreen']);
+          *   xinha_editors['anotherOne'].registerPlugins(['CSS','SuperClean']);
+          *
+          * if you want to use a different set of plugins for one or more of the
+          * editors.
+          ************************************************************************/
+
+          xinha_editors = Xinha.makeEditors(
+        xinha_editors,
+          //xinha_plugins,
+        xinha_config
+        );
+
+          /** STEP 4 ***************************************************************
+          * If you want to change the configuration variables of any of the
+          * editors,  this is the place to do that, for example you might want to
+          * change the width and height of one of the editors, like this...
+          *
+          *   xinha_editors.myTextArea.config.width  = 640;
+          *   xinha_editors.myTextArea.config.height = 480;
+          *
+          ************************************************************************/
+
+
+          /** STEP 5 ***************************************************************
+          * Finally we "start" the editors, this turns the textareas into
+          * Xinha editors.
+          ************************************************************************/
+
+          Xinha.startEditors(xinha_editors);
+          window.onload = null;
+      }
+
+      window.onload = xinha_init;
+      window.onunload = Xinha.collectGarbageForIE;
+  </script> 
+</body>
+</html>

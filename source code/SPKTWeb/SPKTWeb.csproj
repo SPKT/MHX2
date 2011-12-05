@@ -1,0 +1,2315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B22B5A5-0374-4F80-9FC9-370CB9E887C1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPKTWeb</RootNamespace>
+    <AssemblyName>SPKTWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\code\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\..\Desktop\Structure\deploy\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Accounts\EditAccount.aspx" />
+    <Content Include="Accounts\Login.aspx" />
+    <Content Include="Accounts\RecoverPassword.aspx" />
+    <Content Include="Accounts\Register.aspx" />
+    <Content Include="Accounts\UserControl\EditAc.ascx" />
+    <Content Include="Accounts\UserControl\InfoAccount.ascx" />
+    <Content Include="Accounts\UserControl\LoginDesign.ascx" />
+    <Content Include="Accounts\UserControl\LoginDesign1.ascx" />
+    <Content Include="Accounts\UserControl\Logout.ascx" />
+    <Content Include="Accounts\UserControl\Register.ascx" />
+    <Content Include="Accounts\VerifyEmail.aspx" />
+    <Content Include="AddData.aspx" />
+    <Content Include="App.js" />
+    <Content Include="App_Data\SPKT.mdf" />
+    <Content Include="App_Data\SPKT_log.ldf">
+      <DependentUpon>SPKT.mdf</DependentUpon>
+    </Content>
+    <Content Include="Comments\UseComment.aspx" />
+    <Content Include="Comments\UserControl\BoxComment.ascx" />
+    <Content Include="Comments\UserControl\CommentFriend.ascx" />
+    <Content Include="Forums\Forum.aspx" />
+    <Content Include="Friends\ConfirmFriendshipRequest.aspx" />
+    <Content Include="Friends\Invite.aspx" />
+    <Content Include="Friends\ShowFriend.aspx" />
+    <Content Include="Friends\UserControl\BoxFriend.ascx" />
+    <Content Include="Friends\UserControl\BoxInvite.ascx" />
+    <Content Include="Friends\UserControl\FriendList.ascx" />
+    <Content Include="Friends\UserControl\FriendProfile.ascx" />
+    <Content Include="Friends\UserControl\FriendSimple.ascx" />
+    <Content Include="Friends\UserControl\InviteFriends.ascx" />
+    <Content Include="Friends\UserControl\ListFriend.ascx" />
+    <Content Include="Friends\UserControl\ShowFriend.ascx" />
+    <Content Include="Handler\TestURL.aspx" />
+    <Content Include="Homes\Home.aspx" />
+    <Content Include="Images\01.jpg" />
+    <Content Include="Images\02.jpg" />
+    <Content Include="Images\03.jpg" />
+    <Content Include="Images\04.jpg" />
+    <Content Include="Images\05.jpg" />
+    <Content Include="Images\06.jpg" />
+    <Content Include="Images\07.jpg" />
+    <Content Include="Images\08.jpg" />
+    <Content Include="Images\09.jpg" />
+    <Content Include="Images\10.jpg" />
+    <Content Include="Images\11.jpg" />
+    <Content Include="Images\12.jpg" />
+    <Content Include="Images\13.jpg" />
+    <Content Include="Images\14.jpg" />
+    <Content Include="Images\ALIEN_01_01.PNG" />
+    <Content Include="Images\ALIEN_03_01.PNG" />
+    <Content Include="Images\TENT_01_01.PNG" />
+    <Content Include="Image\123.jpg" />
+    <Content Include="Image\ALIEN_01_01.jpg" />
+    <Content Include="Image\ALIEN_01_01.PNG" />
+    <Content Include="Image\arrow.jpg" />
+    <Content Include="Image\banner_menu_bg.gif" />
+    <Content Include="Image\bbl-body-bg.png" />
+    <Content Include="Image\bbl-body-bg_2.png" />
+    <Content Include="Image\bbl-head-bg.png" />
+    <Content Include="Image\bbl-head-bg_2.png" />
+    <Content Include="Image\bgd_footer.gif" />
+    <Content Include="Image\bgm.gif" />
+    <Content Include="Image\Bground.gif" />
+    <Content Include="Image\bground1.gif" />
+    <Content Include="Image\bground2.gif" />
+    <Content Include="Image\bg_blue_2.gif" />
+    <Content Include="Image\bg_yellow.gif" />
+    <Content Include="Image\block_topbg.gif" />
+    <Content Include="Image\blog.jpg" />
+    <Content Include="Image\bn2.jpg" />
+    <Content Include="Image\body-bg2.png" />
+    <Content Include="Image\body-bg2_2.png" />
+    <Content Include="Image\body_bg.jpg" />
+    <Content Include="Image\box_bottom.gif" />
+    <Content Include="Image\box_center.gif" />
+    <Content Include="Image\box_top.gif" />
+    <Content Include="Image\bt2.jpg" />
+    <Content Include="Image\button-search-header.jpg" />
+    <Content Include="Image\but_razd.gif" />
+    <Content Include="Image\CaptChaIma.aspx" />
+    <Content Include="Image\collapse.jpg" />
+    <Content Include="Image\expand.jpg" />
+    <Content Include="Image\gray-grad.png" />
+    <Content Include="Image\ground_left.GIF" />
+    <Content Include="Image\ground_left1.JPG" />
+    <Content Include="Image\hmhdr_mod_teal.gif" />
+    <Content Include="Image\htitle.gif" />
+    <Content Include="Image\icon_close.gif" />
+    <Content Include="Image\icon_friends.gif" />
+    <Content Include="Image\leftground1.gif" />
+    <Content Include="Image\lista.png" />
+    <Content Include="Image\main_background_gradient.jpg" />
+    <Content Include="Image\main_menu_bg.jpg" />
+    <Content Include="Image\notepad.png" />
+    <Content Include="Image\nut.GIF" />
+    <Content Include="Image\page_top_bkgr.gif" />
+    <Content Include="Image\post_entry_bkgr.png" />
+    <Content Include="Image\ProfileAvatar.aspx" />
+    <Content Include="Image\sachmoi copy.gif" />
+    <Content Include="Image\sachmoi.gif" />
+    <Content Include="Image\search.png" />
+    <Content Include="Image\searchbg.png" />
+    <Content Include="Image\spkt.png" />
+    <Content Include="Image\spkticon.gif" />
+    <Content Include="Image\spkticon1.png" />
+    <Content Include="Image\spkt_1.png" />
+    <Content Include="Image\spkt_2.gif" />
+    <Content Include="Image\thanhtren.gif.png" />
+    <Content Include="Image\thead.gif" />
+    <Content Include="Image\tile_cat.gif" />
+    <Content Include="Image\tim.png" />
+    <Content Include="Image\titlemenu.gif" />
+    <Content Include="js\cropper\cropper.css" />
+    <Content Include="js\cropper\cropper.js" />
+    <Content Include="js\cropper\cropper.uncompressed.js" />
+    <Content Include="js\cropper\lib\builder.js" />
+    <Content Include="js\cropper\lib\controls.js" />
+    <Content Include="js\cropper\lib\dragdrop.js" />
+    <Content Include="js\cropper\lib\effects.js" />
+    <Content Include="js\cropper\lib\prototype.js" />
+    <Content Include="js\cropper\lib\scriptaculous.js" />
+    <Content Include="js\cropper\lib\slider.js" />
+    <Content Include="js\cropper\lib\unittest.js" />
+    <Content Include="js\cropper\licence.txt" />
+    <Content Include="js\cropper\marqueeHoriz.gif" />
+    <Content Include="js\cropper\marqueeVert.gif" />
+    <Content Include="js\cropper\tests\castle.jpg" />
+    <Content Include="js\cropper\tests\castleMed.jpg" />
+    <Content Include="js\cropper\tests\example-Basic.htm" />
+    <Content Include="js\cropper\tests\example-CoordsOnLoad.htm" />
+    <Content Include="js\cropper\tests\example-CoordsOnLoadWithRatio.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Absolute.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Float.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Relative.htm" />
+    <Content Include="js\cropper\tests\example-Dimensions.htm" />
+    <Content Include="js\cropper\tests\example-DynamicImage.htm" />
+    <Content Include="js\cropper\tests\example-FixedRatio.htm" />
+    <Content Include="js\cropper\tests\example-MinimumDimensions.htm" />
+    <Content Include="js\cropper\tests\example-MinimumWidth.htm" />
+    <Content Include="js\cropper\tests\example-Preview.htm" />
+    <Content Include="js\cropper\tests\poppy.jpg" />
+    <Content Include="js\cropper\tests\staticHTMLStructure.htm" />
+    <Content Include="Friends\UserControl\ListFriendSimple.ascx" />
+    <Content Include="Messages\MessageMange.aspx" />
+    <Content Include="Messages\ReadMessage.aspx" />
+    <Content Include="Messages\UserControl\LoadInbox.ascx" />
+    <Content Include="Messages\UserControl\MessageBrief.ascx" />
+    <Content Include="Messages\UserControl\MessageNew.ascx" />
+    <Content Include="Messages\UserControl\ReadMessage.ascx" />
+    <Content Include="Messages\WebForm1.aspx" />
+    <Content Include="Messages\WebForm2.aspx" />
+    <Content Include="Picture\banner.jpg" />
+    <Content Include="Picture\bg_img.png" />
+    <Content Include="Picture\blog.jpg" />
+    <Content Include="Picture\bn1.jpg" />
+    <Content Include="Picture\bn2.jpg" />
+    <Content Include="Picture\body_bg.jpg" />
+    <Content Include="Picture\bottom_h1.png" />
+    <Content Include="Picture\bottom_h2.png" />
+    <Content Include="Picture\bottom_i1.jpg" />
+    <Content Include="Picture\bottom_i2.jpg" />
+    <Content Include="Picture\box_home.png" />
+    <Content Include="Picture\bt2.jpg" />
+    <Content Include="Picture\but_over.png" />
+    <Content Include="Picture\but_razd.gif" />
+    <Content Include="Picture\but_search.png" />
+    <Content Include="Picture\but_submi_ind5.png" />
+    <Content Include="Picture\Cuoi-2.jpg" />
+    <Content Include="Picture\c_l.png" />
+    <Content Include="Picture\gallery_big1.jpg" />
+    <Content Include="Picture\gallery_big2.jpg" />
+    <Content Include="Picture\gallery_big3.jpg" />
+    <Content Include="Picture\gallery_big4.jpg" />
+    <Content Include="Picture\gallery_big5.jpg" />
+    <Content Include="Picture\gallery_big6.jpg" />
+    <Content Include="Picture\gallery_big7.jpg" />
+    <Content Include="Picture\gallery_big8.jpg" />
+    <Content Include="Picture\gallery_big9.jpg" />
+    <Content Include="Picture\Header.jpg" />
+    <Content Include="Picture\hinh.jpg" />
+    <Content Include="Picture\img1.gif" />
+    <Content Include="Picture\img2.gif" />
+    <Content Include="Picture\img21.jpg" />
+    <Content Include="Picture\img22.jpg" />
+    <Content Include="Picture\img3.gif" />
+    <Content Include="Picture\img31.jpg" />
+    <Content Include="Picture\img32.jpg" />
+    <Content Include="Picture\img33.jpg" />
+    <Content Include="Picture\img34.jpg" />
+    <Content Include="Picture\img35.jpg" />
+    <Content Include="Picture\img36.jpg" />
+    <Content Include="Picture\img37.jpg" />
+    <Content Include="Picture\img38.jpg" />
+    <Content Include="Picture\img39.jpg" />
+    <Content Include="Picture\img41.jpg" />
+    <Content Include="Picture\img_bg_ind3.png" />
+    <Content Include="Picture\input.png" />
+    <Content Include="Picture\input_ind5.png" />
+    <Content Include="Picture\logo.jpg" />
+    <Content Include="Picture\main.jpg" />
+    <Content Include="Picture\main_bg.png" />
+    <Content Include="Picture\menu.gif" />
+    <Content Include="Picture\menu1.gif" />
+    <Content Include="Picture\menu1.jpg" />
+    <Content Include="Picture\menu2.jpg" />
+    <Content Include="Picture\message_ind5.png" />
+    <Content Include="Picture\mn1.gif" />
+    <Content Include="Picture\mn2.jpg" />
+    <Content Include="Picture\mn3.jpg" />
+    <Content Include="Picture\mn4.jpg" />
+    <Content Include="Picture\mn5.jpg" />
+    <Content Include="Picture\nen1.jpg" />
+    <Content Include="Picture\nen2.jpg" />
+    <Content Include="Picture\profile.jpg" />
+    <Content Include="Picture\project1.jpg" />
+    <Content Include="Picture\project2.jpg" />
+    <Content Include="Picture\read.png" />
+    <Content Include="Picture\rol_over_galery.png" />
+    <Content Include="Picture\scroll1.jpg" />
+    <Content Include="Picture\scroll2.jpg" />
+    <Content Include="Picture\scroll3.jpg" />
+    <Content Include="Picture\scroll4.jpg" />
+    <Content Include="Picture\scroll5.jpg" />
+    <Content Include="Picture\scroll_small.png" />
+    <Content Include="Picture\submit.png" />
+    <Content Include="Picture\textarea.png" />
+    <Content Include="Picture\timkiem.jpg" />
+    <Content Include="Picture\top_left.png" />
+    <Content Include="Picture\top_right.png" />
+    <Content Include="Picture\top_text.gif" />
+    <Content Include="Picture\t_c.png" />
+    <Content Include="Profiles\ManageProfile.aspx" />
+    <Content Include="Profiles\Test.aspx" />
+    <Content Include="Profiles\UploadAvatar.aspx" />
+    <Content Include="Profiles\UserControls\AlertControl.ascx" />
+    <Content Include="Profiles\UserControls\ProfileAttributeControl.ascx" />
+    <Content Include="Profiles\UserControls\ProfileAttributeControlFull.ascx" />
+    <Content Include="Profiles\UserControls\StatusControl.ascx" />
+    <Content Include="Profiles\UserProfile.aspx" />
+    <Content Include="Profiles\UserProfile2.aspx" />
+    <Content Include="Profiles\ViewProfile.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Searchs\Search.aspx" />
+    <Content Include="Style1.css" />
+    <Content Include="Style2.css" />
+    <Content Include="Styles\FOOTER.ascx" />
+    <Content Include="Styles\LEFT_MENU.ascx" />
+    <Content Include="Styles\MENU.ascx" />
+    <Content Include="Styles\MXH.css" />
+    <Content Include="Styles\RIGHT_MENU.ascx" />
+    <Content Include="Styles\RIGHT_MENU1.ascx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="UserControl\Comments.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Xinha\examples\custom.css" />
+    <Content Include="Xinha\examples\dynamic.css" />
+    <Content Include="Xinha\examples\Extended.html" />
+    <Content Include="Xinha\examples\ext_example-body.html" />
+    <Content Include="Xinha\examples\ext_example.html" />
+    <Content Include="Xinha\examples\full_example.css" />
+    <Content Include="Xinha\examples\full_example.js" />
+    <Content Include="Xinha\examples\Newbie.html" />
+    <Content Include="Xinha\examples\simple_example.html" />
+    <Content Include="Xinha\examples\stylist.css" />
+    <Content Include="Xinha\examples\testbed.html" />
+    <Content Include="Xinha\examples\XinhaConfig.js" />
+    <Content Include="Xinha\htmlarea.js" />
+    <Content Include="Xinha\images\de\bold.gif" />
+    <Content Include="Xinha\images\de\italic.gif" />
+    <Content Include="Xinha\images\de\underline.gif" />
+    <Content Include="Xinha\images\ed_about.gif" />
+    <Content Include="Xinha\images\ed_align.gif" />
+    <Content Include="Xinha\images\ed_align_center.gif" />
+    <Content Include="Xinha\images\ed_align_justify.gif" />
+    <Content Include="Xinha\images\ed_align_left.gif" />
+    <Content Include="Xinha\images\ed_align_right.gif" />
+    <Content Include="Xinha\images\ed_blank.gif" />
+    <Content Include="Xinha\images\ed_buttons_main.gif" />
+    <Content Include="Xinha\images\ed_charmap.gif" />
+    <Content Include="Xinha\images\ed_clearfonts.gif" />
+    <Content Include="Xinha\images\ed_color_bg.gif" />
+    <Content Include="Xinha\images\ed_color_fg.gif" />
+    <Content Include="Xinha\images\ed_copy.gif" />
+    <Content Include="Xinha\images\ed_custom.gif" />
+    <Content Include="Xinha\images\ed_cut.gif" />
+    <Content Include="Xinha\images\ed_delete.gif" />
+    <Content Include="Xinha\images\ed_format_bold.gif" />
+    <Content Include="Xinha\images\ed_format_italic.gif" />
+    <Content Include="Xinha\images\ed_format_strike.gif" />
+    <Content Include="Xinha\images\ed_format_sub.gif" />
+    <Content Include="Xinha\images\ed_format_sup.gif" />
+    <Content Include="Xinha\images\ed_format_underline.gif" />
+    <Content Include="Xinha\images\ed_help.gif" />
+    <Content Include="Xinha\images\ed_hr.gif" />
+    <Content Include="Xinha\images\ed_html.gif" />
+    <Content Include="Xinha\images\ed_image.gif" />
+    <Content Include="Xinha\images\ed_indent_less.gif" />
+    <Content Include="Xinha\images\ed_indent_more.gif" />
+    <Content Include="Xinha\images\ed_killword.gif" />
+    <Content Include="Xinha\images\ed_left_to_right.gif" />
+    <Content Include="Xinha\images\ed_link.gif" />
+    <Content Include="Xinha\images\ed_list_bullet.gif" />
+    <Content Include="Xinha\images\ed_list_num.gif" />
+    <Content Include="Xinha\images\ed_overwrite.gif" />
+    <Content Include="Xinha\images\ed_paste.gif" />
+    <Content Include="Xinha\images\ed_print.gif" />
+    <Content Include="Xinha\images\ed_redo.gif" />
+    <Content Include="Xinha\images\ed_right_to_left.gif" />
+    <Content Include="Xinha\images\ed_rmformat.gif" />
+    <Content Include="Xinha\images\ed_save.gif" />
+    <Content Include="Xinha\images\ed_save.png" />
+    <Content Include="Xinha\images\ed_saveas.gif" />
+    <Content Include="Xinha\images\ed_selectall.gif" />
+    <Content Include="Xinha\images\ed_show_border.gif" />
+    <Content Include="Xinha\images\ed_splitblock.gif" />
+    <Content Include="Xinha\images\ed_splitcel.gif" />
+    <Content Include="Xinha\images\ed_undo.gif" />
+    <Content Include="Xinha\images\ed_word_cleaner.gif" />
+    <Content Include="Xinha\images\fr\bold.gif" />
+    <Content Include="Xinha\images\fr\strikethrough.gif" />
+    <Content Include="Xinha\images\fr\underline.gif" />
+    <Content Include="Xinha\images\fullscreen_maximize.gif" />
+    <Content Include="Xinha\images\fullscreen_minimize.gif" />
+    <Content Include="Xinha\images\insertfilelink.gif" />
+    <Content Include="Xinha\images\insertmacro.png" />
+    <Content Include="Xinha\images\insert_table.gif" />
+    <Content Include="Xinha\images\tidy.gif" />
+    <Content Include="Xinha\images\toggle_borders.gif" />
+    <Content Include="Xinha\images\xinha_logo.gif" />
+    <Content Include="Xinha\lang\b5.js" />
+    <Content Include="Xinha\lang\ch.js" />
+    <Content Include="Xinha\lang\cz.js" />
+    <Content Include="Xinha\lang\da.js" />
+    <Content Include="Xinha\lang\de.js" />
+    <Content Include="Xinha\lang\ee.js" />
+    <Content Include="Xinha\lang\el.js" />
+    <Content Include="Xinha\lang\es.js" />
+    <Content Include="Xinha\lang\eu.js" />
+    <Content Include="Xinha\lang\fa.js" />
+    <Content Include="Xinha\lang\fi.js" />
+    <Content Include="Xinha\lang\fr.js" />
+    <Content Include="Xinha\lang\gb.js" />
+    <Content Include="Xinha\lang\he.js" />
+    <Content Include="Xinha\lang\hu.js" />
+    <Content Include="Xinha\lang\it.js" />
+    <Content Include="Xinha\lang\ja.js" />
+    <Content Include="Xinha\lang\lt.js" />
+    <Content Include="Xinha\lang\lv.js" />
+    <Content Include="Xinha\lang\nb.js" />
+    <Content Include="Xinha\lang\nl.js" />
+    <Content Include="Xinha\lang\pl.js" />
+    <Content Include="Xinha\lang\pt_br.js" />
+    <Content Include="Xinha\lang\ro.js" />
+    <Content Include="Xinha\lang\ru.js" />
+    <Content Include="Xinha\lang\sh.js" />
+    <Content Include="Xinha\lang\si.js" />
+    <Content Include="Xinha\lang\sr.js" />
+    <Content Include="Xinha\lang\sv.js" />
+    <Content Include="Xinha\lang\vn.js" />
+    <Content Include="Xinha\license.txt" />
+    <Content Include="Xinha\modules\ColorPicker\ColorPicker.js" />
+    <Content Include="Xinha\modules\CreateLink\link.html" />
+    <Content Include="Xinha\modules\CreateLink\link.js" />
+    <Content Include="Xinha\modules\Dialogs\dialog.js" />
+    <Content Include="Xinha\modules\Dialogs\inline-dialog.js" />
+    <Content Include="Xinha\modules\Dialogs\panel-dialog.js" />
+    <Content Include="Xinha\modules\Dialogs\popupwin.js" />
+    <Content Include="Xinha\modules\FullScreen\full-screen.js" />
+    <Content Include="Xinha\modules\FullScreen\lang\de.js" />
+    <Content Include="Xinha\modules\FullScreen\lang\fr.js" />
+    <Content Include="Xinha\modules\FullScreen\lang\ja.js" />
+    <Content Include="Xinha\modules\FullScreen\lang\nb.js" />
+    <Content Include="Xinha\modules\FullScreen\lang\pl.js" />
+    <Content Include="Xinha\modules\FullScreen\lang\ru.js" />
+    <Content Include="Xinha\modules\FullScreen\lang\sv.js" />
+    <Content Include="Xinha\modules\Gecko\Gecko.js" />
+    <Content Include="Xinha\modules\Gecko\paraHandlerBest.js" />
+    <Content Include="Xinha\modules\Gecko\paraHandlerDirty.js" />
+    <Content Include="Xinha\modules\GetHtml\DOMwalk.js" />
+    <Content Include="Xinha\modules\GetHtml\TransformInnerHTML.js" />
+    <Content Include="Xinha\modules\InsertImage\insert_image.html" />
+    <Content Include="Xinha\modules\InsertImage\insert_image.js" />
+    <Content Include="Xinha\modules\InsertTable\insert_table.html" />
+    <Content Include="Xinha\modules\InsertTable\insert_table.js" />
+    <Content Include="Xinha\modules\InternetExplorer\InternetExplorer.js" />
+    <Content Include="Xinha\plugins\Abbreviation\abbreviation.css" />
+    <Content Include="Xinha\plugins\Abbreviation\abbreviation.js" />
+    <Content Include="Xinha\plugins\Abbreviation\abbr\de.js" />
+    <Content Include="Xinha\plugins\Abbreviation\abbr\en.js" />
+    <Content Include="Xinha\plugins\Abbreviation\img\ed_abbreviation.gif" />
+    <Content Include="Xinha\plugins\Abbreviation\lang\de.js" />
+    <Content Include="Xinha\plugins\Abbreviation\lang\fr.js" />
+    <Content Include="Xinha\plugins\Abbreviation\lang\ja.js" />
+    <Content Include="Xinha\plugins\Abbreviation\lang\nb.js" />
+    <Content Include="Xinha\plugins\Abbreviation\popups\abbreviation.html" />
+    <Content Include="Xinha\plugins\BackgroundImage\background-image.js" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\blufur.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\palecnvs.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\ppplcnvs.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\thumbnails\blufur.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\thumbnails\palecnvs.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\thumbnails\ppplcnvs.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\thumbnails\ylwsand.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\backgrounds\ylwsand.jpg" />
+    <Content Include="Xinha\plugins\BackgroundImage\img\ed_bgimage.gif" />
+    <Content Include="Xinha\plugins\BackgroundImage\lang\de.js" />
+    <Content Include="Xinha\plugins\BackgroundImage\lang\fr.js" />
+    <Content Include="Xinha\plugins\BackgroundImage\lang\ja.js" />
+    <Content Include="Xinha\plugins\BackgroundImage\lang\nb.js" />
+    <Content Include="Xinha\plugins\BackgroundImage\popups\bgimage.html" />
+    <Content Include="Xinha\plugins\CharacterMap\character-map.js" />
+    <Content Include="Xinha\plugins\CharacterMap\CharacterMap.css" />
+    <Content Include="Xinha\plugins\CharacterMap\img\ed_charmap.gif" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\de.js" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\fr.js" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\it.js" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\ja.js" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\nb.js" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\nl.js" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\ru.js" />
+    <Content Include="Xinha\plugins\CharacterMap\lang\sv.js" />
+    <Content Include="Xinha\plugins\CharacterMap\popups\select_character.html" />
+    <Content Include="Xinha\plugins\CharCounter\char-counter.js" />
+    <Content Include="Xinha\plugins\CharCounter\lang\de.js" />
+    <Content Include="Xinha\plugins\CharCounter\lang\fr.js" />
+    <Content Include="Xinha\plugins\CharCounter\lang\ja.js" />
+    <Content Include="Xinha\plugins\CharCounter\lang\nb.js" />
+    <Content Include="Xinha\plugins\ClientsideSpellcheck\clientside-spellcheck.js" />
+    <Content Include="Xinha\plugins\ClientsideSpellcheck\img\clientside-spellcheck.gif" />
+    <Content Include="Xinha\plugins\ClientsideSpellcheck\img\he-spell-check.gif" />
+    <Content Include="Xinha\plugins\ClientsideSpellcheck\lang\de.js" />
+    <Content Include="Xinha\plugins\ClientsideSpellcheck\lang\ja.js" />
+    <Content Include="Xinha\plugins\ClientsideSpellcheck\lang\nb.js" />
+    <Content Include="Xinha\plugins\ContextMenu\context-menu.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\de.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\el.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\fr.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\he.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\ja.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\nb.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\nl.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\pl.js" />
+    <Content Include="Xinha\plugins\ContextMenu\lang\sv.js" />
+    <Content Include="Xinha\plugins\ContextMenu\menu.css" />
+    <Content Include="Xinha\plugins\CSS\css.js" />
+    <Content Include="Xinha\plugins\DefinitionList\definition-list.css" />
+    <Content Include="Xinha\plugins\DefinitionList\definition-list.js" />
+    <Content Include="Xinha\plugins\DefinitionList\img\ed_dd.gif" />
+    <Content Include="Xinha\plugins\DefinitionList\img\ed_dl.gif" />
+    <Content Include="Xinha\plugins\DefinitionList\img\ed_dt.gif" />
+    <Content Include="Xinha\plugins\DefinitionList\lang\ja.js" />
+    <Content Include="Xinha\plugins\DoubleClick\double-click.js" />
+    <Content Include="Xinha\plugins\DynamicCSS\dynamiccss.js" />
+    <Content Include="Xinha\plugins\DynamicCSS\lang\de.js" />
+    <Content Include="Xinha\plugins\DynamicCSS\lang\fr.js" />
+    <Content Include="Xinha\plugins\DynamicCSS\lang\ja.js" />
+    <Content Include="Xinha\plugins\DynamicCSS\lang\nb.js" />
+    <Content Include="Xinha\plugins\DynamicCSS\lang\nl.js" />
+    <Content Include="Xinha\plugins\EditTag\edit-tag.js" />
+    <Content Include="Xinha\plugins\EditTag\img\ed_edit_tag.gif" />
+    <Content Include="Xinha\plugins\EditTag\lang\de.js" />
+    <Content Include="Xinha\plugins\EditTag\lang\fr.js" />
+    <Content Include="Xinha\plugins\EditTag\lang\ja.js" />
+    <Content Include="Xinha\plugins\EditTag\lang\nb.js" />
+    <Content Include="Xinha\plugins\EditTag\popups\edit_tag.html" />
+    <Content Include="Xinha\plugins\Equation\ASCIIMathML.js" />
+    <Content Include="Xinha\plugins\Equation\equation.js" />
+    <Content Include="Xinha\plugins\Equation\example.html" />
+    <Content Include="Xinha\plugins\Equation\img\abs_value.gif" />
+    <Content Include="Xinha\plugins\Equation\img\diag_fraction.gif" />
+    <Content Include="Xinha\plugins\Equation\img\divide.gif" />
+    <Content Include="Xinha\plugins\Equation\img\dsp_greater_equal.gif" />
+    <Content Include="Xinha\plugins\Equation\img\dsp_less_equal.gif" />
+    <Content Include="Xinha\plugins\Equation\img\dsp_notequal.gif" />
+    <Content Include="Xinha\plugins\Equation\img\equation.gif" />
+    <Content Include="Xinha\plugins\Equation\img\equation.old.gif" />
+    <Content Include="Xinha\plugins\Equation\img\greater_equal_than.gif" />
+    <Content Include="Xinha\plugins\Equation\img\hor_fraction.gif" />
+    <Content Include="Xinha\plugins\Equation\img\less_equal_than.gif" />
+    <Content Include="Xinha\plugins\Equation\img\mul.gif" />
+    <Content Include="Xinha\plugins\Equation\img\notequal.gif" />
+    <Content Include="Xinha\plugins\Equation\img\parenthesis.gif" />
+    <Content Include="Xinha\plugins\Equation\img\root.gif" />
+    <Content Include="Xinha\plugins\Equation\img\square_root.gif" />
+    <Content Include="Xinha\plugins\Equation\lang\de.js" />
+    <Content Include="Xinha\plugins\Equation\lang\ja.js" />
+    <Content Include="Xinha\plugins\Equation\popups\dialog.html" />
+    <Content Include="Xinha\plugins\Equation\readme.txt" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\dialog.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\editor.css" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\editor.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\EditorContent.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\editorFrame.css" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\editorFrame.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\hover.htc" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\ImageEditor.css" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\imagelist.css" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\images.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\manager.css" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\manager.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\popup.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\slider.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\assets\wz_jsgraphics.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\demo_images\bikerpeep.jpg" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\demo_images\linux\linux.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\demo_images\wesnoth078.jpg" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\extended-file-manager.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\def.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\def_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\doc.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\doc_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\fla.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\fla_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\folder.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\folder_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\gif_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\gz.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\gz_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\html.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\html_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\jpg_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\js.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\js_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\mov.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\mov_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\pdf.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\pdf_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\php.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\php_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\png_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\ppt.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\ppt_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\rar.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\rar_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\txt.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\txt_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\xls.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\xls_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\zip.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\icons\zip_small.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\1x1_transparent.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\2x2.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\2x2_w.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\btnFolderNew.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\btnFolderNew1.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\btnFolderUp.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\btnFolderUp1.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\btn_cancel.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\btn_ok.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\crop.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\default.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\div.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\dots.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\edit_active.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\edit_copy.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\edit_cut.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\edit_paste.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\edit_pencil.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\edit_rename.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\edit_trash.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\ed_linkfile.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\ed_linkfile1.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\folder.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\hand.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\islocked2.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\locked.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\measure.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\noimages.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\rotate.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\save.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\scale.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\spacer.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\t_black.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\t_white.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\unlocked.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\unlocked2.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\img\unlocked_empty.gif" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\lang\de.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\lang\ja.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\lang\nb.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\lang\nl.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\lang\pl.js" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\prompt.html" />
+    <Content Include="Xinha\plugins\ExtendedFileManager\Readme.txt" />
+    <Content Include="Xinha\plugins\Filter\filter.js" />
+    <Content Include="Xinha\plugins\Filter\filters\paragraph.js" />
+    <Content Include="Xinha\plugins\Filter\filters\word.js" />
+    <Content Include="Xinha\plugins\Filter\img\ed_filter.gif" />
+    <Content Include="Xinha\plugins\Filter\lang\ja.js" />
+    <Content Include="Xinha\plugins\FindReplace\find-replace.js" />
+    <Content Include="Xinha\plugins\FindReplace\fr_engine.js" />
+    <Content Include="Xinha\plugins\FindReplace\img\ed_find.gif" />
+    <Content Include="Xinha\plugins\FindReplace\lang\de.js" />
+    <Content Include="Xinha\plugins\FindReplace\lang\fr.js" />
+    <Content Include="Xinha\plugins\FindReplace\lang\ja.js" />
+    <Content Include="Xinha\plugins\FindReplace\lang\nb.js" />
+    <Content Include="Xinha\plugins\FindReplace\lang\pl.js" />
+    <Content Include="Xinha\plugins\FindReplace\lang\pt_br.js" />
+    <Content Include="Xinha\plugins\FindReplace\lang\ru.js" />
+    <Content Include="Xinha\plugins\FindReplace\lang\sv.js" />
+    <Content Include="Xinha\plugins\FindReplace\popups\find_replace.html" />
+    <Content Include="Xinha\plugins\FormOperations\default_form.html" />
+    <Content Include="Xinha\plugins\FormOperations\form-operations.js" />
+    <Content Include="Xinha\plugins\FormOperations\iframe.css" />
+    <Content Include="Xinha\plugins\FormOperations\img\buttons.gif" />
+    <Content Include="Xinha\plugins\FormOperations\lang\de.js" />
+    <Content Include="Xinha\plugins\FormOperations\lang\fr.js" />
+    <Content Include="Xinha\plugins\FormOperations\lang\ja.js" />
+    <Content Include="Xinha\plugins\FormOperations\lang\nb.js" />
+    <Content Include="Xinha\plugins\FormOperations\panel.html" />
+    <Content Include="Xinha\plugins\Forms\forms.css" />
+    <Content Include="Xinha\plugins\Forms\forms.js" />
+    <Content Include="Xinha\plugins\Forms\img\ed_button.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_checkbox.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_fieldset.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_file.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_form.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_hidden.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_image.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_label.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_password.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_radio.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_reset.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_select.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_submit.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_text.gif" />
+    <Content Include="Xinha\plugins\Forms\img\ed_textarea.gif" />
+    <Content Include="Xinha\plugins\Forms\lang\ja.js" />
+    <Content Include="Xinha\plugins\Forms\popups\fieldset.html" />
+    <Content Include="Xinha\plugins\Forms\popups\form.html" />
+    <Content Include="Xinha\plugins\Forms\popups\input.html" />
+    <Content Include="Xinha\plugins\Forms\popups\label.html" />
+    <Content Include="Xinha\plugins\Forms\popups\select.html" />
+    <Content Include="Xinha\plugins\Forms\popups\textarea.html" />
+    <Content Include="Xinha\plugins\FullPage\full-page.js" />
+    <Content Include="Xinha\plugins\FullPage\img\docprop.gif" />
+    <Content Include="Xinha\plugins\FullPage\lang\de.js" />
+    <Content Include="Xinha\plugins\FullPage\lang\fr.js" />
+    <Content Include="Xinha\plugins\FullPage\lang\he.js" />
+    <Content Include="Xinha\plugins\FullPage\lang\ja.js" />
+    <Content Include="Xinha\plugins\FullPage\lang\nb.js" />
+    <Content Include="Xinha\plugins\FullPage\lang\nl.js" />
+    <Content Include="Xinha\plugins\FullPage\lang\pl.js" />
+    <Content Include="Xinha\plugins\FullPage\lang\ro.js" />
+    <Content Include="Xinha\plugins\FullPage\popups\docprop.html" />
+    <Content Include="Xinha\plugins\GetHtml\get-html.js" />
+    <Content Include="Xinha\plugins\HorizontalRule\horizontal-rule.js" />
+    <Content Include="Xinha\plugins\HorizontalRule\lang\de.js" />
+    <Content Include="Xinha\plugins\HorizontalRule\lang\fr.js" />
+    <Content Include="Xinha\plugins\HorizontalRule\lang\ja.js" />
+    <Content Include="Xinha\plugins\HorizontalRule\lang\nb.js" />
+    <Content Include="Xinha\plugins\HorizontalRule\popups\edit_horizontal_rule.html" />
+    <Content Include="Xinha\plugins\HtmlEntities\Entities.js" />
+    <Content Include="Xinha\plugins\HtmlEntities\html-entities.js" />
+    <Content Include="Xinha\plugins\HtmlEntities\iso-8859-1.js" />
+    <Content Include="Xinha\plugins\HtmlTidy\html-tidy.js" />
+    <Content Include="Xinha\plugins\HtmlTidy\img\html-tidy.gif" />
+    <Content Include="Xinha\plugins\HtmlTidy\lang\de.js" />
+    <Content Include="Xinha\plugins\HtmlTidy\lang\fr.js" />
+    <Content Include="Xinha\plugins\HtmlTidy\lang\ja.js" />
+    <Content Include="Xinha\plugins\HtmlTidy\lang\nb.js" />
+    <Content Include="Xinha\plugins\HtmlTidy\lang\nl.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\dialog.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\editor.css" />
+    <Content Include="Xinha\plugins\ImageManager\assets\editor.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\EditorContent.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\editorFrame.css" />
+    <Content Include="Xinha\plugins\ImageManager\assets\editorFrame.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\hover.htc" />
+    <Content Include="Xinha\plugins\ImageManager\assets\ImageEditor.css" />
+    <Content Include="Xinha\plugins\ImageManager\assets\imagelist.css" />
+    <Content Include="Xinha\plugins\ImageManager\assets\images.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\manager.css" />
+    <Content Include="Xinha\plugins\ImageManager\assets\manager.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\popup.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\slider.js" />
+    <Content Include="Xinha\plugins\ImageManager\assets\wz_jsgraphics.js" />
+    <Content Include="Xinha\plugins\ImageManager\demo_images\bikerpeep.jpg" />
+    <Content Include="Xinha\plugins\ImageManager\demo_images\linux\linux.gif" />
+    <Content Include="Xinha\plugins\ImageManager\demo_images\wesnoth078.jpg" />
+    <Content Include="Xinha\plugins\ImageManager\image-manager.js" />
+    <Content Include="Xinha\plugins\ImageManager\img\2x2.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\2x2_w.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\btnFolderNew.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\btnFolderUp.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\btn_cancel.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\btn_ok.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\crop.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\default.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\div.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\dots.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\edit_active.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\edit_pencil.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\edit_trash.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\folder.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\hand.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\islocked2.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\locked.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\measure.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\noimages.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\rotate.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\save.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\scale.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\spacer.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\t_black.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\t_white.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\unlocked.gif" />
+    <Content Include="Xinha\plugins\ImageManager\img\unlocked2.gif" />
+    <Content Include="Xinha\plugins\ImageManager\lang\de.js" />
+    <Content Include="Xinha\plugins\ImageManager\lang\fr.js" />
+    <Content Include="Xinha\plugins\ImageManager\lang\ja.js" />
+    <Content Include="Xinha\plugins\ImageManager\lang\nb.js" />
+    <Content Include="Xinha\plugins\ImageManager\lang\pl.js" />
+    <Content Include="Xinha\plugins\ImageManager\lang\ru.js" />
+    <Content Include="Xinha\plugins\ImageManager\lang\sv.js" />
+    <Content Include="Xinha\plugins\ImageManager\newFolder.html" />
+    <Content Include="Xinha\plugins\ImageManager\README.txt" />
+    <Content Include="Xinha\plugins\InsertAnchor\img\insert-anchor.gif" />
+    <Content Include="Xinha\plugins\InsertAnchor\img\placeholder.gif" />
+    <Content Include="Xinha\plugins\InsertAnchor\insert-anchor.css" />
+    <Content Include="Xinha\plugins\InsertAnchor\insert-anchor.js" />
+    <Content Include="Xinha\plugins\InsertAnchor\lang\de.js" />
+    <Content Include="Xinha\plugins\InsertAnchor\lang\fr.js" />
+    <Content Include="Xinha\plugins\InsertAnchor\lang\ja.js" />
+    <Content Include="Xinha\plugins\InsertAnchor\lang\nb.js" />
+    <Content Include="Xinha\plugins\InsertAnchor\lang\nl.js" />
+    <Content Include="Xinha\plugins\InsertAnchor\lang\pl.js" />
+    <Content Include="Xinha\plugins\InsertAnchor\popups\insert_anchor.html" />
+    <Content Include="Xinha\plugins\InsertMarquee\img\ed_marquee.gif" />
+    <Content Include="Xinha\plugins\InsertMarquee\insert-marquee.js" />
+    <Content Include="Xinha\plugins\InsertMarquee\lang\de.js" />
+    <Content Include="Xinha\plugins\InsertMarquee\lang\fr.js" />
+    <Content Include="Xinha\plugins\InsertMarquee\lang\it.js" />
+    <Content Include="Xinha\plugins\InsertMarquee\lang\ja.js" />
+    <Content Include="Xinha\plugins\InsertMarquee\lang\nb.js" />
+    <Content Include="Xinha\plugins\InsertMarquee\popups\insert_marquee.html" />
+    <Content Include="Xinha\plugins\InsertPagebreak\img\pagebreak.gif" />
+    <Content Include="Xinha\plugins\InsertPagebreak\insert-pagebreak.js" />
+    <Content Include="Xinha\plugins\InsertPagebreak\lang\de.js" />
+    <Content Include="Xinha\plugins\InsertPagebreak\lang\fr.js" />
+    <Content Include="Xinha\plugins\InsertPagebreak\lang\ja.js" />
+    <Content Include="Xinha\plugins\InsertPagebreak\lang\nb.js" />
+    <Content Include="Xinha\plugins\InsertPicture\demo_pictures\bikerpeep.jpg" />
+    <Content Include="Xinha\plugins\InsertPicture\demo_pictures\wesnoth078.jpg" />
+    <Content Include="Xinha\plugins\InsertPicture\img\btn_open.gif" />
+    <Content Include="Xinha\plugins\InsertPicture\img\nopic.gif" />
+    <Content Include="Xinha\plugins\InsertPicture\insert-picture.js" />
+    <Content Include="Xinha\plugins\InsertPicture\lang\de.js" />
+    <Content Include="Xinha\plugins\InsertPicture\lang\fr.js" />
+    <Content Include="Xinha\plugins\InsertPicture\lang\ja.js" />
+    <Content Include="Xinha\plugins\InsertPicture\lang\nb.js" />
+    <Content Include="Xinha\plugins\InsertPicture\lang\sv.js" />
+    <Content Include="Xinha\plugins\InsertPicture\viewpicture.html" />
+    <Content Include="Xinha\plugins\InsertSmiley\img\ed_smiley.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\insert-smiley.js" />
+    <Content Include="Xinha\plugins\InsertSmiley\lang\de.js" />
+    <Content Include="Xinha\plugins\InsertSmiley\lang\fr.js" />
+    <Content Include="Xinha\plugins\InsertSmiley\lang\ja.js" />
+    <Content Include="Xinha\plugins\InsertSmiley\lang\nb.js" />
+    <Content Include="Xinha\plugins\InsertSmiley\popups\insertsmiley.html" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0001.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0002.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0003.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0004.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0005.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0006.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0007.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0008.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0009.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0010.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0011.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0012.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0013.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0014.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0015.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0016.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0017.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0018.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0019.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0020.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0021.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0022.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0023.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0024.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0025.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0026.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0027.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0028.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0029.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0030.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0031.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0032.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0033.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0034.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0035.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0036.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0037.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0038.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0039.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0040.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0041.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0042.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0043.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0044.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0045.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0046.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0047.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0048.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0049.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0050.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0051.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0052.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0053.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0054.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0055.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0056.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0057.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0058.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0059.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0060.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0061.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0062.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0063.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0064.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0065.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0066.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0067.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0068.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0069.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0070.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0071.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0072.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0073.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0074.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0075.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0076.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0077.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0078.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0079.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0080.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0081.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0082.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0083.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0084.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0085.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0086.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0087.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0088.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0089.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0090.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0091.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0092.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0093.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0094.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0095.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0096.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0097.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0098.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0099.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0100.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0101.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0102.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0103.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0104.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0105.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0106.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0107.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0108.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0109.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0110.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0111.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0112.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0113.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0114.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0115.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0116.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0117.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0118.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0119.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0120.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0121.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0122.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0123.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0124.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0125.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0126.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0127.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0128.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0129.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0130.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0131.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0132.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0133.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0134.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0135.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0136.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0137.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0138.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0139.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0140.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0141.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0142.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0143.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0144.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0145.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0146.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0147.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0148.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0149.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0150.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0151.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0152.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0153.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0154.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0155.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0156.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0157.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0158.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0159.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0160.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0161.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0162.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0163.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0164.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0165.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0166.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0167.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0168.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0169.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0170.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0171.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0172.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0173.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0174.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0175.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0176.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0177.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0178.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0179.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0180.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0181.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0182.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0183.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0184.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0185.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0186.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0187.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0188.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0189.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0190.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0191.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0192.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0193.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0194.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0195.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0196.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0197.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0198.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0199.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0200.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0201.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0202.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0203.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0204.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0205.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0206.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0207.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0208.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0209.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0210.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0211.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0212.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0213.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0214.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0215.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0216.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0217.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0218.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0219.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0220.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0221.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0222.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0223.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0224.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0225.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0226.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0227.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0228.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0229.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0230.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0231.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0232.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0233.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0234.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0235.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0236.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0237.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0238.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0239.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0240.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0241.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0242.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0243.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0244.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0245.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0246.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0247.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0248.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0249.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0250.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0251.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0252.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0253.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0254.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0255.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0256.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0257.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0258.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0259.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0260.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0261.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0262.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0263.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0264.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0265.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0266.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0267.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0268.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0269.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0270.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0271.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0272.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0273.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0274.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0275.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0276.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0277.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0278.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0279.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0280.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0281.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0282.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0283.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0284.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0285.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0286.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0287.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0288.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0289.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0290.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0291.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0292.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0293.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0294.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0295.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0296.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0297.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0298.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0299.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0300.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0301.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0302.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0303.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0304.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0305.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0306.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0307.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0308.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0309.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0310.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0311.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0312.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0313.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0314.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0315.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0316.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0317.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0318.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0319.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0320.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0321.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0322.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0323.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0324.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0325.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0326.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0327.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0328.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0329.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0330.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0331.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0332.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0333.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0334.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0335.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0336.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0337.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0338.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0339.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0340.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0341.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0342.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0343.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0344.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0345.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0346.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0347.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0348.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0349.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0350.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0351.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0352.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0353.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0354.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0355.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0356.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0357.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0358.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0359.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0360.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0361.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0362.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0363.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0364.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0365.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0366.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0367.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0368.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0369.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0370.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0371.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0372.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0373.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0374.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0375.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0376.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0377.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0378.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0379.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0380.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0381.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0382.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0383.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0384.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0385.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0386.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0387.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0388.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0389.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0390.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0391.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0392.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0393.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0394.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0395.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0396.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0397.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0398.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0399.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0400.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0401.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0402.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0403.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0404.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0405.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0406.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0407.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0408.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0409.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0410.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0411.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0412.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0413.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0414.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0415.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0416.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0417.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0418.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0419.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0420.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0421.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0422.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0423.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0424.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0425.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0426.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0427.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0428.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0429.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0430.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0431.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0432.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0433.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0434.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0435.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0436.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0437.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0438.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0439.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0440.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0441.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0442.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0443.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0444.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0445.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0446.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0447.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0448.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0449.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0450.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0451.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0452.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0453.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0454.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0455.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0456.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0457.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0458.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0459.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0460.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0461.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0462.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0463.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0464.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0465.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0466.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0467.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0468.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0469.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0470.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0471.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0472.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0473.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0474.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0475.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0476.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0477.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0478.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0479.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0480.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0481.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0482.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0483.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0484.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0485.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0486.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0487.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0488.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0489.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0490.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0491.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0492.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0493.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0494.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0495.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0496.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0497.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0498.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0499.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0500.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0501.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0502.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0503.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0504.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0505.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0506.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0507.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0508.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0509.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0510.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0511.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0512.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0513.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0514.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0515.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0516.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0517.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0518.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0519.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0520.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0521.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0522.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0523.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0524.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0525.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0526.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0527.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0528.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0529.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0530.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0531.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0532.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0533.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0534.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0535.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0536.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0537.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0538.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0539.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0540.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0541.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0542.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0543.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0544.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0545.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0546.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0547.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0548.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0549.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0550.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0551.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0552.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0553.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0554.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0555.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0556.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0557.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0558.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0559.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0560.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0561.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0562.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0563.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0564.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0565.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0566.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0567.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0568.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0569.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0570.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0571.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0572.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0573.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0574.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0575.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0576.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0577.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0578.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0579.gif" />
+    <Content Include="Xinha\plugins\InsertSmiley\smileys\0580.gif" />
+    <Content Include="Xinha\plugins\InsertSnippet\demosnippets.js" />
+    <Content Include="Xinha\plugins\InsertSnippet\img\ed_snippet.gif" />
+    <Content Include="Xinha\plugins\InsertSnippet\insert-snippet.js" />
+    <Content Include="Xinha\plugins\InsertSnippet\InsertSnippet.css" />
+    <Content Include="Xinha\plugins\InsertSnippet\lang\de.js" />
+    <Content Include="Xinha\plugins\InsertSnippet\lang\ja.js" />
+    <Content Include="Xinha\plugins\InsertSnippet\lang\nb.js" />
+    <Content Include="Xinha\plugins\InsertSnippet\popups\insertsnippet.html" />
+    <Content Include="Xinha\plugins\InsertSnippet\readme.html" />
+    <Content Include="Xinha\plugins\InsertSnippet\snippets.html" />
+    <Content Include="Xinha\plugins\InsertWords\insert-words.js" />
+    <Content Include="Xinha\plugins\LangMarks\img\el.gif" />
+    <Content Include="Xinha\plugins\LangMarks\img\en.gif" />
+    <Content Include="Xinha\plugins\LangMarks\img\fr.gif" />
+    <Content Include="Xinha\plugins\LangMarks\img\la.gif" />
+    <Content Include="Xinha\plugins\LangMarks\lang-marks.css" />
+    <Content Include="Xinha\plugins\LangMarks\lang-marks.js" />
+    <Content Include="Xinha\plugins\LangMarks\lang\de.js" />
+    <Content Include="Xinha\plugins\LangMarks\lang\fr.js" />
+    <Content Include="Xinha\plugins\LangMarks\lang\ja.js" />
+    <Content Include="Xinha\plugins\LangMarks\lang\nb.js" />
+    <Content Include="Xinha\plugins\LangMarks\lang\nl.js" />
+    <Content Include="Xinha\plugins\Linker\dialog.html" />
+    <Content Include="Xinha\plugins\Linker\dTree\api.html" />
+    <Content Include="Xinha\plugins\Linker\dTree\dtree.css" />
+    <Content Include="Xinha\plugins\Linker\dTree\dtree.js" />
+    <Content Include="Xinha\plugins\Linker\dTree\example01.html" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\base.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\cd.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\copy.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\empty.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\folder.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\folderopen.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\globe.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\imgfolder.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\join.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\joinbottom.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\line.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\minus.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\minusbottom.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\move.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\musicfolder.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\nolines_minus.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\nolines_plus.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\offline.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\offline.png" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\page.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\plus.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\plusbottom.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\question.gif" />
+    <Content Include="Xinha\plugins\Linker\dTree\img\trash.gif" />
+    <Content Include="Xinha\plugins\Linker\lang\de.js" />
+    <Content Include="Xinha\plugins\Linker\lang\fr.js" />
+    <Content Include="Xinha\plugins\Linker\lang\ja.js" />
+    <Content Include="Xinha\plugins\Linker\lang\nb.js" />
+    <Content Include="Xinha\plugins\Linker\lang\pl.js" />
+    <Content Include="Xinha\plugins\Linker\linker.js" />
+    <Content Include="Xinha\plugins\ListType\img\circle.png" />
+    <Content Include="Xinha\plugins\ListType\img\decimal.png" />
+    <Content Include="Xinha\plugins\ListType\img\disc.png" />
+    <Content Include="Xinha\plugins\ListType\img\lower-alpha.png" />
+    <Content Include="Xinha\plugins\ListType\img\lower-roman.png" />
+    <Content Include="Xinha\plugins\ListType\img\none.png" />
+    <Content Include="Xinha\plugins\ListType\img\square.png" />
+    <Content Include="Xinha\plugins\ListType\img\upper-alpha.png" />
+    <Content Include="Xinha\plugins\ListType\img\upper-roman.png" />
+    <Content Include="Xinha\plugins\ListType\lang\de.js" />
+    <Content Include="Xinha\plugins\ListType\lang\fr.js" />
+    <Content Include="Xinha\plugins\ListType\lang\ja.js" />
+    <Content Include="Xinha\plugins\ListType\lang\nb.js" />
+    <Content Include="Xinha\plugins\ListType\lang\nl.js" />
+    <Content Include="Xinha\plugins\ListType\lang\pl.js" />
+    <Content Include="Xinha\plugins\ListType\lang\ru.js" />
+    <Content Include="Xinha\plugins\ListType\lang\sv.js" />
+    <Content Include="Xinha\plugins\ListType\list-type.js" />
+    <Content Include="Xinha\plugins\ListType\ListType.css" />
+    <Content Include="Xinha\plugins\NoteServer\img\note.gif" />
+    <Content Include="Xinha\plugins\NoteServer\lang\de.js" />
+    <Content Include="Xinha\plugins\NoteServer\lang\fr.js" />
+    <Content Include="Xinha\plugins\NoteServer\lang\ja.js" />
+    <Content Include="Xinha\plugins\NoteServer\lang\nb.js" />
+    <Content Include="Xinha\plugins\NoteServer\note-server.js" />
+    <Content Include="Xinha\plugins\NoteServer\popups\codenote.html" />
+    <Content Include="Xinha\plugins\PasteText\img\ed_paste_text.gif" />
+    <Content Include="Xinha\plugins\PasteText\lang\de.js" />
+    <Content Include="Xinha\plugins\PasteText\lang\fr.js" />
+    <Content Include="Xinha\plugins\PasteText\lang\ja.js" />
+    <Content Include="Xinha\plugins\PasteText\lang\nb.js" />
+    <Content Include="Xinha\plugins\PasteText\lang\pl.js" />
+    <Content Include="Xinha\plugins\PasteText\paste-text.js" />
+    <Content Include="Xinha\plugins\PasteText\popups\paste_text.html" />
+    <Content Include="Xinha\plugins\QuickTag\img\ed_quicktag.gif" />
+    <Content Include="Xinha\plugins\QuickTag\lang\de.js" />
+    <Content Include="Xinha\plugins\QuickTag\lang\fr.js" />
+    <Content Include="Xinha\plugins\QuickTag\lang\ja.js" />
+    <Content Include="Xinha\plugins\QuickTag\lang\nb.js" />
+    <Content Include="Xinha\plugins\QuickTag\lang\pl.js" />
+    <Content Include="Xinha\plugins\QuickTag\lang\pt_br.js" />
+    <Content Include="Xinha\plugins\QuickTag\popups\quicktag.html" />
+    <Content Include="Xinha\plugins\QuickTag\quick-tag.js" />
+    <Content Include="Xinha\plugins\QuickTag\tag-lib.js" />
+    <Content Include="Xinha\plugins\SaveSubmit\img\ed_save_green.gif" />
+    <Content Include="Xinha\plugins\SaveSubmit\img\ed_save_red.gif" />
+    <Content Include="Xinha\plugins\SaveSubmit\lang\de.js" />
+    <Content Include="Xinha\plugins\SaveSubmit\lang\fr.js" />
+    <Content Include="Xinha\plugins\SaveSubmit\lang\ja.js" />
+    <Content Include="Xinha\plugins\SaveSubmit\lang\ru.js" />
+    <Content Include="Xinha\plugins\SaveSubmit\README.txt" />
+    <Content Include="Xinha\plugins\SaveSubmit\save-submit.js" />
+    <Content Include="Xinha\plugins\SetId\img\placeholder.gif" />
+    <Content Include="Xinha\plugins\SetId\img\set-id.gif" />
+    <Content Include="Xinha\plugins\SetId\lang\de.js" />
+    <Content Include="Xinha\plugins\SetId\lang\ja.js" />
+    <Content Include="Xinha\plugins\SetId\lang\nb.js" />
+    <Content Include="Xinha\plugins\SetId\popups\set_id.html" />
+    <Content Include="Xinha\plugins\SetId\set-id.css" />
+    <Content Include="Xinha\plugins\SetId\set-id.js" />
+    <Content Include="Xinha\plugins\SmartReplace\dialog.html" />
+    <Content Include="Xinha\plugins\SmartReplace\img\smartquotes.gif" />
+    <Content Include="Xinha\plugins\SmartReplace\lang\de.js" />
+    <Content Include="Xinha\plugins\SmartReplace\lang\ja.js" />
+    <Content Include="Xinha\plugins\SmartReplace\popups\dialog.html" />
+    <Content Include="Xinha\plugins\SmartReplace\readme.txt" />
+    <Content Include="Xinha\plugins\SmartReplace\smart-replace.js" />
+    <Content Include="Xinha\plugins\SpellChecker\img\he-spell-check.gif" />
+    <Content Include="Xinha\plugins\SpellChecker\img\spell-check.gif" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\cz.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\da.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\de.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\fr.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\he.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\hu.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\ja.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\nb.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\nl.js" />
+    <Content Include="Xinha\plugins\SpellChecker\lang\ro.js" />
+    <Content Include="Xinha\plugins\SpellChecker\readme-tech.html" />
+    <Content Include="Xinha\plugins\SpellChecker\spell-check-style.css" />
+    <Content Include="Xinha\plugins\SpellChecker\spell-check-ui.html" />
+    <Content Include="Xinha\plugins\SpellChecker\spell-check-ui.js" />
+    <Content Include="Xinha\plugins\SpellChecker\spell-checker.js" />
+    <Content Include="Xinha\plugins\Stylist\lang\de.js" />
+    <Content Include="Xinha\plugins\Stylist\lang\fr.js" />
+    <Content Include="Xinha\plugins\Stylist\lang\ja.js" />
+    <Content Include="Xinha\plugins\Stylist\lang\nb.js" />
+    <Content Include="Xinha\plugins\Stylist\lang\pl.js" />
+    <Content Include="Xinha\plugins\Stylist\stylist.js" />
+    <Content Include="Xinha\plugins\SuperClean\dialog.html" />
+    <Content Include="Xinha\plugins\SuperClean\filters\paragraph.js" />
+    <Content Include="Xinha\plugins\SuperClean\filters\word.js" />
+    <Content Include="Xinha\plugins\SuperClean\img\ed_superclean.gif" />
+    <Content Include="Xinha\plugins\SuperClean\lang\de.js" />
+    <Content Include="Xinha\plugins\SuperClean\lang\fr.js" />
+    <Content Include="Xinha\plugins\SuperClean\lang\ja.js" />
+    <Content Include="Xinha\plugins\SuperClean\lang\nb.js" />
+    <Content Include="Xinha\plugins\SuperClean\super-clean.js" />
+    <Content Include="Xinha\plugins\TableOperations\img\cell-delete.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\cell-insert-after.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\cell-insert-before.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\cell-merge.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\cell-prop.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\cell-split.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\col-delete.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\col-insert-after.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\col-insert-before.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\col-split.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\row-delete.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\row-insert-above.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\row-insert-under.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\row-prop.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\row-split.gif" />
+    <Content Include="Xinha\plugins\TableOperations\img\table-prop.gif" />
+    <Content Include="Xinha\plugins\TableOperations\lang\cz.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\da.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\de.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\el.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\fi.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\fr.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\he.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\it.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\ja.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\nb.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\nl.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\pl.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\ro.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\ru.js" />
+    <Content Include="Xinha\plugins\TableOperations\lang\sv.js" />
+    <Content Include="Xinha\plugins\TableOperations\popups\merge_cells.html" />
+    <Content Include="Xinha\plugins\TableOperations\table-operations.js" />
+    <Content Include="Xinha\plugins\Template\img\ed_template.gif" />
+    <Content Include="Xinha\plugins\Template\img\layout_01.gif" />
+    <Content Include="Xinha\plugins\Template\img\layout_02.gif" />
+    <Content Include="Xinha\plugins\Template\img\layout_03.gif" />
+    <Content Include="Xinha\plugins\Template\lang\de.js" />
+    <Content Include="Xinha\plugins\Template\lang\fr.js" />
+    <Content Include="Xinha\plugins\Template\lang\it.js" />
+    <Content Include="Xinha\plugins\Template\lang\ja.js" />
+    <Content Include="Xinha\plugins\Template\lang\nb.js" />
+    <Content Include="Xinha\plugins\Template\popups\template.html" />
+    <Content Include="Xinha\plugins\Template\template.css" />
+    <Content Include="Xinha\plugins\Template\template.js" />
+    <Content Include="Xinha\plugins\UnFormat\img\unformat.gif" />
+    <Content Include="Xinha\plugins\UnFormat\lang\de.js" />
+    <Content Include="Xinha\plugins\UnFormat\lang\fr.js" />
+    <Content Include="Xinha\plugins\UnFormat\lang\ja.js" />
+    <Content Include="Xinha\plugins\UnFormat\lang\nb.js" />
+    <Content Include="Xinha\plugins\UnFormat\lang\nl.js" />
+    <Content Include="Xinha\plugins\UnFormat\popups\unformat.html" />
+    <Content Include="Xinha\plugins\UnFormat\un-format.js" />
+    <Content Include="Xinha\popups\about.html" />
+    <Content Include="Xinha\popups\blank.html" />
+    <Content Include="Xinha\popups\editor_help.html" />
+    <Content Include="Xinha\popups\popup.css" />
+    <Content Include="Xinha\popups\popup.js" />
+    <Content Include="Xinha\popups\select_color.html" />
+    <Content Include="Xinha\release-notes.txt" />
+    <Content Include="Xinha\skins\blue-look\button-background.png" />
+    <Content Include="Xinha\skins\blue-look\separator.gif" />
+    <Content Include="Xinha\skins\blue-look\skin.css" />
+    <Content Include="Xinha\skins\blue-metallic\button-background.png" />
+    <Content Include="Xinha\skins\blue-metallic\separator.gif" />
+    <Content Include="Xinha\skins\blue-metallic\skin.css" />
+    <Content Include="Xinha\skins\green-look\button-background.gif" />
+    <Content Include="Xinha\skins\green-look\separator.gif" />
+    <Content Include="Xinha\skins\green-look\skin.css" />
+    <Content Include="Xinha\skins\inditreuse\back.png" />
+    <Content Include="Xinha\skins\inditreuse\button-background.png" />
+    <Content Include="Xinha\skins\inditreuse\hover.png" />
+    <Content Include="Xinha\skins\inditreuse\selected.png" />
+    <Content Include="Xinha\skins\inditreuse\separator.png" />
+    <Content Include="Xinha\skins\inditreuse\skin.css" />
+    <Content Include="Xinha\skins\silva\dialog.jpg" />
+    <Content Include="Xinha\skins\silva\html.gif" />
+    <Content Include="Xinha\skins\silva\skin.css" />
+    <Content Include="Xinha\skins\silva\statusbar.png" />
+    <Content Include="Xinha\skins\silva\toolbar.png" />
+    <Content Include="Xinha\skins\titan\back.png" />
+    <Content Include="Xinha\skins\titan\button-background.png" />
+    <Content Include="Xinha\skins\titan\hover.png" />
+    <Content Include="Xinha\skins\titan\selected.png" />
+    <Content Include="Xinha\skins\titan\separator.png" />
+    <Content Include="Xinha\skins\titan\skin.css" />
+    <Content Include="Xinha\skins\xp-blue\back.png" />
+    <Content Include="Xinha\skins\xp-blue\button-background.png" />
+    <Content Include="Xinha\skins\xp-blue\hover.png" />
+    <Content Include="Xinha\skins\xp-blue\selected.png" />
+    <Content Include="Xinha\skins\xp-blue\separator.png" />
+    <Content Include="Xinha\skins\xp-blue\skin.css" />
+    <Content Include="Xinha\skins\xp-green\back.png" />
+    <Content Include="Xinha\skins\xp-green\button-background.png" />
+    <Content Include="Xinha\skins\xp-green\hover.png" />
+    <Content Include="Xinha\skins\xp-green\selected.png" />
+    <Content Include="Xinha\skins\xp-green\separator.png" />
+    <Content Include="Xinha\skins\xp-green\skin.css" />
+    <Content Include="Xinha\Xinha.css" />
+    <Content Include="Xinha\XinhaCore.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\CustomMembershipProvider.cs" />
+    <Compile Include="Accounts\EditAccount.aspx.cs">
+      <DependentUpon>EditAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\EditAccount.aspx.designer.cs">
+      <DependentUpon>EditAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Interface\IEditAccount.cs" />
+    <Compile Include="Accounts\Interface\ILogin.cs" />
+    <Compile Include="Accounts\Interface\IRecoverPassword.cs" />
+    <Compile Include="Accounts\Interface\IRegister.cs" />
+    <Compile Include="Accounts\Interface\IVerifyEmail.cs" />
+    <Compile Include="Accounts\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Presenter\EditAccountPresenter.cs" />
+    <Compile Include="Accounts\Presenter\LoginPresenter.cs" />
+    <Compile Include="Accounts\Presenter\RecoverPasswordPresenter.cs" />
+    <Compile Include="Accounts\Presenter\RegisterPresenter.cs" />
+    <Compile Include="Accounts\Presenter\VerifyEmailPresenter.cs" />
+    <Compile Include="Accounts\RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControl\EditAc.ascx.cs">
+      <DependentUpon>EditAc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControl\EditAc.ascx.designer.cs">
+      <DependentUpon>EditAc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControl\InfoAccount.ascx.cs">
+      <DependentUpon>InfoAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControl\InfoAccount.ascx.designer.cs">
+      <DependentUpon>InfoAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControl\LoginDesign.ascx.cs">
+      <DependentUpon>LoginDesign.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControl\LoginDesign.ascx.designer.cs">
+      <DependentUpon>LoginDesign.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControl\LoginDesign1.ascx.cs">
+      <DependentUpon>LoginDesign1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControl\LoginDesign1.ascx.designer.cs">
+      <DependentUpon>LoginDesign1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControl\Logout.ascx.cs">
+      <DependentUpon>Logout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControl\Logout.ascx.designer.cs">
+      <DependentUpon>Logout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControl\Register.ascx.cs">
+      <DependentUpon>Register.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControl\Register.ascx.designer.cs">
+      <DependentUpon>Register.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\VerifyEmail.aspx.cs">
+      <DependentUpon>VerifyEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\VerifyEmail.aspx.designer.cs">
+      <DependentUpon>VerifyEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddData.aspx.cs">
+      <DependentUpon>AddData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddData.aspx.designer.cs">
+      <DependentUpon>AddData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comments\Interface\IBoxComment.cs" />
+    <Compile Include="Comments\Interface\IPostComment.cs" />
+    <Compile Include="Comments\Presenter\BoxCommentPresenter.cs" />
+    <Compile Include="Comments\Presenter\PostCommentPresenter.cs" />
+    <Compile Include="Comments\UseComment.aspx.cs">
+      <DependentUpon>UseComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comments\UseComment.aspx.designer.cs">
+      <DependentUpon>UseComment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comments\UserControl\BoxComment.ascx.cs">
+      <DependentUpon>BoxComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comments\UserControl\BoxComment.ascx.designer.cs">
+      <DependentUpon>BoxComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Comments\UserControl\CommentFriend.ascx.cs">
+      <DependentUpon>CommentFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comments\UserControl\CommentFriend.ascx.designer.cs">
+      <DependentUpon>CommentFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\Forum.aspx.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\Forum.aspx.designer.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\Interface\IForum.cs" />
+    <Compile Include="Forums\Presenter\ForumPresenter.cs" />
+    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.cs">
+      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.designer.cs">
+      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\Interface\IBoxFriend.cs" />
+    <Compile Include="Friends\Interface\IConfirmFriendshipRequest.cs" />
+    <Compile Include="Friends\Interface\IInviteFriends.cs" />
+    <Compile Include="Friends\Interface\IProfileDisplay.cs" />
+    <Compile Include="Friends\Interface\IShowFriend.cs" />
+    <Compile Include="Friends\Invite.aspx.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\Invite.aspx.designer.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\Presenter\BoxFriendPresenter.cs" />
+    <Compile Include="Friends\Presenter\ConfirmFriendshipRequestPresenter.cs" />
+    <Compile Include="Friends\Presenter\InviteFriend.cs" />
+    <Compile Include="Friends\Presenter\ProfileDisplayPresenter.cs" />
+    <Compile Include="Friends\Presenter\ShowFriendPresenter.cs" />
+    <Compile Include="Friends\ShowFriend.aspx.cs">
+      <DependentUpon>ShowFriend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\ShowFriend.aspx.designer.cs">
+      <DependentUpon>ShowFriend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\BoxFriend.ascx.cs">
+      <DependentUpon>BoxFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\BoxFriend.ascx.designer.cs">
+      <DependentUpon>BoxFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\BoxInvite.ascx.cs">
+      <DependentUpon>BoxInvite.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\BoxInvite.ascx.designer.cs">
+      <DependentUpon>BoxInvite.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendList.ascx.cs">
+      <DependentUpon>FriendList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendList.ascx.designer.cs">
+      <DependentUpon>FriendList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendProfile.ascx.cs">
+      <DependentUpon>FriendProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendProfile.ascx.designer.cs">
+      <DependentUpon>FriendProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendSimple.ascx.cs">
+      <DependentUpon>FriendSimple.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendSimple.ascx.designer.cs">
+      <DependentUpon>FriendSimple.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\InviteFriends.ascx.cs">
+      <DependentUpon>InviteFriends.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\InviteFriends.ascx.designer.cs">
+      <DependentUpon>InviteFriends.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ListFriend.ascx.cs">
+      <DependentUpon>ListFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ListFriend.ascx.designer.cs">
+      <DependentUpon>ListFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ShowFriend.ascx.cs">
+      <DependentUpon>ShowFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ShowFriend.ascx.designer.cs">
+      <DependentUpon>ShowFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\TestURL.aspx.cs">
+      <DependentUpon>TestURL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handler\TestURL.aspx.designer.cs">
+      <DependentUpon>TestURL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\URLRewrite.cs" />
+    <Compile Include="Homes\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homes\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Homes\Interface\IHome.cs" />
+    <Compile Include="Homes\Presenter\HomePresenter.cs" />
+    <Compile Include="Image\CaptChaIma.aspx.cs">
+      <DependentUpon>CaptChaIma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Image\CaptChaIma.aspx.designer.cs">
+      <DependentUpon>CaptChaIma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Image\ProfileAvatar.aspx.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Image\ProfileAvatar.aspx.designer.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IComments.cs" />
+    <Compile Include="Interface\IMXH1Master.cs" />
+    <Compile Include="LogUtil.cs" />
+    <Compile Include="Friends\UserControl\ListFriendSimple.ascx.cs">
+      <DependentUpon>ListFriendSimple.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ListFriendSimple.ascx.designer.cs">
+      <DependentUpon>ListFriendSimple.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\Interface\ILoadMessage.cs" />
+    <Compile Include="Messages\Interface\INewMessage.cs" />
+    <Compile Include="Messages\Interface\IReadMessage.cs" />
+    <Compile Include="Messages\MessageMange.aspx.cs">
+      <DependentUpon>MessageMange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\MessageMange.aspx.designer.cs">
+      <DependentUpon>MessageMange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\Presenter\BriefMessage.cs" />
+    <Compile Include="Messages\Presenter\LoadMessagePresenter.cs" />
+    <Compile Include="Messages\Presenter\NewMessage.cs" />
+    <Compile Include="Messages\Presenter\ReadMessagePresenter.cs" />
+    <Compile Include="Messages\ReadMessage.aspx.cs">
+      <DependentUpon>ReadMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\ReadMessage.aspx.designer.cs">
+      <DependentUpon>ReadMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\UserControl\LoadInbox.ascx.cs">
+      <DependentUpon>LoadInbox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\UserControl\LoadInbox.ascx.designer.cs">
+      <DependentUpon>LoadInbox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\UserControl\MessageBrief.ascx.cs">
+      <DependentUpon>MessageBrief.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\UserControl\MessageBrief.ascx.designer.cs">
+      <DependentUpon>MessageBrief.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\UserControl\MessageNew.ascx.cs">
+      <DependentUpon>MessageNew.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\UserControl\MessageNew.ascx.designer.cs">
+      <DependentUpon>MessageNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\UserControl\ReadMessage.ascx.cs">
+      <DependentUpon>ReadMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\UserControl\ReadMessage.ascx.designer.cs">
+      <DependentUpon>ReadMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MXH1.Master.cs">
+      <DependentUpon>MXH1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH1.Master.designer.cs">
+      <DependentUpon>MXH1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH2.master.cs">
+      <DependentUpon>MXH2.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH2.master.designer.cs">
+      <DependentUpon>MXH2.master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH_1.Master.cs">
+      <DependentUpon>MXH_1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_1.Master.designer.cs">
+      <DependentUpon>MXH_1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH_11.Master.cs">
+      <DependentUpon>MXH_11.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_11.Master.designer.cs">
+      <DependentUpon>MXH_11.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH_2.Master.cs">
+      <DependentUpon>MXH_2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_2.Master.designer.cs">
+      <DependentUpon>MXH_2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NestedMasterPage1.master.cs">
+      <DependentUpon>NestedMasterPage1.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NestedMasterPage1.master.designer.cs">
+      <DependentUpon>NestedMasterPage1.master</DependentUpon>
+    </Compile>
+    <Compile Include="Presenter\CommentPresenter.cs" />
+    <Compile Include="Presenter\MXH1MasterPresenter.cs" />
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Interface\IManageProfile.cs" />
+    <Compile Include="Profiles\Interface\IStatusControl.cs" />
+    <Compile Include="Profiles\Interface\IUploadAvatar.cs" />
+    <Compile Include="Profiles\Interface\IUploadNewAvatar.cs" />
+    <Compile Include="Profiles\Interface\IUserProfile.cs" />
+    <Compile Include="Profiles\Interface\IViewProfile.cs" />
+    <Compile Include="Profiles\LeftMenuPresenter.cs" />
+    <Compile Include="Profiles\ManageProfile.aspx.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\ManageProfile.aspx.designer.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Presenter\ManageProfilePresenter.cs" />
+    <Compile Include="Profiles\Presenter\StatusControlPresenter.cs" />
+    <Compile Include="Profiles\Presenter\UploadAvatarPresenter.cs" />
+    <Compile Include="Profiles\Presenter\UserProfilePresenter.cs" />
+    <Compile Include="Profiles\Presenter\ViewProfilePresenter.cs" />
+    <Compile Include="Profiles\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UploadAvatar.aspx.cs">
+      <DependentUpon>UploadAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UploadAvatar.aspx.designer.cs">
+      <DependentUpon>UploadAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserControls\AlertControl.ascx.cs">
+      <DependentUpon>AlertControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\AlertControl.ascx.designer.cs">
+      <DependentUpon>AlertControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.cs">
+      <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.designer.cs">
+      <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControlFull.ascx.cs">
+      <DependentUpon>ProfileAttributeControlFull.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControlFull.ascx.designer.cs">
+      <DependentUpon>ProfileAttributeControlFull.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserControls\StatusControl.ascx.cs">
+      <DependentUpon>StatusControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\StatusControl.ascx.designer.cs">
+      <DependentUpon>StatusControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserProfile2.aspx.cs">
+      <DependentUpon>UserProfile2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserProfile2.aspx.designer.cs">
+      <DependentUpon>UserProfile2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\ViewProfile.aspx.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\ViewProfile.aspx.designer.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Searchs\Interface\ISearch.cs" />
+    <Compile Include="Searchs\Presenter\SearchPresenter.cs" />
+    <Compile Include="Searchs\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Searchs\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\FOOTER.ascx.cs">
+      <DependentUpon>FOOTER.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Styles\LEFT_MENU.ascx.cs">
+      <DependentUpon>LEFT_MENU.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Styles\LEFT_MENU.ascx.designer.cs">
+      <DependentUpon>LEFT_MENU.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\MENU.ascx.cs">
+      <DependentUpon>MENU.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Styles\RIGHT_MENU.ascx.cs">
+      <DependentUpon>RIGHT_MENU.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Styles\RIGHT_MENU.ascx.designer.cs">
+      <DependentUpon>RIGHT_MENU.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\RIGHT_MENU1.ascx.cs">
+      <DependentUpon>RIGHT_MENU1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Styles\RIGHT_MENU1.ascx.designer.cs">
+      <DependentUpon>RIGHT_MENU1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Comments.ascx.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Comments.ascx.designer.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Groups\Interface\" />
+    <Folder Include="Groups\Presenter\" />
+    <Folder Include="Groups\UserControl\" />
+    <Folder Include="Searchs\UserControl\" />
+    <Folder Include="Xinha\plugins\CSS\lang\" />
+    <Folder Include="Xinha\plugins\HorizontalRule\img\" />
+    <Folder Include="Xinha\plugins\SpellChecker\personal_dicts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StrutureMap.config" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="MXH1.Master" />
+    <Content Include="NestedMasterPage1.master" />
+    <Content Include="MXH2.master" />
+    <Content Include="MXH_1.Master" />
+    <Content Include="MXH_2.Master" />
+    <Content Include="MXH_11.Master" />
+    <None Include="Picture\Untitled-1.psd" />
+    <None Include="Xinha\contrib\lc_parse_strings.php" />
+    <None Include="Xinha\contrib\php-xinha.php" />
+    <None Include="Xinha\contrib\_sgbak\lc_parse_strings.php.2007-05-10.20-20-50.0603" />
+    <None Include="Xinha\examples\ext_example-dest.php" />
+    <None Include="Xinha\examples\ext_example-menu.php" />
+    <None Include="Xinha\plugins\ContextMenu\1.pl" />
+    <None Include="Xinha\plugins\ExtendedFileManager\backend.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\Classes\ExtendedFileManager.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\config.inc.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\demo_images\.htaccess" />
+    <None Include="Xinha\plugins\ExtendedFileManager\editor.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\editorFrame.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\images.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\manager.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\resizer.php" />
+    <None Include="Xinha\plugins\ExtendedFileManager\thumbs.php" />
+    <None Include="Xinha\plugins\FormOperations\formmail.php" />
+    <None Include="Xinha\plugins\FormOperations\README" />
+    <None Include="Xinha\plugins\HtmlTidy\html-tidy-config.cfg" />
+    <None Include="Xinha\plugins\HtmlTidy\html-tidy-logic.php" />
+    <None Include="Xinha\plugins\HtmlTidy\README" />
+    <None Include="Xinha\plugins\ImageManager\backend.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\Files.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\GD.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\IM.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\ImageEditor.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\ImageManager.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\NetPBM.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\Thumbnail.php" />
+    <None Include="Xinha\plugins\ImageManager\Classes\Transform.php" />
+    <None Include="Xinha\plugins\ImageManager\config.inc.php" />
+    <None Include="Xinha\plugins\ImageManager\ddt.php" />
+    <None Include="Xinha\plugins\ImageManager\editor.php" />
+    <None Include="Xinha\plugins\ImageManager\editorFrame.php" />
+    <None Include="Xinha\plugins\ImageManager\images.php" />
+    <None Include="Xinha\plugins\ImageManager\manager.php" />
+    <None Include="Xinha\plugins\ImageManager\resizer.php" />
+    <None Include="Xinha\plugins\ImageManager\thumbs.php" />
+    <None Include="Xinha\plugins\InsertPicture\InsertPicture.php" />
+    <None Include="Xinha\plugins\InsertSnippet\snippets.php" />
+    <None Include="Xinha\plugins\Linker\scan.php" />
+    <None Include="Xinha\plugins\SmartReplace\popups\_sgbak\dialog.html.2007-05-10.20-20-50.1230" />
+    <None Include="Xinha\plugins\SpellChecker\aspell_setup.php" />
+    <None Include="Xinha\plugins\SpellChecker\README" />
+    <None Include="Xinha\plugins\SpellChecker\spell-check-logic.cgi" />
+    <None Include="Xinha\plugins\SpellChecker\spell-check-logic.php" />
+    <None Include="Xinha\plugins\SpellChecker\spell-check-savedicts.php" />
+    <None Include="Xinha\plugins\SuperClean\tidy.php" />
+    <None Include="Xinha\skins\inditreuse\README" />
+    <None Include="Xinha\skins\titan\README" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPKTCore\SPKTCore.csproj">
+      <Project>{934FF6C8-BFA0-41B5-89F1-A8AB887E1DC3}</Project>
+      <Name>SPKTCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4120</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

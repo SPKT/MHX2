@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SPKT" Class="SPKTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=SPKT;Integrated Security=True" SettingsObjectName="SPKTCore.Properties.Settings" SettingsPropertyName="SPKTConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="EmailVerified" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_AccountPermission" Member="AccountPermissions" ThisKey="AccountID" OtherKey="AccountID" Type="AccountPermission" />
+      <Association Name="Account_Alert" Member="Alerts" ThisKey="AccountID" OtherKey="AccountID" Type="Alert" />
+      <Association Name="Account_Comment" Member="Comments" ThisKey="AccountID" OtherKey="CommentByAccountID" Type="Comment" />
+      <Association Name="Account_Friend" Member="Friends" ThisKey="AccountID" OtherKey="AccountID" Type="Friend" />
+      <Association Name="Account_Friend1" Member="Friends1" ThisKey="AccountID" OtherKey="MyFriendAccountID" Type="Friend" />
+      <Association Name="Account_FriendInvitation" Member="FriendInvitations" ThisKey="AccountID" OtherKey="AccountID" Type="FriendInvitation" />
+      <Association Name="Account_Message" Member="Messages" ThisKey="AccountID" OtherKey="SendByAccountID" Type="Message" />
+      <Association Name="Account_MessageRecipient" Member="MessageRecipients" ThisKey="AccountID" OtherKey="AccountID" Type="MessageRecipient" />
+      <Association Name="Account_Profile" Member="Profiles" ThisKey="AccountID" OtherKey="AccountID" Type="Profile" />
+      <Association Name="Account_StatusUpdate" Member="StatusUpdates" ThisKey="AccountID" OtherKey="AccountID" Type="StatusUpdate" />
+      <Association Name="Account_StatusUpdate1" Member="StatusUpdates1" ThisKey="AccountID" OtherKey="SenderID" Type="StatusUpdate" />
+      <Association Name="Account_GroupMember" Member="GroupMembers" ThisKey="AccountID" OtherKey="AccountID" Type="GroupMember" />
+      <Association Name="Account_Group" Member="Groups" ThisKey="AccountID" OtherKey="AccountID" Type="Group" />
+      <Association Name="Account_BoardPost" Member="BoardPosts" ThisKey="AccountID" OtherKey="AccountID" Type="BoardPost" />
+      <Association Name="Account_Blog" Member="Blogs" ThisKey="AccountID" OtherKey="AccountID" Type="Blog" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccountPermission" Member="AccountPermissions">
+    <Type Name="AccountPermission">
+      <Column Name="ApID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_AccountPermission" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="Permission_AccountPermission" Member="Permission" ThisKey="PermissionID" OtherKey="PermissionID" Type="Permission" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alert" Member="Alerts">
+    <Type Name="Alert">
+      <Column Name="AlertID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AlertTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="IsHidden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="Account_Alert" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="AlertType_Alert" Member="AlertType" ThisKey="AlertTypeID" OtherKey="AlertTypeID" Type="AlertType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlertType" Member="AlertTypes">
+    <Type Name="AlertType">
+      <Column Name="AlertTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AlertTypeName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="AlertType_Alert" Member="Alerts" ThisKey="AlertTypeID" OtherKey="AlertTypeID" Type="Alert" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comments" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="CommentID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Body" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CommentByAccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentByUsername" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemObjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SystemObjectRecordID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Account_Comment" Member="Account" ThisKey="CommentByAccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="SystemObject_Comment" Member="SystemObject" ThisKey="SystemObjectID" OtherKey="SystemObjectID" Type="SystemObject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Friend" Member="Friends">
+    <Type Name="Friend">
+      <Column Name="FriendID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MyFriendAccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_Friend" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="Account_Friend1" Member="Account1" ThisKey="MyFriendAccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FriendInvitation" Member="FriendInvitations">
+    <Type Name="FriendInvitation">
+      <Column Name="FriendInvitationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BecameAccoutnID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_FriendInvitation" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FriendMutual" Member="FriendMutuals">
+    <Type Name="FriendMutual">
+      <Column Name="FriendMutualID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AcMyFriendID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AcMutual" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LevelOfExperience" Member="LevelOfExperiences">
+    <Type Name="LevelOfExperience">
+      <Column Name="LevelOfExperienceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LevelOfExperienceName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="SortOrder" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="LevelOfExperience_Profile" Member="Profiles" ThisKey="LevelOfExperienceID" OtherKey="LevelOfExperienceID" Type="Profile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Message" Member="Messages">
+    <Type Name="Message">
+      <Column Name="MessageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SendByAccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="MessageTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Message_MessageRecipient" Member="MessageRecipients" ThisKey="MessageID" OtherKey="MessageID" Type="MessageRecipient" />
+      <Association Name="Account_Message" Member="Account" ThisKey="SendByAccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="MessageType_Message" Member="MessageType" ThisKey="MessageTypeID" OtherKey="MessageTypeID" Type="MessageType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MessageFolder" Member="MessageFolders">
+    <Type Name="MessageFolder">
+      <Column Name="MessageFolderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FolderName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsSystem" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MessageFolder_MessageRecipient" Member="MessageRecipients" ThisKey="MessageFolderID" OtherKey="MessageFolderID" Type="MessageRecipient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MessageRecipient" Member="MessageRecipients">
+    <Type Name="MessageRecipient">
+      <Column Name="MessageRecipientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MessageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MessageRecipientTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="MessageFolderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MessageStatusTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Account_MessageRecipient" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="Message_MessageRecipient" Member="Message" ThisKey="MessageID" OtherKey="MessageID" Type="Message" IsForeignKey="true" />
+      <Association Name="MessageFolder_MessageRecipient" Member="MessageFolder" ThisKey="MessageFolderID" OtherKey="MessageFolderID" Type="MessageFolder" IsForeignKey="true" />
+      <Association Name="MessageRecipientType_MessageRecipient" Member="MessageRecipientType" ThisKey="MessageRecipientTypeID" OtherKey="MessageRecipientTypeID" Type="MessageRecipientType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MessageRecipientType" Member="MessageRecipientTypes">
+    <Type Name="MessageRecipientType">
+      <Column Name="MessageRecipientTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MessageRecipientTypeName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="MessageRecipientType_MessageRecipient" Member="MessageRecipients" ThisKey="MessageRecipientTypeID" OtherKey="MessageRecipientTypeID" Type="MessageRecipient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MessageStatusType" Member="MessageStatusTypes">
+    <Type Name="MessageStatusType">
+      <Column Name="MessageStatusTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MessageStatusTypeName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MessageType" Member="MessageTypes">
+    <Type Name="MessageType">
+      <Column Name="MessageTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MessageTypeName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="MessageType_Message" Member="Messages" ThisKey="MessageTypeID" OtherKey="MessageTypeID" Type="Message" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ParameterInt" Member="ParameterInts">
+    <Type Name="ParameterInt">
+      <Column Name="ParameterName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterContent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permission" Member="Permissions">
+    <Type Name="Permission">
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Permission_AccountPermission" Member="AccountPermissions" ThisKey="PermissionID" OtherKey="PermissionID" Type="AccountPermission" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PrivacyFlag" Member="PrivacyFlags">
+    <Type Name="PrivacyFlag">
+      <Column Name="PrivacyFlagID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrivacyFlagTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="PrivacyFlagType_PrivacyFlag" Member="PrivacyFlagType" ThisKey="PrivacyFlagTypeID" OtherKey="PrivacyFlagTypeID" Type="PrivacyFlagType" IsForeignKey="true" />
+      <Association Name="Profile_PrivacyFlag" Member="Profile" ThisKey="ProfileID" OtherKey="ProfileID" Type="Profile" IsForeignKey="true" />
+      <Association Name="VisibilityLevel_PrivacyFlag" Member="VisibilityLevel" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="VisibilityLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PrivacyFlagType" Member="PrivacyFlagTypes">
+    <Type Name="PrivacyFlagType">
+      <Column Name="PrivacyFlagTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PrivacyFlagType_PrivacyFlag" Member="PrivacyFlags" ThisKey="PrivacyFlagTypeID" OtherKey="PrivacyFlagTypeID" Type="PrivacyFlag" />
+      <Association Name="PrivacyFlagType_ProfileAttributeType" Member="ProfileAttributeTypes" ThisKey="PrivacyFlagTypeID" OtherKey="PrivacyFlagTypeID" Type="ProfileAttributeType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Profile" Member="Profiles">
+    <Type Name="Profile">
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="profileName" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Signature" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UseGrAvatar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LevelOfExperienceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Avatar" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="AvatarMimeType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Profile_PrivacyFlag" Member="PrivacyFlags" ThisKey="ProfileID" OtherKey="ProfileID" Type="PrivacyFlag" />
+      <Association Name="Profile_ProfileAttribute" Member="ProfileAttributes" ThisKey="ProfileID" OtherKey="ProfileID" Type="ProfileAttribute" />
+      <Association Name="Account_Profile" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="LevelOfExperience_Profile" Member="LevelOfExperience" ThisKey="LevelOfExperienceID" OtherKey="LevelOfExperienceID" Type="LevelOfExperience" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProfileAttribute" Member="ProfileAttributes">
+    <Type Name="ProfileAttribute">
+      <Column Name="ProfileAttributeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileAttributeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Response" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Profile_ProfileAttribute" Member="Profile" ThisKey="ProfileID" OtherKey="ProfileID" Type="Profile" IsForeignKey="true" />
+      <Association Name="ProfileAttributeType_ProfileAttribute" Member="ProfileAttributeType" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProfileAttributeType" Member="ProfileAttributeTypes">
+    <Type Name="ProfileAttributeType">
+      <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrivacyFlagTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ProfileAttributeType_ProfileAttribute" Member="ProfileAttributes" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttribute" />
+      <Association Name="PrivacyFlagType_ProfileAttributeType" Member="PrivacyFlagType" ThisKey="PrivacyFlagTypeID" OtherKey="PrivacyFlagTypeID" Type="PrivacyFlagType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusUpdate" Member="StatusUpdates">
+    <Type Name="StatusUpdate">
+      <Column Name="StatusUpdateID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="SenderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Account_StatusUpdate" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="Account_StatusUpdate1" Member="Account1" ThisKey="SenderID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="VisibilityLevel_StatusUpdate" Member="VisibilityLevel" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="VisibilityLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SystemObjects" Member="SystemObjects">
+    <Type Name="SystemObject">
+      <Column Name="SystemObjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="SystemObject_Comment" Member="Comments" ThisKey="SystemObjectID" OtherKey="SystemObjectID" Type="Comment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VisibilityLevel" Member="VisibilityLevels">
+    <Type Name="VisibilityLevel">
+      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="VisibilityLevel_PrivacyFlag" Member="PrivacyFlags" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="PrivacyFlag" />
+      <Association Name="VisibilityLevel_StatusUpdate" Member="StatusUpdates" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="StatusUpdate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupMember" Member="GroupMembers">
+    <Type Name="GroupMember">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Account_GroupMember" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="Group_GroupMember" Member="Group" ThisKey="GroupID" OtherKey="GroupID" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Group]" Member="Groups">
+    <Type Name="Group">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MemberCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="FileID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Group_GroupMember" Member="GroupMembers" ThisKey="GroupID" OtherKey="GroupID" Type="GroupMember" />
+      <Association Name="Group_GroupToGroupType" Member="GroupToGroupTypes" ThisKey="GroupID" OtherKey="GroupID" Type="GroupToGroupType" />
+      <Association Name="Group_GroupForum" Member="GroupForums" ThisKey="GroupID" OtherKey="GroupID" Type="GroupForum" />
+      <Association Name="Account_Group" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupToGroupType" Member="GroupToGroupTypes">
+    <Type Name="GroupToGroupType">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupTypeID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Group_GroupToGroupType" Member="Group" ThisKey="GroupID" OtherKey="GroupID" Type="Group" IsForeignKey="true" />
+      <Association Name="GroupType_GroupToGroupType" Member="GroupType" ThisKey="GroupTypeID" OtherKey="GroupTypeID" Type="GroupType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupType" Member="GroupTypes">
+    <Type Name="GroupType">
+      <Column Name="GroupTypeID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="GroupType_GroupToGroupType" Member="GroupToGroupTypes" ThisKey="GroupTypeID" OtherKey="GroupTypeID" Type="GroupToGroupType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BoardCategory" Member="BoardCategories">
+    <Type Name="BoardCategory">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ThreadCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastPostDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPostByAccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastPostByUsername" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="BoardCategory_BoardForum" Member="BoardForums" ThisKey="CategoryID" OtherKey="CategoryID" Type="BoardForum" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BoardForum" Member="BoardForums">
+    <Type Name="BoardForum">
+      <Column Name="ForumID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ThreadCount" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PostCount" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPostDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPostByAccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastPostByUsername" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="BoardForum_BoardPost" Member="BoardPosts" ThisKey="ForumID" OtherKey="ForumID" Type="BoardPost" />
+      <Association Name="BoardForum_GroupForum" Member="GroupForums" ThisKey="ForumID" OtherKey="ForumID" Type="GroupForum" />
+      <Association Name="BoardCategory_BoardForum" Member="BoardCategory" ThisKey="CategoryID" OtherKey="CategoryID" Type="BoardCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BoardPost" Member="BoardPosts">
+    <Type Name="BoardPost">
+      <Column Name="PostID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsThread" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(3000) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ReplyCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReplyByUsername" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ViewCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ForumID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ThreadID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ReplyByAccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BoardPost_BoardPost" Member="BoardPosts" ThisKey="PostID" OtherKey="ThreadID" Type="BoardPost" />
+      <Association Name="Account_BoardPost" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="BoardForum_BoardPost" Member="BoardForum" ThisKey="ForumID" OtherKey="ForumID" Type="BoardForum" IsForeignKey="true" />
+      <Association Name="BoardPost_BoardPost" Member="BoardPost1" ThisKey="ThreadID" OtherKey="PostID" Type="BoardPost" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Blog" Member="Blogs">
+    <Type Name="Blog">
+      <Column Name="BlogID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="Account_Blog" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupForum" Member="GroupForums">
+    <Type Name="GroupForum">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ForumID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="BoardForum_GroupForum" Member="BoardForum" ThisKey="ForumID" OtherKey="ForumID" Type="BoardForum" IsForeignKey="true" />
+      <Association Name="Group_GroupForum" Member="Group" ThisKey="GroupID" OtherKey="GroupID" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

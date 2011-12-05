@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_11.master.cs" Inherits="SPKTWeb.MXH_11" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Accounts/UserControl/LoginDesign1.ascx" TagName="login" TagPrefix="uc3" %>
+<%@ Register Src="~/Accounts/UserControl/Register.ascx" TagName="regist" TagPrefix="uc4" %>
+<%@ Register Src="~/Accounts/UserControl/InfoAccount.ascx" TagName="info" TagPrefix="uc5" %>
+<%@ Register Src="~/Accounts/UserControl/EditAc.ascx" TagName="edit" TagPrefix="uc6" %>
+<%@ Register Src="~/Friends/UserControl/InviteFriends.ascx" TagName="in" TagPrefix="uc7" %>
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menul" TagPrefix="uc8" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
+<%@ Register Src="Friends/UserControl/ListFriend.ascx" TagName="FriendList" TagPrefix="uc2" %>
+<%@ Register Src="Friends/UserControl/BoxInvite.ascx" TagName="BoxInvite" TagPrefix="uc1" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Mạng xã hội Sinh Viên</title>
+    <link type="text/css" rel="Stylesheet" href="Styles/MXH.css" />
+    <link rel="shortcut icon" type="image/ico" href="Image/spkticon1.png" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="banner">
+            <div align="left" class="item_banner_logo">
+                <asp:Image ID="Image3" runat="server" Height="40px" ImageUrl="~/Image/spkt_1.png" />
+            </div>
+            <div class="item_banner_text">
+                <div id="item_banner_2" style="height: 23px;" align="center">
+                    <asp:LinkButton ID="lblUserName" runat="server" ForeColor="Blue" Text="[LoginChaoban]"
+                        Font-Size="Small"></asp:LinkButton>
+                </div>
+                <div align="right" id="item_banner">
+                    <div align="center" class="item_banner_1">
+                        <asp:LinkButton ID="lb_dangky" runat="server" CssClass="linkbuton" Width="100%">Đăng ký</asp:LinkButton>
+                        <asp:Panel ID="pnregist" runat="server" Width="600px" Height="350px">
+                            <div style="width: 100%; height: 100%;">
+                                <div style="float: left; margin-left: 0%; height: 97%; width: 100%; margin-top: 0px;">
+                                    <uc4:regist ID="regist" runat="server" />
+                                </div>
+                                <div style="float: left; margin-left: 88%;">
+                                    <asp:Button ID="bt" Text="Đóng" runat="server" BackColor="Black" ForeColor="White" />
+                                </div>
+                            </div>
+                        </asp:Panel>
+                        <aspt:ToolkitScriptManager ID="ScriptManager1" runat="server" />
+                        <aspt:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="lb_dangky"
+                            PopupControlID="pnregist" BackgroundCssClass="modalBackground" DropShadow="true"
+                            OkControlID="bt" OnOkScript="onOk()" />
+                    </div>
+                    <div align="center" class="item_banner_1">
+                        <asp:LinkButton ID="lb_dangnhap" runat="server" CssClass="linkbuton" Width="100%">Đăng nhập</asp:LinkButton>
+                        <asp:Panel ID="Login" runat="server" Style="display: block; width: 250px; height: 200px;">
+                            <uc3:login ID="login1" runat="server" />
+                        </asp:Panel>
+                        <aspt:PopupControlExtender ID="PopEx" runat="server" TargetControlID="lb_dangnhap"
+                            PopupControlID="Login" Position="Left">
+                        </aspt:PopupControlExtender>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

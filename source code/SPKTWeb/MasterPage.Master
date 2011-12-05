@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SPKTWeb.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Website</title>
+    <link href="Style1.css" rel="Stylesheet" type="text/css" />
+    <link href="Style2.css" rel="Stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body>
+<script type="text/javascript">
+    xinha_editors = null;
+    xinha_editors = xinha_editors ? xinha_editors : [];
+</script>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+
+        <div id="header">
+        <img  class="banner" src="/Picture/banner.jpg" />
+        </div>  
+        <div id="Divbanner">
+                 <table class="style102" style="background-image: url('/Picture/img2.gif')"">
+                    <tr>
+                        <td class="style103" > 
+                            <asp:TextBox ID="TextBox1" runat="server" Width="440px" Height="20px" BorderWidth="1px" BorderColor="LightGray"></asp:TextBox>
+                        </td>
+                        <td class="style103"> Tìm Kiếm
+                            &nbsp;</td>
+                        <td class="style103"> Đăng Nhập
+                            &nbsp;</td>
+                        <td class="style103"> Đăng Ký
+                            &nbsp;</td>
+                        <td class="style103">Trang Chủ
+                            &nbsp;</td>
+                    </tr>
+                </table>
+       </div>          
+        
+
+        <div id="main">
+            <div id="main_left">
+               <div id="main_leftAbove">
+               LeftAbove
+               <asp:ContentPlaceHolder id="mainLeft_above" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+                <div id="main_leftUnder">
+                LeftUnder
+                <asp:ContentPlaceHolder id="mainLeft_under" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div id="main_center">
+                &nbsp;<asp:ContentPlaceHolder id="mainCenter" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+               <div id="main_right">
+               MainRight
+                <asp:ContentPlaceHolder id="mainRight" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <!--div class vide dung để đẩy thanh footer xuống -->
+            <div class="vide"></div>
+        </div>
+
+        <div id="footer">
+        <asp:ContentPlaceHolder id="mainUnder" runat="server">
+                </asp:ContentPlaceHolder>
+        </div>
+    </div>     
+    </form>
+</body>
+</html>

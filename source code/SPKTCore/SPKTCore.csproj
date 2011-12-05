@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{934FF6C8-BFA0-41B5-89F1-A8AB887E1DC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPKTCore</RootNamespace>
+    <AssemblyName>SPKTCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\..\..\Desktop\Structure\deploy\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>C:\Users\Rua\Desktop\Structure\deploy\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.AutoMocking">
+      <HintPath>..\..\..\..\..\Desktop\Structure\deploy\StructureMap.AutoMocking.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DataAccess\IAlertRepository.cs" />
+    <Compile Include="Core\DataAccess\IBlogRepository.cs" />
+    <Compile Include="Core\DataAccess\IBoardCategoryRepository.cs" />
+    <Compile Include="Core\DataAccess\IBoardForumRepository.cs" />
+    <Compile Include="Core\DataAccess\ICommentRepository.cs" />
+    <Compile Include="Core\DataAccess\IFriendRepository.cs" />
+    <Compile Include="Core\DataAccess\IGroupForumRepository.cs" />
+    <Compile Include="Core\DataAccess\IGroupMemberRepository.cs" />
+    <Compile Include="Core\DataAccess\IGroupRepository.cs" />
+    <Compile Include="Core\DataAccess\IGroupToGroupTypeRepository.cs" />
+    <Compile Include="Core\DataAccess\IGroupTypeRepository.cs" />
+    <Compile Include="Core\DataAccess\ILevelOfExperienceRepository.cs" />
+    <Compile Include="Core\DataAccess\IMessageFolderRepository.cs" />
+    <Compile Include="Core\DataAccess\IMessageRecipientRepository.cs" />
+    <Compile Include="Core\DataAccess\IMessageRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\AccountRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\AlertRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\BlogRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\BoardCategoryRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\BoardForumRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\CommentRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\Connection.cs" />
+    <Compile Include="Core\DataAccess\IAccountRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\EnumObject.cs" />
+    <Compile Include="Core\DataAccess\IConfiguration.cs" />
+    <Compile Include="Core\DataAccess\IFriendInvitationRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\FriendInvitationRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\FriendRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\GroupForumRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\GroupMemberRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\GroupRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\GroupToGroupTypeRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\GroupTypeRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\LevelOfExperienceRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\MessageFolderRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\MessageRecipientRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\MessageRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\ParameterIntRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\PrivacyRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\ProfileAttributeRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\StatusUpdateRepository.cs" />
+    <Compile Include="Core\DataAccess\IParameterIntRepository.cs" />
+    <Compile Include="Core\DataAccess\IPrivacyRepository.cs" />
+    <Compile Include="Core\DataAccess\IProfileAttributeRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\ProfileRepository.cs" />
+    <Compile Include="Core\DataAccess\IPermissionRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\PermissionRepository.cs" />
+    <Compile Include="Core\DataAccess\IProfileRepository.cs" />
+    <Compile Include="Core\DataAccess\IStatusUpdateRepository.cs" />
+    <Compile Include="Core\Domain\Account.cs" />
+    <Compile Include="Core\Domain\Alert.cs" />
+    <Compile Include="Core\Domain\AlertType.cs" />
+    <Compile Include="Core\Domain\Blog.cs" />
+    <Compile Include="Core\Domain\BoardCategory.cs" />
+    <Compile Include="Core\Domain\Folder.cs" />
+    <Compile Include="Core\Domain\Friend.cs" />
+    <Compile Include="Core\Domain\Group.cs" />
+    <Compile Include="Core\Domain\GroupTypes.cs" />
+    <Compile Include="Core\Domain\MessageFolder.cs" />
+    <Compile Include="Core\Domain\MessageRecipientType.cs" />
+    <Compile Include="Core\Domain\MessageStatusType.cs" />
+    <Compile Include="Core\Domain\MessageType.cs" />
+    <Compile Include="Core\Domain\MessageWithRecipient.cs" />
+    <Compile Include="Core\Domain\ObjectFactory.cs" />
+    <Compile Include="Core\Domain\PrivacyFlagType.cs" />
+    <Compile Include="Core\Domain\Profile.cs" />
+    <Compile Include="Core\Domain\ProfileAttribute.cs" />
+    <Compile Include="Core\Domain\SPKT.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPKT.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Domain\StatusUpdate.cs" />
+    <Compile Include="Core\Domain\SystemObject.cs" />
+    <Compile Include="Core\Domain\VisibilityLevel.cs" />
+    <Compile Include="Core\IAccountService.cs" />
+    <Compile Include="Core\IAlertService.cs" />
+    <Compile Include="Core\IBoardService.cs" />
+    <Compile Include="Core\ICaptcha.cs" />
+    <Compile Include="Core\IFriendService.cs" />
+    <Compile Include="Core\IGroupService.cs" />
+    <Compile Include="Core\IMessageService.cs" />
+    <Compile Include="Core\Impl\AccountService.cs" />
+    <Compile Include="Core\Impl\AlertService.cs" />
+    <Compile Include="Core\Impl\BoardService.cs" />
+    <Compile Include="Core\Impl\Captcha.cs" />
+    <Compile Include="Core\Impl\Cryptography.cs" />
+    <Compile Include="Core\Impl\Extendsion.cs" />
+    <Compile Include="Core\Impl\FriendService.cs" />
+    <Compile Include="Core\Impl\GroupService.cs" />
+    <Compile Include="Core\Impl\MessageService.cs" />
+    <Compile Include="Core\Impl\ParameterIntService.cs" />
+    <Compile Include="Core\Impl\PrivacyService.cs" />
+    <Compile Include="Core\Impl\ProfileAttributeService.cs" />
+    <Compile Include="Core\Impl\ProfileService.cs" />
+    <Compile Include="Core\Impl\StatusUpdateService.cs" />
+    <Compile Include="Core\Impl\UserSession.cs" />
+    <Compile Include="Core\IParameterIntService.cs" />
+    <Compile Include="Core\IPrivacyService.cs" />
+    <Compile Include="Core\IProfileAttributeService.cs" />
+    <Compile Include="Core\IProfileService.cs" />
+    <Compile Include="Core\IStatusUpdateService.cs" />
+    <Compile Include="Core\IUserSession.cs" />
+    <Compile Include="Core\IWebContext.cs" />
+    <Compile Include="Core\Impl\WebContext.cs" />
+    <Compile Include="Core\IEmail.cs" />
+    <Compile Include="Core\Impl\Email.cs" />
+    <Compile Include="Core\Impl\Redirector.cs" />
+    <Compile Include="Core\IRedirector.cs" />
+    <Compile Include="Core\ParameterSetting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Domain\SPKT.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SPKT.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StrutureMap.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Domain\SPKT.dbml.layout">
+      <DependentUpon>SPKT.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

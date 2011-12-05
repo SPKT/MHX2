@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MXH1.Master" AutoEventWireup="true" CodeBehind="MXH2.master.cs" Inherits="SPKTWeb.MXH2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style15
+        {
+            width: 100%;
+        }
+        .style16
+        {
+            width: 25%;
+        }
+        .style17
+        {
+            width: 55%;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
+<div>
+    <table class="style15">
+        <tr>
+            <td class="style16">
+                <asp:ContentPlaceHolder ID="Left" runat="server">
+                    <div style="border: 1px solid #999999">
+                    </div>
+                </asp:ContentPlaceHolder>
+                
+            </td>
+            <td class="style17">
+                <asp:ContentPlaceHolder ID="Main_1" runat="server">
+                    <div style="border: 1px solid #999999">
+                    </div>
+                </asp:ContentPlaceHolder>
+               
+            </td>
+            <td>
+                <asp:ContentPlaceHolder ID="Right" runat="server">
+                    <div style="border: 1px solid #999999">
+                    </div>
+                </asp:ContentPlaceHolder>
+               
+            </td>
+        </tr>
+    </table>
+</div>
+</asp:Content>

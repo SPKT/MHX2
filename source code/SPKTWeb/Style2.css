@@ -1,0 +1,116 @@
+﻿body 
+{
+
+       
+        .body {background-color:#dddddd; margin-top:0px; margin-left:0px; font-family: Arial}
+        .ContentTitle{padding:3px; position:relative;top:-40px;color:#5eb2e9;margin-left:5px;}
+        .Master {background-color:#ffffff; margin-right:auto; margin-left:auto; display:block; width:980px;}
+        .PageHeader { background-image:url(/images/Header.jpg); background-repeat:no-repeat;	width:980px; height:183px; }
+        .TipTopNavigation {color: #FFFFFF; position:relative; top:5px; left:450px; text-align:right; width:500px;}
+        TipTopNavigationLinks, a.TipTopNavigationLinks, a.TipTopNavigationLinks:Active 
+        {color: #FFFFFF; text-decoration:none;}
+        a.TipTopNavigationLinks:Hover {text-decoration:underline;color:#FFFFFF;}
+        .Navigation { font-family:Arial; position:relative; left:150px; }
+        .PrimaryNav { width:819px; position:absolute; top:104px; left:-10px; }
+        .PrimaryNavLink { position:relative; top:5px; left:10px; color:#FFFFFF; font-size:16px; padding-right:10px; text-decoration:none; font-weight:bold; }
+        .PrimaryNavLink:hover { text-decoration:underline; }
+        .PrimaryNavLinkActive {z-index:100;text-decoration:none; padding-bottom:10px; padding-right:10px;position:relative;top:5px;left:10px;color:#FF7828; background-image:url(/images/TopNavDownArrow.jpg); background-repeat:no-repeat; background-position: 0px 21px; overflow:visible; font-weight:bold;}
+        .SecondaryNav { width:819px; height:30px; background-color:#000000; color:#FF7828; position:relative; top:134px; }
+        .SecondaryNavLink {text-decoration:none; position:relative; top:5px; left:10px; color:#FF7828; font-size:12px; padding-right:10px; }
+        .LeftNav {width:100px; float:left; height:100%;}
+        .ContentMain { font-family:Arial; position:relative; background-image:url(/images/ContentBackground.jpg); background-color:#c1dde8; width:819px; }
+        .ContentHeader {position:relative; background-image:url(/images/ContentHeader.jpg); background-repeat:no-repeat; width:819px; height:57px; }
+        .Content {display:block;background-image:url(/images/ContentFooter.jpg); background-position:bottom; background-repeat:no-repeat; padding:10px; position:relative;height:423px; min-height:423px; }
+        .ContentFooter { font-family:arial; color:#FF7828; background-color:#000000; font-size:12px; height:30px; }
+        .FooterCopyRight { position:relative; top:8px; padding-left:10px; float: left; }
+        .FooterLinks { position:relative; top:8px; float: right; }
+        .ContentFooterLink { color:#FF7828; text-decoration:none; padding-right:10px; }
+        .ContentFooterBackground { height:15px; background-color:#0a3158; width:980px; position:relative; z-index:50; }
+        .ContentFooterBackgroundHelper { height:35px;z-index:100;display:block;position:absolute;width:100%;background-color:#0a3158; }
+        
+        /* CONTENT STYLES */
+        .divContainer {font-size:12px;background-image:url(/images/transparent.gif); padding: 10px; width:90%; margin-left:auto;margin-right:auto;text-align:center; }
+        .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
+        .divContainerRow { background-color:#ffffff;text-align:left; float:none; padding:5px;}
+        .divContainerCell { display: block; text-align:left; }
+        .divContainerFooter { text-align:right; }
+        .divContainerTitle {margin-bottom:5px;background-color:#d8dfea;border-bottom:solid 1px #a3bdef;border-top:solid 1px #5c76a4; font-weight:bold;text-align:left;padding-bottom:5px;padding-top:5px;padding-left:5px;}
+        .divContainerCellHeader {display:block; height:100%;padding-right:5px; width:150px;text-align:right;font-weight:bold;float:left; }
+        .divInnerRowHeader {text-align: right; width: 100px; font-size: 10px; color: #000000; font-weight:bold; float:left; padding-right: 5px; }
+        .divInnerRowCell { width: 100%; font-size: 10px; color: #000000; padding-left: 5px; }
+        .divContainerHelpText { font-size:10px; color:#777777; font-weight:normal; }
+        .divContainerSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
+        .Wizard { width:90%;padding:10px 10px 10px 10px; }
+        
+        /* PROFILE STYLES */
+        .ProfileName { font-size:16px; font-family:Arial; font-weight:bold;	}
+        
+        /* ALERT STYLES */
+        .AlertDateRow { }
+        .AlertHeader { font-weight:bold; text-align:left; }
+        .AlertHeader a { padding-left: 5px; }
+        .AlertRow { text-align:left; }
+        .AlertRow a { padding-left: 5px; }
+        .AlertIcon { }
+        .AlertSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
+        .AlertActionItems { }
+        
+        /* MAIL */
+        .Folders { border-top: solid 1px #a3bdef; width:150px;}
+        
+        /* Photos */
+        .albumsList { padding:10px; }
+        .albumsList li { display:inline; width:200px; min-height:300px; float:left; padding: 10px; }
+        .albumsTitle { font-weight:bold; }
+        .albumsAuthor, .albumsLocation, .albumsDescription { font-size:12px; }
+        .albumsActionLink { font-size:10px; }
+        
+        /* Blogs */
+        .blogsList { padding:10px; }
+        .blogsList li { display:inline; width:200px; height:200px; float:left; padding: 10px; }
+        .blogsTitle { font-weight:bold; }
+        .blogsAuthor, .blogsLocation, .blogsDescription { font-size:12px; }
+        .blogsActionLink { font-size:10px; }
+        
+        .photosList { padding:10px; }
+        .photosList li { display:inline; width:300px; height:200px; float:left; padding:10px; }
+        
+        /* Groups */
+        .groupsList { padding:10px; }
+        .groupsList li { display:inline; width:200px; height:200px; float:left; padding:10px; }
+        .groupsTitle { font-weight:bold; }
+        .groupsDescription { font-size:12px; }
+        .groupsActionLink { font-size:10px; }
+        
+        /* Ratings */
+        /* Rating */
+        .ratingStar 
+        {
+            font-size: 0pt;
+            width: 16px;
+            height: 16px;
+            margin: 0px;
+            padding: 0px;
+            cursor: pointer;
+            display: block;
+            background-repeat: no-repeat;
+        }
+ 
+        .ratingStarFilled
+        {
+            background-image: url(/images/staryellow.jpg);
+ 
+        }
+ 
+        .ratingStarEmpty
+        {
+            background-image: url(/images/stargrey.jpg);
+        }
+ 
+        .ratingStarSaved
+        {
+            background-image: url(/images/starred.jpg);
+        }
+  
+
+}
