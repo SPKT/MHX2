@@ -14,17 +14,12 @@ namespace SPKTWeb.Accounts.UserControl
     public partial class Register : System.Web.UI.UserControl,IRegister
     {
         RegisterPresenter _Presenter;
-        EnumObject DoiTuong = new EnumObject();
+        //EnumObject DoiTuong = new EnumObject();
         protected void Page_Load(object sender, EventArgs e)
         {
             _Presenter=new RegisterPresenter();
             _Presenter.Init(this);
-            if (rdbCuuSinhVien.Checked == true)
-                DoiTuong = EnumObject.User;
-            else if (rdbGiaoVien.Checked == true)
-                DoiTuong = EnumObject.User;
-            else if (rdbNguoiNgoai.Checked == true)
-                DoiTuong = EnumObject.OutUser;
+            //DoiTuong = EnumObject.OutUser;
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -33,7 +28,7 @@ namespace SPKTWeb.Accounts.UserControl
             string userName = txtUserName.Text;
             string email = txtEmail.Text;
             String captCha = txtCaptCha.Text;
-            _Presenter.Register(userName, passWord, email, DoiTuong,captCha);
+            _Presenter.Register(userName, passWord, email, EnumObject.OutSider, captCha);
         }
 
         public void ShowErrorMessage(string Message)

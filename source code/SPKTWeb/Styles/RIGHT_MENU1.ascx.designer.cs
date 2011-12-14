@@ -56,5 +56,32 @@ namespace SPKTWeb.Styles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SPKTWeb.Messages.UserControl.MessageNew MessageNew1;
+        
+        /// <summary>
+        /// lkbtnAllGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbtnAllGroup;
+        
+        /// <summary>
+        /// lkbtnMyGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbtnMyGroup;
+        
+        /// <summary>
+        /// lkbtnCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbtnCategory;
     }
 }

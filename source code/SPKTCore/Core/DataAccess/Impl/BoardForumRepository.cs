@@ -12,6 +12,7 @@ namespace SPKTCore.Core.DataAccess.Impl
         public BoardForumRepository()
         {
             _conn = new Connection();
+
         }
         public BoardForum GetForumByGroupID(Int32 GroupID)
         {
@@ -73,6 +74,7 @@ namespace SPKTCore.Core.DataAccess.Impl
 
         public Int32 SaveForum(BoardForum boardForum)
         {
+            boardForum.UpdateDate = DateTime.Now;
             using (SPKTDataContext dc = _conn.GetContext())
             {
                 if (boardForum.ForumID > 0)

@@ -11,6 +11,23 @@ namespace SPKTCore.Core.Impl
     [Pluggable("Default")]
     public class WebContext : IWebContext
     {
+        public HttpFileCollection Files
+        {
+            get
+            {
+                if (HttpContext.Current.Request.Files != null)
+                    return HttpContext.Current.Request.Files;
+                else
+                    return null;
+            }
+        }
+        public string FilePath
+        {
+            get
+            {
+                return HttpContext.Current.Request.ServerVariables["APPL_PHYSICAL_PATH"].ToString();
+            }
+        }
         public bool ShowGravatar
         {
             get
@@ -158,7 +175,7 @@ namespace SPKTCore.Core.Impl
 
             HttpContext.Current.Response.Cookies.Add(value);
         }
-        private void RemoveCookie(string name)
+        public void RemoveCookie(string name)
         {
             if (HttpContext.Current == null || HttpContext.Current.Session == null)
             {
@@ -329,6 +346,113 @@ namespace SPKTCore.Core.Impl
                     result = Convert.ToInt32(GetQueryStringValue("PageNumber"));
                 else
                     result = 1;
+                return result;
+            }
+        }
+
+        public Int32 GroupID
+        {
+            get
+            {
+                Int32 result = 0;
+                if (!string.IsNullOrEmpty(GetQueryStringValue("GroupID")))
+                {
+                    result = Convert.ToInt32(GetQueryStringValue("GroupID"));
+                }
+                return result;
+            }
+        }
+
+        public bool IsThread
+        {
+            get
+            {
+                bool result = false;
+                if (!string.IsNullOrEmpty(GetQueryStringValue("IsThread")))
+                {
+                    if (GetQueryStringValue("IsThread") == "1")
+                        result = true;
+                }
+                return result;
+            }
+        }
+        public Int32 ForumID
+        {
+            get
+            {
+                Int32 result = 0;
+                if (!string.IsNullOrEmpty(GetQueryStringValue("ForumID")))
+                {
+                    result = Convert.ToInt32(GetQueryStringValue("ForumID"));
+                }
+                return result;
+            }
+        }
+
+        public int FileTypeID
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public long BlogID
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+
+
+        public long PostID
+        {
+            get
+            {
+                Int64 result = 0;
+                if (!string.IsNullOrEmpty(GetQueryStringValue("PostID")))
+                {
+                    result = Convert.ToInt64(GetQueryStringValue("PostID"));
+                }
+                return result;
+            }
+        }
+
+
+
+
+        public Int64 AlbumID
+        {
+            get
+            {
+                Int64 result;
+                if (!string.IsNullOrEmpty(GetQueryStringValue("AlbumID")))
+                    result = Convert.ToInt64(GetQueryStringValue("AlbumID"));
+                else
+                    result = 0;
+
+                return result;
+            }
+        }
+
+        public string CategoryPageName
+        {
+            get
+            {
+                string result = "";
+                if (!string.IsNullOrEmpty(GetQueryStringValue("CategoryPageName")))
+                {
+                    result = GetQueryStringValue("CategoryPageName");
+                }
+                return result;
+            }
+        }
+        //CHAPTER 9
+        public string ForumPageName
+        {
+            get
+            {
+                string result = "";
+                if (!string.IsNullOrEmpty(GetQueryStringValue("ForumPageName")))
+                {
+                    result = GetQueryStringValue("ForumPageName");
+                }
                 return result;
             }
         }

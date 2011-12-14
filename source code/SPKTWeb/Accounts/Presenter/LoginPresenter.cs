@@ -31,6 +31,22 @@ namespace SPKTWeb.Accounts.Presenter
             string message;
             if (_accountService.Login(username, password, rememberMe, out message))
                 _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
+            else
+            {
+                DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
+                if (service.ValidateUser(username, password))
+                {
+                    if (_accountService.IsAccountExisted(username))
+                        _accountService.SetLogedIn(username);
+                    else
+                    {
+                        DkmhWebservice.users user = service.GetUserByUserName(username);
+                        _accountService.ImportAccount(user.Username, user.Email);
+                        _accountService.SetLogedIn(username);
+                    }
+                    _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
+                }
+            }
             _view.DisplayMessage(message);
         }
 

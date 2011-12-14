@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUserByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserByUserNameResult" type="tns:users" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="users">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsApproved" nillable="true" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastLoginDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreationDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLockedOut" nillable="true" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastLockedOutDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="FailedPasswordAttemptCount" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="FailedPasswordAttemptWindowStart" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="VerificationCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ValidTimeOut" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="profilesReference" type="tns:EntityReferenceOfprofiles" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityObject" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:StructuralObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StructuralObject" abstract="true" />
+      <s:complexType name="EntityKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntitySetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityContainerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityKeyValues" type="tns:ArrayOfEntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityReferenceOfprofiles">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityReference" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityReference" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RelatedEnd">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RelatedEnd" abstract="true" />
+      <s:element name="GetRolesByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRolesByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRolesByUserNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfileByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfileByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfileByUserNameResult" type="tns:profiles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="profiles">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastUpdatedDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="PropertyNames" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PropertyValuesString" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="usersReference" type="tns:EntityReferenceOfusers" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityReferenceOfusers">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityReference" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IsStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsStudentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentByUserNameResult" type="tns:sinhvien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="sinhvien">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MaSinhVien" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ho" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ten" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Phai" nillable="true" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="NgaySinh_Ori" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="NoiSinh" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChuyenNganh" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Lop" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NgaySinh" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IsUserExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUserByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserByUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRolesByUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRolesByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfileByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProfileByUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfileByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserProfileByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:IsStudent" />
+  </wsdl:message>
+  <wsdl:message name="IsStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:IsStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentByUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserExistSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserExist" />
+  </wsdl:message>
+  <wsdl:message name="IsUserExistSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UsrSerSoap">
+    <wsdl:operation name="GetUserByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user by username</wsdl:documentation>
+      <wsdl:input message="tns:GetUserByUserNameSoapIn" />
+      <wsdl:output message="tns:GetUserByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesByUserName">
+      <wsdl:input message="tns:GetRolesByUserNameSoapIn" />
+      <wsdl:output message="tns:GetRolesByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfileByUserName">
+      <wsdl:input message="tns:GetUserProfileByUserNameSoapIn" />
+      <wsdl:output message="tns:GetUserProfileByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsStudent">
+      <wsdl:input message="tns:IsStudentSoapIn" />
+      <wsdl:output message="tns:IsStudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByUserName">
+      <wsdl:input message="tns:GetStudentByUserNameSoapIn" />
+      <wsdl:output message="tns:GetStudentByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserExist">
+      <wsdl:input message="tns:IsUserExistSoapIn" />
+      <wsdl:output message="tns:IsUserExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input message="tns:ValidateUserSoapIn" />
+      <wsdl:output message="tns:ValidateUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UsrSerSoap" type="tns:UsrSerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserByUserName">
+      <soap:operation soapAction="http://tempuri.org/GetUserByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesByUserName">
+      <soap:operation soapAction="http://tempuri.org/GetRolesByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfileByUserName">
+      <soap:operation soapAction="http://tempuri.org/GetUserProfileByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStudent">
+      <soap:operation soapAction="http://tempuri.org/IsStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByUserName">
+      <soap:operation soapAction="http://tempuri.org/GetStudentByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserExist">
+      <soap:operation soapAction="http://tempuri.org/IsUserExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UsrSerSoap12" type="tns:UsrSerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserByUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetUserByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesByUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetRolesByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfileByUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetUserProfileByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStudent">
+      <soap12:operation soapAction="http://tempuri.org/IsStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetStudentByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserExist">
+      <soap12:operation soapAction="http://tempuri.org/IsUserExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap12:operation soapAction="http://tempuri.org/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsrSer">
+    <wsdl:port name="UsrSerSoap" binding="tns:UsrSerSoap">
+      <soap:address location="http://localhost:8088/UsrSer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UsrSerSoap12" binding="tns:UsrSerSoap12">
+      <soap12:address location="http://localhost:8088/UsrSer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

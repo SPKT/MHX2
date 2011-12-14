@@ -193,33 +193,6 @@ namespace SPKTWeb.Accounts {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// rdbCuuSinhVien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbCuuSinhVien;
-        
-        /// <summary>
-        /// rdbGiaoVien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbGiaoVien;
-        
-        /// <summary>
-        /// rdbNguoiNgoai control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbNguoiNgoai;
-        
-        /// <summary>
         /// btnRegister control.
         /// </summary>
         /// <remarks>

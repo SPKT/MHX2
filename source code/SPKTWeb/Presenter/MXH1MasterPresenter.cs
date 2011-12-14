@@ -13,9 +13,11 @@ namespace SPKTWeb.Presenter
     {
         IUserSession _userSession;
         IMXH1Master _view;
+        IWebContext _webContext;
         public MXH1MasterPresenter()
         {
             _userSession = new UserSession();
+            _webContext = new WebContext();
         }
         public void Init(IMXH1Master view)
         {
@@ -27,6 +29,13 @@ namespace SPKTWeb.Presenter
             }
             else
                 _view.ShowUserName("");
+        }
+
+        internal void Logout()
+        {
+            _userSession.LoggedIn = false;
+            _webContext.RemoveCookie("login");
+            
         }
     }
 }

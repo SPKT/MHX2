@@ -9,5 +9,8 @@ namespace SPKTCore.Core
     public interface IBoardService
     {
         List<BoardCategory> GetCategoriesWithForums();
+        void SaveNewBoard(BoardCategory category);
+        void SaveNewForum(BoardForum forum);
+        List<BoardCategory> GetAllCategory();
     }
 }

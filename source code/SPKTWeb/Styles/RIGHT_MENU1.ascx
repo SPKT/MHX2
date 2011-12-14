@@ -22,3 +22,8 @@
         </asp:Panel>
     </div>
 </div>
+<asp:LinkButton ID="lkbtnAllGroup" runat="server" onclick="lkbtnAllGroup_Click">All Group</asp:LinkButton>
+<br />
+<asp:LinkButton ID="lkbtnMyGroup" runat="server" onclick="lkbtnMyGroup_Click">My Group</asp:LinkButton>
+<br />
+<asp:LinkButton ID="lkbtnCategory" runat="server" onclick="lkbtnCategory_Click">Category</asp:LinkButton>

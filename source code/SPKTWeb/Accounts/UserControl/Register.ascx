@@ -67,19 +67,6 @@
         </div>
     </div>
     <div style="height: 30px">
-        <div style="float:left; margin-left:5%; height:100%; width:30%; margin-top:1px; vertical-align:middle; font-size: 14px; color: #666666;">
-            Thuộc nhóm :</div>
-        <div style="float:left; margin-left:0%; height:100%; width:52%; margin-top:1px; vertical-align:middle;">
-                        
-                            <asp:RadioButton ID="rdbCuuSinhVien" runat="server" ForeColor="#0000CC" Text="Cựu sinh viên" 
-                            />
-&nbsp;<asp:RadioButton ID="rdbGiaoVien" runat="server" ForeColor="#0000CC" Text="Giáo viên" 
-                              />
-&nbsp;<asp:RadioButton ID="rdbNguoiNgoai" runat="server" Checked="True" 
-                                ForeColor="#0000CC" Text="Người ngoài" 
-                              />
-                        
-        </div>
     </div>
     <div style="height: 27px" align="center">
 						<asp:Button id="btnLogin" runat="server" BackColor="#0066FF" BorderColor="Blue" 

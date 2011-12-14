@@ -24,7 +24,7 @@ namespace SPKTWeb.Accounts.Presenter
             string username = Cryptography.Decrypt(_webContext.UsernameToVerify,ParameterSetting.EmailVerificationEncryptKey);
 
             Account account = _accountRepository.GetAccountByUsername(username);
-
+            
             if (account != null)
             {
                 account.EmailVerified = true;

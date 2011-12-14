@@ -55,8 +55,8 @@ namespace SPKTCore.Core.DataAccess.Impl
             using (SPKTDataContext dc = conn.GetContext())
             {
                 Group group = dc.Groups.Where(g => g.PageName == PageName).FirstOrDefault();
-                if (group == null)
-                    result = false;
+                if (group != null)
+                    result = true;
             }
             return result;
         }

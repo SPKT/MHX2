@@ -13,40 +13,13 @@ namespace SPKTWeb.Profiles {
     public partial class ViewProfile {
         
         /// <summary>
-        /// imgAvatar control.
+        /// menu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgAvatar;
-        
-        /// <summary>
-        /// lblDisplayProfileName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDisplayProfileName;
-        
-        /// <summary>
-        /// lnkChangeAvatar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkChangeAvatar;
-        
-        /// <summary>
-        /// lnkManageProfile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkManageProfile;
+        protected global::SPKTWeb.Styles.LEFT_MENU menu;
         
         /// <summary>
         /// Wizard1 control.
@@ -85,15 +58,6 @@ namespace SPKTWeb.Profiles {
         protected global::System.Web.UI.WebControls.Label lblProfileName;
         
         /// <summary>
-        /// TenDayDu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow TenDayDu;
-        
-        /// <summary>
         /// lblTenThat control.
         /// </summary>
         /// <remarks>
@@ -101,15 +65,6 @@ namespace SPKTWeb.Profiles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTenThat;
-        
-        /// <summary>
-        /// NgaySinh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow NgaySinh;
         
         /// <summary>
         /// lblNgaySinh control.
@@ -121,15 +76,6 @@ namespace SPKTWeb.Profiles {
         protected global::System.Web.UI.WebControls.Label lblNgaySinh;
         
         /// <summary>
-        /// GioiTinh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow GioiTinh;
-        
-        /// <summary>
         /// lblSex control.
         /// </summary>
         /// <remarks>
@@ -137,15 +83,6 @@ namespace SPKTWeb.Profiles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSex;
-        
-        /// <summary>
-        /// ChuKy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow ChuKy;
         
         /// <summary>
         /// lblChuKy control.

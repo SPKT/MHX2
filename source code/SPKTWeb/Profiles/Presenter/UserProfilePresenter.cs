@@ -6,6 +6,8 @@ using SPKTCore.Core;
 using SPKTCore.Core.Impl;
 using SPKTWeb.Profiles.Interface;
 using SPKTCore.Core.Domain;
+using SPKTCore.Core.DataAccess;
+using SPKTCore.Core.DataAccess.Impl;
 
 namespace SPKTWeb.Profiles.Presenter
 {
@@ -38,39 +40,7 @@ namespace SPKTWeb.Profiles.Presenter
         public void Init(IUserProfile view,bool IsPostBack)
         {
             _view = view;
-           
-            //if (!IsPostBack)
-            //{
-                
-                //Xu ly hien Alert
-                #region Bỏ rồi
-                //string profileID=_webContext.GetQueryStringValue("ProfileID");
-                //List<Alert> listAlert = new List<Alert>();
-                //    if (_userSession.LoggedIn)
-                //    {
-                //        _view.LoadStatusControl();
-                //         if (profileID != null)
-                //         {
-                //             int proID = int.Parse(profileID);
-                //             Profile profile = _profileService.GetProfileByProfileID(proID);
-                //             if (profile != null)
-                //             {
-                //                 if (_userSession.CurrentUser.AccountID == profile.AccountID)
-                //                 {
-                //                     LoadAlertUserProfile(listAlert, _userSession.CurrentUser.AccountID);
-                //                 }
-                //                 else
-                //                     LoadAlert(listAlert, profile.AccountID);
-                //             }
-                //             else
-                //                 _view.Message("Không có Profile này");
-                //         }
-                //         else
-                //         {
-                //             LoadAlertUserProfile(listAlert,_userSession.CurrentUser.AccountID);
-                //         } 
-                #endregion
-                
+
                 int accountID=_webContext.AccountID;
                 bool IsUser = false;
                 List<Alert> listAlert = new List<Alert>();

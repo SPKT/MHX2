@@ -12,23 +12,13 @@ namespace SPKTWeb.Accounts
     public partial class EditAccount : System.Web.UI.Page,IEditAccount
     {
         EditAccountPresenter _presenter;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             _presenter = new EditAccountPresenter();
             _presenter.Init(this,IsPostBack);
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-            
-            //TODO: chua lam editAccount
-           // _presenter.UpdateAccount(txtOldPassword.Text, txtNewPassword2.Text, lblUserName.Text, txtDisplayName.Text,txtEmail.Text);
-        }
-
-        public void ShowMessage(string Message)
-        {
-           // lblErrorMessage.Text = Message;
-        }
 
         public void LoadCurrentInformation(SPKTCore.Core.Domain.Account account)
         {
@@ -36,7 +26,13 @@ namespace SPKTWeb.Accounts
             lblOldTenHienThi.Text = account.DisplayName;
             txtTenHienThi.Text = account.DisplayName;
             lblEmail.Text = account.Email;
-            //txtDisplayName.Text = account.UserName;
+            
+            if (account.UseAuthenticationService != null && ((bool)account.UseAuthenticationService))
+            {
+                rdbUseDKMH.Checked = true;
+            }
+            else
+                rdbUseMXH.Checked = true;
             //txtEmail.Text = account.Email;
          }
 
@@ -47,13 +43,21 @@ namespace SPKTWeb.Accounts
 
         protected void btnSavePass_Click(object sender, EventArgs e)
         {
-            _presenter.SaveChangePassword(txtOlaPass.Text, txtNewPass.Text);
+            _presenter.SaveChangePassword(txtOlaPass.Text, txtNewPass.Text );
         }
-
+        protected void btnSaveUserAuthentication_Click(object sender, EventArgs e)
+        {
+            bool use;
+            if (rdbUseDKMH.Checked)
+                use = false;
+            else
+                use = true;
+            _presenter.SaveChangeUserAuthentication(use);
+        }
 
         public void ShowErrorSavePass(string Message)
         {
-            lblError.Text = Message;
+            lblErrorpass.Text = Message;
         }
 
         protected void btnSaveNewEmail_Click(object sender, EventArgs e)
@@ -64,7 +68,24 @@ namespace SPKTWeb.Accounts
 
         public void ShowErrorSaveEmail(string Message)
         {
-            lblErrorpass.Text = Message;
+            lblEmailMessage.Text = Message;
+        }
+
+
+        public void DisplayAuthentical(bool p)
+        {
+            pnlUseAuthen.Visible = p;
+        }
+
+
+        public void ShowDisplayname(string Message)
+        {
+            lblDisplaynameMessage.Text = Message;
+        }
+
+        public void ShowUseAuthen(string Message)
+        {
+            lblUseAuthen.Text = Message;
         }
     }
 }

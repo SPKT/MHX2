@@ -67,33 +67,6 @@ namespace SPKTWeb.Accounts.UserControl {
         protected global::System.Web.UI.WebControls.TextBox txtCaptCha;
         
         /// <summary>
-        /// rdbCuuSinhVien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbCuuSinhVien;
-        
-        /// <summary>
-        /// rdbGiaoVien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbGiaoVien;
-        
-        /// <summary>
-        /// rdbNguoiNgoai control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbNguoiNgoai;
-        
-        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>

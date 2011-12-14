@@ -44,15 +44,25 @@ namespace SPKTWeb.Homes.Presenter
             _view = View;
             List<VisibilityLevel> _listVisibilityLevel = new List<VisibilityLevel>();
             _listVisibilityLevel = _privacyService.GetListVisibilityLevel();
-            if(_userSession.LoggedIn==true)
+            if (_userSession.LoggedIn == true)
             {
-                _view.LoadStatusControl(_listVisibilityLevel, true);
-                account=_userSession.CurrentUser;
-                if (!IsPostBack)
-                    _view.LoadStatus(GetStatusToShow(account));           
+                IProfileRepository _profileRepository = new ProfileRepository();
+                Profile profile = _profileRepository.GetProfileByAccountID(_userSession.CurrentUser.AccountID);
+                if (profile == null)
+                    _redirector.Redirect("~/Profiles/ManageProfile.aspx");
+                else
+                {
+                    _view.LoadStatusControl(_listVisibilityLevel, true);
+                    account = _userSession.CurrentUser;
+                    if (!IsPostBack)
+                        _view.LoadStatus(GetStatusToShow(account));
+                }
             }
             else
-                account=null;
+            {
+                account = null;
+                _redirector.GoToAccountLoginPage();
+            }
             _view.DisplayCurrentAccount(account);
 
         }

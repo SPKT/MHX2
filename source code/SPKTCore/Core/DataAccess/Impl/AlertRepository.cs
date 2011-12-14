@@ -22,7 +22,7 @@ namespace SPKTCore.Core.DataAccess.Impl
                 IEnumerable<Alert> alerts = (from a in spktDC.Alerts
                                              where a.AccountID == AccountID
                                              orderby a.CreateDate descending
-                                             select a).Take(40);
+                                             select a).Take(20);
                 result = alerts.ToList();
             }
             return result;

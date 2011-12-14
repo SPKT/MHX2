@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FriendList.ascx.cs" Inherits="SPKTWeb.Friends.UserControl.FriendList" %>
 <div id="boxfriend">
     <div class="menu_link">
-        <a href="~/Profiles/UserProfile.aspx?AccountID=<asp:Literal id='litAccountID' runat='server'></asp:Literal>">
+        <a href="~/Profiles/UserProfile2.aspx?AccountID=<asp:Literal id='litAccountID' runat='server'></asp:Literal>">
         <asp:Image style="padding:5px; margin-top: 4px;" ImageAlign="Left" 
             ID="imgAvatar" 
             runat="server" CssClass="img" /></a>

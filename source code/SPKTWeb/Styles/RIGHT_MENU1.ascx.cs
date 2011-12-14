@@ -46,10 +46,7 @@ namespace SPKTWeb.Styles
             pn5.Visible = false;
         }
 
-        protected void bt_add_Click(object sender, EventArgs e)
-        {
 
-        }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -60,6 +57,26 @@ namespace SPKTWeb.Styles
             {
             }
             pn5.Visible = true;
+        }
+
+        protected void lkbtnAllGroup_Click(object sender, EventArgs e)
+        {
+            _redirector.Redirect("~/Groups/ViewAllGroup.aspx");
+        }
+
+        protected void lkbtnMyGroup_Click(object sender, EventArgs e)
+        {
+            _redirector.Redirect("~/Groups/MyGroups.aspx");
+        }
+
+        protected void bt_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lkbtnCategory_Click(object sender, EventArgs e)
+        {
+            _redirector.Redirect("~/Forums/Forum.aspx");
         }
     }
 }

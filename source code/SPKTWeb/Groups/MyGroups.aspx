@@ -1,0 +1,111 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyGroups.aspx.cs" Inherits="SPKTWeb.Groups.MyGroups" EnableEventValidation="false" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+        <style type="text/css">
+            .divMain
+            {
+                width:600px;
+                height: auto;
+                background-color:#CCFFCC;
+                border-color: Blue;
+            }
+        .accordionHeader
+        {
+            border: 1px solid #2F4F4F;
+            color: white;
+            background-color: #5078B3;
+            font-family: Arial, Sans-Serif;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+            .divContainer
+            {
+               margin: 5px;
+            }
+            .divtitle
+            {
+                color: Gray;
+                font-size:x-large;
+                text-align:center;
+            }
+        .divContainerCell { display: block; text-align:left; }
+        .divContainerFooter { text-align:right; }
+        .divContainerTitle {margin-bottom:5px;background-color:#d8dfea;color:Teal;border-bottom:solid 1px #a3bdef;border-top:solid 1px #5c76a4; font-weight:bold;text-align:left;padding-bottom:5px;padding-top:5px;padding-left:5px;}
+        .divContainerCellHeader {display:block; height:100%;padding-right:5px; width:150px;text-align:right;font-weight:bold;float:left; }
+        .divInnerRowHeader {text-align: right; width: 100px; font-size: 10px; color: #000000; font-weight:bold; float:left; padding-right: 5px; }
+        .divInnerRowCell { width: 100%; font-size: 10px; color: #000000; padding-left: 5px; }
+        .divContainerHelpText { font-size:10px; color:#777777; font-weight:normal; }
+        .divContainerSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
+        .Wizard { width:90%;padding:10px 10px 10px 10px; }
+        .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
+        .divContent{margin:5px;}
+    </style>
+</head>
+<body>&nbsp;<form id="form1" runat="server">
+    <div class="divMain">
+    <div class="divContainer">
+        <div class="divContainerBox">
+            <div class="divContainerRow">
+              
+                <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
+                
+ <asp:ListView id="lvGroups" runat="server" OnItemDataBound="lvGroups_ItemDataBound">
+                    <LayoutTemplate>
+                        <ul class="groupsList">
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                        </ul>
+                    </LayoutTemplate>
+                    
+                    <ItemTemplate>
+                   
+                   <div style="width:100%;">
+                     
+                            <asp:Literal Visible="false" ID="litImageID" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).FileID %>'></asp:Literal>
+                            <asp:Literal ID="litPageName" Visible="false" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).PageName %>'></asp:Literal>
+                            <div>
+                                <div style="float:left;">
+                                    <div style="float:left;">
+                                        <div>
+                                        <asp:LinkButton OnClick="lbPageName_Click" id="lbPageName" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).Name %>'></asp:LinkButton>
+                                        </div>
+                                        <asp:Image ID="imgGroupImage" Width="60px" Height="60px" runat="server" />
+                                    </div>
+                                    <div >
+                                        <br />
+                                        Ngày tạo:<asp:Label ID="Label1" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).CreateDate %>' runat="server"></asp:Label><br />
+                                        Mô tả:<asp:Label ID="lbl" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).MemberCount %>' runat="server"></asp:Label><br />
+                                        Số lượng thành viên:<asp:Label ID="Label2" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).Description %>' runat="server"></asp:Label>
+                                    </div>
+                                </div>
+                                
+                                <div style="text-align:right;"><asp:ImageButton Width="20px" Height="20px" ID="ibDelete" OnClick="ibDelete_Click" runat="server" ImageUrl="~/image/icon_close.gif" />
+                                <asp:ImageButton Width="20px" Height="20px" ID="ibEdit" OnClick="ibEdit_Click" runat="server" ImageUrl="~/image/pencil.jpg" />
+                                </div>
+                            </div>  
+                         <asp:Literal Visible="false" ID="litGroupID" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).GroupID %>'></asp:Literal>
+                        </div>
+                        <br />
+                        <img width="100%" alt="k" height="2px" id="img2" src="../../Image/bground2.gif" />
+                        
+                       </div>
+                    </ItemTemplate>
+                    
+                    <EmptyDataTemplate>
+                        
+                    </EmptyDataTemplate>
+                </asp:ListView>
+               
+            </div>
+        </div>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

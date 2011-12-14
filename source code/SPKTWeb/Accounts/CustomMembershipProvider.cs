@@ -9,7 +9,7 @@ using SPKTWeb.Accounts.Presenter;
 
 namespace SPKTWeb
 {
-    public class CustomMembershipProvider:MembershipProvider
+    public class CustomMembershipProvider : System.Web.Security.MembershipProvider
     {
         public override bool EnablePasswordReset
         {

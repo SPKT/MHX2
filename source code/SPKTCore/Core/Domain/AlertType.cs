@@ -21,7 +21,10 @@ namespace SPKTCore.Core.Domain
             ProfileCreated = 9,
             CreatedBlog=10,
             AccountCreated=11,
-            AccountModified=12
+            AccountModified=12,
+            NewBoardPost=13,
+            NewBoardThread=14,
+            NewBlogPost=15
         }
     }
 }

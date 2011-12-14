@@ -18,6 +18,9 @@ namespace SPKTCore.Core
         void Logout();
         void Register(Account a, string permission);
         Account GetAccountByAccountID(Int32 accountID);
-       
+        bool IsAccountExisted(string username);
+        
+        void ImportAccount(string username, string email);
+        void SetLogedIn(string username);
     }
 }

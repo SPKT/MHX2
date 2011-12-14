@@ -2,9 +2,15 @@
 
 <%@ Register Src="~/UserControl/Comments.ascx" TagName="Comment" TagPrefix="uc2" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
+<%@ Register Src="~/Styles/RIGHT_MENU1.ascx" TagName="rightmenu" TagPrefix="uc5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="content6" ContentPlaceHolderID="right1" runat="server"></asp:Content>
+<asp:Content ID="content6" ContentPlaceHolderID="right1" runat="server">
+   
+    <div>
+       <uc5:rightmenu ID="uc" runat="server" />
+    </div>
+</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
 <div runat="server" id="divMain">
         <div>

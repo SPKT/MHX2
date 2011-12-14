@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.master" AutoEventWireup="true" CodeBehind="ViewProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ViewProfile" %>
+ <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .winzard
@@ -8,7 +9,7 @@
             padding:0;
             }
         #scroll_box {   height:467px; 
-                          display: auto; 
+                         
                             border: 1px solid #CCCCCC; 
                               margin: 0em 0 1em 0; 
                               overflow:scroll; 
@@ -30,27 +31,15 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="right" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="left" runat="server">
-<div  style="background-color:White;  height:462px;">
-        
-            <img id="imgAvatar" src="~/Image/ProfileAvatar.aspx" alt="test image" width="145"
-                height="100" runat="server" style="border: 2px solid #FFCCFF" />
-           <div style="border-top-color:Blue">
-                <asp:Label ID="lblDisplayProfileName" ForeColor="Aqua" runat="server"></asp:Label>
-            </div>
-            <div class="buttonlink">
-                <a href="UploadAvatar.aspx" id="lnkChangeAvatar" runat="server" style="border-top-color:Blue">Đối Avatar</a>
-            </div>
-
-            <div class="buttonlink">
-                <a href="ManageProfile.aspx" runat="server" id="lnkManageProfile">Thay đổi thông tin</a>
-            </div>
-
-        </div>
+   <div>
+        <uc4:menu ID="menu" runat="server" />
+    </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
        
-    <div style="background-color:White; height: 469px;">
-   <div class="winzard" id="scroll_box">
+   <div style="background-color:White; height: 469px;">
+   
+   <div class="winzard">
         <asp:Wizard CssClass="winzard"  EnableViewState="true" ID="Wizard1" 
             runat="server" ActiveStepIndex="0" 
             CellPadding="10" FinishCompleteButtonText="Hết" 
@@ -61,8 +50,28 @@
                 <asp:Panel ID="Panel1" runat="server">
                     <a style=" color: #FF0000; font-size: x-large; font-weight: bold; outline-color:invert"></a>
                     <br />
-    
-                    <table border="0"">
+                    <div class="divContainerTitle">
+                        Tên Tài Khoản <div class="divContainerRow"><asp:Label  ID="lblProfileName" ForeColor="Coral" Width="286px" runat="server" 
+                                         ></asp:Label></div> 
+                    </div>
+                    <div class="divContainerTitle">
+                        Tên Thật <div class="divContainerRow"> <asp:Label ID="lblTenThat" runat="server" ForeColor="Coral" Width="286px"
+                                        ></asp:Label></div>
+                    </div>
+                    <div class="divContainerTitle">
+                        Ngày Sinh <div class="divContainerRow"> <asp:Label ID="lblNgaySinh" runat="server"  ForeColor="Coral" Width="286px"
+                                     ></asp:Label></div>
+                    </div>
+                    <div class="divContainerTitle">
+                        Giới Tính <div class="divContainerRow"> <asp:Label ID="lblSex" runat="server"  ForeColor="Coral" Width="286px"
+                          
+                                     ></asp:Label></div>
+                    </div>
+                    <div class="divContainerTitle">
+                        Chữ Ký <div class="divContainerRow"><asp:Label ID="lblChuKy" runat="server" ForeColor="Coral" Width="286px"
+                                        ></asp:Label></div>
+                    </div>
+<%--                    <table border="0"">
                         <caption>
                             <tr class="divContainerTitle" >
                                 <td align="left"  style=" font-size: large;">
@@ -108,7 +117,7 @@
                                 </td>
                             </tr>
                         </caption>
-                </table>
+                </table>--%>
                 </asp:Panel>
             </asp:WizardStep>
             <asp:wizardStep ID="WinzardStep2" runat="server" Title="Thôngtin">

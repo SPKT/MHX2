@@ -15,7 +15,7 @@
             background: none repeat scroll 0 0 #F5F5F5;
             border: 1px solid #E5E5E5;
 
-            width:auto;
+            width:100%;
             height:auto;
 }
     </style>
@@ -56,6 +56,7 @@
                            
                          </asp:UpdatePanel>
                         </td>
+
                        
 
                     </tr>
@@ -134,24 +135,7 @@
                                 ErrorMessage="Chưa nhập Captcha"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                   <tr>
-                        <td align="right" 
-                            style="color: #0000FF; font-size: large;" class="style106">
-                            Thuộc Nhóm:</td>
-                        <td align="left" class="style109">
-                        
-                            <asp:RadioButton ID="rdbCuuSinhVien" runat="server" ForeColor="#0000CC" Text="Cựu sinh viên" 
-                            />
-&nbsp;&nbsp;
-                            <asp:RadioButton ID="rdbGiaoVien" runat="server" ForeColor="#0000CC" Text="Giáo viên" 
-                              />
-&nbsp;&nbsp;
-                            <asp:RadioButton ID="rdbNguoiNgoai" runat="server" Checked="True" 
-                                ForeColor="#0000CC" Text="Người ngoài" 
-                              />
-                        
-                        </td>
-                    </tr>
+                
                    <tr>
                         <td class="style107">
                         </td>

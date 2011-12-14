@@ -32,5 +32,42 @@ namespace SPKTCore.Properties {
                 return ((string)(this["SPKTConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=SPKT;Integrated Security=True")]
+        public string SPKTConnectionString {
+            get {
+                return ((string)(this["SPKTConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int DefaultCacheDuration_Days {
+            get {
+                return ((int)(this["DefaultCacheDuration_Days"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DefaultCacheDuration_Hours {
+            get {
+                return ((int)(this["DefaultCacheDuration_Hours"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DefaultCacheDuration_Minutes {
+            get {
+                return ((int)(this["DefaultCacheDuration_Minutes"]));
+            }
+        }
     }
 }

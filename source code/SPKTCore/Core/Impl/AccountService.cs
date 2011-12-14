@@ -83,8 +83,10 @@ namespace SPKTCore.Core.Impl
             String message;
             return Login(Username, Password,out message );
         }
+
         public bool Login(string Username, string Password,out String returnMessage)
         {
+            
             Password = Password.Encrypt(Username);
             Account account = _accountRepository.GetAccountByUsername(Username);
 
@@ -95,9 +97,7 @@ namespace SPKTCore.Core.Impl
                 {
                     if (account.EmailVerified)
                     {
-                        _userSession.LoggedIn = true;
-                        _userSession.Username = Username;
-                        _userSession.CurrentUser = GetAccountByID(account.AccountID);
+                        SetLogedIn(Username);
                         returnMessage = "Đăng nhập thành công";
                         if (!string.IsNullOrEmpty(_webContext.FriendshipRequest))
                         {
@@ -147,6 +147,44 @@ namespace SPKTCore.Core.Impl
         {
             return _accountRepository.GetAccountByID(accountID);
             
+        }
+
+
+        public bool IsAccountExisted(string username)
+        {
+            Account account = _accountRepository.GetAccountByUsername(username);
+            if (account == null)
+                return false;
+            return true;
+        }
+
+
+
+        public void ImportAccount(string username, string email)
+        {
+            Account account = new Account();
+            account.UserName = username;
+            account.Email = email;
+            account.EmailVerified = true;
+            account.Password = "";
+            account.DisplayName = username;
+            account.UseAuthenticationService = true;
+            _accountRepository.SaveAccount(account);
+            Permission publicPermission = _permissionRepository.GetPermissionByName(EnumObject.User.ToString());
+            Permission registeredPermission = _permissionRepository.GetPermissionByName(EnumObject.Registered.ToString());
+            Account newAccount = _accountRepository.GetAccountByUsername(account.UserName);
+            _accountRepository.AddPermission(newAccount, publicPermission);
+            _accountRepository.AddPermission(newAccount, registeredPermission);
+
+        }
+
+        public void SetLogedIn(string Username)
+        {
+            Account account = _accountRepository.GetAccountByUsername(Username);
+            _userSession.LoggedIn = true;
+            _userSession.Username = Username;
+            _userSession.CurrentUser = GetAccountByID(account.AccountID);
+
         }
     }
 }

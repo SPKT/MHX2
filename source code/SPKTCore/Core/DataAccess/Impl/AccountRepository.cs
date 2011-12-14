@@ -7,6 +7,7 @@ using SPKTCore.Core.DataAccess.Impl;
 using SPKTCore.Core;
 using SPKTCore.Core.DataAccess;
 using SPKTCore.Core.Domain;
+using SPKTCore.Core.Impl;
 
 /// <summary>
 /// Summary description for AccountRepository
@@ -17,9 +18,11 @@ namespace SPKTCore.Core.DataAccess.Impl
     public class AccountRepository :IAccountRepository
     {
         private Connection conn;
+        private IConfiguration _configuration;
         public AccountRepository()
         {
             conn = new Connection();
+            _configuration = new Configuration();
 
         }
         public Account GetAccountByID(int AccountID)
@@ -97,19 +100,52 @@ namespace SPKTCore.Core.DataAccess.Impl
 
         public List<Account> GetAllAccounts(int PageNumber)
         {
-            throw new NotImplementedException();
+            List<Account> result = new List<Account>();
+
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                IEnumerable<Account> accounts = (from a in dc.Accounts
+                                                 orderby a.UserName
+                                                 select a).Skip((PageNumber - 1) * 10).Take(10);
+                result = accounts.ToList();
+            }
+
+            return result;
         }
 
         
 
         public List<Account> GetApprovedAccountsByGroupID(int GroupID, int PageNumber)
         {
-            throw new NotImplementedException();
+            List<Account> result = null;
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                //IEnumerable<Account> accounts = (from a in dc.Accounts
+                //                                 join m in dc.GroupMembers on a.AccountID equals m.AccountID
+                //                                 where m.GroupID == GroupID && m.IsApproved
+                //                                 select a).Skip((_configuration.NumberOfRecordsInPage * (PageNumber - 1)))
+                //                                 .Take(_configuration.NumberOfRecordsInPage);
+                IEnumerable<Account> accounts = (from a in dc.Accounts
+                                                 join m in dc.GroupMembers on a.AccountID equals m.AccountID
+                                                 where m.GroupID == GroupID && m.IsApproved
+                                                 select a).Skip((PageNumber - 1) * 10).Take(10);
+                result = accounts.ToList();
+            }
+            return result;
         }
 
         public List<Account> GetAccountsToApproveByGroupID(int GroupID)
         {
-            throw new NotImplementedException();
+            List<Account> result = null;
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                IEnumerable<Account> accounts = (from a in dc.Accounts
+                                                 join m in dc.GroupMembers on a.AccountID equals m.AccountID
+                                                 where m.GroupID == GroupID && !m.IsApproved
+                                                 select a);
+                result = accounts.ToList();
+            }
+            return result;
         }
         public List<Account> SearchAccounts(string SearchText)
         {

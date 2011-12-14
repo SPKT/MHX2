@@ -13,6 +13,15 @@ namespace SPKTWeb.Homes {
     public partial class Home {
         
         /// <summary>
+        /// uc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SPKTWeb.Styles.RIGHT_MENU1 uc;
+        
+        /// <summary>
         /// divMain control.
         /// </summary>
         /// <remarks>

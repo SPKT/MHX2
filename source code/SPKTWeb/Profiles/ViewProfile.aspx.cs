@@ -37,13 +37,13 @@ namespace SPKTWeb.Profiles
             if (profile != null)
             {
                 lblProfileName.Text = profile.profileName;
-                TenDayDu.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.FullName);
+                //TenDayDu.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.FullName);
                 lblTenThat.Text = profile.FullName;
-                NgaySinh.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.Birthday);
+                //NgaySinh.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.Birthday);
                 lblNgaySinh.Text = profile.Birthday.ToString();
-                NgaySinh.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.Signature);
+                //NgaySinh.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.Signature);
                 lblChuKy.Text = profile.Signature;
-                NgaySinh.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.Sex);
+                //NgaySinh.Visible = _presenter.IsAttributeVisible((int)PrivacyFlagType.PrivacyFlagTypes.Sex);
                 lblSex.Text = profile.Sex;
             }
         }
@@ -80,18 +80,18 @@ namespace SPKTWeb.Profiles
 
         public void DisplayAccountInfo(int viewerID, int accountID)
         {
-            imgAvatar.Src = "~/Image/ProfileAvatar.aspx?AccountID=" + accountID.ToString();
+            //imgAvatar.Src = "~/Image/ProfileAvatar.aspx?AccountID=" + accountID.ToString();
 
-            lnkChangeAvatar.Visible = (viewerID == accountID);
-            lnkManageProfile.Visible=(viewerID == accountID);
-            if (lnkChangeAvatar.Visible == true)
-                lblDisplayProfileName.Visible = false;
-            else
-                lblDisplayProfileName.Visible = true;
+            //lnkChangeAvatar.Visible = (viewerID == accountID);
+            //lnkManageProfile.Visible=(viewerID == accountID);
+            //if (lnkChangeAvatar.Visible == true)
+            //    lblDisplayProfileName.Visible = false;
+            //else
+            //    lblDisplayProfileName.Visible = true;
         }
         public void ShowProfileName(string profileName)
         {
-            lblDisplayProfileName.Text = profileName;
+            //lblDisplayProfileName.Text = profileName;
         }
 
         public void lbtnChangeAvatar_Click(object sender, EventArgs e)

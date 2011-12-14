@@ -41,9 +41,12 @@
       <HintPath>..\..\..\..\..\Desktop\Structure\deploy\StructureMap.AutoMocking.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,7 +59,12 @@
     <Compile Include="Core\DataAccess\IBlogRepository.cs" />
     <Compile Include="Core\DataAccess\IBoardCategoryRepository.cs" />
     <Compile Include="Core\DataAccess\IBoardForumRepository.cs" />
+    <Compile Include="Core\DataAccess\IBoardPostReponsitory.cs" />
     <Compile Include="Core\DataAccess\ICommentRepository.cs" />
+    <Compile Include="Core\DataAccess\IContentFilterRepository.cs" />
+    <Compile Include="Core\DataAccess\IFileRepository.cs" />
+    <Compile Include="Core\DataAccess\IFileSystemFolderRepository.cs" />
+    <Compile Include="Core\DataAccess\IFolderRepository.cs" />
     <Compile Include="Core\DataAccess\IFriendRepository.cs" />
     <Compile Include="Core\DataAccess\IGroupForumRepository.cs" />
     <Compile Include="Core\DataAccess\IGroupMemberRepository.cs" />
@@ -72,12 +80,27 @@
     <Compile Include="Core\DataAccess\Impl\BlogRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\BoardCategoryRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\BoardForumRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\BoardPostReponsitory.cs" />
     <Compile Include="Core\DataAccess\Impl\CommentRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\Connection.cs" />
     <Compile Include="Core\DataAccess\IAccountRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\ContentFilterRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\EnumObject.cs" />
-    <Compile Include="Core\DataAccess\IConfiguration.cs" />
     <Compile Include="Core\DataAccess\IFriendInvitationRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\FileRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\FileSystemFolderRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\FolderRepository.cs" />
+    <Compile Include="Core\Domain\BoardPost.cs" />
+    <Compile Include="Core\Domain\File.cs" />
+    <Compile Include="Core\Domain\FileSystemFolder.cs" />
+    <Compile Include="Core\ICache.cs" />
+    <Compile Include="Core\IConfiguration.cs" />
+    <Compile Include="Core\IContentFilterService.cs" />
+    <Compile Include="Core\IFileService.cs" />
+    <Compile Include="Core\Impl\Cache.cs" />
+    <Compile Include="Core\Impl\Configuration.cs" />
+    <Compile Include="Core\Impl\ContentFilterService.cs" />
+    <Compile Include="Core\Impl\Extensions.cs" />
     <Compile Include="Core\DataAccess\Impl\FriendInvitationRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\FriendRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\GroupForumRepository.cs" />
@@ -109,7 +132,6 @@
     <Compile Include="Core\Domain\Folder.cs" />
     <Compile Include="Core\Domain\Friend.cs" />
     <Compile Include="Core\Domain\Group.cs" />
-    <Compile Include="Core\Domain\GroupTypes.cs" />
     <Compile Include="Core\Domain\MessageFolder.cs" />
     <Compile Include="Core\Domain\MessageRecipientType.cs" />
     <Compile Include="Core\Domain\MessageStatusType.cs" />
@@ -139,7 +161,7 @@
     <Compile Include="Core\Impl\BoardService.cs" />
     <Compile Include="Core\Impl\Captcha.cs" />
     <Compile Include="Core\Impl\Cryptography.cs" />
-    <Compile Include="Core\Impl\Extendsion.cs" />
+    <Compile Include="Core\Impl\FileService.cs" />
     <Compile Include="Core\Impl\FriendService.cs" />
     <Compile Include="Core\Impl\GroupService.cs" />
     <Compile Include="Core\Impl\MessageService.cs" />
@@ -170,6 +192,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Core\Domain\SPKT.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>SPKT.designer.cs</LastGenOutput>
@@ -193,6 +217,9 @@
     <None Include="Core\Domain\SPKT.dbml.layout">
       <DependentUpon>SPKT.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,15 +17,6 @@ namespace SPKTWeb.Accounts.UserControl
             _presenter.Init(this, IsPostBack);
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void ShowMessage(string Message)
-        {
-            // lblErrorMessage.Text = Message;
-        }
 
         public void LoadCurrentInformation(SPKTCore.Core.Domain.Account account)
         {
@@ -41,9 +32,11 @@ namespace SPKTWeb.Accounts.UserControl
         {
             _presenter.SaveChangeTenHienThi(txtTenHienThi.Text);
         }
+        
 
         protected void btnSavePass_Click(object sender, EventArgs e)
         {
+            //TODO: Can lam lai
             _presenter.SaveChangePassword(txtOlaPass.Text, txtNewPass.Text);
         }
 
@@ -62,6 +55,23 @@ namespace SPKTWeb.Accounts.UserControl
         public void ShowErrorSaveEmail(string Message)
         {
             lblErrorpass.Text = Message;
+        }
+
+
+        public void DisplayAuthentical(bool p)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public void ShowDisplayname(string Message)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowUseAuthen(string Message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

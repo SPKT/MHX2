@@ -54,6 +54,11 @@ namespace SPKTWeb
 
             _redirector.Redirect("~/Friends/ShowFriend.aspx");
         }
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            _presenter.Logout();
+            _redirector.Redirect("~/Accounts/Login.aspx");
+        }
         protected void lb_info_Click(object sender, EventArgs e)
         {
             _redirector.GoToHomePage();

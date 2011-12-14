@@ -15,6 +15,7 @@ namespace SPKTCore.Core.Impl
         private IWebContext _webContext;
         private IFriendRepository _friendRepository;
         private IAccountRepository _accountRepository;
+        private IGroupMemberRepository _groupMemberRepository;
         private Account account;
         private Alert alert;
         private string alertMessage;
@@ -27,6 +28,7 @@ namespace SPKTCore.Core.Impl
             _friendRepository = new FriendRepository();
             alert = new Alert();
             _accountRepository = new AccountRepository();
+            _groupMemberRepository = new GroupMemberRepository();
         }
 
         private void Init()
@@ -102,17 +104,7 @@ namespace SPKTCore.Core.Impl
             return "<img width=\"50\" height=\"50\" src=\"~/image/ProfileAvatar.aspx?AccountID=" +
                    AccountID.ToString() + "&w=50&h=50\" align=\"absmiddle\">";
         }
-        private void SendAlertToFriends(Alert alert)
-        {
-            List<Friend> friends = _friendRepository.GetFriendsByAccountID(alert.AccountID);
-            foreach (Friend friend in friends)
-            {
-                alert.AlertID = 0;
-                
-                alert.AccountID = friend.MyFriendAccountID;
-                SaveAlert(alert);
-            }
-        }
+
         public void AddNewAvatarAlert()
         {
             Init();
@@ -181,5 +173,123 @@ namespace SPKTCore.Core.Impl
 
             return alerts;
         }
+        private void SendAlertToGroup(Alert alert, Group group)
+        {
+            List<int> groupMembers = _groupMemberRepository.GetMemberAccountIDsByGroupID(group.GroupID);
+            foreach (int id in groupMembers)
+            {
+                alert.AlertID = 0;
+                alert.AccountID = id;
+                SaveAlert(alert);
+            }
+        }
+
+        private void SendAlertToFriends(Alert alert)
+        {
+            List<Friend> friends = _friendRepository.GetFriendsByAccountID(alert.AccountID);
+            foreach (Friend friend in friends)
+            {
+                alert.AlertID = 0;
+                alert.AccountID = friend.MyFriendAccountID;
+                SaveAlert(alert);
+            }
+        }
+        public void AddNewBoardPostAlert(BoardCategory category, BoardForum forum, BoardPost post, BoardPost thread, Group group)
+        {
+            Init();
+            alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardPost;
+            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new post: <b>" +
+                           post.Name + "</b></div>";
+
+            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+                           "/" + forum.PageName + "/" + thread.PageName + ".aspx" + "\">" + _webContext.RootUrl +
+                           "forums/" + category.PageName + "/" + forum.PageName + "/" + thread.PageName +
+                           ".aspx</a></div>";
+            alert.Message = alertMessage;
+            SaveAlert(alert);
+            SendAlertToGroup(alert, group);
+        }
+
+
+        public void AddNewBoardThreadAlert(BoardCategory category, BoardForum forum, BoardPost post, Group group)
+        {
+            Init();
+            alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardThread;
+            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new thread on the board: <b>" +
+                           post.Name + "</b></div>";
+
+            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+                           "/" + forum.PageName + "/" + post.PageName + ".aspx" + "\">" + _webContext.RootUrl +
+                           "forums/" + category.PageName + "/" + forum.PageName + "/" + post.PageName +
+                           ".aspx</a></div>";
+            alert.Message = alertMessage;
+            SaveAlert(alert);
+            SendAlertToGroup(alert, group);
+        }
+
+        public void AddNewBoardPostAlert(BoardCategory category, BoardForum forum, BoardPost post, BoardPost thread)
+        {
+            Init();
+            alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardPost;
+            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new post: <b>" +
+                           post.Name + "</b></div>";
+
+            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+                           "/" + forum.PageName + "/" + thread.PageName + ".aspx" + "\">" + _webContext.RootUrl +
+                           "forums/" + category.PageName + "/" + forum.PageName + "/" + thread.PageName +
+                           ".aspx</a></div>";
+            alert.Message = alertMessage;
+            SaveAlert(alert);
+            SendAlertToFriends(alert);
+        }
+
+         public void AddNewBoardThreadAlert(BoardCategory category, BoardForum forum, BoardPost post)
+        {
+            Init();
+            alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardThread;
+            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new thread on the board: <b>" +
+                           post.Name + "</b></div>";
+
+            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+                           "/" + forum.PageName + "/" + post.PageName + ".aspx" + "\">" + _webContext.RootUrl +
+                           "forums/" + category.PageName + "/" + forum.PageName + "/" + post.PageName +
+                           ".aspx</a></div>";
+            alert.Message = alertMessage;
+            SaveAlert(alert);
+            SendAlertToFriends(alert);
+        }
+
+          public void AddNewBlogPostAlert(Blog blog)
+        {
+            alert = new Alert();
+            alert.CreateDate = DateTime.Now;
+            alert.AccountID = _userSession.CurrentUser.AccountID;
+            alert.AlertTypeID = (int)AlertType.AlertTypes.NewBlogPost;
+            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new blog post: <b>" +
+                           blog.Title + "</b></div>";
+            alert.Message = alertMessage;
+            SaveAlert(alert);
+            SendAlertToFriends(alert);
+        }
+
+        public void AddUpdatedBlogPostAlert(Blog blog)
+        {
+            alert = new Alert();
+            alert.CreateDate = DateTime.Now;
+            alert.AccountID = _userSession.CurrentUser.AccountID;
+            alert.AlertTypeID = (int)AlertType.AlertTypes.NewBlogPost;
+            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has updated the <b>" + blog.Title +
+                           "</b> blog post!</div>";
+            alert.Message = alertMessage;
+            SaveAlert(alert);
+            SendAlertToFriends(alert);
+        }
+
     }
 }

@@ -19,12 +19,7 @@ namespace SPKTWeb.Accounts
         {
             _Presenter=new RegisterPresenter();
             _Presenter.Init(this);
-            if (rdbCuuSinhVien.Checked == true)
-                DoiTuong = EnumObject.User;
-            else if (rdbGiaoVien.Checked == true)
-                DoiTuong = EnumObject.User;
-            else if (rdbNguoiNgoai.Checked == true)
-                DoiTuong = EnumObject.OutUser;
+            DoiTuong = EnumObject.OutSider;
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)

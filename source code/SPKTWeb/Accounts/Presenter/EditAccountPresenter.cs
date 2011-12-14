@@ -8,6 +8,7 @@ using SPKTCore.Core.DataAccess;
 using StructureMap;
 using SPKTCore.Core.Impl;
 using SPKTCore.Core.Domain;
+using SPKTCore.Core.DataAccess.Impl;
 
 namespace SPKTWeb.Accounts.Presenter
 {
@@ -20,13 +21,14 @@ namespace SPKTWeb.Accounts.Presenter
         private Account account;
         private IRedirector _redirector;
         private IEmail _email;
-
+        private IPermissionRepository _permissionRepository;
         public EditAccountPresenter()
         {
             _userSession = new UserSession();
             _accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
             _redirector = new Redirector();
             _accountService = new AccountService();
+            _permissionRepository = new PermissionRepository();
             _email = new Email();       
         }
 
@@ -36,14 +38,23 @@ namespace SPKTWeb.Accounts.Presenter
             if (_userSession.LoggedIn)
             {
                 if (_userSession.CurrentUser != null)
-                
+                {
                     account = _userSession.CurrentUser;
+                    List<Permission> permissions = _permissionRepository.GetPermissionsByAccountID(_userSession.CurrentUser.AccountID);
+                    foreach (Permission p in permissions)
+                    {
+                        if (_permissionRepository.GetPermissionByName("OutSider").PermissionID == p.PermissionID)
+                            _view.DisplayAuthentical(false);
+                    }
+                }
                 else
                     _redirector.GoToAccountLoginPage();
 
                 if (!IsPostBack)
                     LoadCurrentUser();
             }
+            else
+            _redirector.GoToAccountLoginPage();
         }
 
         private void LoadCurrentUser()
@@ -60,28 +71,86 @@ namespace SPKTWeb.Accounts.Presenter
         {
             account.DisplayName = tenHienThi;
             _accountRepository.SaveAccount(account);
+            _view.ShowDisplayname("Thay đổi thành công");
         }
 
-        public void SaveChangePassword( string oldPass,  string newPass)
+        public void SaveChangePassword(string oldPass, string newPass)
         {
-            if (account.Password.Decrypt(account.UserName) == oldPass)
+            if (account.UseAuthenticationService!=null && ((bool)account.UseAuthenticationService))
             {
-                account.Password = newPass.Encrypt(account.UserName);
-                _accountRepository.SaveAccount(account);
+                try
+                {
+                    DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
+                    if (service.ValidateUser(account.UserName, oldPass))
+                    {
+                        account.Password = newPass;
+                        _accountRepository.SaveAccount(account);
+                        _view.ShowErrorSavePass("Đã thay đổi thành công");
+                    }
+                    else
+                        _view.ShowErrorSavePass("Mật khẩu nhập vào không đúng");
+                }
+                catch (Exception e)
+                {
+                    return;
+                }
+
             }
             else
-                _view.ShowErrorSavePass("Mật khẩu cũ nhập vào không đúng");
+
+                if (account.Password.Decrypt(account.UserName) == oldPass)
+                {
+                    account.Password = newPass.Encrypt(account.UserName);
+                    _accountRepository.SaveAccount(account);
+                    _view.ShowErrorSavePass("Đã thay đổi thành công");
+                }
+                else
+                    _view.ShowErrorSavePass("Mật khẩu cũ nhập vào không đúng");
         }
 
         public void SaveNewEmail(string email, string pass)
         {
-            if (account.Password.Decrypt(account.UserName) == pass)
+            if (account.UseAuthenticationService != null && ((bool)account.UseAuthenticationService))
             {
-                account.Email = email;
-                _accountRepository.SaveAccount(account);
+                try
+                {
+                    DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
+                    if (service.ValidateUser(account.UserName, pass))
+                    {
+                        account.Email = email;
+                        _accountRepository.SaveAccount(account);
+                        _view.ShowErrorSaveEmail("Thay đổi thành công");
+                    }
+                    else
+                        _view.ShowErrorSaveEmail("Mật khẩu nhập vào không đúng");
+                }
+                catch (Exception e)
+                {
+                    return;
+                }
+
             }
             else
-                _view.ShowErrorSaveEmail("Mật khẩu cũ nhập vào không đúng");
+                if (account.Password.Decrypt(account.UserName) == pass)
+                {
+                    account.Email = email;
+                    _accountRepository.SaveAccount(account);
+                    _view.ShowErrorSaveEmail("Thay đổi thành công");
+                }
+                else
+                    _view.ShowErrorSaveEmail("Mật khẩu cũ nhập vào không đúng");
+        }
+
+        internal void SaveChangeUserAuthentication(bool p)
+        {
+            if (p == false && account.Password == "")
+                _view.ShowUseAuthen("Bạn phải đổi mật khẩu trước khi chọn kiểu chứng thực này");
+            else
+            {
+                account.UseAuthenticationService = p;
+                _accountRepository.SaveAccount(account);
+                _view.ShowUseAuthen("Thay đổi thành công");
+            }
         }
     }
 }

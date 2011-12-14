@@ -18,17 +18,21 @@ namespace SPKTWeb.Forums.Presenter
         private IRedirector _redirector;
         private IBoardForumRepository _forumRepository;
         private IBoardCategoryRepository _categoryRepository;
+        private IWebContext _webContext;
         public ForumPresenter()
         {
+            
             _boardService = new BoardService();
             _forumRepository =new BoardForumRepository();
             _categoryRepository = new BoardCategoryRepository();
             _redirector = new Redirector();
+            _webContext = new WebContext();
         }
 
         public void Init(IForum View)
         {
             _view = View;
+            bool IsLogin = _webContext.LoggedIn;
             _view.LoadCategories(_boardService.GetCategoriesWithForums());
         }
 

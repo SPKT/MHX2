@@ -22,24 +22,6 @@ namespace SPKTWeb.Accounts {
         protected global::SPKTWeb.Styles.LEFT_MENU menu;
         
         /// <summary>
-        /// Accordion1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.Accordion Accordion1;
-        
-        /// <summary>
-        /// AccordionPane1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane1;
-        
-        /// <summary>
         /// lblUserName control.
         /// </summary>
         /// <remarks>
@@ -56,15 +38,6 @@ namespace SPKTWeb.Accounts {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbluser;
-        
-        /// <summary>
-        /// AccordionPane2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane2;
         
         /// <summary>
         /// lblOldTenHienThi control.
@@ -103,13 +76,22 @@ namespace SPKTWeb.Accounts {
         protected global::System.Web.UI.WebControls.Button btnSaveTenHienThi;
         
         /// <summary>
-        /// AccordionPane3 control.
+        /// lblDisplaynameMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane3;
+        protected global::System.Web.UI.WebControls.Label lblDisplaynameMessage;
+        
+        /// <summary>
+        /// lblAuthentication control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAuthentication;
         
         /// <summary>
         /// lblOldPass control.
@@ -157,22 +139,13 @@ namespace SPKTWeb.Accounts {
         protected global::System.Web.UI.WebControls.Button btnSavePass;
         
         /// <summary>
-        /// lblError control.
+        /// lblErrorpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
-        
-        /// <summary>
-        /// AccordionPane4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane4;
+        protected global::System.Web.UI.WebControls.Label lblErrorpass;
         
         /// <summary>
         /// lblEmail control.
@@ -229,12 +202,66 @@ namespace SPKTWeb.Accounts {
         protected global::System.Web.UI.WebControls.Button btnSaveNewEmail;
         
         /// <summary>
-        /// lblErrorpass control.
+        /// lblEmailMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorpass;
+        protected global::System.Web.UI.WebControls.Label lblEmailMessage;
+        
+        /// <summary>
+        /// pnlUseAuthen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlUseAuthen;
+        
+        /// <summary>
+        /// lbl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl1;
+        
+        /// <summary>
+        /// rdbUseDKMH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdbUseDKMH;
+        
+        /// <summary>
+        /// rdbUseMXH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdbUseMXH;
+        
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
+        
+        /// <summary>
+        /// lblUseAuthen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUseAuthen;
     }
 }

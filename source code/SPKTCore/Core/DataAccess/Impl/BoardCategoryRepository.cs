@@ -35,13 +35,12 @@ namespace SPKTCore.Core.DataAccess.Impl
             return category;
         }
 
-        //CHAPTER 10
         public List<BoardCategory> GetAllCategories()
         {
             List<BoardCategory> result;
             using (SPKTDataContext dc = _conn.GetContext())
             {
-                IEnumerable<BoardCategory> categories = dc.BoardCategories.Where(c => c.CategoryID != 4); //don't get the groups category
+                IEnumerable<BoardCategory> categories = dc.BoardCategories.Where(c => c.CategoryID != 8); //don't get the groups category
                 result = categories.ToList();
             }
             return result;
@@ -49,6 +48,7 @@ namespace SPKTCore.Core.DataAccess.Impl
 
         public Int32 SaveCategory(BoardCategory category)
         {
+            category.UpdateDate = DateTime.Now;
             using (SPKTDataContext dc = _conn.GetContext())
             {
                 if (category.CategoryID > 0)
@@ -63,9 +63,10 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return category.CategoryID;
         }
-
+        
         public void DeleteCategory(BoardCategory category)
         {
+            
             using (SPKTDataContext dc = _conn.GetContext())
             {
                 dc.BoardCategories.Attach(category, true);

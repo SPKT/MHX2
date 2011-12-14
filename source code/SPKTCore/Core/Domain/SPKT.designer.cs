@@ -30,9 +30,6 @@ namespace SPKTCore.Core.Domain
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertAccount(Account instance);
-    partial void UpdateAccount(Account instance);
-    partial void DeleteAccount(Account instance);
     partial void InsertAccountPermission(AccountPermission instance);
     partial void UpdateAccountPermission(AccountPermission instance);
     partial void DeleteAccountPermission(AccountPermission instance);
@@ -114,6 +111,15 @@ namespace SPKTCore.Core.Domain
     partial void InsertGroupType(GroupType instance);
     partial void UpdateGroupType(GroupType instance);
     partial void DeleteGroupType(GroupType instance);
+    partial void InsertBlog(Blog instance);
+    partial void UpdateBlog(Blog instance);
+    partial void DeleteBlog(Blog instance);
+    partial void InsertGroupForum(GroupForum instance);
+    partial void UpdateGroupForum(GroupForum instance);
+    partial void DeleteGroupForum(GroupForum instance);
+    partial void InsertContentFilter(ContentFilter instance);
+    partial void UpdateContentFilter(ContentFilter instance);
+    partial void DeleteContentFilter(ContentFilter instance);
     partial void InsertBoardCategory(BoardCategory instance);
     partial void UpdateBoardCategory(BoardCategory instance);
     partial void DeleteBoardCategory(BoardCategory instance);
@@ -123,12 +129,24 @@ namespace SPKTCore.Core.Domain
     partial void InsertBoardPost(BoardPost instance);
     partial void UpdateBoardPost(BoardPost instance);
     partial void DeleteBoardPost(BoardPost instance);
-    partial void InsertBlog(Blog instance);
-    partial void UpdateBlog(Blog instance);
-    partial void DeleteBlog(Blog instance);
-    partial void InsertGroupForum(GroupForum instance);
-    partial void UpdateGroupForum(GroupForum instance);
-    partial void DeleteGroupForum(GroupForum instance);
+    partial void InsertFile(File instance);
+    partial void UpdateFile(File instance);
+    partial void DeleteFile(File instance);
+    partial void InsertFileSystemFolder(FileSystemFolder instance);
+    partial void UpdateFileSystemFolder(FileSystemFolder instance);
+    partial void DeleteFileSystemFolder(FileSystemFolder instance);
+    partial void InsertFileType(FileType instance);
+    partial void UpdateFileType(FileType instance);
+    partial void DeleteFileType(FileType instance);
+    partial void InsertFolder(Folder instance);
+    partial void UpdateFolder(Folder instance);
+    partial void DeleteFolder(Folder instance);
+    partial void InsertFolderType(FolderType instance);
+    partial void UpdateFolderType(FolderType instance);
+    partial void DeleteFolderType(FolderType instance);
+    partial void InsertAccount(Account instance);
+    partial void UpdateAccount(Account instance);
+    partial void DeleteAccount(Account instance);
     #endregion
 		
 		public SPKTDataContext() : 
@@ -159,14 +177,6 @@ namespace SPKTCore.Core.Domain
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Account> Accounts
-		{
-			get
-			{
-				return this.GetTable<Account>();
-			}
 		}
 		
 		public System.Data.Linq.Table<AccountPermission> AccountPermissions
@@ -393,6 +403,30 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
+		public System.Data.Linq.Table<Blog> Blogs
+		{
+			get
+			{
+				return this.GetTable<Blog>();
+			}
+		}
+		
+		public System.Data.Linq.Table<GroupForum> GroupForums
+		{
+			get
+			{
+				return this.GetTable<GroupForum>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ContentFilter> ContentFilters
+		{
+			get
+			{
+				return this.GetTable<ContentFilter>();
+			}
+		}
+		
 		public System.Data.Linq.Table<BoardCategory> BoardCategories
 		{
 			get
@@ -417,694 +451,66 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		public System.Data.Linq.Table<Blog> Blogs
+		public System.Data.Linq.Table<File> Files
 		{
 			get
 			{
-				return this.GetTable<Blog>();
+				return this.GetTable<File>();
 			}
 		}
 		
-		public System.Data.Linq.Table<GroupForum> GroupForums
+		public System.Data.Linq.Table<FileSystemFolder> FileSystemFolders
 		{
 			get
 			{
-				return this.GetTable<GroupForum>();
+				return this.GetTable<FileSystemFolder>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
-	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _AccountID;
-		
-		private string _UserName;
-		
-		private string _DisplayName;
-		
-		private string _Password;
-		
-		private string _Email;
-		
-		private bool _EmailVerified;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<System.DateTime> _LastUpdateDate;
-		
-		private System.Data.Linq.Binary _Timestamp;
-		
-		private EntitySet<AccountPermission> _AccountPermissions;
-		
-		private EntitySet<Alert> _Alerts;
-		
-		private EntitySet<Comment> _Comments;
-		
-		private EntitySet<Friend> _Friends;
-		
-		private EntitySet<Friend> _Friends1;
-		
-		private EntitySet<FriendInvitation> _FriendInvitations;
-		
-		private EntitySet<Message> _Messages;
-		
-		private EntitySet<MessageRecipient> _MessageRecipients;
-		
-		private EntitySet<Profile> _Profiles;
-		
-		private EntitySet<StatusUpdate> _StatusUpdates;
-		
-		private EntitySet<StatusUpdate> _StatusUpdates1;
-		
-		private EntitySet<GroupMember> _GroupMembers;
-		
-		private EntitySet<Group> _Groups;
-		
-		private EntitySet<BoardPost> _BoardPosts;
-		
-		private EntitySet<Blog> _Blogs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnAccountIDChanging(int value);
-    partial void OnAccountIDChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnDisplayNameChanging(string value);
-    partial void OnDisplayNameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnEmailVerifiedChanging(bool value);
-    partial void OnEmailVerifiedChanged();
-    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreateDateChanged();
-    partial void OnLastUpdateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnLastUpdateDateChanged();
-    partial void OnTimestampChanging(System.Data.Linq.Binary value);
-    partial void OnTimestampChanged();
-    #endregion
-		
-		public Account()
-		{
-			this._AccountPermissions = new EntitySet<AccountPermission>(new Action<AccountPermission>(this.attach_AccountPermissions), new Action<AccountPermission>(this.detach_AccountPermissions));
-			this._Alerts = new EntitySet<Alert>(new Action<Alert>(this.attach_Alerts), new Action<Alert>(this.detach_Alerts));
-			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
-			this._Friends = new EntitySet<Friend>(new Action<Friend>(this.attach_Friends), new Action<Friend>(this.detach_Friends));
-			this._Friends1 = new EntitySet<Friend>(new Action<Friend>(this.attach_Friends1), new Action<Friend>(this.detach_Friends1));
-			this._FriendInvitations = new EntitySet<FriendInvitation>(new Action<FriendInvitation>(this.attach_FriendInvitations), new Action<FriendInvitation>(this.detach_FriendInvitations));
-			this._Messages = new EntitySet<Message>(new Action<Message>(this.attach_Messages), new Action<Message>(this.detach_Messages));
-			this._MessageRecipients = new EntitySet<MessageRecipient>(new Action<MessageRecipient>(this.attach_MessageRecipients), new Action<MessageRecipient>(this.detach_MessageRecipients));
-			this._Profiles = new EntitySet<Profile>(new Action<Profile>(this.attach_Profiles), new Action<Profile>(this.detach_Profiles));
-			this._StatusUpdates = new EntitySet<StatusUpdate>(new Action<StatusUpdate>(this.attach_StatusUpdates), new Action<StatusUpdate>(this.detach_StatusUpdates));
-			this._StatusUpdates1 = new EntitySet<StatusUpdate>(new Action<StatusUpdate>(this.attach_StatusUpdates1), new Action<StatusUpdate>(this.detach_StatusUpdates1));
-			this._GroupMembers = new EntitySet<GroupMember>(new Action<GroupMember>(this.attach_GroupMembers), new Action<GroupMember>(this.detach_GroupMembers));
-			this._Groups = new EntitySet<Group>(new Action<Group>(this.attach_Groups), new Action<Group>(this.detach_Groups));
-			this._BoardPosts = new EntitySet<BoardPost>(new Action<BoardPost>(this.attach_BoardPosts), new Action<BoardPost>(this.detach_BoardPosts));
-			this._Blogs = new EntitySet<Blog>(new Action<Blog>(this.attach_Blogs), new Action<Blog>(this.detach_Blogs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public int AccountID
+		public System.Data.Linq.Table<FileType> FileTypes
 		{
 			get
 			{
-				return this._AccountID;
-			}
-			set
-			{
-				if ((this._AccountID != value))
-				{
-					this.OnAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._AccountID = value;
-					this.SendPropertyChanged("AccountID");
-					this.OnAccountIDChanged();
-				}
+				return this.GetTable<FileType>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)", UpdateCheck=UpdateCheck.Never)]
-		public string UserName
+		public System.Data.Linq.Table<Folder> Folders
 		{
 			get
 			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
+				return this.GetTable<Folder>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(100)", UpdateCheck=UpdateCheck.Never)]
-		public string DisplayName
+		public System.Data.Linq.Table<FolderType> FolderTypes
 		{
 			get
 			{
-				return this._DisplayName;
-			}
-			set
-			{
-				if ((this._DisplayName != value))
-				{
-					this.OnDisplayNameChanging(value);
-					this.SendPropertyChanging();
-					this._DisplayName = value;
-					this.SendPropertyChanged("DisplayName");
-					this.OnDisplayNameChanged();
-				}
+				return this.GetTable<FolderType>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50)", UpdateCheck=UpdateCheck.Never)]
-		public string Password
+		public System.Data.Linq.Table<FolderFile> FolderFiles
 		{
 			get
 			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
+				return this.GetTable<FolderFile>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(150)", UpdateCheck=UpdateCheck.Never)]
-		public string Email
+		public System.Data.Linq.Table<Account> Accounts
 		{
 			get
 			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
+				return this.GetTable<Account>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailVerified", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public bool EmailVerified
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.IsFlagged", IsComposable=true)]
+		public System.Nullable<bool> IsFlagged([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemObjectID", DbType="Int")] System.Nullable<int> systemObjectID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemObjectRecordID", DbType="BigInt")] System.Nullable<long> systemObjectRecordID)
 		{
-			get
-			{
-				return this._EmailVerified;
-			}
-			set
-			{
-				if ((this._EmailVerified != value))
-				{
-					this.OnEmailVerifiedChanging(value);
-					this.SendPropertyChanging();
-					this._EmailVerified = value;
-					this.SendPropertyChanged("EmailVerified");
-					this.OnEmailVerifiedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime", UpdateCheck=UpdateCheck.Never)]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateDate", DbType="SmallDateTime", UpdateCheck=UpdateCheck.Never)]
-		public System.Nullable<System.DateTime> LastUpdateDate
-		{
-			get
-			{
-				return this._LastUpdateDate;
-			}
-			set
-			{
-				if ((this._LastUpdateDate != value))
-				{
-					this.OnLastUpdateDateChanging(value);
-					this.SendPropertyChanging();
-					this._LastUpdateDate = value;
-					this.SendPropertyChanged("LastUpdateDate");
-					this.OnLastUpdateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Timestamp
-		{
-			get
-			{
-				return this._Timestamp;
-			}
-			set
-			{
-				if ((this._Timestamp != value))
-				{
-					this.OnTimestampChanging(value);
-					this.SendPropertyChanging();
-					this._Timestamp = value;
-					this.SendPropertyChanged("Timestamp");
-					this.OnTimestampChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountPermission", Storage="_AccountPermissions", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<AccountPermission> AccountPermissions
-		{
-			get
-			{
-				return this._AccountPermissions;
-			}
-			set
-			{
-				this._AccountPermissions.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Alert", Storage="_Alerts", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<Alert> Alerts
-		{
-			get
-			{
-				return this._Alerts;
-			}
-			set
-			{
-				this._Alerts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Comment", Storage="_Comments", ThisKey="AccountID", OtherKey="CommentByAccountID")]
-		public EntitySet<Comment> Comments
-		{
-			get
-			{
-				return this._Comments;
-			}
-			set
-			{
-				this._Comments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend", Storage="_Friends", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<Friend> Friends
-		{
-			get
-			{
-				return this._Friends;
-			}
-			set
-			{
-				this._Friends.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend1", Storage="_Friends1", ThisKey="AccountID", OtherKey="MyFriendAccountID")]
-		public EntitySet<Friend> Friends1
-		{
-			get
-			{
-				return this._Friends1;
-			}
-			set
-			{
-				this._Friends1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_FriendInvitation", Storage="_FriendInvitations", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<FriendInvitation> FriendInvitations
-		{
-			get
-			{
-				return this._FriendInvitations;
-			}
-			set
-			{
-				this._FriendInvitations.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Message", Storage="_Messages", ThisKey="AccountID", OtherKey="SendByAccountID")]
-		public EntitySet<Message> Messages
-		{
-			get
-			{
-				return this._Messages;
-			}
-			set
-			{
-				this._Messages.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_MessageRecipient", Storage="_MessageRecipients", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<MessageRecipient> MessageRecipients
-		{
-			get
-			{
-				return this._MessageRecipients;
-			}
-			set
-			{
-				this._MessageRecipients.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Profile", Storage="_Profiles", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<Profile> Profiles
-		{
-			get
-			{
-				return this._Profiles;
-			}
-			set
-			{
-				this._Profiles.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_StatusUpdate", Storage="_StatusUpdates", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<StatusUpdate> StatusUpdates
-		{
-			get
-			{
-				return this._StatusUpdates;
-			}
-			set
-			{
-				this._StatusUpdates.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_StatusUpdate1", Storage="_StatusUpdates1", ThisKey="AccountID", OtherKey="SenderID")]
-		public EntitySet<StatusUpdate> StatusUpdates1
-		{
-			get
-			{
-				return this._StatusUpdates1;
-			}
-			set
-			{
-				this._StatusUpdates1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_GroupMember", Storage="_GroupMembers", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<GroupMember> GroupMembers
-		{
-			get
-			{
-				return this._GroupMembers;
-			}
-			set
-			{
-				this._GroupMembers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Group", Storage="_Groups", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<Group> Groups
-		{
-			get
-			{
-				return this._Groups;
-			}
-			set
-			{
-				this._Groups.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_BoardPost", Storage="_BoardPosts", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<BoardPost> BoardPosts
-		{
-			get
-			{
-				return this._BoardPosts;
-			}
-			set
-			{
-				this._BoardPosts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Blog", Storage="_Blogs", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<Blog> Blogs
-		{
-			get
-			{
-				return this._Blogs;
-			}
-			set
-			{
-				this._Blogs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_AccountPermissions(AccountPermission entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_AccountPermissions(AccountPermission entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Alerts(Alert entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Alerts(Alert entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Friends(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Friends(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Friends1(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account1 = this;
-		}
-		
-		private void detach_Friends1(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account1 = null;
-		}
-		
-		private void attach_FriendInvitations(FriendInvitation entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_FriendInvitations(FriendInvitation entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Messages(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Messages(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_MessageRecipients(MessageRecipient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_MessageRecipients(MessageRecipient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Profiles(Profile entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Profiles(Profile entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_StatusUpdates(StatusUpdate entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_StatusUpdates(StatusUpdate entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_StatusUpdates1(StatusUpdate entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account1 = this;
-		}
-		
-		private void detach_StatusUpdates1(StatusUpdate entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account1 = null;
-		}
-		
-		private void attach_GroupMembers(GroupMember entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_GroupMembers(GroupMember entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Groups(Group entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Groups(Group entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_BoardPosts(BoardPost entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_BoardPosts(BoardPost entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Blogs(Blog entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Blogs(Blog entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
+			return ((System.Nullable<bool>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), systemObjectID, systemObjectRecordID).ReturnValue));
 		}
 	}
 	
@@ -1122,9 +528,9 @@ namespace SPKTCore.Core.Domain
 		
 		private System.Data.Linq.Binary _Timestamp;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<Permission> _Permission;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1142,8 +548,8 @@ namespace SPKTCore.Core.Domain
 		
 		public AccountPermission()
 		{
-			this._Account = default(EntityRef<Account>);
 			this._Permission = default(EntityRef<Permission>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -1235,40 +641,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountPermission", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.AccountPermissions.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.AccountPermissions.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Permission_AccountPermission", Storage="_Permission", ThisKey="PermissionID", OtherKey="PermissionID", IsForeignKey=true)]
 		public Permission Permission
 		{
@@ -1299,6 +671,40 @@ namespace SPKTCore.Core.Domain
 						this._PermissionID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Permission");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountPermission", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.AccountPermissions.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.AccountPermissions.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -1344,9 +750,9 @@ namespace SPKTCore.Core.Domain
 		
 		private string _Message;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<AlertType> _AlertType;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1370,8 +776,8 @@ namespace SPKTCore.Core.Domain
 		
 		public Alert()
 		{
-			this._Account = default(EntityRef<Account>);
 			this._AlertType = default(EntityRef<AlertType>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -1503,7 +909,7 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(200)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(1000)", UpdateCheck=UpdateCheck.Never)]
 		public string Message
 		{
 			get
@@ -1519,40 +925,6 @@ namespace SPKTCore.Core.Domain
 					this._Message = value;
 					this.SendPropertyChanged("Message");
 					this.OnMessageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Alert", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Alerts.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Alerts.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -1587,6 +959,40 @@ namespace SPKTCore.Core.Domain
 						this._AlertTypeID = default(int);
 					}
 					this.SendPropertyChanged("AlertType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Alert", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Alerts.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Alerts.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -1748,9 +1154,9 @@ namespace SPKTCore.Core.Domain
 		
 		private long _SystemObjectRecordID;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<SystemObject> _SystemObject;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1776,8 +1182,8 @@ namespace SPKTCore.Core.Domain
 		
 		public Comment()
 		{
-			this._Account = default(EntityRef<Account>);
 			this._SystemObject = default(EntityRef<SystemObject>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -1949,40 +1355,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Comment", Storage="_Account", ThisKey="CommentByAccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Comments.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Comments.Add(this);
-						this._CommentByAccountID = value.AccountID;
-					}
-					else
-					{
-						this._CommentByAccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SystemObject_Comment", Storage="_SystemObject", ThisKey="SystemObjectID", OtherKey="SystemObjectID", IsForeignKey=true)]
 		public SystemObject SystemObject
 		{
@@ -2013,6 +1385,40 @@ namespace SPKTCore.Core.Domain
 						this._SystemObjectID = default(int);
 					}
 					this.SendPropertyChanged("SystemObject");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Comment", Storage="_Account", ThisKey="CommentByAccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Comments.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Comments.Add(this);
+						this._CommentByAccountID = value.AccountID;
+					}
+					else
+					{
+						this._CommentByAccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -2843,9 +2249,9 @@ namespace SPKTCore.Core.Domain
 		
 		private EntitySet<MessageRecipient> _MessageRecipients;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<MessageType> _MessageType;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2870,8 +2276,8 @@ namespace SPKTCore.Core.Domain
 		public Message()
 		{
 			this._MessageRecipients = new EntitySet<MessageRecipient>(new Action<MessageRecipient>(this.attach_MessageRecipients), new Action<MessageRecipient>(this.detach_MessageRecipients));
-			this._Account = default(EntityRef<Account>);
 			this._MessageType = default(EntityRef<MessageType>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -3036,40 +2442,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Message", Storage="_Account", ThisKey="SendByAccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Messages.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Messages.Add(this);
-						this._SendByAccountID = value.AccountID;
-					}
-					else
-					{
-						this._SendByAccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MessageType_Message", Storage="_MessageType", ThisKey="MessageTypeID", OtherKey="MessageTypeID", IsForeignKey=true)]
 		public MessageType MessageType
 		{
@@ -3100,6 +2472,40 @@ namespace SPKTCore.Core.Domain
 						this._MessageTypeID = default(int);
 					}
 					this.SendPropertyChanged("MessageType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Message", Storage="_Account", ThisKey="SendByAccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Messages.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Messages.Add(this);
+						this._SendByAccountID = value.AccountID;
+					}
+					else
+					{
+						this._SendByAccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -3343,13 +2749,13 @@ namespace SPKTCore.Core.Domain
 		
 		private System.Nullable<int> _MessageStatusTypeID;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<Message> _Message;
 		
 		private EntityRef<MessageFolder> _MessageFolder;
 		
 		private EntityRef<MessageRecipientType> _MessageRecipientType;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3373,10 +2779,10 @@ namespace SPKTCore.Core.Domain
 		
 		public MessageRecipient()
 		{
-			this._Account = default(EntityRef<Account>);
 			this._Message = default(EntityRef<Message>);
 			this._MessageFolder = default(EntityRef<MessageFolder>);
 			this._MessageRecipientType = default(EntityRef<MessageRecipientType>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -3536,40 +2942,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_MessageRecipient", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.MessageRecipients.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.MessageRecipients.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Message_MessageRecipient", Storage="_Message", ThisKey="MessageID", OtherKey="MessageID", IsForeignKey=true)]
 		public Message Message
 		{
@@ -3668,6 +3040,40 @@ namespace SPKTCore.Core.Domain
 						this._MessageRecipientTypeID = default(int);
 					}
 					this.SendPropertyChanged("MessageRecipientType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_MessageRecipient", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.MessageRecipients.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.MessageRecipients.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -4795,9 +4201,9 @@ namespace SPKTCore.Core.Domain
 		
 		private EntitySet<ProfileAttribute> _ProfileAttributes;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<LevelOfExperience> _LevelOfExperience;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4837,8 +4243,8 @@ namespace SPKTCore.Core.Domain
 		{
 			this._PrivacyFlags = new EntitySet<PrivacyFlag>(new Action<PrivacyFlag>(this.attach_PrivacyFlags), new Action<PrivacyFlag>(this.detach_PrivacyFlags));
 			this._ProfileAttributes = new EntitySet<ProfileAttribute>(new Action<ProfileAttribute>(this.attach_ProfileAttributes), new Action<ProfileAttribute>(this.detach_ProfileAttributes));
-			this._Account = default(EntityRef<Account>);
 			this._LevelOfExperience = default(EntityRef<LevelOfExperience>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -5156,40 +4562,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Profile", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Profiles.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Profiles.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LevelOfExperience_Profile", Storage="_LevelOfExperience", ThisKey="LevelOfExperienceID", OtherKey="LevelOfExperienceID", IsForeignKey=true)]
 		public LevelOfExperience LevelOfExperience
 		{
@@ -5220,6 +4592,40 @@ namespace SPKTCore.Core.Domain
 						this._LevelOfExperienceID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("LevelOfExperience");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Profile", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Profiles.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Profiles.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -5780,11 +5186,11 @@ namespace SPKTCore.Core.Domain
 		
 		private int _SenderID;
 		
+		private EntityRef<VisibilityLevel> _VisibilityLevel;
+		
 		private EntityRef<Account> _Account;
 		
 		private EntityRef<Account> _Account1;
-		
-		private EntityRef<VisibilityLevel> _VisibilityLevel;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5808,9 +5214,9 @@ namespace SPKTCore.Core.Domain
 		
 		public StatusUpdate()
 		{
+			this._VisibilityLevel = default(EntityRef<VisibilityLevel>);
 			this._Account = default(EntityRef<Account>);
 			this._Account1 = default(EntityRef<Account>);
-			this._VisibilityLevel = default(EntityRef<VisibilityLevel>);
 			OnCreated();
 		}
 		
@@ -5966,6 +5372,40 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VisibilityLevel_StatusUpdate", Storage="_VisibilityLevel", ThisKey="VisibilityLevelID", OtherKey="VisibilityLevelID", IsForeignKey=true)]
+		public VisibilityLevel VisibilityLevel
+		{
+			get
+			{
+				return this._VisibilityLevel.Entity;
+			}
+			set
+			{
+				VisibilityLevel previousValue = this._VisibilityLevel.Entity;
+				if (((previousValue != value) 
+							|| (this._VisibilityLevel.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._VisibilityLevel.Entity = null;
+						previousValue.StatusUpdates.Remove(this);
+					}
+					this._VisibilityLevel.Entity = value;
+					if ((value != null))
+					{
+						value.StatusUpdates.Add(this);
+						this._VisibilityLevelID = value.VisibilityLevelID;
+					}
+					else
+					{
+						this._VisibilityLevelID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("VisibilityLevel");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_StatusUpdate", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
 		public Account Account
 		{
@@ -6030,40 +5470,6 @@ namespace SPKTCore.Core.Domain
 						this._SenderID = default(int);
 					}
 					this.SendPropertyChanged("Account1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VisibilityLevel_StatusUpdate", Storage="_VisibilityLevel", ThisKey="VisibilityLevelID", OtherKey="VisibilityLevelID", IsForeignKey=true)]
-		public VisibilityLevel VisibilityLevel
-		{
-			get
-			{
-				return this._VisibilityLevel.Entity;
-			}
-			set
-			{
-				VisibilityLevel previousValue = this._VisibilityLevel.Entity;
-				if (((previousValue != value) 
-							|| (this._VisibilityLevel.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._VisibilityLevel.Entity = null;
-						previousValue.StatusUpdates.Remove(this);
-					}
-					this._VisibilityLevel.Entity = value;
-					if ((value != null))
-					{
-						value.StatusUpdates.Add(this);
-						this._VisibilityLevelID = value.VisibilityLevelID;
-					}
-					else
-					{
-						this._VisibilityLevelID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("VisibilityLevel");
 				}
 			}
 		}
@@ -6389,9 +5795,9 @@ namespace SPKTCore.Core.Domain
 		
 		private bool _IsApproved;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<Group> _Group;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6415,8 +5821,8 @@ namespace SPKTCore.Core.Domain
 		
 		public GroupMember()
 		{
-			this._Account = default(EntityRef<Account>);
 			this._Group = default(EntityRef<Group>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -6568,40 +5974,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_GroupMember", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.GroupMembers.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.GroupMembers.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_GroupMember", Storage="_Group", ThisKey="GroupID", OtherKey="GroupID", IsForeignKey=true)]
 		public Group Group
 		{
@@ -6632,6 +6004,40 @@ namespace SPKTCore.Core.Domain
 						this._GroupID = default(int);
 					}
 					this.SendPropertyChanged("Group");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_GroupMember", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.GroupMembers.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.GroupMembers.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -7462,1380 +6868,6 @@ namespace SPKTCore.Core.Domain
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BoardCategory")]
-	public partial class BoardCategory : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CategoryID;
-		
-		private string _Name;
-		
-		private string _Subject;
-		
-		private int _SortOrder;
-		
-		private System.Data.Linq.Binary _Timestamp;
-		
-		private System.DateTime _CreateDate;
-		
-		private System.DateTime _UpdateDate;
-		
-		private int _ThreadCount;
-		
-		private int _PostCount;
-		
-		private System.DateTime _LastPostDate;
-		
-		private int _LastPostByAccountID;
-		
-		private string _LastPostByUsername;
-		
-		private string _PageName;
-		
-		private EntitySet<BoardForum> _BoardForums;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCategoryIDChanging(int value);
-    partial void OnCategoryIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnSubjectChanging(string value);
-    partial void OnSubjectChanged();
-    partial void OnSortOrderChanging(int value);
-    partial void OnSortOrderChanged();
-    partial void OnTimestampChanging(System.Data.Linq.Binary value);
-    partial void OnTimestampChanged();
-    partial void OnCreateDateChanging(System.DateTime value);
-    partial void OnCreateDateChanged();
-    partial void OnUpdateDateChanging(System.DateTime value);
-    partial void OnUpdateDateChanged();
-    partial void OnThreadCountChanging(int value);
-    partial void OnThreadCountChanged();
-    partial void OnPostCountChanging(int value);
-    partial void OnPostCountChanged();
-    partial void OnLastPostDateChanging(System.DateTime value);
-    partial void OnLastPostDateChanged();
-    partial void OnLastPostByAccountIDChanging(int value);
-    partial void OnLastPostByAccountIDChanged();
-    partial void OnLastPostByUsernameChanging(string value);
-    partial void OnLastPostByUsernameChanged();
-    partial void OnPageNameChanging(string value);
-    partial void OnPageNameChanged();
-    #endregion
-		
-		public BoardCategory()
-		{
-			this._BoardForums = new EntitySet<BoardForum>(new Action<BoardForum>(this.attach_BoardForums), new Action<BoardForum>(this.detach_BoardForums));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public int CategoryID
-		{
-			get
-			{
-				return this._CategoryID;
-			}
-			set
-			{
-				if ((this._CategoryID != value))
-				{
-					this.OnCategoryIDChanging(value);
-					this.SendPropertyChanging();
-					this._CategoryID = value;
-					this.SendPropertyChanged("CategoryID");
-					this.OnCategoryIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="VarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Subject
-		{
-			get
-			{
-				return this._Subject;
-			}
-			set
-			{
-				if ((this._Subject != value))
-				{
-					this.OnSubjectChanging(value);
-					this.SendPropertyChanging();
-					this._Subject = value;
-					this.SendPropertyChanged("Subject");
-					this.OnSubjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SortOrder", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int SortOrder
-		{
-			get
-			{
-				return this._SortOrder;
-			}
-			set
-			{
-				if ((this._SortOrder != value))
-				{
-					this.OnSortOrderChanging(value);
-					this.SendPropertyChanging();
-					this._SortOrder = value;
-					this.SendPropertyChanged("SortOrder");
-					this.OnSortOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Timestamp
-		{
-			get
-			{
-				return this._Timestamp;
-			}
-			set
-			{
-				if ((this._Timestamp != value))
-				{
-					this.OnTimestampChanging(value);
-					this.SendPropertyChanging();
-					this._Timestamp = value;
-					this.SendPropertyChanged("Timestamp");
-					this.OnTimestampChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime UpdateDate
-		{
-			get
-			{
-				return this._UpdateDate;
-			}
-			set
-			{
-				if ((this._UpdateDate != value))
-				{
-					this.OnUpdateDateChanging(value);
-					this.SendPropertyChanging();
-					this._UpdateDate = value;
-					this.SendPropertyChanged("UpdateDate");
-					this.OnUpdateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThreadCount", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int ThreadCount
-		{
-			get
-			{
-				return this._ThreadCount;
-			}
-			set
-			{
-				if ((this._ThreadCount != value))
-				{
-					this.OnThreadCountChanging(value);
-					this.SendPropertyChanging();
-					this._ThreadCount = value;
-					this.SendPropertyChanged("ThreadCount");
-					this.OnThreadCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostCount", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int PostCount
-		{
-			get
-			{
-				return this._PostCount;
-			}
-			set
-			{
-				if ((this._PostCount != value))
-				{
-					this.OnPostCountChanging(value);
-					this.SendPropertyChanging();
-					this._PostCount = value;
-					this.SendPropertyChanged("PostCount");
-					this.OnPostCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime LastPostDate
-		{
-			get
-			{
-				return this._LastPostDate;
-			}
-			set
-			{
-				if ((this._LastPostDate != value))
-				{
-					this.OnLastPostDateChanging(value);
-					this.SendPropertyChanging();
-					this._LastPostDate = value;
-					this.SendPropertyChanged("LastPostDate");
-					this.OnLastPostDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByAccountID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int LastPostByAccountID
-		{
-			get
-			{
-				return this._LastPostByAccountID;
-			}
-			set
-			{
-				if ((this._LastPostByAccountID != value))
-				{
-					this.OnLastPostByAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._LastPostByAccountID = value;
-					this.SendPropertyChanged("LastPostByAccountID");
-					this.OnLastPostByAccountIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByUsername", DbType="VarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string LastPostByUsername
-		{
-			get
-			{
-				return this._LastPostByUsername;
-			}
-			set
-			{
-				if ((this._LastPostByUsername != value))
-				{
-					this.OnLastPostByUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._LastPostByUsername = value;
-					this.SendPropertyChanged("LastPostByUsername");
-					this.OnLastPostByUsernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="VarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string PageName
-		{
-			get
-			{
-				return this._PageName;
-			}
-			set
-			{
-				if ((this._PageName != value))
-				{
-					this.OnPageNameChanging(value);
-					this.SendPropertyChanging();
-					this._PageName = value;
-					this.SendPropertyChanged("PageName");
-					this.OnPageNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardCategory_BoardForum", Storage="_BoardForums", ThisKey="CategoryID", OtherKey="CategoryID")]
-		public EntitySet<BoardForum> BoardForums
-		{
-			get
-			{
-				return this._BoardForums;
-			}
-			set
-			{
-				this._BoardForums.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BoardForums(BoardForum entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardCategory = this;
-		}
-		
-		private void detach_BoardForums(BoardForum entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardCategory = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BoardForum")]
-	public partial class BoardForum : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ForumID;
-		
-		private string _Name;
-		
-		private string _Subject;
-		
-		private long _ThreadCount;
-		
-		private long _PostCount;
-		
-		private System.DateTime _CreateDate;
-		
-		private System.DateTime _UpdateDate;
-		
-		private System.DateTime _LastPostDate;
-		
-		private int _LastPostByAccountID;
-		
-		private string _LastPostByUsername;
-		
-		private System.Data.Linq.Binary _Timestamp;
-		
-		private int _CategoryID;
-		
-		private string _PageName;
-		
-		private EntitySet<BoardPost> _BoardPosts;
-		
-		private EntitySet<GroupForum> _GroupForums;
-		
-		private EntityRef<BoardCategory> _BoardCategory;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnForumIDChanging(int value);
-    partial void OnForumIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnSubjectChanging(string value);
-    partial void OnSubjectChanged();
-    partial void OnThreadCountChanging(long value);
-    partial void OnThreadCountChanged();
-    partial void OnPostCountChanging(long value);
-    partial void OnPostCountChanged();
-    partial void OnCreateDateChanging(System.DateTime value);
-    partial void OnCreateDateChanged();
-    partial void OnUpdateDateChanging(System.DateTime value);
-    partial void OnUpdateDateChanged();
-    partial void OnLastPostDateChanging(System.DateTime value);
-    partial void OnLastPostDateChanged();
-    partial void OnLastPostByAccountIDChanging(int value);
-    partial void OnLastPostByAccountIDChanged();
-    partial void OnLastPostByUsernameChanging(string value);
-    partial void OnLastPostByUsernameChanged();
-    partial void OnTimestampChanging(System.Data.Linq.Binary value);
-    partial void OnTimestampChanged();
-    partial void OnCategoryIDChanging(int value);
-    partial void OnCategoryIDChanged();
-    partial void OnPageNameChanging(string value);
-    partial void OnPageNameChanged();
-    #endregion
-		
-		public BoardForum()
-		{
-			this._BoardPosts = new EntitySet<BoardPost>(new Action<BoardPost>(this.attach_BoardPosts), new Action<BoardPost>(this.detach_BoardPosts));
-			this._GroupForums = new EntitySet<GroupForum>(new Action<GroupForum>(this.attach_GroupForums), new Action<GroupForum>(this.detach_GroupForums));
-			this._BoardCategory = default(EntityRef<BoardCategory>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForumID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public int ForumID
-		{
-			get
-			{
-				return this._ForumID;
-			}
-			set
-			{
-				if ((this._ForumID != value))
-				{
-					this.OnForumIDChanging(value);
-					this.SendPropertyChanging();
-					this._ForumID = value;
-					this.SendPropertyChanged("ForumID");
-					this.OnForumIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="VarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Subject
-		{
-			get
-			{
-				return this._Subject;
-			}
-			set
-			{
-				if ((this._Subject != value))
-				{
-					this.OnSubjectChanging(value);
-					this.SendPropertyChanging();
-					this._Subject = value;
-					this.SendPropertyChanged("Subject");
-					this.OnSubjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThreadCount", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public long ThreadCount
-		{
-			get
-			{
-				return this._ThreadCount;
-			}
-			set
-			{
-				if ((this._ThreadCount != value))
-				{
-					this.OnThreadCountChanging(value);
-					this.SendPropertyChanging();
-					this._ThreadCount = value;
-					this.SendPropertyChanged("ThreadCount");
-					this.OnThreadCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostCount", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public long PostCount
-		{
-			get
-			{
-				return this._PostCount;
-			}
-			set
-			{
-				if ((this._PostCount != value))
-				{
-					this.OnPostCountChanging(value);
-					this.SendPropertyChanging();
-					this._PostCount = value;
-					this.SendPropertyChanged("PostCount");
-					this.OnPostCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime UpdateDate
-		{
-			get
-			{
-				return this._UpdateDate;
-			}
-			set
-			{
-				if ((this._UpdateDate != value))
-				{
-					this.OnUpdateDateChanging(value);
-					this.SendPropertyChanging();
-					this._UpdateDate = value;
-					this.SendPropertyChanged("UpdateDate");
-					this.OnUpdateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime LastPostDate
-		{
-			get
-			{
-				return this._LastPostDate;
-			}
-			set
-			{
-				if ((this._LastPostDate != value))
-				{
-					this.OnLastPostDateChanging(value);
-					this.SendPropertyChanging();
-					this._LastPostDate = value;
-					this.SendPropertyChanged("LastPostDate");
-					this.OnLastPostDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByAccountID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int LastPostByAccountID
-		{
-			get
-			{
-				return this._LastPostByAccountID;
-			}
-			set
-			{
-				if ((this._LastPostByAccountID != value))
-				{
-					this.OnLastPostByAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._LastPostByAccountID = value;
-					this.SendPropertyChanged("LastPostByAccountID");
-					this.OnLastPostByAccountIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByUsername", DbType="VarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string LastPostByUsername
-		{
-			get
-			{
-				return this._LastPostByUsername;
-			}
-			set
-			{
-				if ((this._LastPostByUsername != value))
-				{
-					this.OnLastPostByUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._LastPostByUsername = value;
-					this.SendPropertyChanged("LastPostByUsername");
-					this.OnLastPostByUsernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Timestamp
-		{
-			get
-			{
-				return this._Timestamp;
-			}
-			set
-			{
-				if ((this._Timestamp != value))
-				{
-					this.OnTimestampChanging(value);
-					this.SendPropertyChanging();
-					this._Timestamp = value;
-					this.SendPropertyChanged("Timestamp");
-					this.OnTimestampChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int CategoryID
-		{
-			get
-			{
-				return this._CategoryID;
-			}
-			set
-			{
-				if ((this._CategoryID != value))
-				{
-					if (this._BoardCategory.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCategoryIDChanging(value);
-					this.SendPropertyChanging();
-					this._CategoryID = value;
-					this.SendPropertyChanged("CategoryID");
-					this.OnCategoryIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="VarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string PageName
-		{
-			get
-			{
-				return this._PageName;
-			}
-			set
-			{
-				if ((this._PageName != value))
-				{
-					this.OnPageNameChanging(value);
-					this.SendPropertyChanging();
-					this._PageName = value;
-					this.SendPropertyChanged("PageName");
-					this.OnPageNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_BoardPost", Storage="_BoardPosts", ThisKey="ForumID", OtherKey="ForumID")]
-		public EntitySet<BoardPost> BoardPosts
-		{
-			get
-			{
-				return this._BoardPosts;
-			}
-			set
-			{
-				this._BoardPosts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_GroupForum", Storage="_GroupForums", ThisKey="ForumID", OtherKey="ForumID")]
-		public EntitySet<GroupForum> GroupForums
-		{
-			get
-			{
-				return this._GroupForums;
-			}
-			set
-			{
-				this._GroupForums.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardCategory_BoardForum", Storage="_BoardCategory", ThisKey="CategoryID", OtherKey="CategoryID", IsForeignKey=true)]
-		public BoardCategory BoardCategory
-		{
-			get
-			{
-				return this._BoardCategory.Entity;
-			}
-			set
-			{
-				BoardCategory previousValue = this._BoardCategory.Entity;
-				if (((previousValue != value) 
-							|| (this._BoardCategory.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BoardCategory.Entity = null;
-						previousValue.BoardForums.Remove(this);
-					}
-					this._BoardCategory.Entity = value;
-					if ((value != null))
-					{
-						value.BoardForums.Add(this);
-						this._CategoryID = value.CategoryID;
-					}
-					else
-					{
-						this._CategoryID = default(int);
-					}
-					this.SendPropertyChanged("BoardCategory");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BoardPosts(BoardPost entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardForum = this;
-		}
-		
-		private void detach_BoardPosts(BoardPost entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardForum = null;
-		}
-		
-		private void attach_GroupForums(GroupForum entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardForum = this;
-		}
-		
-		private void detach_GroupForums(GroupForum entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardForum = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BoardPost")]
-	public partial class BoardPost : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _PostID;
-		
-		private bool _IsThread;
-		
-		private string _Name;
-		
-		private string _Post;
-		
-		private System.DateTime _CreateDate;
-		
-		private System.DateTime _UpdateDate;
-		
-		private int _AccountID;
-		
-		private string _Username;
-		
-		private int _ReplyCount;
-		
-		private string _ReplyByUsername;
-		
-		private int _ViewCount;
-		
-		private int _ForumID;
-		
-		private string _PageName;
-		
-		private System.Nullable<long> _ThreadID;
-		
-		private System.Nullable<int> _ReplyByAccountID;
-		
-		private EntitySet<BoardPost> _BoardPosts;
-		
-		private EntityRef<Account> _Account;
-		
-		private EntityRef<BoardForum> _BoardForum;
-		
-		private EntityRef<BoardPost> _BoardPost1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPostIDChanging(long value);
-    partial void OnPostIDChanged();
-    partial void OnIsThreadChanging(bool value);
-    partial void OnIsThreadChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnPostChanging(string value);
-    partial void OnPostChanged();
-    partial void OnCreateDateChanging(System.DateTime value);
-    partial void OnCreateDateChanged();
-    partial void OnUpdateDateChanging(System.DateTime value);
-    partial void OnUpdateDateChanged();
-    partial void OnAccountIDChanging(int value);
-    partial void OnAccountIDChanged();
-    partial void OnUsernameChanging(string value);
-    partial void OnUsernameChanged();
-    partial void OnReplyCountChanging(int value);
-    partial void OnReplyCountChanged();
-    partial void OnReplyByUsernameChanging(string value);
-    partial void OnReplyByUsernameChanged();
-    partial void OnViewCountChanging(int value);
-    partial void OnViewCountChanged();
-    partial void OnForumIDChanging(int value);
-    partial void OnForumIDChanged();
-    partial void OnPageNameChanging(string value);
-    partial void OnPageNameChanged();
-    partial void OnThreadIDChanging(System.Nullable<long> value);
-    partial void OnThreadIDChanged();
-    partial void OnReplyByAccountIDChanging(System.Nullable<int> value);
-    partial void OnReplyByAccountIDChanged();
-    #endregion
-		
-		public BoardPost()
-		{
-			this._BoardPosts = new EntitySet<BoardPost>(new Action<BoardPost>(this.attach_BoardPosts), new Action<BoardPost>(this.detach_BoardPosts));
-			this._Account = default(EntityRef<Account>);
-			this._BoardForum = default(EntityRef<BoardForum>);
-			this._BoardPost1 = default(EntityRef<BoardPost>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long PostID
-		{
-			get
-			{
-				return this._PostID;
-			}
-			set
-			{
-				if ((this._PostID != value))
-				{
-					this.OnPostIDChanging(value);
-					this.SendPropertyChanging();
-					this._PostID = value;
-					this.SendPropertyChanged("PostID");
-					this.OnPostIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsThread", DbType="Bit NOT NULL")]
-		public bool IsThread
-		{
-			get
-			{
-				return this._IsThread;
-			}
-			set
-			{
-				if ((this._IsThread != value))
-				{
-					this.OnIsThreadChanging(value);
-					this.SendPropertyChanging();
-					this._IsThread = value;
-					this.SendPropertyChanged("IsThread");
-					this.OnIsThreadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Post", DbType="VarChar(3000) NOT NULL", CanBeNull=false)]
-		public string Post
-		{
-			get
-			{
-				return this._Post;
-			}
-			set
-			{
-				if ((this._Post != value))
-				{
-					this.OnPostChanging(value);
-					this.SendPropertyChanging();
-					this._Post = value;
-					this.SendPropertyChanged("Post");
-					this.OnPostChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime UpdateDate
-		{
-			get
-			{
-				return this._UpdateDate;
-			}
-			set
-			{
-				if ((this._UpdateDate != value))
-				{
-					this.OnUpdateDateChanging(value);
-					this.SendPropertyChanging();
-					this._UpdateDate = value;
-					this.SendPropertyChanged("UpdateDate");
-					this.OnUpdateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int NOT NULL")]
-		public int AccountID
-		{
-			get
-			{
-				return this._AccountID;
-			}
-			set
-			{
-				if ((this._AccountID != value))
-				{
-					if (this._Account.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._AccountID = value;
-					this.SendPropertyChanged("AccountID");
-					this.OnAccountIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this.OnUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._Username = value;
-					this.SendPropertyChanged("Username");
-					this.OnUsernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplyCount", DbType="Int NOT NULL")]
-		public int ReplyCount
-		{
-			get
-			{
-				return this._ReplyCount;
-			}
-			set
-			{
-				if ((this._ReplyCount != value))
-				{
-					this.OnReplyCountChanging(value);
-					this.SendPropertyChanging();
-					this._ReplyCount = value;
-					this.SendPropertyChanged("ReplyCount");
-					this.OnReplyCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplyByUsername", DbType="VarChar(250)")]
-		public string ReplyByUsername
-		{
-			get
-			{
-				return this._ReplyByUsername;
-			}
-			set
-			{
-				if ((this._ReplyByUsername != value))
-				{
-					this.OnReplyByUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._ReplyByUsername = value;
-					this.SendPropertyChanged("ReplyByUsername");
-					this.OnReplyByUsernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViewCount", DbType="Int NOT NULL")]
-		public int ViewCount
-		{
-			get
-			{
-				return this._ViewCount;
-			}
-			set
-			{
-				if ((this._ViewCount != value))
-				{
-					this.OnViewCountChanging(value);
-					this.SendPropertyChanging();
-					this._ViewCount = value;
-					this.SendPropertyChanged("ViewCount");
-					this.OnViewCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForumID", DbType="Int NOT NULL")]
-		public int ForumID
-		{
-			get
-			{
-				return this._ForumID;
-			}
-			set
-			{
-				if ((this._ForumID != value))
-				{
-					if (this._BoardForum.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnForumIDChanging(value);
-					this.SendPropertyChanging();
-					this._ForumID = value;
-					this.SendPropertyChanged("ForumID");
-					this.OnForumIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="VarChar(250)")]
-		public string PageName
-		{
-			get
-			{
-				return this._PageName;
-			}
-			set
-			{
-				if ((this._PageName != value))
-				{
-					this.OnPageNameChanging(value);
-					this.SendPropertyChanging();
-					this._PageName = value;
-					this.SendPropertyChanged("PageName");
-					this.OnPageNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThreadID", DbType="BigInt")]
-		public System.Nullable<long> ThreadID
-		{
-			get
-			{
-				return this._ThreadID;
-			}
-			set
-			{
-				if ((this._ThreadID != value))
-				{
-					if (this._BoardPost1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnThreadIDChanging(value);
-					this.SendPropertyChanging();
-					this._ThreadID = value;
-					this.SendPropertyChanged("ThreadID");
-					this.OnThreadIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplyByAccountID", DbType="Int")]
-		public System.Nullable<int> ReplyByAccountID
-		{
-			get
-			{
-				return this._ReplyByAccountID;
-			}
-			set
-			{
-				if ((this._ReplyByAccountID != value))
-				{
-					this.OnReplyByAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._ReplyByAccountID = value;
-					this.SendPropertyChanged("ReplyByAccountID");
-					this.OnReplyByAccountIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardPost_BoardPost", Storage="_BoardPosts", ThisKey="PostID", OtherKey="ThreadID")]
-		public EntitySet<BoardPost> BoardPosts
-		{
-			get
-			{
-				return this._BoardPosts;
-			}
-			set
-			{
-				this._BoardPosts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_BoardPost", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.BoardPosts.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.BoardPosts.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_BoardPost", Storage="_BoardForum", ThisKey="ForumID", OtherKey="ForumID", IsForeignKey=true)]
-		public BoardForum BoardForum
-		{
-			get
-			{
-				return this._BoardForum.Entity;
-			}
-			set
-			{
-				BoardForum previousValue = this._BoardForum.Entity;
-				if (((previousValue != value) 
-							|| (this._BoardForum.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BoardForum.Entity = null;
-						previousValue.BoardPosts.Remove(this);
-					}
-					this._BoardForum.Entity = value;
-					if ((value != null))
-					{
-						value.BoardPosts.Add(this);
-						this._ForumID = value.ForumID;
-					}
-					else
-					{
-						this._ForumID = default(int);
-					}
-					this.SendPropertyChanged("BoardForum");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardPost_BoardPost", Storage="_BoardPost1", ThisKey="ThreadID", OtherKey="PostID", IsForeignKey=true)]
-		public BoardPost BoardPost1
-		{
-			get
-			{
-				return this._BoardPost1.Entity;
-			}
-			set
-			{
-				BoardPost previousValue = this._BoardPost1.Entity;
-				if (((previousValue != value) 
-							|| (this._BoardPost1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BoardPost1.Entity = null;
-						previousValue.BoardPosts.Remove(this);
-					}
-					this._BoardPost1.Entity = value;
-					if ((value != null))
-					{
-						value.BoardPosts.Add(this);
-						this._ThreadID = value.PostID;
-					}
-					else
-					{
-						this._ThreadID = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("BoardPost1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BoardPosts(BoardPost entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardPost1 = this;
-		}
-		
-		private void detach_BoardPosts(BoardPost entity)
-		{
-			this.SendPropertyChanging();
-			entity.BoardPost1 = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Blog")]
 	public partial class Blog : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -9147,9 +7179,9 @@ namespace SPKTCore.Core.Domain
 		
 		private System.Data.Linq.Binary _Timestamp;
 		
-		private EntityRef<BoardForum> _BoardForum;
-		
 		private EntityRef<Group> _Group;
+		
+		private EntityRef<BoardForum> _BoardForum;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -9169,8 +7201,8 @@ namespace SPKTCore.Core.Domain
 		
 		public GroupForum()
 		{
-			this._BoardForum = default(EntityRef<BoardForum>);
 			this._Group = default(EntityRef<Group>);
+			this._BoardForum = default(EntityRef<BoardForum>);
 			OnCreated();
 		}
 		
@@ -9282,40 +7314,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_GroupForum", Storage="_BoardForum", ThisKey="ForumID", OtherKey="ForumID", IsForeignKey=true)]
-		public BoardForum BoardForum
-		{
-			get
-			{
-				return this._BoardForum.Entity;
-			}
-			set
-			{
-				BoardForum previousValue = this._BoardForum.Entity;
-				if (((previousValue != value) 
-							|| (this._BoardForum.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BoardForum.Entity = null;
-						previousValue.GroupForums.Remove(this);
-					}
-					this._BoardForum.Entity = value;
-					if ((value != null))
-					{
-						value.GroupForums.Add(this);
-						this._ForumID = value.ForumID;
-					}
-					else
-					{
-						this._ForumID = default(int);
-					}
-					this.SendPropertyChanged("BoardForum");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_GroupForum", Storage="_Group", ThisKey="GroupID", OtherKey="GroupID", IsForeignKey=true)]
 		public Group Group
 		{
@@ -9350,6 +7348,40 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_GroupForum", Storage="_BoardForum", ThisKey="ForumID", OtherKey="ForumID", IsForeignKey=true)]
+		public BoardForum BoardForum
+		{
+			get
+			{
+				return this._BoardForum.Entity;
+			}
+			set
+			{
+				BoardForum previousValue = this._BoardForum.Entity;
+				if (((previousValue != value) 
+							|| (this._BoardForum.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BoardForum.Entity = null;
+						previousValue.GroupForums.Remove(this);
+					}
+					this._BoardForum.Entity = value;
+					if ((value != null))
+					{
+						value.GroupForums.Add(this);
+						this._ForumID = value.ForumID;
+					}
+					else
+					{
+						this._ForumID = default(int);
+					}
+					this.SendPropertyChanged("BoardForum");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -9368,6 +7400,3704 @@ namespace SPKTCore.Core.Domain
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ContentFilter")]
+	public partial class ContentFilter : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ContentFilterID;
+		
+		private string _StringToFilter;
+		
+		private string _ReplaceWith;
+		
+		private int _AccountID;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.Data.Linq.Binary _TimeStamp;
+		
+		private EntityRef<Account> _Account;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnContentFilterIDChanging(int value);
+    partial void OnContentFilterIDChanged();
+    partial void OnStringToFilterChanging(string value);
+    partial void OnStringToFilterChanged();
+    partial void OnReplaceWithChanging(string value);
+    partial void OnReplaceWithChanged();
+    partial void OnAccountIDChanging(int value);
+    partial void OnAccountIDChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnTimeStampChanging(System.Data.Linq.Binary value);
+    partial void OnTimeStampChanged();
+    #endregion
+		
+		public ContentFilter()
+		{
+			this._Account = default(EntityRef<Account>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContentFilterID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int ContentFilterID
+		{
+			get
+			{
+				return this._ContentFilterID;
+			}
+			set
+			{
+				if ((this._ContentFilterID != value))
+				{
+					this.OnContentFilterIDChanging(value);
+					this.SendPropertyChanging();
+					this._ContentFilterID = value;
+					this.SendPropertyChanged("ContentFilterID");
+					this.OnContentFilterIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StringToFilter", DbType="VarChar(500) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string StringToFilter
+		{
+			get
+			{
+				return this._StringToFilter;
+			}
+			set
+			{
+				if ((this._StringToFilter != value))
+				{
+					this.OnStringToFilterChanging(value);
+					this.SendPropertyChanging();
+					this._StringToFilter = value;
+					this.SendPropertyChanged("StringToFilter");
+					this.OnStringToFilterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplaceWith", DbType="VarChar(500) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string ReplaceWith
+		{
+			get
+			{
+				return this._ReplaceWith;
+			}
+			set
+			{
+				if ((this._ReplaceWith != value))
+				{
+					this.OnReplaceWithChanging(value);
+					this.SendPropertyChanging();
+					this._ReplaceWith = value;
+					this.SendPropertyChanged("ReplaceWith");
+					this.OnReplaceWithChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary TimeStamp
+		{
+			get
+			{
+				return this._TimeStamp;
+			}
+			set
+			{
+				if ((this._TimeStamp != value))
+				{
+					this.OnTimeStampChanging(value);
+					this.SendPropertyChanging();
+					this._TimeStamp = value;
+					this.SendPropertyChanged("TimeStamp");
+					this.OnTimeStampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_ContentFilter", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.ContentFilters.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.ContentFilters.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BoardCategory")]
+	public partial class BoardCategory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CategoryID;
+		
+		private string _Name;
+		
+		private string _Subject;
+		
+		private int _SortOrder;
+		
+		private System.Data.Linq.Binary _Timestamp;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _UpdateDate;
+		
+		private int _ThreadCount;
+		
+		private int _PostCount;
+		
+		private System.Nullable<System.DateTime> _LastPostDate;
+		
+		private System.Nullable<int> _LastPostByAccountID;
+		
+		private string _LastPostByUsername;
+		
+		private string _PageName;
+		
+		private EntitySet<BoardForum> _BoardForums;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCategoryIDChanging(int value);
+    partial void OnCategoryIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSubjectChanging(string value);
+    partial void OnSubjectChanged();
+    partial void OnSortOrderChanging(int value);
+    partial void OnSortOrderChanged();
+    partial void OnTimestampChanging(System.Data.Linq.Binary value);
+    partial void OnTimestampChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnUpdateDateChanging(System.DateTime value);
+    partial void OnUpdateDateChanged();
+    partial void OnThreadCountChanging(int value);
+    partial void OnThreadCountChanged();
+    partial void OnPostCountChanging(int value);
+    partial void OnPostCountChanged();
+    partial void OnLastPostDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastPostDateChanged();
+    partial void OnLastPostByAccountIDChanging(System.Nullable<int> value);
+    partial void OnLastPostByAccountIDChanged();
+    partial void OnLastPostByUsernameChanging(string value);
+    partial void OnLastPostByUsernameChanged();
+    partial void OnPageNameChanging(string value);
+    partial void OnPageNameChanged();
+    #endregion
+		
+		public BoardCategory()
+		{
+			this._BoardForums = new EntitySet<BoardForum>(new Action<BoardForum>(this.attach_BoardForums), new Action<BoardForum>(this.detach_BoardForums));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					this.OnCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryID = value;
+					this.SendPropertyChanged("CategoryID");
+					this.OnCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Subject
+		{
+			get
+			{
+				return this._Subject;
+			}
+			set
+			{
+				if ((this._Subject != value))
+				{
+					this.OnSubjectChanging(value);
+					this.SendPropertyChanging();
+					this._Subject = value;
+					this.SendPropertyChanged("Subject");
+					this.OnSubjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SortOrder", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int SortOrder
+		{
+			get
+			{
+				return this._SortOrder;
+			}
+			set
+			{
+				if ((this._SortOrder != value))
+				{
+					this.OnSortOrderChanging(value);
+					this.SendPropertyChanging();
+					this._SortOrder = value;
+					this.SendPropertyChanged("SortOrder");
+					this.OnSortOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this.OnTimestampChanging(value);
+					this.SendPropertyChanging();
+					this._Timestamp = value;
+					this.SendPropertyChanged("Timestamp");
+					this.OnTimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime UpdateDate
+		{
+			get
+			{
+				return this._UpdateDate;
+			}
+			set
+			{
+				if ((this._UpdateDate != value))
+				{
+					this.OnUpdateDateChanging(value);
+					this.SendPropertyChanging();
+					this._UpdateDate = value;
+					this.SendPropertyChanged("UpdateDate");
+					this.OnUpdateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThreadCount", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int ThreadCount
+		{
+			get
+			{
+				return this._ThreadCount;
+			}
+			set
+			{
+				if ((this._ThreadCount != value))
+				{
+					this.OnThreadCountChanging(value);
+					this.SendPropertyChanging();
+					this._ThreadCount = value;
+					this.SendPropertyChanged("ThreadCount");
+					this.OnThreadCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostCount", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int PostCount
+		{
+			get
+			{
+				return this._PostCount;
+			}
+			set
+			{
+				if ((this._PostCount != value))
+				{
+					this.OnPostCountChanging(value);
+					this.SendPropertyChanging();
+					this._PostCount = value;
+					this.SendPropertyChanged("PostCount");
+					this.OnPostCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostDate", DbType="SmallDateTime", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<System.DateTime> LastPostDate
+		{
+			get
+			{
+				return this._LastPostDate;
+			}
+			set
+			{
+				if ((this._LastPostDate != value))
+				{
+					this.OnLastPostDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastPostDate = value;
+					this.SendPropertyChanged("LastPostDate");
+					this.OnLastPostDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByAccountID", DbType="Int", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<int> LastPostByAccountID
+		{
+			get
+			{
+				return this._LastPostByAccountID;
+			}
+			set
+			{
+				if ((this._LastPostByAccountID != value))
+				{
+					this.OnLastPostByAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._LastPostByAccountID = value;
+					this.SendPropertyChanged("LastPostByAccountID");
+					this.OnLastPostByAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByUsername", DbType="NVarChar(250)", UpdateCheck=UpdateCheck.Never)]
+		public string LastPostByUsername
+		{
+			get
+			{
+				return this._LastPostByUsername;
+			}
+			set
+			{
+				if ((this._LastPostByUsername != value))
+				{
+					this.OnLastPostByUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._LastPostByUsername = value;
+					this.SendPropertyChanged("LastPostByUsername");
+					this.OnLastPostByUsernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string PageName
+		{
+			get
+			{
+				return this._PageName;
+			}
+			set
+			{
+				if ((this._PageName != value))
+				{
+					this.OnPageNameChanging(value);
+					this.SendPropertyChanging();
+					this._PageName = value;
+					this.SendPropertyChanged("PageName");
+					this.OnPageNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardCategory_BoardForum", Storage="_BoardForums", ThisKey="CategoryID", OtherKey="CategoryID")]
+		public EntitySet<BoardForum> BoardForums
+		{
+			get
+			{
+				return this._BoardForums;
+			}
+			set
+			{
+				this._BoardForums.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BoardForums(BoardForum entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardCategory = this;
+		}
+		
+		private void detach_BoardForums(BoardForum entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardCategory = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BoardForum")]
+	public partial class BoardForum : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ForumID;
+		
+		private string _Name;
+		
+		private string _Subject;
+		
+		private long _ThreadCount;
+		
+		private long _PostCount;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _UpdateDate;
+		
+		private System.Nullable<System.DateTime> _LastPostDate;
+		
+		private int _LastPostByAccountID;
+		
+		private string _LastPostByUsername;
+		
+		private System.Data.Linq.Binary _Timestamp;
+		
+		private int _CategoryID;
+		
+		private string _PageName;
+		
+		private EntitySet<GroupForum> _GroupForums;
+		
+		private EntitySet<BoardPost> _BoardPosts;
+		
+		private EntityRef<BoardCategory> _BoardCategory;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnForumIDChanging(int value);
+    partial void OnForumIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSubjectChanging(string value);
+    partial void OnSubjectChanged();
+    partial void OnThreadCountChanging(long value);
+    partial void OnThreadCountChanged();
+    partial void OnPostCountChanging(long value);
+    partial void OnPostCountChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnUpdateDateChanging(System.DateTime value);
+    partial void OnUpdateDateChanged();
+    partial void OnLastPostDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastPostDateChanged();
+    partial void OnLastPostByAccountIDChanging(int value);
+    partial void OnLastPostByAccountIDChanged();
+    partial void OnLastPostByUsernameChanging(string value);
+    partial void OnLastPostByUsernameChanged();
+    partial void OnTimestampChanging(System.Data.Linq.Binary value);
+    partial void OnTimestampChanged();
+    partial void OnCategoryIDChanging(int value);
+    partial void OnCategoryIDChanged();
+    partial void OnPageNameChanging(string value);
+    partial void OnPageNameChanged();
+    #endregion
+		
+		public BoardForum()
+		{
+			this._GroupForums = new EntitySet<GroupForum>(new Action<GroupForum>(this.attach_GroupForums), new Action<GroupForum>(this.detach_GroupForums));
+			this._BoardPosts = new EntitySet<BoardPost>(new Action<BoardPost>(this.attach_BoardPosts), new Action<BoardPost>(this.detach_BoardPosts));
+			this._BoardCategory = default(EntityRef<BoardCategory>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForumID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int ForumID
+		{
+			get
+			{
+				return this._ForumID;
+			}
+			set
+			{
+				if ((this._ForumID != value))
+				{
+					this.OnForumIDChanging(value);
+					this.SendPropertyChanging();
+					this._ForumID = value;
+					this.SendPropertyChanged("ForumID");
+					this.OnForumIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Subject
+		{
+			get
+			{
+				return this._Subject;
+			}
+			set
+			{
+				if ((this._Subject != value))
+				{
+					this.OnSubjectChanging(value);
+					this.SendPropertyChanging();
+					this._Subject = value;
+					this.SendPropertyChanged("Subject");
+					this.OnSubjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThreadCount", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long ThreadCount
+		{
+			get
+			{
+				return this._ThreadCount;
+			}
+			set
+			{
+				if ((this._ThreadCount != value))
+				{
+					this.OnThreadCountChanging(value);
+					this.SendPropertyChanging();
+					this._ThreadCount = value;
+					this.SendPropertyChanged("ThreadCount");
+					this.OnThreadCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostCount", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long PostCount
+		{
+			get
+			{
+				return this._PostCount;
+			}
+			set
+			{
+				if ((this._PostCount != value))
+				{
+					this.OnPostCountChanging(value);
+					this.SendPropertyChanging();
+					this._PostCount = value;
+					this.SendPropertyChanged("PostCount");
+					this.OnPostCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime UpdateDate
+		{
+			get
+			{
+				return this._UpdateDate;
+			}
+			set
+			{
+				if ((this._UpdateDate != value))
+				{
+					this.OnUpdateDateChanging(value);
+					this.SendPropertyChanging();
+					this._UpdateDate = value;
+					this.SendPropertyChanged("UpdateDate");
+					this.OnUpdateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostDate", DbType="SmallDateTime", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<System.DateTime> LastPostDate
+		{
+			get
+			{
+				return this._LastPostDate;
+			}
+			set
+			{
+				if ((this._LastPostDate != value))
+				{
+					this.OnLastPostDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastPostDate = value;
+					this.SendPropertyChanged("LastPostDate");
+					this.OnLastPostDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByAccountID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastPostByAccountID
+		{
+			get
+			{
+				return this._LastPostByAccountID;
+			}
+			set
+			{
+				if ((this._LastPostByAccountID != value))
+				{
+					this.OnLastPostByAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._LastPostByAccountID = value;
+					this.SendPropertyChanged("LastPostByAccountID");
+					this.OnLastPostByAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPostByUsername", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string LastPostByUsername
+		{
+			get
+			{
+				return this._LastPostByUsername;
+			}
+			set
+			{
+				if ((this._LastPostByUsername != value))
+				{
+					this.OnLastPostByUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._LastPostByUsername = value;
+					this.SendPropertyChanged("LastPostByUsername");
+					this.OnLastPostByUsernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this.OnTimestampChanging(value);
+					this.SendPropertyChanging();
+					this._Timestamp = value;
+					this.SendPropertyChanged("Timestamp");
+					this.OnTimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					if (this._BoardCategory.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryID = value;
+					this.SendPropertyChanged("CategoryID");
+					this.OnCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string PageName
+		{
+			get
+			{
+				return this._PageName;
+			}
+			set
+			{
+				if ((this._PageName != value))
+				{
+					this.OnPageNameChanging(value);
+					this.SendPropertyChanging();
+					this._PageName = value;
+					this.SendPropertyChanged("PageName");
+					this.OnPageNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_GroupForum", Storage="_GroupForums", ThisKey="ForumID", OtherKey="ForumID")]
+		public EntitySet<GroupForum> GroupForums
+		{
+			get
+			{
+				return this._GroupForums;
+			}
+			set
+			{
+				this._GroupForums.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_BoardPost", Storage="_BoardPosts", ThisKey="ForumID", OtherKey="ForumID")]
+		public EntitySet<BoardPost> BoardPosts
+		{
+			get
+			{
+				return this._BoardPosts;
+			}
+			set
+			{
+				this._BoardPosts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardCategory_BoardForum", Storage="_BoardCategory", ThisKey="CategoryID", OtherKey="CategoryID", IsForeignKey=true)]
+		public BoardCategory BoardCategory
+		{
+			get
+			{
+				return this._BoardCategory.Entity;
+			}
+			set
+			{
+				BoardCategory previousValue = this._BoardCategory.Entity;
+				if (((previousValue != value) 
+							|| (this._BoardCategory.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BoardCategory.Entity = null;
+						previousValue.BoardForums.Remove(this);
+					}
+					this._BoardCategory.Entity = value;
+					if ((value != null))
+					{
+						value.BoardForums.Add(this);
+						this._CategoryID = value.CategoryID;
+					}
+					else
+					{
+						this._CategoryID = default(int);
+					}
+					this.SendPropertyChanged("BoardCategory");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_GroupForums(GroupForum entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardForum = this;
+		}
+		
+		private void detach_GroupForums(GroupForum entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardForum = null;
+		}
+		
+		private void attach_BoardPosts(BoardPost entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardForum = this;
+		}
+		
+		private void detach_BoardPosts(BoardPost entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardForum = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BoardPost")]
+	public partial class BoardPost : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _PostID;
+		
+		private bool _IsThread;
+		
+		private string _Name;
+		
+		private string _Post;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _UpdateDate;
+		
+		private int _AccountID;
+		
+		private string _Username;
+		
+		private int _ReplyCount;
+		
+		private string _ReplyByUsername;
+		
+		private int _ViewCount;
+		
+		private int _ForumID;
+		
+		private string _PageName;
+		
+		private System.Nullable<long> _ThreadID;
+		
+		private System.Nullable<int> _ReplyByAccountID;
+		
+		private EntitySet<BoardPost> _BoardPosts;
+		
+		private EntityRef<BoardForum> _BoardForum;
+		
+		private EntityRef<BoardPost> _BoardPost1;
+		
+		private EntityRef<Account> _Account;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPostIDChanging(long value);
+    partial void OnPostIDChanged();
+    partial void OnIsThreadChanging(bool value);
+    partial void OnIsThreadChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnPostChanging(string value);
+    partial void OnPostChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnUpdateDateChanging(System.DateTime value);
+    partial void OnUpdateDateChanged();
+    partial void OnAccountIDChanging(int value);
+    partial void OnAccountIDChanged();
+    partial void OnUsernameChanging(string value);
+    partial void OnUsernameChanged();
+    partial void OnReplyCountChanging(int value);
+    partial void OnReplyCountChanged();
+    partial void OnReplyByUsernameChanging(string value);
+    partial void OnReplyByUsernameChanged();
+    partial void OnViewCountChanging(int value);
+    partial void OnViewCountChanged();
+    partial void OnForumIDChanging(int value);
+    partial void OnForumIDChanged();
+    partial void OnPageNameChanging(string value);
+    partial void OnPageNameChanged();
+    partial void OnThreadIDChanging(System.Nullable<long> value);
+    partial void OnThreadIDChanged();
+    partial void OnReplyByAccountIDChanging(System.Nullable<int> value);
+    partial void OnReplyByAccountIDChanged();
+    #endregion
+		
+		public BoardPost()
+		{
+			this._BoardPosts = new EntitySet<BoardPost>(new Action<BoardPost>(this.attach_BoardPosts), new Action<BoardPost>(this.detach_BoardPosts));
+			this._BoardForum = default(EntityRef<BoardForum>);
+			this._BoardPost1 = default(EntityRef<BoardPost>);
+			this._Account = default(EntityRef<Account>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long PostID
+		{
+			get
+			{
+				return this._PostID;
+			}
+			set
+			{
+				if ((this._PostID != value))
+				{
+					this.OnPostIDChanging(value);
+					this.SendPropertyChanging();
+					this._PostID = value;
+					this.SendPropertyChanged("PostID");
+					this.OnPostIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsThread", DbType="Bit NOT NULL")]
+		public bool IsThread
+		{
+			get
+			{
+				return this._IsThread;
+			}
+			set
+			{
+				if ((this._IsThread != value))
+				{
+					this.OnIsThreadChanging(value);
+					this.SendPropertyChanging();
+					this._IsThread = value;
+					this.SendPropertyChanged("IsThread");
+					this.OnIsThreadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Post", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
+		public string Post
+		{
+			get
+			{
+				return this._Post;
+			}
+			set
+			{
+				if ((this._Post != value))
+				{
+					this.OnPostChanging(value);
+					this.SendPropertyChanging();
+					this._Post = value;
+					this.SendPropertyChanged("Post");
+					this.OnPostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime UpdateDate
+		{
+			get
+			{
+				return this._UpdateDate;
+			}
+			set
+			{
+				if ((this._UpdateDate != value))
+				{
+					this.OnUpdateDateChanging(value);
+					this.SendPropertyChanging();
+					this._UpdateDate = value;
+					this.SendPropertyChanged("UpdateDate");
+					this.OnUpdateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int NOT NULL")]
+		public int AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this.OnUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._Username = value;
+					this.SendPropertyChanged("Username");
+					this.OnUsernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplyCount", DbType="Int NOT NULL")]
+		public int ReplyCount
+		{
+			get
+			{
+				return this._ReplyCount;
+			}
+			set
+			{
+				if ((this._ReplyCount != value))
+				{
+					this.OnReplyCountChanging(value);
+					this.SendPropertyChanging();
+					this._ReplyCount = value;
+					this.SendPropertyChanged("ReplyCount");
+					this.OnReplyCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplyByUsername", DbType="NVarChar(250)")]
+		public string ReplyByUsername
+		{
+			get
+			{
+				return this._ReplyByUsername;
+			}
+			set
+			{
+				if ((this._ReplyByUsername != value))
+				{
+					this.OnReplyByUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._ReplyByUsername = value;
+					this.SendPropertyChanged("ReplyByUsername");
+					this.OnReplyByUsernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViewCount", DbType="Int NOT NULL")]
+		public int ViewCount
+		{
+			get
+			{
+				return this._ViewCount;
+			}
+			set
+			{
+				if ((this._ViewCount != value))
+				{
+					this.OnViewCountChanging(value);
+					this.SendPropertyChanging();
+					this._ViewCount = value;
+					this.SendPropertyChanged("ViewCount");
+					this.OnViewCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForumID", DbType="Int NOT NULL")]
+		public int ForumID
+		{
+			get
+			{
+				return this._ForumID;
+			}
+			set
+			{
+				if ((this._ForumID != value))
+				{
+					if (this._BoardForum.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnForumIDChanging(value);
+					this.SendPropertyChanging();
+					this._ForumID = value;
+					this.SendPropertyChanged("ForumID");
+					this.OnForumIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="NVarChar(250)")]
+		public string PageName
+		{
+			get
+			{
+				return this._PageName;
+			}
+			set
+			{
+				if ((this._PageName != value))
+				{
+					this.OnPageNameChanging(value);
+					this.SendPropertyChanging();
+					this._PageName = value;
+					this.SendPropertyChanged("PageName");
+					this.OnPageNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThreadID", DbType="BigInt")]
+		public System.Nullable<long> ThreadID
+		{
+			get
+			{
+				return this._ThreadID;
+			}
+			set
+			{
+				if ((this._ThreadID != value))
+				{
+					if (this._BoardPost1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnThreadIDChanging(value);
+					this.SendPropertyChanging();
+					this._ThreadID = value;
+					this.SendPropertyChanged("ThreadID");
+					this.OnThreadIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplyByAccountID", DbType="Int")]
+		public System.Nullable<int> ReplyByAccountID
+		{
+			get
+			{
+				return this._ReplyByAccountID;
+			}
+			set
+			{
+				if ((this._ReplyByAccountID != value))
+				{
+					this.OnReplyByAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReplyByAccountID = value;
+					this.SendPropertyChanged("ReplyByAccountID");
+					this.OnReplyByAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardPost_BoardPost", Storage="_BoardPosts", ThisKey="PostID", OtherKey="ThreadID")]
+		public EntitySet<BoardPost> BoardPosts
+		{
+			get
+			{
+				return this._BoardPosts;
+			}
+			set
+			{
+				this._BoardPosts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardForum_BoardPost", Storage="_BoardForum", ThisKey="ForumID", OtherKey="ForumID", IsForeignKey=true)]
+		public BoardForum BoardForum
+		{
+			get
+			{
+				return this._BoardForum.Entity;
+			}
+			set
+			{
+				BoardForum previousValue = this._BoardForum.Entity;
+				if (((previousValue != value) 
+							|| (this._BoardForum.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BoardForum.Entity = null;
+						previousValue.BoardPosts.Remove(this);
+					}
+					this._BoardForum.Entity = value;
+					if ((value != null))
+					{
+						value.BoardPosts.Add(this);
+						this._ForumID = value.ForumID;
+					}
+					else
+					{
+						this._ForumID = default(int);
+					}
+					this.SendPropertyChanged("BoardForum");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BoardPost_BoardPost", Storage="_BoardPost1", ThisKey="ThreadID", OtherKey="PostID", IsForeignKey=true)]
+		public BoardPost BoardPost1
+		{
+			get
+			{
+				return this._BoardPost1.Entity;
+			}
+			set
+			{
+				BoardPost previousValue = this._BoardPost1.Entity;
+				if (((previousValue != value) 
+							|| (this._BoardPost1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BoardPost1.Entity = null;
+						previousValue.BoardPosts.Remove(this);
+					}
+					this._BoardPost1.Entity = value;
+					if ((value != null))
+					{
+						value.BoardPosts.Add(this);
+						this._ThreadID = value.PostID;
+					}
+					else
+					{
+						this._ThreadID = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("BoardPost1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_BoardPost", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.BoardPosts.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.BoardPosts.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BoardPosts(BoardPost entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardPost1 = this;
+		}
+		
+		private void detach_BoardPosts(BoardPost entity)
+		{
+			this.SendPropertyChanging();
+			entity.BoardPost1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[File]")]
+	public partial class File : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _FileID;
+		
+		private System.Guid _FileSystemName;
+		
+		private int _FileSystemFolderID;
+		
+		private string _FileName;
+		
+		private int _FileTypeID;
+		
+		private System.DateTime _CreateDate;
+		
+		private int _AccountID;
+		
+		private bool _IsPublicResource;
+		
+		private long _DefaultFolderID;
+		
+		private string _Description;
+		
+		private System.Data.Linq.Binary _Timestamp;
+		
+		private long _Size;
+		
+		private EntityRef<FileSystemFolder> _FileSystemFolder;
+		
+		private EntityRef<FileType> _FileType;
+		
+		private EntityRef<Folder> _Folder;
+		
+		private EntityRef<Account> _Account;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFileIDChanging(long value);
+    partial void OnFileIDChanged();
+    partial void OnFileSystemNameChanging(System.Guid value);
+    partial void OnFileSystemNameChanged();
+    partial void OnFileSystemFolderIDChanging(int value);
+    partial void OnFileSystemFolderIDChanged();
+    partial void OnFileNameChanging(string value);
+    partial void OnFileNameChanged();
+    partial void OnFileTypeIDChanging(int value);
+    partial void OnFileTypeIDChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnAccountIDChanging(int value);
+    partial void OnAccountIDChanged();
+    partial void OnIsPublicResourceChanging(bool value);
+    partial void OnIsPublicResourceChanged();
+    partial void OnDefaultFolderIDChanging(long value);
+    partial void OnDefaultFolderIDChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnTimestampChanging(System.Data.Linq.Binary value);
+    partial void OnTimestampChanged();
+    partial void OnSizeChanging(long value);
+    partial void OnSizeChanged();
+    #endregion
+		
+		public File()
+		{
+			this._FileSystemFolder = default(EntityRef<FileSystemFolder>);
+			this._FileType = default(EntityRef<FileType>);
+			this._Folder = default(EntityRef<Folder>);
+			this._Account = default(EntityRef<Account>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public long FileID
+		{
+			get
+			{
+				return this._FileID;
+			}
+			set
+			{
+				if ((this._FileID != value))
+				{
+					this.OnFileIDChanging(value);
+					this.SendPropertyChanging();
+					this._FileID = value;
+					this.SendPropertyChanged("FileID");
+					this.OnFileIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileSystemName", DbType="UniqueIdentifier NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.Guid FileSystemName
+		{
+			get
+			{
+				return this._FileSystemName;
+			}
+			set
+			{
+				if ((this._FileSystemName != value))
+				{
+					this.OnFileSystemNameChanging(value);
+					this.SendPropertyChanging();
+					this._FileSystemName = value;
+					this.SendPropertyChanged("FileSystemName");
+					this.OnFileSystemNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileSystemFolderID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int FileSystemFolderID
+		{
+			get
+			{
+				return this._FileSystemFolderID;
+			}
+			set
+			{
+				if ((this._FileSystemFolderID != value))
+				{
+					if (this._FileSystemFolder.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFileSystemFolderIDChanging(value);
+					this.SendPropertyChanging();
+					this._FileSystemFolderID = value;
+					this.SendPropertyChanged("FileSystemFolderID");
+					this.OnFileSystemFolderIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string FileName
+		{
+			get
+			{
+				return this._FileName;
+			}
+			set
+			{
+				if ((this._FileName != value))
+				{
+					this.OnFileNameChanging(value);
+					this.SendPropertyChanging();
+					this._FileName = value;
+					this.SendPropertyChanged("FileName");
+					this.OnFileNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileTypeID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int FileTypeID
+		{
+			get
+			{
+				return this._FileTypeID;
+			}
+			set
+			{
+				if ((this._FileTypeID != value))
+				{
+					if (this._FileType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFileTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._FileTypeID = value;
+					this.SendPropertyChanged("FileTypeID");
+					this.OnFileTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPublicResource", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool IsPublicResource
+		{
+			get
+			{
+				return this._IsPublicResource;
+			}
+			set
+			{
+				if ((this._IsPublicResource != value))
+				{
+					this.OnIsPublicResourceChanging(value);
+					this.SendPropertyChanging();
+					this._IsPublicResource = value;
+					this.SendPropertyChanged("IsPublicResource");
+					this.OnIsPublicResourceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultFolderID", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long DefaultFolderID
+		{
+			get
+			{
+				return this._DefaultFolderID;
+			}
+			set
+			{
+				if ((this._DefaultFolderID != value))
+				{
+					if (this._Folder.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDefaultFolderIDChanging(value);
+					this.SendPropertyChanging();
+					this._DefaultFolderID = value;
+					this.SendPropertyChanged("DefaultFolderID");
+					this.OnDefaultFolderIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this.OnTimestampChanging(value);
+					this.SendPropertyChanging();
+					this._Timestamp = value;
+					this.SendPropertyChanged("Timestamp");
+					this.OnTimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long Size
+		{
+			get
+			{
+				return this._Size;
+			}
+			set
+			{
+				if ((this._Size != value))
+				{
+					this.OnSizeChanging(value);
+					this.SendPropertyChanging();
+					this._Size = value;
+					this.SendPropertyChanged("Size");
+					this.OnSizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FileSystemFolder_File", Storage="_FileSystemFolder", ThisKey="FileSystemFolderID", OtherKey="FileSystemFolderID", IsForeignKey=true)]
+		public FileSystemFolder FileSystemFolder
+		{
+			get
+			{
+				return this._FileSystemFolder.Entity;
+			}
+			set
+			{
+				FileSystemFolder previousValue = this._FileSystemFolder.Entity;
+				if (((previousValue != value) 
+							|| (this._FileSystemFolder.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._FileSystemFolder.Entity = null;
+						previousValue.Files.Remove(this);
+					}
+					this._FileSystemFolder.Entity = value;
+					if ((value != null))
+					{
+						value.Files.Add(this);
+						this._FileSystemFolderID = value.FileSystemFolderID;
+					}
+					else
+					{
+						this._FileSystemFolderID = default(int);
+					}
+					this.SendPropertyChanged("FileSystemFolder");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FileType_File", Storage="_FileType", ThisKey="FileTypeID", OtherKey="FileTypeID", IsForeignKey=true)]
+		public FileType FileType
+		{
+			get
+			{
+				return this._FileType.Entity;
+			}
+			set
+			{
+				FileType previousValue = this._FileType.Entity;
+				if (((previousValue != value) 
+							|| (this._FileType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._FileType.Entity = null;
+						previousValue.Files.Remove(this);
+					}
+					this._FileType.Entity = value;
+					if ((value != null))
+					{
+						value.Files.Add(this);
+						this._FileTypeID = value.FileTypeID;
+					}
+					else
+					{
+						this._FileTypeID = default(int);
+					}
+					this.SendPropertyChanged("FileType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Folder_File", Storage="_Folder", ThisKey="DefaultFolderID", OtherKey="FolderID", IsForeignKey=true)]
+		public Folder Folder
+		{
+			get
+			{
+				return this._Folder.Entity;
+			}
+			set
+			{
+				Folder previousValue = this._Folder.Entity;
+				if (((previousValue != value) 
+							|| (this._Folder.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Folder.Entity = null;
+						previousValue.Files.Remove(this);
+					}
+					this._Folder.Entity = value;
+					if ((value != null))
+					{
+						value.Files.Add(this);
+						this._DefaultFolderID = value.FolderID;
+					}
+					else
+					{
+						this._DefaultFolderID = default(long);
+					}
+					this.SendPropertyChanged("Folder");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_File", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Files.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Files.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FileSystemFolder")]
+	public partial class FileSystemFolder : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FileSystemFolderID;
+		
+		private string _Path;
+		
+		private System.Data.Linq.Binary _Timestamp;
+		
+		private EntitySet<File> _Files;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFileSystemFolderIDChanging(int value);
+    partial void OnFileSystemFolderIDChanged();
+    partial void OnPathChanging(string value);
+    partial void OnPathChanged();
+    partial void OnTimestampChanging(System.Data.Linq.Binary value);
+    partial void OnTimestampChanged();
+    #endregion
+		
+		public FileSystemFolder()
+		{
+			this._Files = new EntitySet<File>(new Action<File>(this.attach_Files), new Action<File>(this.detach_Files));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileSystemFolderID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int FileSystemFolderID
+		{
+			get
+			{
+				return this._FileSystemFolderID;
+			}
+			set
+			{
+				if ((this._FileSystemFolderID != value))
+				{
+					this.OnFileSystemFolderIDChanging(value);
+					this.SendPropertyChanging();
+					this._FileSystemFolderID = value;
+					this.SendPropertyChanged("FileSystemFolderID");
+					this.OnFileSystemFolderIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Path", DbType="NVarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Path
+		{
+			get
+			{
+				return this._Path;
+			}
+			set
+			{
+				if ((this._Path != value))
+				{
+					this.OnPathChanging(value);
+					this.SendPropertyChanging();
+					this._Path = value;
+					this.SendPropertyChanged("Path");
+					this.OnPathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this.OnTimestampChanging(value);
+					this.SendPropertyChanging();
+					this._Timestamp = value;
+					this.SendPropertyChanged("Timestamp");
+					this.OnTimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FileSystemFolder_File", Storage="_Files", ThisKey="FileSystemFolderID", OtherKey="FileSystemFolderID")]
+		public EntitySet<File> Files
+		{
+			get
+			{
+				return this._Files;
+			}
+			set
+			{
+				this._Files.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.FileSystemFolder = this;
+		}
+		
+		private void detach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.FileSystemFolder = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FileType")]
+	public partial class FileType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FileTypeID;
+		
+		private string _Name;
+		
+		private EntitySet<File> _Files;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFileTypeIDChanging(int value);
+    partial void OnFileTypeIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public FileType()
+		{
+			this._Files = new EntitySet<File>(new Action<File>(this.attach_Files), new Action<File>(this.detach_Files));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int FileTypeID
+		{
+			get
+			{
+				return this._FileTypeID;
+			}
+			set
+			{
+				if ((this._FileTypeID != value))
+				{
+					this.OnFileTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._FileTypeID = value;
+					this.SendPropertyChanged("FileTypeID");
+					this.OnFileTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FileType_File", Storage="_Files", ThisKey="FileTypeID", OtherKey="FileTypeID")]
+		public EntitySet<File> Files
+		{
+			get
+			{
+				return this._Files;
+			}
+			set
+			{
+				this._Files.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.FileType = this;
+		}
+		
+		private void detach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.FileType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Folder")]
+	public partial class Folder : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _FolderID;
+		
+		private string _Name;
+		
+		private bool _IsPublicResource;
+		
+		private System.DateTime _CreateDate;
+		
+		private int _AccountID;
+		
+		private string _Description;
+		
+		private string _Location;
+		
+		private System.Data.Linq.Binary _Timestamp;
+		
+		private System.Nullable<int> _FolderTypeID;
+		
+		private EntitySet<File> _Files;
+		
+		private EntityRef<FolderType> _FolderType;
+		
+		private EntityRef<Account> _Account;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFolderIDChanging(long value);
+    partial void OnFolderIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnIsPublicResourceChanging(bool value);
+    partial void OnIsPublicResourceChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnAccountIDChanging(int value);
+    partial void OnAccountIDChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnLocationChanging(string value);
+    partial void OnLocationChanged();
+    partial void OnTimestampChanging(System.Data.Linq.Binary value);
+    partial void OnTimestampChanged();
+    partial void OnFolderTypeIDChanging(System.Nullable<int> value);
+    partial void OnFolderTypeIDChanged();
+    #endregion
+		
+		public Folder()
+		{
+			this._Files = new EntitySet<File>(new Action<File>(this.attach_Files), new Action<File>(this.detach_Files));
+			this._FolderType = default(EntityRef<FolderType>);
+			this._Account = default(EntityRef<Account>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FolderID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public long FolderID
+		{
+			get
+			{
+				return this._FolderID;
+			}
+			set
+			{
+				if ((this._FolderID != value))
+				{
+					this.OnFolderIDChanging(value);
+					this.SendPropertyChanging();
+					this._FolderID = value;
+					this.SendPropertyChanged("FolderID");
+					this.OnFolderIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPublicResource", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool IsPublicResource
+		{
+			get
+			{
+				return this._IsPublicResource;
+			}
+			set
+			{
+				if ((this._IsPublicResource != value))
+				{
+					this.OnIsPublicResourceChanging(value);
+					this.SendPropertyChanging();
+					this._IsPublicResource = value;
+					this.SendPropertyChanged("IsPublicResource");
+					this.OnIsPublicResourceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="NVarChar(100) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Location
+		{
+			get
+			{
+				return this._Location;
+			}
+			set
+			{
+				if ((this._Location != value))
+				{
+					this.OnLocationChanging(value);
+					this.SendPropertyChanging();
+					this._Location = value;
+					this.SendPropertyChanged("Location");
+					this.OnLocationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this.OnTimestampChanging(value);
+					this.SendPropertyChanging();
+					this._Timestamp = value;
+					this.SendPropertyChanged("Timestamp");
+					this.OnTimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FolderTypeID", DbType="Int", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<int> FolderTypeID
+		{
+			get
+			{
+				return this._FolderTypeID;
+			}
+			set
+			{
+				if ((this._FolderTypeID != value))
+				{
+					if (this._FolderType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFolderTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._FolderTypeID = value;
+					this.SendPropertyChanged("FolderTypeID");
+					this.OnFolderTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Folder_File", Storage="_Files", ThisKey="FolderID", OtherKey="DefaultFolderID")]
+		public EntitySet<File> Files
+		{
+			get
+			{
+				return this._Files;
+			}
+			set
+			{
+				this._Files.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FolderType_Folder", Storage="_FolderType", ThisKey="FolderTypeID", OtherKey="FolderTypeID", IsForeignKey=true)]
+		public FolderType FolderType
+		{
+			get
+			{
+				return this._FolderType.Entity;
+			}
+			set
+			{
+				FolderType previousValue = this._FolderType.Entity;
+				if (((previousValue != value) 
+							|| (this._FolderType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._FolderType.Entity = null;
+						previousValue.Folders.Remove(this);
+					}
+					this._FolderType.Entity = value;
+					if ((value != null))
+					{
+						value.Folders.Add(this);
+						this._FolderTypeID = value.FolderTypeID;
+					}
+					else
+					{
+						this._FolderTypeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("FolderType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Folder", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Folders.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Folders.Add(this);
+						this._AccountID = value.AccountID;
+					}
+					else
+					{
+						this._AccountID = default(int);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.Folder = this;
+		}
+		
+		private void detach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.Folder = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FolderType")]
+	public partial class FolderType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FolderTypeID;
+		
+		private string _Name;
+		
+		private EntitySet<Folder> _Folders;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFolderTypeIDChanging(int value);
+    partial void OnFolderTypeIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public FolderType()
+		{
+			this._Folders = new EntitySet<Folder>(new Action<Folder>(this.attach_Folders), new Action<Folder>(this.detach_Folders));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FolderTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int FolderTypeID
+		{
+			get
+			{
+				return this._FolderTypeID;
+			}
+			set
+			{
+				if ((this._FolderTypeID != value))
+				{
+					this.OnFolderTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._FolderTypeID = value;
+					this.SendPropertyChanged("FolderTypeID");
+					this.OnFolderTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FolderType_Folder", Storage="_Folders", ThisKey="FolderTypeID", OtherKey="FolderTypeID")]
+		public EntitySet<Folder> Folders
+		{
+			get
+			{
+				return this._Folders;
+			}
+			set
+			{
+				this._Folders.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Folders(Folder entity)
+		{
+			this.SendPropertyChanging();
+			entity.FolderType = this;
+		}
+		
+		private void detach_Folders(Folder entity)
+		{
+			this.SendPropertyChanging();
+			entity.FolderType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FolderFile")]
+	public partial class FolderFile
+	{
+		
+		private long _FolderID;
+		
+		private long _FileID;
+		
+		private int _AccountID;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		private System.Data.Linq.Binary _Timestamp;
+		
+		public FolderFile()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FolderID", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long FolderID
+		{
+			get
+			{
+				return this._FolderID;
+			}
+			set
+			{
+				if ((this._FolderID != value))
+				{
+					this._FolderID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileID", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long FileID
+		{
+			get
+			{
+				return this._FileID;
+			}
+			set
+			{
+				if ((this._FileID != value))
+				{
+					this._FileID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this._Timestamp = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
+	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AccountID;
+		
+		private string _UserName;
+		
+		private string _DisplayName;
+		
+		private string _Password;
+		
+		private string _Email;
+		
+		private bool _EmailVerified;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		private System.Nullable<System.DateTime> _LastUpdateDate;
+		
+		private System.Data.Linq.Binary _Timestamp;
+		
+		private System.Nullable<bool> _UseAuthenticationService;
+		
+		private EntitySet<AccountPermission> _AccountPermissions;
+		
+		private EntitySet<Alert> _Alerts;
+		
+		private EntitySet<Comment> _Comments;
+		
+		private EntitySet<Friend> _Friends;
+		
+		private EntitySet<Friend> _Friends1;
+		
+		private EntitySet<FriendInvitation> _FriendInvitations;
+		
+		private EntitySet<Message> _Messages;
+		
+		private EntitySet<MessageRecipient> _MessageRecipients;
+		
+		private EntitySet<Profile> _Profiles;
+		
+		private EntitySet<StatusUpdate> _StatusUpdates;
+		
+		private EntitySet<StatusUpdate> _StatusUpdates1;
+		
+		private EntitySet<GroupMember> _GroupMembers;
+		
+		private EntitySet<Group> _Groups;
+		
+		private EntitySet<Blog> _Blogs;
+		
+		private EntitySet<ContentFilter> _ContentFilters;
+		
+		private EntitySet<BoardPost> _BoardPosts;
+		
+		private EntitySet<File> _Files;
+		
+		private EntitySet<Folder> _Folders;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAccountIDChanging(int value);
+    partial void OnAccountIDChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnDisplayNameChanging(string value);
+    partial void OnDisplayNameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnEmailVerifiedChanging(bool value);
+    partial void OnEmailVerifiedChanged();
+    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastUpdateDateChanged();
+    partial void OnTimestampChanging(System.Data.Linq.Binary value);
+    partial void OnTimestampChanged();
+    partial void OnUseAuthenticationServiceChanging(System.Nullable<bool> value);
+    partial void OnUseAuthenticationServiceChanged();
+    #endregion
+		
+		public Account()
+		{
+			this._AccountPermissions = new EntitySet<AccountPermission>(new Action<AccountPermission>(this.attach_AccountPermissions), new Action<AccountPermission>(this.detach_AccountPermissions));
+			this._Alerts = new EntitySet<Alert>(new Action<Alert>(this.attach_Alerts), new Action<Alert>(this.detach_Alerts));
+			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
+			this._Friends = new EntitySet<Friend>(new Action<Friend>(this.attach_Friends), new Action<Friend>(this.detach_Friends));
+			this._Friends1 = new EntitySet<Friend>(new Action<Friend>(this.attach_Friends1), new Action<Friend>(this.detach_Friends1));
+			this._FriendInvitations = new EntitySet<FriendInvitation>(new Action<FriendInvitation>(this.attach_FriendInvitations), new Action<FriendInvitation>(this.detach_FriendInvitations));
+			this._Messages = new EntitySet<Message>(new Action<Message>(this.attach_Messages), new Action<Message>(this.detach_Messages));
+			this._MessageRecipients = new EntitySet<MessageRecipient>(new Action<MessageRecipient>(this.attach_MessageRecipients), new Action<MessageRecipient>(this.detach_MessageRecipients));
+			this._Profiles = new EntitySet<Profile>(new Action<Profile>(this.attach_Profiles), new Action<Profile>(this.detach_Profiles));
+			this._StatusUpdates = new EntitySet<StatusUpdate>(new Action<StatusUpdate>(this.attach_StatusUpdates), new Action<StatusUpdate>(this.detach_StatusUpdates));
+			this._StatusUpdates1 = new EntitySet<StatusUpdate>(new Action<StatusUpdate>(this.attach_StatusUpdates1), new Action<StatusUpdate>(this.detach_StatusUpdates1));
+			this._GroupMembers = new EntitySet<GroupMember>(new Action<GroupMember>(this.attach_GroupMembers), new Action<GroupMember>(this.detach_GroupMembers));
+			this._Groups = new EntitySet<Group>(new Action<Group>(this.attach_Groups), new Action<Group>(this.detach_Groups));
+			this._Blogs = new EntitySet<Blog>(new Action<Blog>(this.attach_Blogs), new Action<Blog>(this.detach_Blogs));
+			this._ContentFilters = new EntitySet<ContentFilter>(new Action<ContentFilter>(this.attach_ContentFilters), new Action<ContentFilter>(this.detach_ContentFilters));
+			this._BoardPosts = new EntitySet<BoardPost>(new Action<BoardPost>(this.attach_BoardPosts), new Action<BoardPost>(this.detach_BoardPosts));
+			this._Files = new EntitySet<File>(new Action<File>(this.attach_Files), new Action<File>(this.detach_Files));
+			this._Folders = new EntitySet<Folder>(new Action<Folder>(this.attach_Folders), new Action<Folder>(this.detach_Folders));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)", UpdateCheck=UpdateCheck.Never)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(100)", UpdateCheck=UpdateCheck.Never)]
+		public string DisplayName
+		{
+			get
+			{
+				return this._DisplayName;
+			}
+			set
+			{
+				if ((this._DisplayName != value))
+				{
+					this.OnDisplayNameChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayName = value;
+					this.SendPropertyChanged("DisplayName");
+					this.OnDisplayNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50)", UpdateCheck=UpdateCheck.Never)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(150)", UpdateCheck=UpdateCheck.Never)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailVerified", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool EmailVerified
+		{
+			get
+			{
+				return this._EmailVerified;
+			}
+			set
+			{
+				if ((this._EmailVerified != value))
+				{
+					this.OnEmailVerifiedChanging(value);
+					this.SendPropertyChanging();
+					this._EmailVerified = value;
+					this.SendPropertyChanged("EmailVerified");
+					this.OnEmailVerifiedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="SmallDateTime", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateDate", DbType="SmallDateTime", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<System.DateTime> LastUpdateDate
+		{
+			get
+			{
+				return this._LastUpdateDate;
+			}
+			set
+			{
+				if ((this._LastUpdateDate != value))
+				{
+					this.OnLastUpdateDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateDate = value;
+					this.SendPropertyChanged("LastUpdateDate");
+					this.OnLastUpdateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this.OnTimestampChanging(value);
+					this.SendPropertyChanging();
+					this._Timestamp = value;
+					this.SendPropertyChanged("Timestamp");
+					this.OnTimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UseAuthenticationService", DbType="Bit", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<bool> UseAuthenticationService
+		{
+			get
+			{
+				return this._UseAuthenticationService;
+			}
+			set
+			{
+				if ((this._UseAuthenticationService != value))
+				{
+					this.OnUseAuthenticationServiceChanging(value);
+					this.SendPropertyChanging();
+					this._UseAuthenticationService = value;
+					this.SendPropertyChanged("UseAuthenticationService");
+					this.OnUseAuthenticationServiceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountPermission", Storage="_AccountPermissions", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<AccountPermission> AccountPermissions
+		{
+			get
+			{
+				return this._AccountPermissions;
+			}
+			set
+			{
+				this._AccountPermissions.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Alert", Storage="_Alerts", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<Alert> Alerts
+		{
+			get
+			{
+				return this._Alerts;
+			}
+			set
+			{
+				this._Alerts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Comment", Storage="_Comments", ThisKey="AccountID", OtherKey="CommentByAccountID")]
+		public EntitySet<Comment> Comments
+		{
+			get
+			{
+				return this._Comments;
+			}
+			set
+			{
+				this._Comments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend", Storage="_Friends", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<Friend> Friends
+		{
+			get
+			{
+				return this._Friends;
+			}
+			set
+			{
+				this._Friends.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend1", Storage="_Friends1", ThisKey="AccountID", OtherKey="MyFriendAccountID")]
+		public EntitySet<Friend> Friends1
+		{
+			get
+			{
+				return this._Friends1;
+			}
+			set
+			{
+				this._Friends1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_FriendInvitation", Storage="_FriendInvitations", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<FriendInvitation> FriendInvitations
+		{
+			get
+			{
+				return this._FriendInvitations;
+			}
+			set
+			{
+				this._FriendInvitations.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Message", Storage="_Messages", ThisKey="AccountID", OtherKey="SendByAccountID")]
+		public EntitySet<Message> Messages
+		{
+			get
+			{
+				return this._Messages;
+			}
+			set
+			{
+				this._Messages.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_MessageRecipient", Storage="_MessageRecipients", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<MessageRecipient> MessageRecipients
+		{
+			get
+			{
+				return this._MessageRecipients;
+			}
+			set
+			{
+				this._MessageRecipients.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Profile", Storage="_Profiles", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<Profile> Profiles
+		{
+			get
+			{
+				return this._Profiles;
+			}
+			set
+			{
+				this._Profiles.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_StatusUpdate", Storage="_StatusUpdates", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<StatusUpdate> StatusUpdates
+		{
+			get
+			{
+				return this._StatusUpdates;
+			}
+			set
+			{
+				this._StatusUpdates.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_StatusUpdate1", Storage="_StatusUpdates1", ThisKey="AccountID", OtherKey="SenderID")]
+		public EntitySet<StatusUpdate> StatusUpdates1
+		{
+			get
+			{
+				return this._StatusUpdates1;
+			}
+			set
+			{
+				this._StatusUpdates1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_GroupMember", Storage="_GroupMembers", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<GroupMember> GroupMembers
+		{
+			get
+			{
+				return this._GroupMembers;
+			}
+			set
+			{
+				this._GroupMembers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Group", Storage="_Groups", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<Group> Groups
+		{
+			get
+			{
+				return this._Groups;
+			}
+			set
+			{
+				this._Groups.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Blog", Storage="_Blogs", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<Blog> Blogs
+		{
+			get
+			{
+				return this._Blogs;
+			}
+			set
+			{
+				this._Blogs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_ContentFilter", Storage="_ContentFilters", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<ContentFilter> ContentFilters
+		{
+			get
+			{
+				return this._ContentFilters;
+			}
+			set
+			{
+				this._ContentFilters.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_BoardPost", Storage="_BoardPosts", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<BoardPost> BoardPosts
+		{
+			get
+			{
+				return this._BoardPosts;
+			}
+			set
+			{
+				this._BoardPosts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_File", Storage="_Files", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<File> Files
+		{
+			get
+			{
+				return this._Files;
+			}
+			set
+			{
+				this._Files.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Folder", Storage="_Folders", ThisKey="AccountID", OtherKey="AccountID")]
+		public EntitySet<Folder> Folders
+		{
+			get
+			{
+				return this._Folders;
+			}
+			set
+			{
+				this._Folders.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_AccountPermissions(AccountPermission entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_AccountPermissions(AccountPermission entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Alerts(Alert entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Alerts(Alert entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Friends(Friend entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Friends(Friend entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Friends1(Friend entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account1 = this;
+		}
+		
+		private void detach_Friends1(Friend entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account1 = null;
+		}
+		
+		private void attach_FriendInvitations(FriendInvitation entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_FriendInvitations(FriendInvitation entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Messages(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Messages(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_MessageRecipients(MessageRecipient entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_MessageRecipients(MessageRecipient entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Profiles(Profile entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Profiles(Profile entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_StatusUpdates(StatusUpdate entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_StatusUpdates(StatusUpdate entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_StatusUpdates1(StatusUpdate entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account1 = this;
+		}
+		
+		private void detach_StatusUpdates1(StatusUpdate entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account1 = null;
+		}
+		
+		private void attach_GroupMembers(GroupMember entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_GroupMembers(GroupMember entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Groups(Group entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Groups(Group entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Blogs(Blog entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Blogs(Blog entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_ContentFilters(ContentFilter entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_ContentFilters(ContentFilter entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_BoardPosts(BoardPost entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_BoardPosts(BoardPost entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Folders(Folder entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Folders(Folder entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
 		}
 	}
 }

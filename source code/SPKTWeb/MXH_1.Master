@@ -15,6 +15,7 @@
     <title>Mạng xã hội SINH VIÊN</title>
     <link type="text/css" rel="Stylesheet" href="Styles/MXH.css" />
     <link rel="shortcut icon" type="image/ico" href="Image/spkticon1.png" />
+    <link href="Style2.css" rel="Stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
@@ -51,8 +52,8 @@
                                         Width="100%" Height="22px" OnClick="thaydoi_Click"></asp:LinkButton>
                                 </div>
                                 <div class="link">
-                                    <asp:LinkButton ID="lb_thoat" runat="server" Text="Đăng suất" Font-Strikeout="false"
-                                        Width="100%" Height="22px"></asp:LinkButton>
+                                    <asp:LinkButton ID="lb_thoat" runat="server" Text="Đăng xuất" Font-Strikeout="false"
+                                        Width="100%" Height="22px" OnClick="logout_Click"></asp:LinkButton>
                                 </div>
                             </div>
                         </asp:Panel>

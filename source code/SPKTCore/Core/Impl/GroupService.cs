@@ -15,13 +15,15 @@ namespace SPKTCore.Core.Impl
         private IWebContext _webContext;
         private IBoardForumRepository _forumRepository;
         private IGroupForumRepository _groupForumRepository;
+        private IAccountRepository _accountRepository;
         public GroupService()
         {
             _groupRepository = new GroupRepository();
             _webContext =new WebContext();
-            //_forumRepository =new BoardForumRepository();
-            //_groupForumRepository = new GroupForumRepository();
+            _forumRepository =new BoardForumRepository(); 
+            _groupForumRepository = new GroupForumRepository();
             _groupMemberRepository =new GroupMemberRepository();
+            _accountRepository = new AccountRepository();
         }
 
         public bool IsOwnerOrAdministrator(Int32 AccountID, Int32 GroupID)
@@ -54,15 +56,15 @@ namespace SPKTCore.Core.Impl
             {
                 result = _groupRepository.SaveGroup(group);
             }
-           /* else
+            else
             {
                 result = _groupRepository.SaveGroup(group);
 
                 BoardForum forum = new BoardForum();
-                forum.CategoryID = 4; //group forums container
+                forum.CategoryID = 8; //group forums container
                 forum.CreateDate = DateTime.Now;
                 forum.LastPostByAccountID = _webContext.CurrentUser.AccountID;
-                forum.LastPostByUsername = _webContext.CurrentUser.Username;
+                forum.LastPostByUsername = _webContext.CurrentUser.UserName;
                 forum.LastPostDate = DateTime.Now;
                 forum.Name = group.Name;
                 forum.PageName = group.PageName;
@@ -78,9 +80,21 @@ namespace SPKTCore.Core.Impl
                 gf.GroupID = group.GroupID;
                 gf.CreateDate = DateTime.Now;
                 _groupForumRepository.SaveGroupForum(gf);
-            }*/
+            }
 
             return result;
+        }
+
+
+        public List<Account> GetAllMemberByGroupID(int GroupID)
+        {
+            List<Account> accounts = new List<Account>();
+            List<int> accountIDs = _groupMemberRepository.GetMemberAccountIDsByGroupID(GroupID);
+            foreach (int i in accountIDs)
+            {
+                accounts.Add(_accountRepository.GetAccountByID(i));
+            }
+            return accounts;
         }
     }
 }

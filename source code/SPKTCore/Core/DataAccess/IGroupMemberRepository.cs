@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SPKTCore.Core.Domain;
 
 namespace SPKTCore.Core.DataAccess
 {
     public interface IGroupMemberRepository
     {
         List<int> GetMemberAccountIDsByGroupID(Int32 GroupID);
-        //void SaveGroupMember(GroupMember groupMember);
-        //void DeleteGroupMember(GroupMember groupMember);
+        void SaveGroupMember(GroupMember groupMember);
+        void DeleteGroupMember(GroupMember groupMember);
         void DeleteGroupMembers(List<int> MembersToDelete, int GroupID);
         void ApproveGroupMembers(List<int> MembersToApprove, int GroupID);
         void PromoteGroupMembersToAdmin(List<int> MembersToPromote, int GroupID);
