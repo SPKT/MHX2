@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Comments.ascx.cs" Inherits="SPKTWeb.UserControl.Comments" %>
+
        <asp:UpdatePanel runat="server">
            
           
@@ -8,7 +9,7 @@
             <asp:HiddenField ID="hidenSystemObjectRecordID" Value="0" runat="server" />
             <asp:HiddenField ID="hidenSystemObjectID" Value="0" runat="server" />
 
-        <asp:Timer ID="Timer1" runat="server" Interval="10000" ontick="Timer1_Tick" >
+        <asp:Timer ID="Timer1" runat="server" Interval="20000" ontick="Timer1_Tick" >
        </asp:Timer>
             <asp:PlaceHolder ID="phComments" runat="server"></asp:PlaceHolder>
                     <div style="margin-bottom:5px;">

@@ -32,7 +32,7 @@ namespace SPKTWeb.Groups.UserControl
             lblDescription.Text = Thread.Post;
 
             imgProfile.ImageUrl = "/Image/ProfileAvatar.aspx?AccountID=" + Thread.AccountID.ToString();
-            linkReply.Text = "Reply";
+            linkReply.Text = "Bình Luận";
             //linkReply.NavigateUrl = "/Forums/Post.aspx?PostID=" + Thread.PostID.ToString();
 
             linkReply.NavigateUrl = "/Groups/PostGroupforum.aspx?PostID=" + Thread.PostID.ToString() + "&IsThread=" + false  + "&ForumID=" + forum.ForumID + "&GroupID=" + group.GroupID;

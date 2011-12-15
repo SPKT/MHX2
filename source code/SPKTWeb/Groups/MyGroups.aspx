@@ -92,7 +92,7 @@
                          <asp:Literal Visible="false" ID="litGroupID" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).GroupID %>'></asp:Literal>
                         </div>
                         <br />
-                        <img width="100%" alt="k" height="2px" id="img2" src="../../Image/bground2.gif" />
+                        <img id="img" alt="kk" src="../../Image/post_entry_bkgr.png" runat="server" style="width:100%; height:1px;" />
                         
                        </div>
                     </ItemTemplate>

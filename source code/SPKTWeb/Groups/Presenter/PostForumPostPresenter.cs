@@ -54,7 +54,8 @@ namespace SPKTWeb.Groups.Presenter
                         post.ThreadID = postToReplyToo.PostID;
                     else
                     {
-                        post.ThreadID = postToReplyToo.ThreadID;
+                        //if post.ThreadID = postToReplyToo.ThreadID thì ở thread show tất cả bình luận.
+                        post.ThreadID = postToReplyToo.PostID;
                     }
                     post.ForumID = postToReplyToo.ForumID;
                 }

@@ -247,6 +247,7 @@
     <Content Include="Messages\UserControl\ReadMessage.ascx" />
     <Content Include="Messages\WebForm1.aspx" />
     <Content Include="Messages\WebForm2.aspx" />
+    <Content Include="NotificationTemp.aspx" />
     <Content Include="Picture\banner.jpg" />
     <Content Include="Picture\bg_img.png" />
     <Content Include="Picture\blog.jpg" />
@@ -330,7 +331,7 @@
     <Content Include="Profiles\ManageProfile.aspx" />
     <Content Include="Profiles\Test.aspx" />
     <Content Include="Profiles\UploadAvatar.aspx" />
-    <Content Include="Profiles\UserControls\AlertControl.ascx" />
+    <Content Include="Profiles\UserControls\NotifycationControl.ascx" />
     <Content Include="Profiles\UserControls\ProfileAttributeControl.ascx" />
     <Content Include="Profiles\UserControls\ProfileAttributeControlFull.ascx" />
     <Content Include="Profiles\UserControls\StatusControl.ascx" />
@@ -2268,6 +2269,13 @@
     <Compile Include="NestedMasterPage1.master.designer.cs">
       <DependentUpon>NestedMasterPage1.master</DependentUpon>
     </Compile>
+    <Compile Include="NotificationTemp.aspx.cs">
+      <DependentUpon>NotificationTemp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationTemp.aspx.designer.cs">
+      <DependentUpon>NotificationTemp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\CommentPresenter.cs" />
     <Compile Include="Presenter\MXH1MasterPresenter.cs" />
     <Compile Include="MasterPage.Master.cs">
@@ -2278,6 +2286,7 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Presenter\ProfileDisplayPresenter.cs" />
+    <Compile Include="Profiles\Interface\INotificationControl.cs" />
     <Compile Include="Profiles\Interface\IManageProfile.cs" />
     <Compile Include="Profiles\Interface\IStatusControl.cs" />
     <Compile Include="Profiles\Interface\IUploadAvatar.cs" />
@@ -2292,6 +2301,7 @@
     <Compile Include="Profiles\ManageProfile.aspx.designer.cs">
       <DependentUpon>ManageProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Profiles\Presenter\NotifycationControlPresenter.cs" />
     <Compile Include="Profiles\Presenter\ManageProfilePresenter.cs" />
     <Compile Include="Profiles\Presenter\StatusControlPresenter.cs" />
     <Compile Include="Profiles\Presenter\UploadAvatarPresenter.cs" />
@@ -2311,12 +2321,12 @@
     <Compile Include="Profiles\UploadAvatar.aspx.designer.cs">
       <DependentUpon>UploadAvatar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profiles\UserControls\AlertControl.ascx.cs">
-      <DependentUpon>AlertControl.ascx</DependentUpon>
+    <Compile Include="Profiles\UserControls\NotifycationControl.ascx.cs">
+      <DependentUpon>NotifycationControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profiles\UserControls\AlertControl.ascx.designer.cs">
-      <DependentUpon>AlertControl.ascx</DependentUpon>
+    <Compile Include="Profiles\UserControls\NotifycationControl.ascx.designer.cs">
+      <DependentUpon>NotifycationControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.cs">
       <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>

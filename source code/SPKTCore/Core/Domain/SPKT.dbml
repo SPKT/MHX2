@@ -509,6 +509,18 @@
       <Association Name="Account_File" Member="Files" ThisKey="AccountID" OtherKey="AccountID" Type="File" />
       <Association Name="Account_Folder" Member="Folders" ThisKey="AccountID" OtherKey="AccountID" Type="Folder" />
       <Association Name="Account_FolderFile" Member="FolderFiles" ThisKey="AccountID" OtherKey="AccountID" Type="FolderFile" />
+      <Association Name="Account_Notification" Member="Notifications" ThisKey="AccountID" OtherKey="AccountID" Type="Notification" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Notification" Member="Notifications">
+    <Type Name="Notification">
+      <Column Name="NotificationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="IsRead" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="Account_Notification" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.IsFlagged" Method="IsFlagged" IsComposable="true">

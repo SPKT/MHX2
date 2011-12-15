@@ -16,8 +16,10 @@ namespace SPKTCore.Core.Impl
         private IFriendRepository _friendRepository;
         private IAccountRepository _accountRepository;
         private IGroupMemberRepository _groupMemberRepository;
+        private INotificationRepository _notifycationRepository;
         private Account account;
         private Alert alert;
+        private Notification notify;
         private string alertMessage;
         private string[] tags = { "[rootUrl]" };
         public AlertService()
@@ -29,6 +31,8 @@ namespace SPKTCore.Core.Impl
             alert = new Alert();
             _accountRepository = new AccountRepository();
             _groupMemberRepository = new GroupMemberRepository();
+            _notifycationRepository = new NotificationRepository();
+
         }
 
         private void Init()
@@ -37,16 +41,18 @@ namespace SPKTCore.Core.Impl
             alert = new Alert();
             alert.AccountID = account.AccountID;
             alert.CreateDate = DateTime.Now;
+            notify = new Notification();
         }
 
         public void AddAccountCreatedAlert()
         {
             Init();
             alertMessage = "<div class=\"AlertHeader\">" + GetProfileUrl(account.UserName) + " just signed up!</div>";
-            alertMessage += "<div class=\"AlertRow\">" + GetSendMessageUrl(account.AccountID) + "</div>";
+            //alertMessage += "<div class=\"AlertRow\">" + GetSendMessageUrl(account.AccountID) + "</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.AccountCreated;
             SaveAlert(alert);
+            SendAlertToFriends(alert);
         }
 
         public void AddAccountModifiedAlert()
@@ -64,21 +70,23 @@ namespace SPKTCore.Core.Impl
             Init();
             alertMessage = "<div class=\"AlertHeader\">" + GetProfileUrl(account.UserName) +
                            " vừa mới tạo Profile</div>";
-            alertMessage += "<div class=\"AlertRow\">" + GetSendMessageUrl(account.AccountID) + "</div>";
+            //alertMessage += "<div class=\"AlertRow\">" + GetSendMessageUrl(account.AccountID) + "</div>";
             alert.CreateDate = DateTime.Now;
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.ProfileCreated;
             SaveAlert(alert);
+            SendAlertToFriends(alert);
         }
 
         public void AddProfileModifiedAlert()
         {
             Init();
-            alertMessage = "<div class=\"AlertHeader\">" +"<a href='/UserProfile2.aspx?AccountID='"+account.UserName+"</a>" +
+            alertMessage = "<div class=\"AlertHeader\">" +"<a href='Profiles/UserProfile2.aspx?AccountID='"+account.UserName+"</a>" +
                            " vừa mới thay đổi thông tin cá nhân.</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.ProfileModified;
             SaveAlert(alert);
+            SendAlertToFriends(alert);
         }
         public void AddStatusUpdateAlert(StatusUpdate statusUpdate)
         {
@@ -87,17 +95,18 @@ namespace SPKTCore.Core.Impl
             alert.CreateDate = DateTime.Now;
             alert.AccountID = statusUpdate.SenderID;
             alert.AlertTypeID = (int)AlertType.AlertTypes.StatusUpdate;
-            //alertMessage = "<div class=\"AlertHeader\">" +  
-                            //GetProfileImage(_userSession.CurrentUser.AccountID)  
-                            //+ GetProfileUrl(_userSession.CurrentUser.UserName) +
-                            //"   " + statusUpdate.Status + "</div>";
+            alertMessage = "<div class=\"AlertHeader\">" +
+                            GetProfileImage(_userSession.CurrentUser.AccountID)
+                            + GetProfileUrl(_userSession.CurrentUser.UserName) +
+                            "   " + statusUpdate.Status + "</div>";
 
-            alertMessage ="<a href='/UserProfile2.aspx?AccountID='"+ _accountRepository.GetAccountByID(statusUpdate.SenderID).UserName+"</a" + " viết lên tường nhà "
+            /*alertMessage ="<a href='/UserProfile2.aspx?AccountID='"+ _accountRepository.GetAccountByID(statusUpdate.SenderID).UserName+"</a" + " viết lên tường nhà "
                     +"<a href='~/Profiles/UserProfile2.aspx?AccountID='"+ _accountRepository.GetAccountByID((int)statusUpdate.AccountID).UserName+"<\a>" + " : " + statusUpdate.Status;
+             */
            
             alert.Message = alertMessage;
             SaveAlert(alert);
-            //SendAlertToFriends(alert);
+            SendAlertToFriends(alert);
         }
         private string GetProfileImage(Int32 AccountID)
         {
@@ -114,6 +123,7 @@ namespace SPKTCore.Core.Impl
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewAvatar;
             SaveAlert(alert);
+            SendAlertToFriends(alert);
         }
 
         public List<Alert> GetAlertsByAccountID(Int32 AccountID)
@@ -157,19 +167,19 @@ namespace SPKTCore.Core.Impl
         {
             List<Alert> result = new List<Alert>();
             List<Alert> alerts = _alertRepository.GetAlertsByAccountID(AccountID);
-            //foreach (Alert alert in alerts)
-            //{
-            //    foreach (string s in tags)
-            //    {
-            //        switch (s)
-            //        {
-            //            case "[rootUrl]":
-            //                alert.Message = alert.Message.Replace("[rootUrl]", _webContext.RootUrl);
-            //                result.Add(alert);
-            //                break;
-            //        }
-            //    }
-            //}
+            foreach (Alert alert in alerts)
+            {
+                foreach (string s in tags)
+                {
+                    switch (s)
+                    {
+                        case "[rootUrl]":
+                            alert.Message = alert.Message.Replace("[rootUrl]", _webContext.RootUrl);
+                            result.Add(alert);
+                            break;
+                    }
+                }
+            }
 
             return alerts;
         }
@@ -181,6 +191,10 @@ namespace SPKTCore.Core.Impl
                 alert.AlertID = 0;
                 alert.AccountID = id;
                 SaveAlert(alert);
+                notify.AccountID = alert.AccountID;
+                notify.Body = alert.Message;
+                notify.IsRead = false;
+                _notifycationRepository.SaveNotification(notify);
             }
         }
 
@@ -202,10 +216,11 @@ namespace SPKTCore.Core.Impl
                            GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new post: <b>" +
                            post.Name + "</b></div>";
 
-            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+            /*alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + thread.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + thread.PageName +
-                           ".aspx</a></div>";
+                           ".aspx</a></div>";*/
+            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" +post.PostID + "&GroupID=" + group.GroupID +"</a></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToGroup(alert, group);
@@ -220,10 +235,11 @@ namespace SPKTCore.Core.Impl
                            GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new thread on the board: <b>" +
                            post.Name + "</b></div>";
 
-            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+            /*alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + post.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + post.PageName +
-                           ".aspx</a></div>";
+                           ".aspx</a></div>";*/
+            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" + post.PostID + "&GroupID=" + group.GroupID + "</a></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToGroup(alert, group);

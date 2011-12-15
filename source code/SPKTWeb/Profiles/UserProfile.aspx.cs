@@ -47,9 +47,9 @@ namespace SPKTWeb.Profiles
         {
             foreach (Alert alert in listAlert)
             {
-                AlertControl alertControl = new AlertControl();
-                alertControl.Alert = alert;
-                alertControl.YesNo = true;
+                NotifycationControl alertControl = new NotifycationControl();
+               // alertControl.Alert = alert;
+              //  alertControl.YesNo = true;
                 pnlAlert.Controls.Add(alertControl);
             }
             //foreach (Alert alert in listAlert)

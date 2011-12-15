@@ -7,28 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SPKTWeb.Groups {
+namespace SPKTWeb.Profiles.UserControls {
     
     
-    public partial class ViewAllGroup {
+    public partial class NotifycationControl {
         
         /// <summary>
-        /// form1 control.
+        /// pnlNotify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel pnlNotify;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// repNotify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Repeater repNotify;
         
         /// <summary>
         /// lblMessage control.
@@ -40,12 +40,12 @@ namespace SPKTWeb.Groups {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// lvGroups control.
+        /// hlkViewAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvGroups;
+        protected global::System.Web.UI.WebControls.HyperLink hlkViewAll;
     }
 }

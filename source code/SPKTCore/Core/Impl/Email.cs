@@ -17,6 +17,11 @@ namespace SPKTCore.Core.Impl
         const string FROM_EMAIL_ADDRESS = "mxh.spkt@gmail.com";
         const string PASSWORD = "mxh012345";
         private IFriendInvitationRepository _friendInvitationRepository;
+        IWebContext _webContext;
+        public void Init()
+        {
+            _webContext = new WebContext();
+        }
         public void SendEmail(string From, string Subject, string Message)
         {
             MailMessage mm = new MailMessage(From, TO_EMAIL_ADDRESS);
@@ -94,17 +99,19 @@ namespace SPKTCore.Core.Impl
         public void SendEmailAddressVerificationEmail(string Username, string To)
         {
             //TODO: Lay noi dung email tu ben ngoai (database, tham so)
+            Init();
             String emailBody = "Ban da dang ky thanh cong. De hoan thanh dang ky vui long click vao link ben duoi<br>";
             String queryStringValue = Cryptography.Encrypt(Username, ParameterSetting.EmailVerificationEncryptKey);
-            string link = String.Format("http://localhost:4120/Accounts/"+"{0}?{1}={2}", ParameterSetting.EmailVerificationURL, ParameterSetting.UsernameToVerifyQueryStringName, queryStringValue);
+            string link = String.Format(_webContext.RootUrl+"Accounts/"+"{0}?{1}={2}", ParameterSetting.EmailVerificationURL, ParameterSetting.UsernameToVerifyQueryStringName, queryStringValue);
             emailBody += String.Format("<br>Click here to verify: <a href='{0}'>{0}</a>", link);
             SendEmailTo(To,ParameterSetting.VerificationEmailSubject, emailBody);
 
         }
         public void SendFriendInvitation(string toEmail, string Username, string GUID, string Message)
         {
+            Init();
             String emailBody = "Toi muon ket ban voi ban, neu ban san long hay den tham profile cua toi<br>";
-            string link = String.Format("http://localhost:4120/Friends/" + "{0}?{1}={2}", ParameterSetting.FriendURL, "InvitationKey", GUID);
+            string link = String.Format(_webContext.RootUrl+"Friends/" + "{0}?{1}={2}", ParameterSetting.FriendURL, "InvitationKey", GUID);
             emailBody += String.Format("<br>Đồng ý: <a href='{0}'>{0}</a>", link);
             SendEmailTo(toEmail, Username + ParameterSetting.InvitionFriendSubject + " : ", emailBody + Message);
 

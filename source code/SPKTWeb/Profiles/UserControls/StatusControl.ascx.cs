@@ -26,7 +26,7 @@ namespace SPKTWeb.Profiles.UserControls
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            _presenter.SaveStatusUpdate(txtStatus.Text, 1);
+            //_presenter.SaveStatusUpdate(txtStatus.Text, 1);
         }
 
         public void LoadRange(List<VisibilityLevel> visiLevel)

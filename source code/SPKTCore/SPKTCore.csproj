@@ -90,6 +90,8 @@
     <Compile Include="Core\DataAccess\Impl\FileRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\FileSystemFolderRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\FolderRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\NotificationRepository.cs" />
+    <Compile Include="Core\DataAccess\INotificationRepository.cs" />
     <Compile Include="Core\Domain\BoardPost.cs" />
     <Compile Include="Core\Domain\File.cs" />
     <Compile Include="Core\Domain\FileSystemFolder.cs" />
@@ -165,12 +167,14 @@
     <Compile Include="Core\Impl\FriendService.cs" />
     <Compile Include="Core\Impl\GroupService.cs" />
     <Compile Include="Core\Impl\MessageService.cs" />
+    <Compile Include="Core\Impl\NotificationService.cs" />
     <Compile Include="Core\Impl\ParameterIntService.cs" />
     <Compile Include="Core\Impl\PrivacyService.cs" />
     <Compile Include="Core\Impl\ProfileAttributeService.cs" />
     <Compile Include="Core\Impl\ProfileService.cs" />
     <Compile Include="Core\Impl\StatusUpdateService.cs" />
     <Compile Include="Core\Impl\UserSession.cs" />
+    <Compile Include="Core\INotificationService.cs" />
     <Compile Include="Core\IParameterIntService.cs" />
     <Compile Include="Core\IPrivacyService.cs" />
     <Compile Include="Core\IProfileAttributeService.cs" />

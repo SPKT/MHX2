@@ -77,8 +77,9 @@
                 <div>
                     <div style="float:left">
                     </div>
-                    <div style="float:right; margin-bottom:10px;">
-                        <asp:HyperLink runat="server" ID="linkReply" NavigateUrl='<%#  "/Groups/PostGroupforum.aspx?" + "IsThread=" + 0 + "&ForumID=" + ((BoardPost)Container.DataItem).ForumID + "&GroupID=" + ((BoardPost)Container.DataItem).groupID+"&PostID=0"%>' Text="Bình Luận"></asp:HyperLink>
+                    <div style="float:right; margin-bottom:20px;">
+                        <asp:HyperLink runat="server" ID="hlkShowReply" NavigateUrl='<%#  "~/Groups/ViewGroupForumPost.aspx?PostID="+((BoardPost)Container.DataItem).PostID+"&GroupID="+((BoardPost)Container.DataItem).groupID%>' Text="Xem Bình Luận"></asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="linkReply" NavigateUrl='<%#  "/Groups/PostGroupforum.aspx?" + "IsThread=" + 0 + "&ForumID=" + ((BoardPost)Container.DataItem).ForumID + "&GroupID=" + ((BoardPost)Container.DataItem).groupID+"&PostID="+ ((BoardPost)Container.DataItem).PostID%>' Text="Bình Luận"></asp:HyperLink>
                     </div>
                 </div>
                
