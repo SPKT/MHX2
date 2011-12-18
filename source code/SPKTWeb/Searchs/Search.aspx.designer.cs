@@ -13,6 +13,15 @@ namespace SPKTWeb.Search {
     public partial class Search {
         
         /// <summary>
+        /// menu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SPKTWeb.Styles.LEFT_MENU menu;
+        
+        /// <summary>
         /// lblSearchTerm control.
         /// </summary>
         /// <remarks>
@@ -20,24 +29,6 @@ namespace SPKTWeb.Search {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSearchTerm;
-        
-        /// <summary>
-        /// lb_Soluong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_Soluong;
-        
-        /// <summary>
-        /// pnlFriends control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlFriends;
         
         /// <summary>
         /// repAccounts control.

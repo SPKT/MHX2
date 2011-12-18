@@ -15,6 +15,10 @@
 &nbsp;<asp:LinkButton ID="lb_Content" runat="server" Font-Underline="False" 
         ForeColor="Black" onclick="lb_Content_Click"></asp:LinkButton>
     <asp:Label ID="lb_MessageID" runat="server" Visible="False"></asp:Label>
+            <asp:Label ID="lb_Thoigian0" runat="server" Font-Italic="True" 
+                ForeColor="#FF6600" Visible="False"></asp:Label>
+            <asp:Label ID="lb_Thoigian1" runat="server" Font-Italic="True" 
+                ForeColor="#FF6600" Visible="False"></asp:Label>
         </td>
         <td align="center" style="width:3%">
             
@@ -46,14 +50,15 @@
         </td>
         <td align="center" style="width:3%">
             
-            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Image/collapse.jpg" /> 
+            <asp:ImageButton ID="ImageButton1" runat="server" 
+                ImageUrl="~/Image/collapse.jpg" onclick="ImageButton1_Click" /> 
                 
         </td>
     </tr>
     
     </table>
 </div>
-<div id="div_content" runat="server" style="border: 1px solid #999999; height:auto">
+<div id="div_content" runat="server" style="border: 1px solid #999999; height:auto; background-color:White;">
  
     &nbsp;
     <br />
@@ -69,5 +74,11 @@
         
 </div>
 </asp:Panel>
-  
+<asp:Panel ID="pn3" runat="server" Visible="false">
+<div style="margin:20px; width:80%; height:auto">
+    
+    <uc3:MessageNew ID="new_ms" runat="server" />
+    
+</div>
+</asp:Panel> 
 </div>

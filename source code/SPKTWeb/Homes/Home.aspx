@@ -7,12 +7,12 @@
 </asp:Content>
 <asp:Content ID="content6" ContentPlaceHolderID="right1" runat="server">
    
-    <div>
+    <div style="width:100%; height:100px; background-color:White; margin-top:0px;">
        <uc5:rightmenu ID="uc" runat="server" />
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
-<div runat="server" id="divMain">
+<div class="box" style="width:100%; height:100%;">
         <div>
             <asp:Label ID="lblXinChao" runat="server" Visible="false"></asp:Label>
             <asp:LinkButton Visible="false" ID="lbtnProfile" runat="server" OnClick="lbtnProfile_Click"></asp:LinkButton>

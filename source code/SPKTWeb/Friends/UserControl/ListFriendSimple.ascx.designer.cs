@@ -22,15 +22,6 @@ namespace SPKTWeb.Friends {
         protected global::System.Web.UI.WebControls.LinkButton lbt_Friend;
         
         /// <summary>
-        /// pnlInFriends control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlInFriends;
-        
-        /// <summary>
         /// repFriends control.
         /// </summary>
         /// <remarks>

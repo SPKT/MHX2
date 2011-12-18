@@ -10,5 +10,7 @@ namespace SPKTWeb.Messages.Interface
     {
         void LoadReply(MessageWithRecipient message);
         void LoadTo(string Username);
+        void LoadSubject(string Subject);
+        void LoadContent(string Content);
     }
 }

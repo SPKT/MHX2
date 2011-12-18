@@ -76,6 +76,24 @@ namespace SPKTWeb.Messages.UserControl {
         protected global::System.Web.UI.WebControls.Label lb_MessageID;
         
         /// <summary>
+        /// lb_Thoigian0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_Thoigian0;
+        
+        /// <summary>
+        /// lb_Thoigian1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_Thoigian1;
+        
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -200,5 +218,23 @@ namespace SPKTWeb.Messages.UserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbt_Xoa;
+        
+        /// <summary>
+        /// pn3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pn3;
+        
+        /// <summary>
+        /// new_ms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SPKTWeb.Messages.UserControl.MessageNew new_ms;
     }
 }

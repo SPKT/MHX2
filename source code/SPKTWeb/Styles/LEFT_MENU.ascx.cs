@@ -21,6 +21,7 @@ namespace SPKTWeb.Styles
         FriendInvitationRepository _fi;
         WebContext _webcontext;
         AccountRepository _ac;
+        MessageRecipientRepository _mr;
         FriendService _f;
         public int id=0;
         public String Path
@@ -42,6 +43,7 @@ namespace SPKTWeb.Styles
             _webcontext=new WebContext();
             _fi=new FriendInvitationRepository();
             _ac = new AccountRepository();
+            _mr = new MessageRecipientRepository();
             _f = new FriendService();
             Account acid;
 
@@ -56,6 +58,7 @@ namespace SPKTWeb.Styles
                     AccordionPane1.Visible = false;
                     AccordionPane3.Visible = false;
                     id = acid.AccountID;
+                    lbtnChangeAvatar.Visible = false;
                 }
                 else
                 {
@@ -67,6 +70,8 @@ namespace SPKTWeb.Styles
                     lb_invite.Text = " ( " + _fi.FriendInv(_usersession.CurrentUser).Count.ToString() + " )";
                     id = _usersession.CurrentUser.AccountID;
                     lb_message.Text = " ( 0 ) ";
+                    lbtnChangeAvatar.Visible = true;
+                    //lb_message.Text = " ( " + _mr.getMessageRecipientByAccountID(_usersession.CurrentUser.AccountID).Count.ToString() + " ) ";
                 }
             }
         }

@@ -1,16 +1,16 @@
 ﻿body 
 {
-    background-color:White;
-    width:98%;
+    background-image:url("/image/body.gif");
+    background-repeat:repeat;
+    width:100%;
     height:957px;
-    margin-left:5%;
-    margin-left:5%;
-    margin-top:0px;
+    margin-left:0;
+    margin-top:0;
 
 }
 #banner 
 {
-    background-image: url("/image/123.jpg");
+    background-image: url("/image/bn-2.gif");
     background-repeat:repeat-x;
     width:98%;
     height:50px;
@@ -91,13 +91,14 @@ div.item_banner_1 a:hover
     border-color:#666666;
     border-style:solid;
     border-width:1px;
-    background-image: url('/Image/thead.gif'); background-repeat: repeat-x;
+     background-image: url("/image/menu-2.gif");
+     background-repeat:repeat-x;
     vertical-align:middle;
     width:98%;
     margin-left:0px;  
     position:fixed; 
     left:0;
-    top:53px;
+    top:51px;
     right:0px;
     -moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -107,7 +108,7 @@ div.item_banner_1 a:hover
 }
 #box_menu_top_1
 { height:99%;
-  margin-left:10%;
+  margin-left:15%;
   margin-right:10%;
   width:80%;
   float:left;
@@ -118,18 +119,26 @@ div.item_banner_1 a:hover
 .menu_ngang 
 {
     height:84%;
-    width:15%;
+    width:8%;
     float:left;
     -moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	margin-left:1%;
 	margin-top:1px;
 	margin-bottom:1%;
-	color:Maroon;
+	color:White;
+	border-left-color:White;
+	border-left-style:solid;
+	border-left-width:1px;
+	
+}
+.mn
+{
+    width:100%; height:100%; margin:0px; margin-right:0px;
 }
 .linbuton_ngang
 {
-    color:#666666;
+    color:White;
 }
 .linbuton_ngang:visited,active
 {
@@ -137,16 +146,15 @@ div.item_banner_1 a:hover
 }
 div.menu_ngang a:hover
 {
-    background-color:Black;
+    background-image:url("/image/nuttim.gif");
     height:100%;
     width:100%;
-    -moz-border-radius:5px;
-	-webkit-border-radius:5px;
 	margin-left:1%;
 	margin-top:1px;
 	margin-bottom:1%;
 	color:White;
-	opacity: 0.9;filter: alpha(opacity=90);
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 
 div.menu_ngang a:active
@@ -174,12 +182,17 @@ div.menu_ngang a:visited
 .menu_ngang_timkiem
 {
     height:86%;
-    width:27%;
+    width:20%;
     float:left;
 	margin-left:1%;
 	margin-top:1px;
 	margin-bottom:1%;
 	margin-right:0%;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-color:red;
+	border-style:solid;
+	border-width:1px;
 }
 
 .menu_ngang_timkiem_nut
@@ -194,7 +207,8 @@ div.menu_ngang a:visited
 }
 .nuttim
 {
-    color:#666666;
+    color:White;
+    background-image:url("/image/nuttim.gif");
 }
 div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu_ngang_timkiem_nut a:active
 {
@@ -227,7 +241,7 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
 {
     width:20%;
     height:500px;
-    margin-top:5%;
+    margin-top:44px;
     float:left;
     border-right-width:0px;
     border-right-color:Silver;
@@ -239,18 +253,18 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
     margin-left:1%;
     height:721px;
     float:left;
-    margin-top:5%;
+    margin-top:31px;
 }
 .main_box
 {
-    margin-left:2%;
-    margin-top:2px;
-    margin-right:2%;
-    border-color:#666666;
+    margin-left:1%;
+    margin-top:86px;
+    margin-right:1%;
+    border-color:#ffffff;
     border-style:solid;
-    border-width:1px;
-    -moz-border-radius:10px;
-	-webkit-border-radius:10px;
+    border-width:0px;
+     -moz-border-radius:2px;
+	-webkit-border-radius:2px;
 }
 .right_box
 {
@@ -260,8 +274,7 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
      border-color:#666666;
     border-style:solid;
     border-width:1px;
-    -moz-border-radius:10px;
-	-webkit-border-radius:10px;
+    
 }   
 .left_box1
 {
@@ -280,10 +293,10 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
     width:88%;
     height:23px;
     margin-top:1px;
-    background-image: url('/Image/htitle.gif'); background-repeat: repeat-x;
+    background-image: url('/Image/lista.png'); background-repeat: repeat-x;
     -moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	color:#666666;
+	color:Orange;
 	padding-left:5px;
 	border-color:#666666;
     border-style:solid;
@@ -352,8 +365,8 @@ img:hover
     border-width:1px;
 }
 .img {
-	width: 65px;
-	height: 63px;
+	width: 60px;
+	height: 60px;
 }
 .text
 {
@@ -372,7 +385,7 @@ text:hover
     width:100%;
     margin-left:5px;
     margin-right:7px;
-    background-color:Black;
+    background-image:url("/image/bn1.gif");
     -moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-color:Gray;
@@ -385,7 +398,7 @@ text:hover
     width:100%;
     margin-left:0px;
     margin-right:7px;
-    background-color:Black;
+    background-image:url("/image/nuttim.gif");
     -moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-color:Gray;
@@ -395,7 +408,7 @@ text:hover
 }
 .popupHover
 {
-    background-color:Black;
+    background-image:url("/image/nuttim.gif");
     -moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	color:Orange;
@@ -513,4 +526,51 @@ div.link a:hover
     border-bottom-color:#ffccff;
     border-left-color: White;
     border-right-color: White;
+}
+.movefriend
+{
+    background-color:White;
+    border-style: solid; 
+    border-width: 0px 0px 1px 0px; 
+    border-color: #FFFFFF #FFFFFF #9999FF #FFFFFF; 
+    float:left; 
+    width: 654px; 
+    height: 87px;
+}
+movefriend:hover
+{
+    background-color:#999999;
+    border-style: solid; 
+    border-width: 0px 0px 1px 0px; 
+    border-color: #FFFFFF #FFFFFF #9999FF #FFFFFF; 
+    float:left; 
+    width: 654px; 
+    height: 87px;
+}
+.move
+{
+    background-color:White;
+}
+move:hover
+{
+    background-color:Red;
+}
+.extend
+{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:60%;
+    top:20%;
+}
+.icon
+{
+    color:#333333;
+    font-size:11px;
+}
+div.icon a:hover
+{
+    font-size:11px;
+    color:Blue;
+    font-variant:small-caps;
 }

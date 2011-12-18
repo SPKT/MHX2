@@ -15,12 +15,14 @@ namespace SPKTWeb.Friends.UserControl
 {
     public partial class ListFriend : System.Web.UI.UserControl,IShowFriend
     {
+        //public int idac;
         protected ShowFriendPresenter _showfriendpresenter;
         protected void Page_Load(object sender, EventArgs e)
         {
             _showfriendpresenter = new ShowFriendPresenter();
             _showfriendpresenter.Init(this);
         }
+        
         protected void repFriends_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)

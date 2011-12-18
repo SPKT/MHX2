@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="SPKTWeb.Accounts.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_NEW.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="SPKTWeb.Accounts.Register" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
     <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
@@ -8,42 +8,41 @@
         {
             height: 23px;
         }
+        .style106
+        {
+            font-size:12px;
+            font-family: Times New Roman;
+            
+        }
         .sign-in {
             float: right;
                 }
         .signin-box, .accountchooser-box {
             background: none repeat scroll 0 0 #F5F5F5;
-            border: 1px solid #E5E5E5;
-
+           
             width:100%;
             height:auto;
 }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="right1" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="right" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
 
-     <table class="signin-box" border="0">
-        <div class="divContainerTitle" style="background-image: url('../Image/block_topbg.gif'); color: #FF0000; font-size: x-large; font-weight: bold;">Đăng Ký Tài Khoản</div> <br />
-                   
+<asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
+    <div style="width:100%; height:700px; background-color:White;background-image: url('../Image/bo4.gif');-moz-border-radius:5px;-webkit-border-radius:5px; background-repeat:repeat-x;">
+     
+        <div align="center" class="divContainerTitle" style=" padding-top:50px;background-image: url('../Image/bo4.gif'); color: #FF0000; font-size: x-large; font-weight: bold;">Đăng Ký Tài Khoản</div> <br />
+                   <table class="signin-box" border="0" style="background-color:White; padding-top:20px;">
                     <tr>
                         <td align="right" 
-                            style="color: #0000FF; font-size: large;" class="style105">
-                            Tên đăng ký:</td>
-
-
-                        <td align="left" class="style108">
+                            style="color: #0000FF; font-size: large;" class="style106">
+                            Tên đăng ký :</td>
+                        <td align="left" class="style109">
+                           <asp:TextBox ID="txtUserName" AutoPostBack="true" runat="server"  
+                                OnTextChanged="txtUserName_TextChanged" 
+                               CausesValidation="True" BorderColor="#9999FF" BorderStyle="Solid" 
+                                BorderWidth="1px" Width="220px" Height="22px"></asp:TextBox> 
                          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                        <ContentTemplate>
-                            <asp:TextBox ID="txtUserName" AutoPostBack="true" runat="server"  
-                                OnTextChanged="txtUserName_TextChanged" 
-                               CausesValidation="True"></asp:TextBox>
-                         
+                            
                             <asp:Label ID="lblCheckUsername" runat="server"></asp:Label>
                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                 ControlToValidate="txtUserName" Display="Dynamic" 
@@ -67,7 +66,8 @@
                         <td align="left" class="style109">
                            <asp:TextBox ID="txtPassword" runat="server" 
                                 
-                               TextMode="Password"></asp:TextBox>
+                               TextMode="Password" Width="220px" BorderColor="#9999FF" BorderStyle="Solid" 
+                                BorderWidth="1px" Height="22px"></asp:TextBox>
                             <asp:Label ID="lblMessageLegthPass" runat="server"></asp:Label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                 ControlToValidate="txtPassword" Display="Dynamic" 
@@ -84,7 +84,8 @@
                         <td align="left" class="style109">
                             <asp:TextBox ID="txtPasswordPre" runat="server" 
                                 
-                              TextMode="Password" ></asp:TextBox>
+                              TextMode="Password" Width="220px" BorderColor="#9999FF" BorderStyle="Solid" 
+                                BorderWidth="1px" Height="22px" ></asp:TextBox>
                             <asp:PasswordStrength ID="txtPassword_PasswordStrength" runat="server" 
                                 Enabled="True" TargetControlID="txtPassword">
                             </asp:PasswordStrength>
@@ -103,7 +104,8 @@
                             style="color: #0000FF; font-size: large;" class="style104">
                             Email:</td>
                         <td align="left" class="style104">
-                            <asp:TextBox ID="txtEmail" runat="server" 
+                            <asp:TextBox ID="txtEmail" runat="server" Width="220px" BorderColor="#9999FF" 
+                                BorderStyle="Solid" BorderWidth="1px" Height="22px"
                               ></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                 ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Chưa nhập email"></asp:RequiredFieldValidator>
@@ -128,7 +130,8 @@
                             style="color: #0000FF; font-size: large;" class="style104">
                             Captcha:</td>
                         <td align="left" class="style104">
-                            <asp:TextBox ID="txtCaptCha" runat="server" 
+                            <asp:TextBox ID="txtCaptCha" runat="server" BorderColor="#9999FF" 
+                                BorderStyle="Solid" BorderWidth="1px" Height="22px" 
                              ></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                 ControlToValidate="txtCaptCha" Display="Dynamic" 
@@ -163,4 +166,5 @@
                         </td>
                     </tr>
                 </table>
+                </div>
 </asp:Content>

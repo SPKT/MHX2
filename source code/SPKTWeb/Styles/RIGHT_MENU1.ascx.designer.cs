@@ -13,75 +13,39 @@ namespace SPKTWeb.Styles {
     public partial class RIGHT_MENU1 {
         
         /// <summary>
-        /// bt_add0 control.
+        /// ImageButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_add0;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
         
         /// <summary>
-        /// bt_add control.
+        /// Friend1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_add;
+        protected global::SPKTWeb.Friends.UserControl.ButtonAddFriend Friend1;
         
         /// <summary>
-        /// Button2 control.
+        /// img_send_mess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.ImageButton img_send_mess;
         
         /// <summary>
-        /// pn5 control.
+        /// Message1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pn5;
-        
-        /// <summary>
-        /// MessageNew1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SPKTWeb.Messages.UserControl.MessageNew MessageNew1;
-        
-        /// <summary>
-        /// lkbtnAllGroup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtnAllGroup;
-        
-        /// <summary>
-        /// lkbtnMyGroup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtnMyGroup;
-        
-        /// <summary>
-        /// lkbtnCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtnCategory;
+        protected global::SPKTWeb.Messages.UserControl.ButtonMessage Message1;
     }
 }

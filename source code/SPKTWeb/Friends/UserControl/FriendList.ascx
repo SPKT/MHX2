@@ -1,8 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FriendList.ascx.cs" Inherits="SPKTWeb.Friends.UserControl.FriendList" %>
-<div id="boxfriend">
+<div style="background-image: url('http://localhost:4120/Image/a2.gif'); background-repeat: repeat-x; margin-bottom:0px; height: 86px;">
     <div class="menu_link">
         <a href="~/Profiles/UserProfile2.aspx?AccountID=<asp:Literal id='litAccountID' runat='server'></asp:Literal>">
-        <asp:Image style="padding:5px; margin-top: 4px;" ImageAlign="Left" 
+        <asp:Image style="padding:5px; margin-top: 6px;" ImageAlign="Left" 
             ID="imgAvatar" 
             runat="server" CssClass="img" /></a>
         <br />
@@ -16,6 +16,5 @@
     </div>
     <br />
 </div>
-<br />
-<div style="border: 1px solid #808080; margin-top: 60px; height:2px; width:100%">
+<div style="border: 1px solid #808080; margin-top: 2px; height:2px; width:100%">
  </div>

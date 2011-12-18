@@ -17,7 +17,7 @@ namespace SPKTWeb.Styles
     {
         private IRedirector _redirector;
         IUserSession _usersession;
-        private String path;
+        //private String path;
         FriendInvitationRepository _fi;
         WebContext _webcontext;
         AccountRepository _ac;
@@ -34,19 +34,20 @@ namespace SPKTWeb.Styles
             {
                 if (_webcontext.AccountID != _usersession.CurrentUser.AccountID && _webcontext.AccountID != 0)
                 {
-                    bt_add0.Visible = true;
-                    bt_add.Visible = false;
+                    
                 }
                 else
                 {
-                    bt_add0.Visible = false;
-                    bt_add.Visible = true;
+                    
                 }
             }
-            pn5.Visible = false;
+           
         }
 
+        protected void bt_add_Click(object sender, EventArgs e)
+        {
 
+        }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -56,27 +57,12 @@ namespace SPKTWeb.Styles
             else
             {
             }
-            pn5.Visible = true;
+            
         }
 
-        protected void lkbtnAllGroup_Click(object sender, EventArgs e)
-        {
-            _redirector.Redirect("~/Groups/ViewAllGroup.aspx");
-        }
-
-        protected void lkbtnMyGroup_Click(object sender, EventArgs e)
-        {
-            _redirector.Redirect("~/Groups/MyGroups.aspx");
-        }
-
-        protected void bt_add_Click(object sender, EventArgs e)
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
 
-        }
-
-        protected void lkbtnCategory_Click(object sender, EventArgs e)
-        {
-            _redirector.Redirect("~/Forums/Forum.aspx");
         }
     }
 }

@@ -67,7 +67,7 @@ namespace SPKTWeb.Accounts.Presenter
                 a.DisplayName = a.UserName;
                 a.CreateDate = DateTime.Now;
                 a.Password = Password.Encrypt(Username);
-
+                a.UseAuthenticationService = false;
 
                 if (_accountService.EmailInUse(Email))
                 {

@@ -2,22 +2,22 @@
 <%@ Register Src="~/Friends/UserControl/BoxInvite.ascx" TagName="BoxInvite" TagPrefix="uc1" %>
 <%@ Register Src="~/Friends/UserControl/ListFriend.ascx" TagName="FriendList" TagPrefix="uc2" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
-<div class="mainleft" align="center" style="height: 402px; background-color: #FFFFFF;">
+<div class="mainleft" align="center" style="height: 402px;">
     <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-style: solid;
-        border-width: 1px 1px 0px 1px; border-color: #999999; width: 89%; height: 42%">
+        border-width: 1px 1px 0px 1px; border-color: #999999; width: 89%; height: 42%; background-color:White; background-image: url('../../Image/a6.gif'); background-repeat: repeat-x;">
         <div style="margin-top: 15px;">
             <img src="~/Image/ProfileAvatar.aspx" alt="test image" id="testImage" runat="server"
                 style="border: 1px solid #666666; width: 160px; height: 120px; background-color: #FFFFFF;"
                 onclick="return testImage_onclick()" /></div>
     </div>
     <div style="border: 1px solid #999999; -moz-border-radius: 5px; -webkit-border-radius: 5px;
-        margin-top: -6%; background-image: url('/Image/htitle.gif'); background-repeat: repeat-x;
+        margin-top: -6%; background-image: url('/Image/lista.png'); background-repeat: repeat-x;
         width: 84%">
-        <asp:Label ID="lblProfileName" runat="server" ForeColor="#333333"></asp:Label>
+        <asp:Label ID="lblProfileName" runat="server" ForeColor="GreenYellow" Font-Bold="true"></asp:Label>
     </div>
     <br />
     <div style="border-color:#999999; border-style:Solid; border-width:1px ; Height:70px; Width:90%;-moz-border-radius:5px;-webkit-border-radius:5px;
-             border-bottom-color:White; border-bottom-width:0px;">
+             border-bottom-color:White; border-bottom-width:0px;background-color:White; background-image: url('../../Image/a5.gif'); background-repeat: repeat-x;">
         <asp:Panel ID="pn1" runat="server" Height="25px">
         <div class="link" style="color: #C0C0C0; margin-top:2px;">
             <asp:LinkButton ID="lbtnChangeAvatar" runat="server" Text="Đối Avatar" OnClick="lbtnChangeAvatar_Click"
@@ -32,9 +32,9 @@
         </div></asp:Panel>
     </div>
     <div style="border: 1px solid #999999; -moz-border-radius: 5px; -webkit-border-radius: 5px;
-        margin-top: -6%; background-image: url('/Image/htitle.gif'); background-repeat: repeat-x;
+        margin-top: -6%; background-image: url('/Image/lista.png'); background-repeat: repeat-x;
         width: 84%">
-        <asp:Label ID="Label1" runat="server" ForeColor="#333333" Text="Chào bạn"></asp:Label>
+        <asp:Label ID="Label1" runat="server" ForeColor="GreenYellow" Font-Bold="true" Text="Chào bạn"></asp:Label>
     </div>
     <br />
     <div>

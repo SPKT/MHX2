@@ -21,7 +21,7 @@ namespace SPKTWeb.Messages.UserControl
         IMessageRepository _messageResponstory;
         IMessageService _messageService;
         NewMessage _new;
-        string sto = "";
+        int sto;
         protected void Page_Load(object sender, EventArgs e)
         {
             _webContext = new WebContext();
@@ -30,6 +30,7 @@ namespace SPKTWeb.Messages.UserControl
             _messageService = new MessageService();
             _new = new NewMessage();
             _new.Init(this);
+            
         }
         public void LoadReply(MessageWithRecipient message)
         {
@@ -41,7 +42,14 @@ namespace SPKTWeb.Messages.UserControl
         {
             tb_To.Text = Username;
         }
-       
+        public void LoadSubject(string Subject)
+        {
+            tb_Subject.Text = Subject;
+        }
+        public void LoadContent(string Content)
+        {
+            tb_Box.Text = Content;
+        }
         protected void bt_Send_Click(object sender, EventArgs e)
         {
             if (tb_To.Text == null)
@@ -67,11 +75,11 @@ namespace SPKTWeb.Messages.UserControl
         }
         public string tbTO()
         {
-            return sto;
+            return tb_To.Text;
         }
-        public void settbTO(string tb)
+        public void settbTO(int tb)
         {
-            tb_To.Text = tb;
+            sto = tb;
         }
     }
 }

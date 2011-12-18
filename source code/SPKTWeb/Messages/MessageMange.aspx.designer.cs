@@ -49,24 +49,6 @@ namespace SPKTWeb.Messages {
         protected global::System.Web.UI.WebControls.LinkButton lbt_MessNew;
         
         /// <summary>
-        /// lbt_MessFrom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbt_MessFrom;
-        
-        /// <summary>
-        /// lbt_MessSpam control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbt_MessSpam;
-        
-        /// <summary>
         /// ListFriendSimple1 control.
         /// </summary>
         /// <remarks>
@@ -74,24 +56,6 @@ namespace SPKTWeb.Messages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SPKTWeb.Friends.ListFriendSimple ListFriendSimple1;
-        
-        /// <summary>
-        /// bt_Xoa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_Xoa;
-        
-        /// <summary>
-        /// bt_Xoa_All control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_Xoa_All;
         
         /// <summary>
         /// MessageNew1 control.

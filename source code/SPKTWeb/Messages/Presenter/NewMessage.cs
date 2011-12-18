@@ -18,6 +18,7 @@ namespace SPKTWeb.Messages.Presenter
         private IMessageRepository _messageRepository;
         private IUserSession _userSession;
         private IAccountRepository _accountRepository;
+        int idac;
         public NewMessage()
         {
             _webContext = new WebContext();
@@ -29,15 +30,21 @@ namespace SPKTWeb.Messages.Presenter
         public void Init(INewMessage view)
         {
             _view = view;
-            if (_webContext.MessageID != 0)
-                _view.LoadReply(_messageRepository.GetMessageByMessageID(_webContext.MessageID, _userSession.CurrentUser.AccountID));
+           // if (_webContext.MessageID != 0)
+              //  _view.LoadReply(_messageRepository.GetMessageByMessageID(_webContext.MessageID, _userSession.CurrentUser.AccountID));
             if (_webContext.AccountID != 0)
                 _view.LoadTo(_accountRepository.GetAccountByID(_webContext.AccountID).UserName);
+            if(idac>0)
+                _view.LoadTo(_accountRepository.GetAccountByID(idac).UserName);
         }
-
+        public void setidac(int accountID)
+        {
+            idac = accountID;
+        }
         public void SendMessage(string Subject, string Message, string[] To)
         {
             _messageService.SendMessage(Message, Subject, To);
         }
+        
     }
 }

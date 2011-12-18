@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_1.master.cs" Inherits="SPKTWeb.MXH_1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_1.Master.cs" Inherits="SPKTWeb.MXH_1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register Src="~/Accounts/UserControl/LoginDesign1.ascx" TagName="login" TagPrefix="uc3" %>
@@ -15,7 +15,6 @@
     <title>Mạng xã hội SINH VIÊN</title>
     <link type="text/css" rel="Stylesheet" href="Styles/MXH.css" />
     <link rel="shortcut icon" type="image/ico" href="Image/spkticon1.png" />
-    <link href="Style2.css" rel="Stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
@@ -31,12 +30,12 @@
         <div style="height: 50px">
             <div id="banner">
                 <div align="left" class="item_banner_logo">
-                    <asp:Image ID="Image3" runat="server" Height="40px" ImageUrl="~/Image/spkt_1.png" />
+                    
                 </div>
                 <div class="item_banner_text">
                     <div id="item_banner_2" style="height: 23px;" align="center">
                         <asp:Image ID="img_av" runat="server" Width="20px" Height="20px" />
-                        <asp:Label ID="lblUserName" runat="server" ForeColor="Black" Text="Xin chao" Font-Size="Small"></asp:Label>
+                        <asp:Label ID="lblUserName" runat="server" ForeColor="White" Text="Xin chao" Font-Size="Small"></asp:Label>
                         <asp:Image Width="13px" Height="13px" ImageUrl="Image/expand.jpg" runat="server"
                             ID="img_1" />
                         <asp:Panel ID="Panel1" runat="server" Style="display: block; width: 120px; height: 80px;">
@@ -53,10 +52,11 @@
                                 </div>
                                 <div class="link">
                                     <asp:LinkButton ID="lb_thoat" runat="server" Text="Đăng xuất" Font-Strikeout="false"
-                                        Width="100%" Height="22px" OnClick="logout_Click"></asp:LinkButton>
+                                        Width="100%" Height="22px" OnClick="dangxuat_Click"></asp:LinkButton>
                                 </div>
                             </div>
                         </asp:Panel>
+                        <aspt:ToolkitScriptManager ID="ScriptManager1" runat="server" />
                         <aspt:PopupControlExtender ID="PopupControlExtender1" runat="server" TargetControlID="img_1"
                             PopupControlID="Panel1" Position="Left" OffsetX="-100" OffsetY="0">
                         </aspt:PopupControlExtender>
@@ -64,41 +64,20 @@
                     <div align="right" id="item_banner">
                         <div align="center" class="item_banner_1">
                             <asp:LinkButton ID="lb_dangky" runat="server" CssClass="linkbuton" Width="100%">Đăng ký</asp:LinkButton>
-                            <asp:Panel ID="pnregist" runat="server" Width="600px" Height="350px">
-                                <div style="width: 100%; height: 100%;">
-                                    <div style="float: left; margin-left: 0%; height: 97%; width: 100%; margin-top: 0px;">
-                                        <uc4:regist ID="regist" runat="server" />
-                                    </div>
-                                    <div style="float: left; margin-left: 88%;">
-                                        <asp:Button ID="bt" Text="Đóng" runat="server" BackColor="Black" ForeColor="White" />
-                                    </div>
-                                </div>
-                            </asp:Panel>
-                            <aspt:ToolkitScriptManager ID="ScriptManager1" runat="server" />
-                            <aspt:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="lb_dangky"
-                                PopupControlID="pnregist" BackgroundCssClass="modalBackground" DropShadow="true"
-                                OkControlID="bt" OnOkScript="onOk()" />
+                            
                         </div>
                         <div align="center" class="item_banner_1">
                             <asp:LinkButton ID="lb_dangnhap" runat="server" CssClass="linkbuton" Width="100%">Đăng nhập</asp:LinkButton>
-                            <asp:Panel ID="Login" runat="server" Style="display: block; width: 250px; height: 200px;">
-                                <div style="margin-left: 90%; margin-top: 0%;">
-                                    <a onclick="document.body.click(); return false;" title="Fermer" style="color: Black">
-                                        X</a>
-                                </div>
-                                <uc3:login ID="login1" runat="server" />
-                            </asp:Panel>
-                            <aspt:PopupControlExtender ID="PopEx" runat="server" TargetControlID="lb_dangnhap"
-                                PopupControlID="Login" Position="Left">
-                            </aspt:PopupControlExtender>
+                            
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
             <div id="box_menu_top" align="center" style="border-bottom-style: solid; border-bottom-width: 1px;
-                border-bottom-color: #999999; background-image: url('/Image/block_topbg.gif');">
+                border-bottom-color: #999999;">
                 <div id="box_menu_top_1">
-                    <div class="menu_ngang">
+                    <div class="menu_ngang"> 
+                        
                         <asp:LinkButton ID="lb_info" runat="server" Font-Underline="False" Height="100%"
                             Width="100%" CssClass="linbuton_ngang" OnClick="lb_info_Click">Trang chủ</asp:LinkButton>
                     </div>
@@ -124,15 +103,15 @@
                             OffsetY="0" PopDelay="50" />
                     </div>
                     <div class="menu_ngang">
-                        <div>
-                            <asp:LinkButton ID="lb_profile" runat="server" Font-Underline="False" Height="100%"
-                                Width="100%" CssClass="linbuton_ngang" OnClick="lb_profile_Click">Bạn bè</asp:LinkButton>
-                        </div>
+                        
+                            <asp:LinkButton ID="lb_profile" runat="server" Font-Underline="False" 
+                            Width="100%" CssClass="linbuton_ngang" OnClick="lb_profile_Click">Bạn bè</asp:LinkButton>
+                       
                         <div>
                             <asp:Panel ID="pn3" runat="server" Width="11%">
                                 <div class="popupMenu">
                                     <div align="left" style="margin-left: 5px;">
-                                        <asp:LinkButton ID="lb_friend" runat="server" Text="Danh sách bạn bè" Height="100%"
+                                        <asp:LinkButton ID="lb_friend" runat="server" Text="Danh sách bạn" Height="100%"
                                             Width="99%" Font-Underline="false" CssClass="popuplink" OnClick="tim_Click"></asp:LinkButton>
                                     </div>
                                     <div align="left" style="margin-left: 5px;">
@@ -160,11 +139,20 @@
                         </div>
                     </div>
                     <div class="menu_ngang">
+                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Underline="False" Height="100%"
+                            Width="100%" CssClass="linbuton_ngang" OnClick="diendan">Diễn đàn</asp:LinkButton>
+                    </div>
+                    <div class="menu_ngang">
+                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Underline="False" Height="100%"
+                            Width="100%" CssClass="linbuton_ngang" OnClick="ketnhom">Kết nhóm</asp:LinkButton>
+                    </div>
+                    <div class="menu_ngang">
                         <asp:LinkButton ID="LinkButton1" runat="server" Font-Underline="False" Height="100%"
                             Width="100%" CssClass="linbuton_ngang">Tin tức</asp:LinkButton>
                     </div>
-                    <div class="menu_ngang_timkiem">
-                        <input id="timkiem" type="text" name="timkiem" runat="server" />
+                    <div class="menu_ngang_timkiem" style="margin: 0px; border-style: none;">
+                        <input id="timkiem" type="text" name="timkiem" runat="server" 
+                            style="margin: 2px; border-style: none;" />
                     </div>
                     <div align="center" class="menu_ngang_timkiem_nut">
                         <asp:LinkButton ID="lbt_tim" runat="server" CssClass="nuttim" Font-Underline="False"
@@ -183,7 +171,7 @@
                         <asp:ContentPlaceHolder ID="left" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
-                    <div id="box_main">
+                    <div id="box_main" style=" background-color:White;  margin-top:0px; padding-top:30px; margin-left:10px; background-image: url('../Image/bo8.gif'); background-repeat: repeat-y;">
                         <div>
                             <asp:ContentPlaceHolder ID="Main" runat="server">
                             </asp:ContentPlaceHolder>

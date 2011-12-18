@@ -23,7 +23,12 @@ namespace SPKTCore.Core.Impl
             _accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
             _email =new SPKTCore.Core.Impl.Email();
         }
-
+        public void saveMessageRecipient(int messageID)
+        {
+            MessageRecipient m = _messageRecipientRepository.GetMessageRecipientByID(messageID);
+            m.MessageStatusTypeID = (int)MessageStatusType.MessageStatusTypes.Read;
+            _messageRecipientRepository.SaveMessageRecipient(m);
+        }
         public void SendMessage(string Body, string Subject, string[] To)
         {
             Message m = new Message();

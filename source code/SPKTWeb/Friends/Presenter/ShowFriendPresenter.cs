@@ -23,6 +23,7 @@ namespace SPKTWeb.Friends.Presenter
         private FriendService _friendService;
         WebContext _webcontext;
         IAccountRepository _ac;
+        public int idac;
         public ShowFriendPresenter()
         {
             _friendRepository = new SPKTCore.Core.DataAccess.Impl.FriendRepository();
@@ -39,7 +40,10 @@ namespace SPKTWeb.Friends.Presenter
                 LoadFriend();
             }
         }
-        
+        public void setidac(int accountID)
+        {
+            idac = accountID;
+        }
         public void LoadFriend()
         {
             if (_userSession != null)
@@ -53,6 +57,20 @@ namespace SPKTWeb.Friends.Presenter
                 {
                     _view.LoadFriend(_friendService.SearchFriend(_userSession.CurrentUser));
                 }
+            }
+            if (idac > 0)
+            {
+                Account ac = _ac.GetAccountByID(idac);
+                _view.LoadFriend(_friendService.SearchFriend(ac));
+            }
+           
+        }
+        public void LoadFriend1()
+        {
+            if (idac > 0)
+            {
+                Account ac = _ac.GetAccountByID(13);
+                _view.LoadFriend(_friendService.SearchFriend(ac));
             }
         }
     }

@@ -17,12 +17,15 @@ namespace SPKTWeb.Messages.UserControl
         protected void Page_Load(object sender, EventArgs e)
         {
             _presenter = new LoadMessagePresenter();
-            _presenter.Init(this);
+            _presenter.Init(this,IsPostBack);
         }
         public void LoadMessages(List<MessageWithRecipient> Messages)
         {
-              repMessages.DataSource = Messages;
-              repMessages.DataBind();
+            if (!IsPostBack)
+            {
+                repMessages.DataSource = Messages;
+                repMessages.DataBind();
+            }
            
         }
         protected void repMessages_ItemDataBound(object sender, RepeaterItemEventArgs e)

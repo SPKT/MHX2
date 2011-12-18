@@ -1,31 +1,22 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MENU.ascx.cs" Inherits="MENU" %>
-<div>
-<div id="box_menu_top" align="center" 
-                style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #999999">
-                <div id="box_menu_top_1">
-                    <div class="menu_ngang">
-                       <asp:LinkButton  ID="lb_info" runat="server" Font-Underline="False" 
-                            ForeColor="#666666" Height="100%" Width="100%">Thông tin mới</asp:LinkButton>
-                    </div>
-                    <div class="menu_ngang">
-                        <asp:LinkButton ID="lb_account" runat="server" Font-Underline="False" 
-                            ForeColor="#666666" Height="100%" Width="100%">Thông tin tài khoản</asp:LinkButton>
-                    </div>
-                    <div class="menu_ngang">
-                        <asp:LinkButton ID="lb_profile" runat="server" Font-Underline="False" 
-                            ForeColor="#666666" Height="100%" Width="100%">Thông tin cá nhân</asp:LinkButton>
-                    </div>
-                    <div class="menu_ngang">
-                        <asp:LinkButton ID="lb_Friend" runat="server" Font-Underline="False" 
-                            ForeColor="#666666" Height="100%" Width="100%">Kết bạn</asp:LinkButton>
-                    </div>
-                    <div class="menu_ngang_timkiem">
-                        <input id="timkiem" type="text" />
-                    </div>
-                    <div class="menu_ngang_timkiem_nut">
-                        <asp:Image ID="Image1" runat="server" 
-                            ImageUrl="~/Image/button-search-header.jpg" Width="57px" />
-                    </div>
-                </div>
-            </div>
- </div>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MENU.ascx.cs" Inherits="SPKTWeb.Styles.MENU" %>
+<div style="margin-left:0px;position:fixed; left:-1px; top:53px;right:-1px; -moz-border-radius:10px; -webkit-border-radius:10px; margin-left:1%; margin-top:2px; margin-right:1%; height: 28px;background-image: url("~/image/pro_15_0.gif");>
+        <li style="padding: 0px; list-style-image: url('../Image/4.gif'); float:left; width:auto; height:25px;">
+            <asp:LinkButton runat="server" ID="lbt_Home">Trang chủ</asp:LinkButton>
+        </li>
+        <li style="list-style-image: url('../Image/6.gif');float:left;width:auto; height:25px;">
+            <asp:LinkButton runat="server" ID="lbt_Profile">Cá nhân</asp:LinkButton>
+        </li>
+        <li style="list-style-image: url('../Image/5.gif');float:left; width:auto; height:25px;">
+            <asp:LinkButton runat="server" ID="lbt_friend">Bạn bè</asp:LinkButton>
+        </li>
+        <li style="list-style-image: url('../Image/1.gif');float:left;width:auto; height:25px;">
+            <asp:LinkButton runat="server" ID="lbt_forum">Diễn đàn</asp:LinkButton>
+        </li>
+        <li style="list-style-image: url('../Image/3.gif');float:left; width:auto; height:25px;">
+            <asp:LinkButton runat="server" ID="lbt_group">Nhóm</asp:LinkButton>
+        </li>
+        <li style="list-style-image: url('../Image/2.gif');float:left;width:auto; height:25px;">
+            <asp:LinkButton runat="server" ID="LinkButton1">Thông tin</asp:LinkButton>
+        </li>
+    </ul>
+</div>

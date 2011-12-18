@@ -50,7 +50,7 @@
 
 </asp:Content>
 <asp:Content ID="content6" ContentPlaceHolderID="right1" runat="server">
-<div>
+<div style="width:100%;background-color:White; margin-top:0px;">
     <uc5:menu1 ID="mu" runat="server" />
  </div>
 </asp:Content>
@@ -60,13 +60,13 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="right" runat="server">
-<div>
+<div style="width:100%; height:100%; background-color:Black; margin-top:0px;">
     <div >
         <asp:UpdatePanel ID="UpdatePanel2" runat="server" >
             <ContentTemplate>
                 <asp:Panel ID="Panel2" runat="server">
-                    <asp:GridView ID="gvAlert" runat="server" AutoGenerateColumns="False" BorderColor="#ccffcc"
-                        BorderWidth="0px" BackColor="White" PageSize="20" AllowPaging="true" CellPadding="2" ForeColor="Black"
+                    <asp:GridView ID="gvAlert" runat="server" AutoGenerateColumns="False" BorderColor="#9999FF"
+                        BorderWidth="1px" BackColor="White" PageSize="20" AllowPaging="true" CellPadding="2" ForeColor="Black"
                         GridLines="None">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
@@ -105,7 +105,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
-    <div class="box">
+    <div class="box" style="width:100%; height:100%;">
        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
                 <asp:Panel ID="pnlStatusUpdate" runat="server" Width="100%" Height="91px">

@@ -28,8 +28,10 @@ namespace SPKTWeb.Friends
         protected IFriendInvitationRepository _fi;
         protected IFriendRepository _f;
         protected IEmail _email;
+        IWebContext _webcontext;
         protected void Page_Load(object sender, EventArgs e)
         {
+            _webcontext = new WebContext();
             _usersession = new SPKTCore.Core.Impl.UserSession();
             _fi = new SPKTCore.Core.DataAccess.Impl.FriendInvitationRepository();
             _f = new SPKTCore.Core.DataAccess.Impl.FriendRepository();
@@ -40,25 +42,43 @@ namespace SPKTWeb.Friends
             btn_de.Attributes.Add("onclick", "javascript:return confirm('Ban co muon xoa bạn?')");
             if (_usersession.CurrentUser == null)
             {
-                btn_add_de.Visible = true;
+                btn_add_de.Visible = false;
                 btn_de.Visible = false;
                 btn_ok.Visible = false;
             }
             else
             {
-                if (_presenter.TestFriend(_account) == true||_presenter.TestFriend2(_account))
-                {
-                    btn_add_de.Visible = false;
-                    btn_de.Visible = true;
-                }
                
-                else
-                {
-                    btn_add_de.Visible = true;
-                    btn_de.Visible = false;
-                }
-                imgAvatar.ImageUrl = "~/Image/ProfileAvatar.aspx?AccountID=" + Int32.Parse(lblFriendID.Text);
+                    if (_presenter.TestFriend(_account) == true || _presenter.TestFriend2(_account))
+                    {
+                        btn_add_de.Visible = false;
+                        btn_de.Visible = true;
+                        btn_ok.Visible = false;
+                        if (_webcontext.SearchText == lblUsername.Text)
+                        {
+                            btn_de.Visible = true;
+                            btn_de.Text = "Chào bạn";
+                            btn_de.BackColor = System.Drawing.Color.Gray;
+                        }
+                    }
+
+                    else
+                    {
+                        btn_add_de.Visible = true;
+                        btn_de.Visible = false;
+                        btn_ok.Visible = false;
+                        if (_webcontext.SearchText == lblUsername.Text)
+                        {
+                            btn_add_de.Visible = true;
+                            btn_add_de.Text = "Chào bạn";
+                            btn_add_de.BackColor = System.Drawing.Color.Gray;
+
+                        }
+                    }
+                    imgAvatar.ImageUrl = "~/Image/ProfileAvatar.aspx?AccountID=" + Int32.Parse(lblFriendID.Text);
+                
             }
+            more1.setacid(Int32.Parse(lblFriendID.Text));
         }
         
         public bool ShowDeleteButton
@@ -76,11 +96,14 @@ namespace SPKTWeb.Friends
         {
             _ac = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
             _account = account;
-            lblName.Text = _ac.fullname(account.AccountID);
+            lblName.Text = account.DisplayName;
             lblUsername.Text = account.UserName;
             lblCreateDate.Text = account.CreateDate.ToString();
             lblFriendID.Text = account.AccountID.ToString();
-            //moi
+            if (_ac.fullname(account.AccountID) == null)
+            {
+                lblName.Text = account.UserName;
+            }
             lblemail.Text = account.Email;
         }
 

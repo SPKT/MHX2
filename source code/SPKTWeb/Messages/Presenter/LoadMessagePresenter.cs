@@ -27,12 +27,11 @@ namespace SPKTWeb.Messages.Presenter
             _webContext = new WebContext();
             _ac = new AccountRepository();
         }
-        public void Init(ILoadMessage view)
+        public void Init(ILoadMessage view,bool Ispoback)
         {
             _view = view;
             if (_userSession.CurrentUser != null)
             {
-                
                     _view.LoadMessages(_messageRepository.GetMessagesByAccountID(_userSession.CurrentUser.AccountID,
                                                                                  _webContext.PageNumber,
                                                                                  (MessageFolders)_webContext.FolderID));

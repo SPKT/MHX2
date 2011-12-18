@@ -62,6 +62,7 @@
     <Content Include="About.aspx" />
     <Content Include="Accounts\EditAccount.aspx" />
     <Content Include="Accounts\Login.aspx" />
+    <Content Include="Accounts\ManageAccount.aspx" />
     <Content Include="Accounts\RecoverPassword.aspx" />
     <Content Include="Accounts\Register.aspx" />
     <Content Include="Accounts\UserControl\EditAc.ascx" />
@@ -100,11 +101,17 @@
     <Content Include="Friends\ShowFriend.aspx" />
     <Content Include="Friends\UserControl\BoxFriend.ascx" />
     <Content Include="Friends\UserControl\BoxInvite.ascx" />
+    <Content Include="Friends\UserControl\ButtonAdd.ascx" />
+    <Content Include="Friends\UserControl\ButtonAddFriend.ascx" />
+    <Content Include="Friends\UserControl\Friend.ascx" />
     <Content Include="Friends\UserControl\FriendList.ascx" />
     <Content Include="Friends\UserControl\FriendProfile.ascx" />
+    <Content Include="Friends\UserControl\Friendship.ascx" />
     <Content Include="Friends\UserControl\FriendSimple.ascx" />
     <Content Include="Friends\UserControl\InviteFriends.ascx" />
     <Content Include="Friends\UserControl\ListFriend.ascx" />
+    <Content Include="Friends\UserControl\ListFriendSimple.ascx" />
+    <Content Include="Friends\UserControl\MoreFriend.ascx" />
     <Content Include="Friends\UserControl\ShowFriend.ascx" />
     <Content Include="Groups\ManageGroup.aspx" />
     <Content Include="Groups\Members.aspx" />
@@ -139,10 +146,27 @@
     <Content Include="Images\ALIEN_01_01.PNG" />
     <Content Include="Images\ALIEN_03_01.PNG" />
     <Content Include="Images\TENT_01_01.PNG" />
+    <Content Include="Image\1.gif" />
+    <Content Include="Image\110934_27850_48_email_forward_letter_send_icon1.png" />
     <Content Include="Image\123.jpg" />
+    <Content Include="Image\1_170.png" />
+    <Content Include="Image\2.gif" />
+    <Content Include="Image\3.gif" />
+    <Content Include="Image\4.gif" />
+    <Content Include="Image\5.gif" />
+    <Content Include="Image\6.gif" />
+    <Content Include="Image\a1.gif" />
+    <Content Include="Image\a2.gif" />
+    <Content Include="Image\a3.gif" />
+    <Content Include="Image\a4.gif" />
+    <Content Include="Image\a5.gif" />
+    <Content Include="Image\a6.gif" />
     <Content Include="Image\ALIEN_01_01.jpg" />
     <Content Include="Image\ALIEN_01_01.PNG" />
     <Content Include="Image\arrow.jpg" />
+    <Content Include="Image\arrow1.jpg" />
+    <Content Include="Image\b.gif" />
+    <Content Include="Image\banner.jpg" />
     <Content Include="Image\banner_menu_bg.gif" />
     <Content Include="Image\bbl-body-bg.png" />
     <Content Include="Image\bbl-body-bg_2.png" />
@@ -150,6 +174,7 @@
     <Content Include="Image\bbl-head-bg_2.png" />
     <Content Include="Image\bg.png" />
     <Content Include="Image\bgd_footer.gif" />
+    <Content Include="Image\bgIndexOptionsTop.gif" />
     <Content Include="Image\bgm.gif" />
     <Content Include="Image\Bground.gif" />
     <Content Include="Image\bground1.gif" />
@@ -157,57 +182,137 @@
     <Content Include="Image\bg_blue_2.gif" />
     <Content Include="Image\bg_yellow.gif" />
     <Content Include="Image\block_topbg.gif" />
+    <Content Include="Image\block_topbg1.gif" />
+    <Content Include="Image\block_topbg2.gif" />
     <Content Include="Image\blog.jpg" />
+    <Content Include="Image\bn-2.gif" />
+    <Content Include="Image\bn.gif" />
+    <Content Include="Image\bn1.gif" />
     <Content Include="Image\bn2.jpg" />
+    <Content Include="Image\bo.gif" />
+    <Content Include="Image\bo1.gif" />
+    <Content Include="Image\bo2.gif" />
+    <Content Include="Image\bo3.gif" />
+    <Content Include="Image\bo4.gif" />
+    <Content Include="Image\bo5.gif" />
+    <Content Include="Image\bo6.gif" />
+    <Content Include="Image\bo7.gif" />
+    <Content Include="Image\bo8.gif" />
     <Content Include="Image\body-bg2.png" />
     <Content Include="Image\body-bg2_2.png" />
+    <Content Include="Image\body.gif" />
     <Content Include="Image\body_bg.jpg" />
     <Content Include="Image\box_bottom.gif" />
     <Content Include="Image\box_center.gif" />
+    <Content Include="Image\box_mtl_ctr.gif" />
     <Content Include="Image\box_top.gif" />
     <Content Include="Image\bt2.jpg" />
     <Content Include="Image\button-search-header.jpg" />
     <Content Include="Image\but_razd.gif" />
+    <Content Include="Image\camera.gif" />
     <Content Include="Image\CaptChaIma.aspx" />
     <Content Include="Image\collapse.jpg" />
+    <Content Include="Image\contact.gif" />
+    <Content Include="Image\events.gif" />
     <Content Include="Image\expand.jpg" />
+    <Content Include="Image\find.gif" />
+    <Content Include="Image\footer.gif" />
+    <Content Include="Image\gray Icon.png" />
     <Content Include="Image\gray-grad.png" />
     <Content Include="Image\ground_left.GIF" />
     <Content Include="Image\ground_left1.JPG" />
     <Content Include="Image\hmhdr_mod_teal.gif" />
+    <Content Include="Image\home.gif" />
+    <Content Include="Image\home2.gif" />
     <Content Include="Image\htitle.gif" />
+    <Content Include="Image\icforum.jpg" />
+    <Content Include="Image\icgroup.jpg" />
+    <Content Include="Image\ichome.jpg" />
+    <Content Include="Image\icinfo.jpg" />
     <Content Include="Image\icon_close.gif" />
     <Content Include="Image\icon_friends.gif" />
+    <Content Include="Image\j.gif" />
+    <Content Include="Image\l.gif" />
     <Content Include="Image\leftground1.gif" />
     <Content Include="Image\lista.png" />
     <Content Include="Image\main_background_gradient.jpg" />
     <Content Include="Image\main_menu_bg.jpg" />
+    <Content Include="Image\menu-1.gif" />
+    <Content Include="Image\menu-2.gif" />
+    <Content Include="Image\menu_d.jpg" />
+    <Content Include="Image\menu_d1.gif" />
+    <Content Include="Image\menu_d1.jpg" />
+    <Content Include="Image\menu_d2.jpg" />
+    <Content Include="Image\menu_n.jpg" />
+    <Content Include="Image\menu_n1.jpg" />
+    <Content Include="Image\mpd.gif" />
+    <Content Include="Image\mpg.gif" />
+    <Content Include="Image\mpt.gif" />
+    <Content Include="Image\mt.gif" />
+    <Content Include="Image\mtd.gif" />
+    <Content Include="Image\mtg.gif" />
+    <Content Include="Image\mtt.gif" />
+    <Content Include="Image\n1.gif" />
+    <Content Include="Image\ngang1.jpg" />
     <Content Include="Image\notepad.png" />
     <Content Include="Image\nut.GIF" />
+    <Content Include="Image\nuttim.gif" />
     <Content Include="Image\page_top_bkgr.gif" />
     <Content Include="Image\pencil.jpg" />
     <Content Include="Image\pencil_note.jpg" />
     <Content Include="Image\post_entry_bkgr.png" />
     <Content Include="Image\ProfileAvatar.aspx" />
+    <Content Include="Image\pro_15_0.gif" />
+    <Content Include="Image\pro_15_1.gif" />
+    <Content Include="Image\pro_15_2.gif" />
+    <Content Include="Image\r.gif" />
+    <Content Include="Image\red-square-icon-social-media-logos-mail.png" />
+    <Content Include="Image\redstyle-10-add.png" />
+    <Content Include="Image\s.gif" />
+    <Content Include="Image\s1.gif" />
+    <Content Include="Image\s2.gif" />
+    <Content Include="Image\s3.gif" />
     <Content Include="Image\sachmoi copy.gif" />
     <Content Include="Image\sachmoi.gif" />
+    <Content Include="Image\search.gif" />
     <Content Include="Image\search.png" />
     <Content Include="Image\searchbg.png" />
+    <Content Include="Image\send-icon1.png" />
     <Content Include="Image\spkt.png" />
     <Content Include="Image\spkticon.gif" />
     <Content Include="Image\spkticon1.png" />
     <Content Include="Image\spkt_1.png" />
     <Content Include="Image\spkt_2.gif" />
+    <Content Include="Image\t.gif" />
+    <Content Include="Image\tan_duoi.gif" />
+    <Content Include="Image\tan_phai.gif" />
+    <Content Include="Image\tan_trai.gif" />
+    <Content Include="Image\ta_duoi.gif" />
+    <Content Include="Image\ta_gdp.gif" />
+    <Content Include="Image\ta_gdt.gif" />
+    <Content Include="Image\ta_gtp.gif" />
+    <Content Include="Image\ta_gtt.gif" />
+    <Content Include="Image\ta_p.gif" />
+    <Content Include="Image\ta_trai.gif" />
+    <Content Include="Image\ta_tren.gif" />
     <Content Include="Image\thanh.JPG" />
     <Content Include="Image\thanhtren.gif.png" />
     <Content Include="Image\thead.gif" />
     <Content Include="Image\tile_cat.gif" />
+    <Content Include="Image\tim.gif" />
     <Content Include="Image\tim.png" />
+    <Content Include="Image\timn.gif" />
+    <Content Include="Image\timnp.gif" />
+    <Content Include="Image\timntrai.gif" />
     <Content Include="Image\titlemenu.gif" />
     <Content Include="Image\tt03-310.png" />
     <Content Include="Image\tt07-610.png" />
     <Content Include="Image\tt09-410.png" />
     <Content Include="Image\ttt01110.png" />
+    <Content Include="Image\undo.png" />
+    <Content Include="Image\up.jpg" />
+    <Content Include="Image\upload_icon.gif" />
+    <Content Include="Image\y.gif" />
     <Content Include="js\cropper\cropper.css" />
     <Content Include="js\cropper\cropper.js" />
     <Content Include="js\cropper\cropper.uncompressed.js" />
@@ -238,9 +343,10 @@
     <Content Include="js\cropper\tests\example-Preview.htm" />
     <Content Include="js\cropper\tests\poppy.jpg" />
     <Content Include="js\cropper\tests\staticHTMLStructure.htm" />
-    <Content Include="Friends\UserControl\ListFriendSimple.ascx" />
     <Content Include="Messages\MessageMange.aspx" />
     <Content Include="Messages\ReadMessage.aspx" />
+    <Content Include="Messages\UserControl\ButtonMess.ascx" />
+    <Content Include="Messages\UserControl\ButtonMessage.ascx" />
     <Content Include="Messages\UserControl\LoadInbox.ascx" />
     <Content Include="Messages\UserControl\MessageBrief.ascx" />
     <Content Include="Messages\UserControl\MessageNew.ascx" />
@@ -356,8 +462,15 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="temp.aspx" />
+    <Content Include="UserControl\ButtonComment.ascx" />
+    <Content Include="UserControl\Comment.ascx" />
     <Content Include="UserControl\Comments.ascx" />
     <Content Include="UserControl\ProfileDisplay.ascx" />
+    <None Include="Image\menu_d1.psd" />
+    <None Include="Image\Untitled-2.psd" />
+    <Content Include="MXH_NEW.Master" />
+    <Content Include="MXH_P.Master" />
+    <Content Include="MXH_1.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1758,6 +1871,13 @@
     <Compile Include="Accounts\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Accounts\ManageAccount.aspx.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\ManageAccount.aspx.designer.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Accounts\Presenter\EditAccountPresenter.cs" />
     <Compile Include="Accounts\Presenter\LoginPresenter.cs" />
     <Compile Include="Accounts\Presenter\RecoverPasswordPresenter.cs" />
@@ -1902,6 +2022,104 @@
       <DependentUpon>Post.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forums\Presenter\ForumPresenter.cs" />
+    <Compile Include="Friends\UserControl\BoxFriend.ascx.cs">
+      <DependentUpon>BoxFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\BoxFriend.ascx.designer.cs">
+      <DependentUpon>BoxFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\BoxInvite.ascx.cs">
+      <DependentUpon>BoxInvite.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\BoxInvite.ascx.designer.cs">
+      <DependentUpon>BoxInvite.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ButtonAdd.ascx.cs">
+      <DependentUpon>ButtonAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ButtonAdd.ascx.designer.cs">
+      <DependentUpon>ButtonAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ButtonAddFriend.ascx.cs">
+      <DependentUpon>ButtonAddFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ButtonAddFriend.ascx.designer.cs">
+      <DependentUpon>ButtonAddFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\Friend.ascx.cs">
+      <DependentUpon>Friend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\Friend.ascx.designer.cs">
+      <DependentUpon>Friend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendList.ascx.cs">
+      <DependentUpon>FriendList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendList.ascx.designer.cs">
+      <DependentUpon>FriendList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendProfile.ascx.cs">
+      <DependentUpon>FriendProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendProfile.ascx.designer.cs">
+      <DependentUpon>FriendProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\Friendship.ascx.cs">
+      <DependentUpon>Friendship.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\Friendship.ascx.designer.cs">
+      <DependentUpon>Friendship.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendSimple.ascx.cs">
+      <DependentUpon>FriendSimple.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendSimple.ascx.designer.cs">
+      <DependentUpon>FriendSimple.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\InviteFriends.ascx.cs">
+      <DependentUpon>InviteFriends.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\InviteFriends.ascx.designer.cs">
+      <DependentUpon>InviteFriends.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ListFriend.ascx.cs">
+      <DependentUpon>ListFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ListFriend.ascx.designer.cs">
+      <DependentUpon>ListFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ListFriendSimple.ascx.cs">
+      <DependentUpon>ListFriendSimple.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ListFriendSimple.ascx.designer.cs">
+      <DependentUpon>ListFriendSimple.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\MoreFriend.ascx.cs">
+      <DependentUpon>MoreFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\MoreFriend.ascx.designer.cs">
+      <DependentUpon>MoreFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ShowFriend.ascx.cs">
+      <DependentUpon>ShowFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ShowFriend.ascx.designer.cs">
+      <DependentUpon>ShowFriend.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Groups\Interface\IViewGroupForumPost.cs" />
     <Compile Include="Groups\Interface\IMyGroups.cs" />
     <Compile Include="Groups\Members.aspx.cs">
@@ -1976,62 +2194,6 @@
     </Compile>
     <Compile Include="Friends\ShowFriend.aspx.designer.cs">
       <DependentUpon>ShowFriend.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\BoxFriend.ascx.cs">
-      <DependentUpon>BoxFriend.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\BoxFriend.ascx.designer.cs">
-      <DependentUpon>BoxFriend.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\BoxInvite.ascx.cs">
-      <DependentUpon>BoxInvite.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\BoxInvite.ascx.designer.cs">
-      <DependentUpon>BoxInvite.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\FriendList.ascx.cs">
-      <DependentUpon>FriendList.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\FriendList.ascx.designer.cs">
-      <DependentUpon>FriendList.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\FriendProfile.ascx.cs">
-      <DependentUpon>FriendProfile.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\FriendProfile.ascx.designer.cs">
-      <DependentUpon>FriendProfile.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\FriendSimple.ascx.cs">
-      <DependentUpon>FriendSimple.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\FriendSimple.ascx.designer.cs">
-      <DependentUpon>FriendSimple.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\InviteFriends.ascx.cs">
-      <DependentUpon>InviteFriends.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\InviteFriends.ascx.designer.cs">
-      <DependentUpon>InviteFriends.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\ListFriend.ascx.cs">
-      <DependentUpon>ListFriend.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\ListFriend.ascx.designer.cs">
-      <DependentUpon>ListFriend.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Friends\UserControl\ShowFriend.ascx.cs">
-      <DependentUpon>ShowFriend.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\ShowFriend.ascx.designer.cs">
-      <DependentUpon>ShowFriend.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2156,13 +2318,6 @@
     <Compile Include="Interface\IMXH1Master.cs" />
     <Compile Include="Interface\IProfileDisplay.cs" />
     <Compile Include="LogUtil.cs" />
-    <Compile Include="Friends\UserControl\ListFriendSimple.ascx.cs">
-      <DependentUpon>ListFriendSimple.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\UserControl\ListFriendSimple.ascx.designer.cs">
-      <DependentUpon>ListFriendSimple.ascx</DependentUpon>
-    </Compile>
     <Compile Include="MembershipProvider\MxhMembershipProvider.cs" />
     <Compile Include="Messages\Interface\ILoadMessage.cs" />
     <Compile Include="Messages\Interface\INewMessage.cs" />
@@ -2184,6 +2339,20 @@
     </Compile>
     <Compile Include="Messages\ReadMessage.aspx.designer.cs">
       <DependentUpon>ReadMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\UserControl\ButtonMess.ascx.cs">
+      <DependentUpon>ButtonMess.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\UserControl\ButtonMess.ascx.designer.cs">
+      <DependentUpon>ButtonMess.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\UserControl\ButtonMessage.ascx.cs">
+      <DependentUpon>ButtonMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\UserControl\ButtonMessage.ascx.designer.cs">
+      <DependentUpon>ButtonMessage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Messages\UserControl\LoadInbox.ascx.cs">
       <DependentUpon>LoadInbox.ascx</DependentUpon>
@@ -2261,6 +2430,20 @@
     </Compile>
     <Compile Include="MXH_2.Master.designer.cs">
       <DependentUpon>MXH_2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH_NEW.Master.cs">
+      <DependentUpon>MXH_NEW.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_NEW.Master.designer.cs">
+      <DependentUpon>MXH_NEW.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH_P.Master.cs">
+      <DependentUpon>MXH_P.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_P.Master.designer.cs">
+      <DependentUpon>MXH_P.Master</DependentUpon>
     </Compile>
     <Compile Include="NestedMasterPage1.master.cs">
       <DependentUpon>NestedMasterPage1.master</DependentUpon>
@@ -2414,6 +2597,9 @@
       <DependentUpon>MENU.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Styles\MENU.ascx.designer.cs">
+      <DependentUpon>MENU.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Styles\RIGHT_MENU.ascx.cs">
       <DependentUpon>RIGHT_MENU.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2441,6 +2627,20 @@
     </Compile>
     <Compile Include="Temp.Master.designer.cs">
       <DependentUpon>Temp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ButtonComment.ascx.cs">
+      <DependentUpon>ButtonComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ButtonComment.ascx.designer.cs">
+      <DependentUpon>ButtonComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Comment.ascx.cs">
+      <DependentUpon>Comment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Comment.ascx.designer.cs">
+      <DependentUpon>Comment.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Comments.ascx.cs">
       <DependentUpon>Comments.ascx</DependentUpon>
@@ -2500,7 +2700,6 @@
     <Content Include="MXH1.Master" />
     <Content Include="NestedMasterPage1.master" />
     <Content Include="MXH2.master" />
-    <Content Include="MXH_1.Master" />
     <Content Include="MXH_2.Master" />
     <Content Include="MXH_11.Master" />
     <Content Include="HorisontalMenu.sitemap" />
@@ -2591,7 +2790,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4120</DevelopmentServerPort>
+          <DevelopmentServerPort>29465</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
