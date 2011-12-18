@@ -6,7 +6,7 @@ using StructureMap;
 using SPKTCore.Core.Domain;
 namespace SPKTCore.Core.DataAccess
 {
-    [PluginFamily("Defaul")]
+    
     public interface IProfileRepository
     {
         Profile GetProfileByAccountID(int AccountID);

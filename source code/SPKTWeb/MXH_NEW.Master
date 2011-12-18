@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_NEW.master.cs" Inherits="SPKTWeb.MXH_NEW1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Accounts/UserControl/LoginDesign1.ascx" TagName="login" TagPrefix="uc3" %>
+<%@ Register Src="~/Accounts/UserControl/Register.ascx" TagName="regist" TagPrefix="uc4" %>
+<%@ Register Src="~/Accounts/UserControl/InfoAccount.ascx" TagName="info" TagPrefix="uc5" %>
+<%@ Register Src="~/Accounts/UserControl/EditAc.ascx" TagName="edit" TagPrefix="uc6" %>
+<%@ Register Src="~/Friends/UserControl/InviteFriends.ascx" TagName="in" TagPrefix="uc7" %>
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menul" TagPrefix="uc8" %>
+<%@ Register Src="~/Styles/MENU.ascx" TagName="menu" TagPrefix="uc9" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
+<%@ Register Src="Friends/UserControl/ListFriend.ascx" TagName="FriendList" TagPrefix="uc2" %>
+<%@ Register Src="Friends/UserControl/BoxInvite.ascx" TagName="BoxInvite" TagPrefix="uc1" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Mạng xã hội SINH VIÊN</title>
+    <link type="text/css" rel="Stylesheet" href="Styles/MXH.css" />
+    <link rel="shortcut icon" type="image/ico" href="Image/spkticon1.png" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <script type="text/javascript">
+        var styleToSelect;
+        function onOk() {
+            document.getElementById('Paragraph1').className = styleToSelect;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div style="height: 50px">
+            <div id="banner">
+                <div align="left" class="item_banner_logo">
+                </div>
+                <div class="item_banner_text">
+                    <div id="item_banner_2" style="height: 23px;" align="center">
+                     
+                    </div>
+                    <div align="right" id="item_banner">
+                        <div align="center" class="item_banner_1">
+                            <asp:LinkButton ID="lb_dangky" runat="server" CssClass="linkbuton" Width="100%">Đăng ký</asp:LinkButton>
+                        </div>
+                        <div align="center" class="item_banner_1">
+                            <asp:LinkButton ID="lb_dangnhap" runat="server" CssClass="linkbuton" Width="100%">Đăng nhập</asp:LinkButton>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div style="height:100%;margin-left:1%; margin-top:2px; margin-right:1%;">
+           <aspt:ToolkitScriptManager ID="ScriptManager1" runat="server" />
+            <asp:ContentPlaceHolder ID="Main" runat="server"></asp:ContentPlaceHolder>
+          </div>
+    </div>
+    </form>
+</body>
+</html>

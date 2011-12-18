@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_P.master.cs" Inherits="SPKTWeb.MXH_P" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Accounts/UserControl/LoginDesign1.ascx" TagName="login" TagPrefix="uc3" %>
+<%@ Register Src="~/Accounts/UserControl/Register.ascx" TagName="regist" TagPrefix="uc4" %>
+<%@ Register Src="~/Accounts/UserControl/InfoAccount.ascx" TagName="info" TagPrefix="uc5" %>
+<%@ Register Src="~/Accounts/UserControl/EditAc.ascx" TagName="edit" TagPrefix="uc6" %>
+<%@ Register Src="~/Friends/UserControl/InviteFriends.ascx" TagName="in" TagPrefix="uc7" %>
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menul" TagPrefix="uc8" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
+<%@ Register Src="Friends/UserControl/ListFriend.ascx" TagName="FriendList" TagPrefix="uc2" %>
+<%@ Register Src="Friends/UserControl/BoxInvite.ascx" TagName="BoxInvite" TagPrefix="uc1" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Mạng xã hội SINH VIÊN</title>
+    <link type="text/css" rel="Stylesheet" href="Styles/MXH.css" />
+    <link rel="shortcut icon" type="image/ico" href="Image/spkticon1.png" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        var styleToSelect;
+        function onOk() {
+            document.getElementById('Paragraph1').className = styleToSelect;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div style="height: 50px">
+            <div id="banner">
+                <div align="left" class="item_banner_logo">
+                    
+                </div>
+                <div class="item_banner_text">
+                    <div id="item_banner_2" style="height: 23px;" align="center">
+                        <asp:Image ID="img_av" runat="server" Width="20px" Height="20px" />
+                        <asp:Label ID="lblUserName" runat="server" ForeColor="White" Text="Xin chao" Font-Size="Small"></asp:Label>
+                        <asp:Image Width="13px" Height="13px" ImageUrl="Image/expand.jpg" runat="server"
+                            ID="img_1" />
+                        <asp:Panel ID="Panel1" runat="server" Style="display: block; width: 120px; height: 80px;">
+                            <div style="margin-left: 86%; margin-top: 7px; float: left">
+                                <a onclick="document.body.click(); return false;" title="Fermer" style="color: Gray">
+                                    <asp:Button Width="20px" Height="18px" Text="X" runat="server" ID="ii" /></a>
+                            </div>
+                            <div style="background-image: url('/Image/bbl-body-bg.png'); width: 100%; height: 100%;
+                                margin: 5px; margin-top: 10px; border-color: #666666; border-style: solid; border-width: 1px;
+                                -moz-border-radius: 5px; -webkit-border-radius: 5px;">
+                                <div class="link">
+                                    <asp:LinkButton ID="lb_thaydoi" runat="server" Text="Quản lý tài khoản" Font-Strikeout="false"
+                                        Width="100%" Height="22px" OnClick="thaydoi_Click"></asp:LinkButton>
+                                </div>
+                                <div class="link">
+                                    <asp:LinkButton ID="lb_thoat" runat="server" Text="Đăng xuất" Font-Strikeout="false"
+                                        Width="100%" Height="22px" OnClick="dangxuat_Click"></asp:LinkButton>
+                                </div>
+                            </div>
+                        </asp:Panel>
+                        <aspt:ToolkitScriptManager ID="ScriptManager1" runat="server" />
+                        <aspt:PopupControlExtender ID="PopupControlExtender1" runat="server" TargetControlID="img_1"
+                            PopupControlID="Panel1" Position="Left" OffsetX="-100" OffsetY="0">
+                        </aspt:PopupControlExtender>
+                    </div>
+                    <div align="right" id="item_banner">
+                        <div align="center" class="item_banner_1">
+                            <asp:LinkButton ID="lb_dangky" runat="server" CssClass="linkbuton" Width="100%">Đăng ký</asp:LinkButton>
+                            
+                        </div>
+                        <div align="center" class="item_banner_1">
+                            <asp:LinkButton ID="lb_dangnhap" runat="server" CssClass="linkbuton" Width="100%">Đăng nhập</asp:LinkButton>
+                            
+                        </div>
+                    </div>
+                </div>
+                </div>
+            <div id="box_menu_top" align="center" style="border-bottom-style: solid; border-bottom-width: 1px;
+                border-bottom-color: #999999;">
+                <div id="box_menu_top_1">
+                    <div class="menu_ngang"> 
+                        
+                        <asp:LinkButton ID="lb_info" runat="server" Font-Underline="False" Height="100%"
+                            Width="100%" CssClass="linbuton_ngang" OnClick="lb_info_Click">Trang chủ</asp:LinkButton>
+                    </div>
+                    <div class="menu_ngang">
+                        <asp:LinkButton ID="lb_account" runat="server" Font-Underline="False" Height="100%"
+                            Width="100%" CssClass="linbuton_ngang" OnClick="lb_account_Click">Cá nhân</asp:LinkButton>
+                        <asp:Panel ID="pn2" runat="server" Width="11%">
+                            <div class="popupMenu">
+                                <div align="left" style="margin-left: 5px;">
+                                    <asp:LinkButton ID="lb_info_ac" runat="server" Text="Quản lý cá nhân" Height="100%"
+                                        Width="99%" Font-Underline="false" CssClass="popuplink" OnClick="lb_manageProfile_Click"></asp:LinkButton>
+                                </div>
+                                <div align="left" style="margin-left: 5px;">
+                                    <asp:LinkButton ID="lb_edit_ac" runat="server" Text="Hộp thư tin nhắn" Height="100%"
+                                        Width="99%" Font-Underline="false" CssClass="popuplink" OnClick="lb_edit_ac_Click" ></asp:LinkButton>
+                                </div>
+                                <div style="height: 5px;">
+                                </div>
+                            </div>
+                        </asp:Panel>
+                        <aspt:HoverMenuExtender ID="HoverMenuExtender1" runat="Server" TargetControlID="lb_account"
+                            PopupControlID="pn2" HoverCssClass="popupHover" PopupPosition="Bottom" OffsetX="0"
+                            OffsetY="0" PopDelay="50" />
+                    </div>
+                    <div class="menu_ngang">
+                        
+                            <asp:LinkButton ID="lb_profile" runat="server" Font-Underline="False" 
+                            Width="100%" CssClass="linbuton_ngang" OnClick="lb_profile_Click">Bạn bè</asp:LinkButton>
+                       
+                        <div>
+                            <asp:Panel ID="pn3" runat="server" Width="11%">
+                                <div class="popupMenu">
+                                    <div align="left" style="margin-left: 5px;">
+                                        <asp:LinkButton ID="lb_friend" runat="server" Text="Danh sách bạn" Height="100%"
+                                            Width="99%" Font-Underline="false" CssClass="popuplink" OnClick="tim_Click"></asp:LinkButton>
+                                    </div>
+                                    <div align="left" style="margin-left: 5px;">
+                                        <asp:LinkButton ID="lb_in" runat="server" Text="Mời bạn" Height="100%" Width="99%"
+                                            Font-Underline="false" CssClass="popuplink"></asp:LinkButton>
+                                        <asp:Panel ID="pn_in" runat="server" Width="500px" Height="303px">
+                                            <div style="width: 100%; height: 100%;">
+                                                <div style="float: left; margin-left: 0%; height: 97%; width: 100%; margin-top: 0px;">
+                                                    <uc7:in ID="in2" runat="server" />
+                                                </div>
+                                                <div style="float: left; margin-left: 95%;">
+                                                    <asp:Button ID="bt_3" Text="Đóng" runat="server" BackColor="Black" ForeColor="White" />
+                                                </div>
+                                            </div>
+                                        </asp:Panel>
+                                        <aspt:ModalPopupExtender ID="ModalPopupExtender4" runat="server" TargetControlID="lb_in"
+                                            PopupControlID="pn_in" BackgroundCssClass="modalBackground" DropShadow="false"
+                                            OkControlID="bt_3" OnOkScript="onOk()" />
+                                    </div>
+                                </div>
+                            </asp:Panel>
+                            <aspt:HoverMenuExtender ID="HoverMenuExtender2" runat="Server" TargetControlID="lb_profile"
+                                PopupControlID="pn3" HoverCssClass="popupHover" PopupPosition="Bottom" OffsetX="0"
+                                OffsetY="0" PopDelay="50" />
+                        </div>
+                    </div>
+                    <div class="menu_ngang">
+                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Underline="False" Height="100%"
+                            Width="100%" CssClass="linbuton_ngang">Diễn đàn</asp:LinkButton>
+                    </div>
+                    <div class="menu_ngang">
+                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Underline="False" Height="100%"
+                            Width="100%" CssClass="linbuton_ngang">Kết nhóm</asp:LinkButton>
+                    </div>
+                    <div class="menu_ngang">
+                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Underline="False" Height="100%"
+                            Width="100%" CssClass="linbuton_ngang">Tin tức</asp:LinkButton>
+                    </div>
+                    <div class="menu_ngang_timkiem" style="margin: 0px; border-style: none;">
+                        <input id="timkiem" type="text" name="timkiem" runat="server" 
+                            style="margin: 2px; border-style: none;" />
+                    </div>
+                    <div align="center" class="menu_ngang_timkiem_nut">
+                        <asp:LinkButton ID="lbt_tim" runat="server" CssClass="nuttim" Font-Underline="False"
+                            Height="100%" OnClick="lbt_tim_Click" Width="100%">Tìm</asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px; width: 100%; background-image: url('/Image/thead.gif');
+                background-repeat: repeat-x;">
+            </div>
+            <div style="margin-top: 2px; width: 100%">
+                <div style="height: 810px">
+                    <div id="box_left">
+                        <div class="left_box">
+                        </div>
+                        <asp:ContentPlaceHolder ID="left" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div style="width:82%; height:1000px;">
+                        <div>
+                            <asp:ContentPlaceHolder ID="Main" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
