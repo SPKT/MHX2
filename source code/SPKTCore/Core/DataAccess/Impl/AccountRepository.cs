@@ -14,7 +14,7 @@ using SPKTCore.Core.Impl;
 /// </summary>
 namespace SPKTCore.Core.DataAccess.Impl
 {
-    [Pluggable("Default")]
+   
     public class AccountRepository :IAccountRepository
     {
         private Connection conn;
