@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using System.Drawing;
 
 namespace SPKTCore.Core
 {
-    [PluginFamily("Default")]
+    //[PluginFamily("Default")]
     public interface ICaptcha
     {
         string FamilyName { get; set; }

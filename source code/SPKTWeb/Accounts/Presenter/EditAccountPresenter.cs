@@ -5,7 +5,7 @@ using System.Web;
 using SPKTWeb.Accounts.Interface;
 using SPKTCore.Core;
 using SPKTCore.Core.DataAccess;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Impl;
 using SPKTCore.Core.Domain;
 using SPKTCore.Core.DataAccess.Impl;

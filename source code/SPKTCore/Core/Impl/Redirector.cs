@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core;
 
 namespace SPKTCore.Core.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class Redirector : IRedirector
     {
         public void GotoManageProfile()
-        {
+        {          
             Redirect("~/Profiles/ManageProfile.aspx");
         }
         public void GoToAccountAccessDenied()

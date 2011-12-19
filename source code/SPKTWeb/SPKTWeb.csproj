@@ -2319,6 +2319,7 @@
     <Compile Include="Interface\IProfileDisplay.cs" />
     <Compile Include="LogUtil.cs" />
     <Compile Include="MembershipProvider\MxhMembershipProvider.cs" />
+    <Compile Include="MembershipProvider\MxhRoleProvider.cs" />
     <Compile Include="Messages\Interface\ILoadMessage.cs" />
     <Compile Include="Messages\Interface\INewMessage.cs" />
     <Compile Include="Messages\Interface\IReadMessage.cs" />

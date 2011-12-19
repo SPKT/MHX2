@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Domain;
 using SPKTCore.Core.Impl;
 using System.Data.SqlTypes;
 
 namespace SPKTCore.Core.DataAccess.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class ProfileRepository:IProfileRepository
     {
         private Connection conn;

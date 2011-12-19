@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Domain;
 
 namespace SPKTCore.Core.DataAccess
 {
-    [PluginFamily("Default")]
+    //[PluginFamily("Default")]
     public interface IFriendInvitationRepository
     {
         List<FriendInvitation> GetFriendInvitationsByAccountID(Int32 AccountID);

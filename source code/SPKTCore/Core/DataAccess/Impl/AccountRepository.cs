@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.DataAccess.Impl;
 using SPKTCore.Core;
 using SPKTCore.Core.DataAccess;
@@ -14,7 +14,7 @@ using SPKTCore.Core.Impl;
 /// </summary>
 namespace SPKTCore.Core.DataAccess.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class AccountRepository :IAccountRepository
     {
         private Connection conn;

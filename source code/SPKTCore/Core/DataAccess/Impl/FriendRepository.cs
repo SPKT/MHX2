@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Domain;
 using SPKTCore.Core.DataAccess.Impl;
 using SPKTCore.Core.DataAccess;
 
 namespace SPKTCore.Core.DataAccess.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class FriendRepository : IFriendRepository
     {
         private Connection conn;

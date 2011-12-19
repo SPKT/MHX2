@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SPKTCore.Core.DataAccess.Impl;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Domain;
 
 namespace SPKTCore.Core.DataAccess
 {
-    [PluginFamily("Default")]
+    //[PluginFamily("Default")]
     public interface IAccountRepository
     {
         Account GetAccountByID(int AccountID);

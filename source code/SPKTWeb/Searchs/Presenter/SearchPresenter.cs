@@ -12,7 +12,7 @@ using SPKTCore.Core;
 using SPKTCore.Core.DataAccess;
 using SPKTWeb.Searchs.Interface;
 using SPKTCore.Core.Impl;
-using StructureMap;
+//using StructureMap;
 namespace SPKTWeb.Searchs.Presenter
 {
     public class SearchPresenter
