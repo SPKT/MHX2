@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using System.Net.Mail;
 using System.Net;
 using SPKTCore.Core.DataAccess;
@@ -10,7 +10,7 @@ using SPKTCore.Core.Domain;
 
 namespace SPKTCore.Core.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class Email:IEmail
     {
         const string TO_EMAIL_ADDRESS = "mxh.spkt@gmail.com";

@@ -47,32 +47,32 @@ namespace SPKTWeb.Styles
             _f = new FriendService();
             Account acid;
 
-            if (_usersession != null)
+            if ((_usersession != null) && (_usersession.CurrentUser != null))
             {
-                if (_webcontext.AccountID != _usersession.CurrentUser.AccountID && _webcontext.AccountID!=0)
-                {
-                    acid = _ac.GetAccountByID(_webcontext.AccountID);
-                    lblProfileName.Text = acid.UserName;
-                    lb_ban.Text = " ( " + _f.SearchFriend(acid).Count.ToString() + " )";
-                    testImage.Src = "~/Image/ProfileAvatar.aspx?AccountID=" + acid.AccountID;
-                    AccordionPane1.Visible = false;
-                    AccordionPane3.Visible = false;
-                    id = acid.AccountID;
-                    lbtnChangeAvatar.Visible = false;
-                }
-                else
-                {
-                    lblProfileName.Text = _usersession.CurrentUser.UserName;
-                    lb_ban.Text = " ( " + _f.SearchFriend(_usersession.CurrentUser).Count.ToString() + " )";
-                    testImage.Src = "~/Image/ProfileAvatar.aspx?AccountID=" + _usersession.CurrentUser.AccountID;
-                    AccordionPane1.Visible = true;
-                    AccordionPane3.Visible = true;
-                    lb_invite.Text = " ( " + _fi.FriendInv(_usersession.CurrentUser).Count.ToString() + " )";
-                    id = _usersession.CurrentUser.AccountID;
-                    lb_message.Text = " ( 0 ) ";
-                    lbtnChangeAvatar.Visible = true;
-                    //lb_message.Text = " ( " + _mr.getMessageRecipientByAccountID(_usersession.CurrentUser.AccountID).Count.ToString() + " ) ";
-                }
+              if (_webcontext.AccountID != _usersession.CurrentUser.AccountID && _webcontext.AccountID != 0)
+              {
+                acid = _ac.GetAccountByID(_webcontext.AccountID);
+                lblProfileName.Text = acid.UserName;
+                lb_ban.Text = " ( " + _f.SearchFriend(acid).Count.ToString() + " )";
+                testImage.Src = "~/Image/ProfileAvatar.aspx?AccountID=" + acid.AccountID;
+                AccordionPane1.Visible = false;
+                AccordionPane3.Visible = false;
+                id = acid.AccountID;
+                lbtnChangeAvatar.Visible = false;
+              }
+              else
+              {
+                lblProfileName.Text = _usersession.CurrentUser.UserName;
+                lb_ban.Text = " ( " + _f.SearchFriend(_usersession.CurrentUser).Count.ToString() + " )";
+                testImage.Src = "~/Image/ProfileAvatar.aspx?AccountID=" + _usersession.CurrentUser.AccountID;
+                AccordionPane1.Visible = true;
+                AccordionPane3.Visible = true;
+                lb_invite.Text = " ( " + _fi.FriendInv(_usersession.CurrentUser).Count.ToString() + " )";
+                id = _usersession.CurrentUser.AccountID;
+                lb_message.Text = " ( 0 ) ";
+                lbtnChangeAvatar.Visible = true;
+                //lb_message.Text = " ( " + _mr.getMessageRecipientByAccountID(_usersession.CurrentUser.AccountID).Count.ToString() + " ) ";
+              }
             }
         }
 

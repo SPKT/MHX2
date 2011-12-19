@@ -7,7 +7,7 @@ using SPKTCore.Core.DataAccess;
 using SPKTCore.Core.Domain;
 using SPKTCore.Core.Impl;
 using SPKTCore.Core;
-using StructureMap;
+//using StructureMap;
 namespace SPKTWeb.Friends.Presenter
 {
     public class InviteFriendsPresenter

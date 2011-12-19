@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
 namespace SPKTCore.Core.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class Captcha : ICaptcha
     {
         private string text;

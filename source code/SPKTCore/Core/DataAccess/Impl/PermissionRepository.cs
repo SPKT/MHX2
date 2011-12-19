@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SPKTCore.Core.DataAccess;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Domain;
 /// <summary>
 /// Summary description for PermissionRepository
 /// </summary>
 namespace SPKTCore.Core.DataAccess.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class PermissionRepository:IPermissionRepository
     {
         private Connection conn;

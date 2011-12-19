@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Domain;
 
 namespace SPKTCore.Core.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class UserSession : IUserSession
     {
         private IWebContext _webContext;

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.Domain;
 
 namespace SPKTCore.Core
 {
-    [PluginFamily("Default")]
+    //[PluginFamily("Default")]
     public interface IEmail
     {
         void SendEmail(string From, string Subject, string Message);

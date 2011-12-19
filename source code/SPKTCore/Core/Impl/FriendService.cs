@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using SPKTCore.Core.Domain;
 using SPKTCore.Core.DataAccess;
-using StructureMap;
+//using StructureMap;
 
 namespace SPKTCore.Core.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class FriendService : IFriendService
     {
         private IFriendInvitationRepository _friendInvitationRepository;

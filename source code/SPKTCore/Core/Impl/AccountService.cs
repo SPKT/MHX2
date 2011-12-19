@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core.DataAccess;
 using SPKTCore.Core.Domain;
 using SPKTCore.Core.DataAccess.Impl;
 
 namespace SPKTCore.Core.Impl
 {
-    [Pluggable("Default")]
+    //[Pluggable("Default")]
     public class AccountService : IAccountService
     {
         private IAccountRepository _accountRepository;

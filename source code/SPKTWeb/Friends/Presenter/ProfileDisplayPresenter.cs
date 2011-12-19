@@ -12,7 +12,7 @@ using SPKTCore.Core.Domain;
 using SPKTCore.Core.DataAccess;
 using SPKTCore.Core.Impl;
 using SPKTWeb.Friends.Interface;
-using StructureMap;
+//using StructureMap;
 using SPKTCore.Core;
 
 namespace SPKTWeb.Friends.Presenter
