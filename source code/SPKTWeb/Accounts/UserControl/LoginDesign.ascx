@@ -89,7 +89,8 @@
 						<td style="height: 23px; width: 50px; background-image: none; background-repeat: repeat-x;"></td>
 						<td style="height: 23px; width: 95px"></td>
 						<td style="height: 23px">
-						<asp:LinkButton id="lbRecoverPassword" runat="server">Quên mật 
+						<asp:LinkButton id="lbRecoverPassword" runat="server" 
+                                onclick="lbRecoverPassword_Click1">Quên mật 
 						khẩu</asp:LinkButton>
 						&nbsp;</td>
 					</tr>

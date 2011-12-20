@@ -55,6 +55,14 @@ namespace SPKTWeb
         {
             _redirector.Redirect("~/Accounts/EditAccount.aspx");
         }
+        protected void ketnhom(object sender, EventArgs e)
+        {
+            _redirector.Redirect("~/Groups/ViewAllGroup.aspx");
+        }
+        protected void diendan(object sender, EventArgs e)
+        {
+            _redirector.Redirect("~/Forums/Forum.aspx");
+        }
         protected void dangxuat_Click(object sender, EventArgs e)
         {
             _as.Logout();

@@ -83,7 +83,7 @@ namespace SPKTWeb.Accounts.Presenter
                     DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
                     if (service.ValidateUser(account.UserName, oldPass))
                     {
-                        account.Password = newPass;
+                        account.Password = newPass.Encrypt(account.UserName);
                         _accountRepository.SaveAccount(account);
                         _view.ShowErrorSavePass("Đã thay đổi thành công");
                     }

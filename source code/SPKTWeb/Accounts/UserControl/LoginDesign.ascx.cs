@@ -37,5 +37,10 @@ namespace MXH
         {
             _Presenter.Login(txtUserName.Text, txtPassword.Text,ckbAutoLogin.Checked);
         }
+
+        protected void lbRecoverPassword_Click1(object sender, EventArgs e)
+        {
+            _Presenter.GoToRecoverPassword();
+        }
     }
 }

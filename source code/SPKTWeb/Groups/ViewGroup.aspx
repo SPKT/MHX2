@@ -63,7 +63,7 @@
 
     <div class="divContainer">
         <div class="divContainerBox">
-            <div class="divContainerRow" style="width:100%; height:120px">
+            <div class="divContainerRow" style="width:100%;">
                 <asp:Label ForeColor="Red" ID="lblMessage" runat="server"></asp:Label>
                 <asp:Panel ID="pnlPublic" runat="server">
                     <div style="float: none;">
@@ -72,8 +72,8 @@
                         <asp:Label ID="lblName" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label><br />
                             <asp:Image ID="imgGroupLogo" Width="120px" Height="80px" runat="server" /></div>
                         <div style="text-align: right;">
-                            <asp:Label ID="lblPrivateMessage" ForeColor="Red" runat="server" Text="This group is private!"></asp:Label>
-                            <asp:LinkButton ID="lbRequestMembership" OnClick="lbRequestMembership_Click" Text="Request Membership"
+                            <asp:Label ID="lblPrivateMessage" ForeColor="Red" runat="server" Text="Nhóm đang ở chế độ riêng tư!"></asp:Label>
+                            <asp:LinkButton ID="lbRequestMembership" OnClick="lbRequestMembership_Click" Text="Tham gia nhóm"
                                 runat="server"></asp:LinkButton>
                         </div>
                     </div>
@@ -99,12 +99,14 @@
             <br />
             <asp:Repeater ID="reMember" runat="server" OnItemCommand="reMember_ItemCommand">
                 <ItemTemplate>
-                    <a href="/Profiles/UserProfile2.aspx?AccountID=<%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>">
-                        <asp:Image Style="padding: 5px; margin-top: 4px;" ID="imgAvatar" runat="server" Width="40px"
-                            Height="40px" CssClass="img" ImageUrl="/image/ProfileAvatar.aspx?AccountID=<%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>" /></a>
-                    <a href="/Profiles/UserProfile2.aspx?AccountID=<%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>">
+                    <a href='/Profiles/UserProfile2.aspx?AccountID= <%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>'>
+                        <img alt='avatar' style="padding: 5px; margin-top: 4px;" id="imgAvatar" width="40px" height="40px"  class="img" src='/image/ProfileAvatar.aspx?AccountID=<%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>' />
+                    </a>
+                   <br />
+                    <a style="margin-bottom:35px;" href='/Profiles/UserProfile2.aspx?AccountID=<%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>'>
                         <%# ((SPKTCore.Core.Domain.Account)Container.DataItem).UserName %>
                     </a>
+                    
                     <br />
                 </ItemTemplate>
             </asp:Repeater>

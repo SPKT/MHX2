@@ -25,7 +25,7 @@ namespace SPKTWeb.Groups.UserControl
             BoardPost post = new BoardPost();
             post.Name = txtName.Text;
             //post.PageName = txtPageName.Text;
-            // post.Post = txtPost.Text;
+            
             post.Post = Editor1.Content;
 
             _presenter.Save(post);
@@ -33,7 +33,7 @@ namespace SPKTWeb.Groups.UserControl
         //not necessary
         public void SetDisplay(bool IsThread)
         {
-            txtName.Enabled = IsThread;
+            //txtName.Enabled = IsThread;
         }
 
         public void SetErrorMessage(string Message)

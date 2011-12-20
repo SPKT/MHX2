@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-//using StructureMap;
 using SPKTCore.Core.DataAccess.Impl;
 using SPKTCore.Core;
 using SPKTCore.Core.DataAccess;
@@ -14,7 +13,7 @@ using SPKTCore.Core.Impl;
 /// </summary>
 namespace SPKTCore.Core.DataAccess.Impl
 {
-    //[Pluggable("Default")]
+
     public class AccountRepository :IAccountRepository
     {
         private Connection conn;
@@ -98,7 +97,7 @@ namespace SPKTCore.Core.DataAccess.Impl
 
         }
 
-        public List<Account> GetAllAccounts(int PageNumber)
+        public List<Account> GetAllAccounts(int PageNumber, int PageSize)
         {
             List<Account> result = new List<Account>();
 
@@ -106,7 +105,7 @@ namespace SPKTCore.Core.DataAccess.Impl
             {
                 IEnumerable<Account> accounts = (from a in dc.Accounts
                                                  orderby a.UserName
-                                                 select a).Skip((PageNumber - 1) * 10).Take(10);
+                                                 select a).Skip((PageNumber - 1) * PageSize).Take(PageSize);
                 result = accounts.ToList();
             }
 

@@ -75,81 +75,21 @@
                 </div>
             <div id="box_menu_top" align="center" style="border-bottom-style: solid; border-bottom-width: 1px;
                 border-bottom-color: #999999;">
-                <div id="box_menu_top_1">
-                    <div class="menu_ngang"> 
-                        
-                        <asp:LinkButton ID="lb_info" runat="server" Font-Underline="False" Height="100%"
-                            Width="100%" CssClass="linbuton_ngang" OnClick="lb_info_Click">Trang chủ</asp:LinkButton>
-                    </div>
-                    <div class="menu_ngang">
-                        <asp:LinkButton ID="lb_account" runat="server" Font-Underline="False" Height="100%"
-                            Width="100%" CssClass="linbuton_ngang" OnClick="lb_account_Click">Cá nhân</asp:LinkButton>
-                        <asp:Panel ID="pn2" runat="server" Width="11%">
-                            <div class="popupMenu">
-                                <div align="left" style="margin-left: 5px;">
-                                    <asp:LinkButton ID="lb_info_ac" runat="server" Text="Quản lý cá nhân" Height="100%"
-                                        Width="99%" Font-Underline="false" CssClass="popuplink" OnClick="lb_manageProfile_Click"></asp:LinkButton>
-                                </div>
-                                <div align="left" style="margin-left: 5px;">
-                                    <asp:LinkButton ID="lb_edit_ac" runat="server" Text="Hộp thư tin nhắn" Height="100%"
-                                        Width="99%" Font-Underline="false" CssClass="popuplink" OnClick="lb_edit_ac_Click" ></asp:LinkButton>
-                                </div>
-                                <div style="height: 5px;">
-                                </div>
-                            </div>
-                        </asp:Panel>
-                        <aspt:HoverMenuExtender ID="HoverMenuExtender1" runat="Server" TargetControlID="lb_account"
-                            PopupControlID="pn2" HoverCssClass="popupHover" PopupPosition="Bottom" OffsetX="0"
-                            OffsetY="0" PopDelay="50" />
-                    </div>
-                    <div class="menu_ngang">
-                        
-                            <asp:LinkButton ID="lb_profile" runat="server" Font-Underline="False" 
-                            Width="100%" CssClass="linbuton_ngang" OnClick="lb_profile_Click">Bạn bè</asp:LinkButton>
-                       
-                        <div>
-                            <asp:Panel ID="pn3" runat="server" Width="11%">
-                                <div class="popupMenu">
-                                    <div align="left" style="margin-left: 5px;">
-                                        <asp:LinkButton ID="lb_friend" runat="server" Text="Danh sách bạn" Height="100%"
-                                            Width="99%" Font-Underline="false" CssClass="popuplink" OnClick="tim_Click"></asp:LinkButton>
-                                    </div>
-                                    <div align="left" style="margin-left: 5px;">
-                                        <asp:LinkButton ID="lb_in" runat="server" Text="Mời bạn" Height="100%" Width="99%"
-                                            Font-Underline="false" CssClass="popuplink"></asp:LinkButton>
-                                        <asp:Panel ID="pn_in" runat="server" Width="500px" Height="303px">
-                                            <div style="width: 100%; height: 100%;">
-                                                <div style="float: left; margin-left: 0%; height: 97%; width: 100%; margin-top: 0px;">
-                                                    <uc7:in ID="in2" runat="server" />
-                                                </div>
-                                                <div style="float: left; margin-left: 95%;">
-                                                    <asp:Button ID="bt_3" Text="Đóng" runat="server" BackColor="Black" ForeColor="White" />
-                                                </div>
-                                            </div>
-                                        </asp:Panel>
-                                        <aspt:ModalPopupExtender ID="ModalPopupExtender4" runat="server" TargetControlID="lb_in"
-                                            PopupControlID="pn_in" BackgroundCssClass="modalBackground" DropShadow="false"
-                                            OkControlID="bt_3" OnOkScript="onOk()" />
-                                    </div>
-                                </div>
-                            </asp:Panel>
-                            <aspt:HoverMenuExtender ID="HoverMenuExtender2" runat="Server" TargetControlID="lb_profile"
-                                PopupControlID="pn3" HoverCssClass="popupHover" PopupPosition="Bottom" OffsetX="0"
-                                OffsetY="0" PopDelay="50" />
-                        </div>
-                    </div>
-                    <div class="menu_ngang">
-                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Underline="False" Height="100%"
-                            Width="100%" CssClass="linbuton_ngang" OnClick="diendan">Diễn đàn</asp:LinkButton>
-                    </div>
-                    <div class="menu_ngang">
-                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Underline="False" Height="100%"
-                            Width="100%" CssClass="linbuton_ngang" OnClick="ketnhom">Kết nhóm</asp:LinkButton>
-                    </div>
-                    <div class="menu_ngang">
-                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Underline="False" Height="100%"
-                            Width="100%" CssClass="linbuton_ngang">Tin tức</asp:LinkButton>
-                    </div>
+                   <div id="box_menu_top_1">
+                     <asp:Menu ID="Menu2" runat="server" DataSourceID="HorisontalMenu" DynamicHorizontalOffset="10"
+                            Font-Names="Verdana" Font-Size="0.8em" ForeColor="White" Height="30px" Orientation="Horizontal"
+                            StaticSubMenuIndent="30px" Width="100%">
+                            <DynamicHoverStyle BackColor="Blue" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="30px" VerticalPadding="7px" />
+                            <DynamicMenuStyle BackColor="#B5C7DE" />
+                            <DynamicSelectedStyle BackColor="Blue" />
+                            <StaticHoverStyle BackColor="Blue" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="7px" />
+                            <StaticSelectedStyle BackColor="Blue" />
+                        </asp:Menu>
+                        <asp:SiteMapDataSource ID="HorisontalMenu" runat="server" ShowStartingNode="False" SiteMapProvider="HorisontalMenu" />
+                </div>
+                <div id="box_menu_top_timkiem">
                     <div class="menu_ngang_timkiem" style="margin: 0px; border-style: none;">
                         <input id="timkiem" type="text" name="timkiem" runat="server" 
                             style="margin: 2px; border-style: none;" />
@@ -171,7 +111,7 @@
                         <asp:ContentPlaceHolder ID="left" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
-                    <div id="box_main" style=" background-color:White;  margin-top:0px; padding-top:30px; margin-left:10px; background-image: url('../Image/bo8.gif'); background-repeat: repeat-y;">
+                    <div id="box_main">
                         <div>
                             <asp:ContentPlaceHolder ID="Main" runat="server">
                             </asp:ContentPlaceHolder>

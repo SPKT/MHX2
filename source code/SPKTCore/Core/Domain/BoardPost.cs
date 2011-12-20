@@ -10,14 +10,16 @@ namespace SPKTCore.Core.Domain
     public partial class BoardPost
     {
         IGroupRepository _groupRepository;
+        IBoardPostRepository _boardPostRepository;
         public int groupID
         {
             get
             {
-                 _groupRepository= new GroupRepository();
+                _groupRepository = ObjectFactory.GetInstance<IGroupRepository>();
                  return _groupRepository.GetGroupByForumID(this.ForumID).GroupID;
             }
             
         }
+    
     }
 }

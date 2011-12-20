@@ -16,7 +16,7 @@ namespace SPKTCore.Core.DataAccess
         Account GetAccountByEmail(string Email);
         Account GetAccountByUsername(string Username);
         void AddPermission(Account account, Permission permission);
-        List<Account> GetAllAccounts(Int32 PageNumber);
+        List<Account> GetAllAccounts(int PageNumber, int PageSize);
         List<Account> SearchAccounts(string SearchText);
         List<Account> GetApprovedAccountsByGroupID(int GroupID, int PageNumber);
         List<Account> GetAccountsToApproveByGroupID(int GroupID);

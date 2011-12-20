@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Temp.Master" AutoEventWireup="true" CodeBehind="ViewForum.aspx.cs" Inherits="SPKTWeb.Forums.ViewForum" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="ViewForum.aspx.cs" Inherits="SPKTWeb.Forums.ViewForum" %>
 <%@ Import Namespace="SPKTCore.Core.Domain"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<style type="text/css">
+    <style type="text/css">
  .divContainer {font-size:12px;background-image:Url("..\Image\bg.png"); padding: 10px;width:100%; margin-left:auto;margin-right:auto;text-align:center; }
         .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff; margin: 3px}
         .divContainerRow { background-color:#ffffff;text-align:left; float:none; padding:5px;}
@@ -23,20 +23,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Main" runat="server">
-<div  style="background-color:Gray">
+    <div  style="background-color:White">
     <div>
-        <div>
+        <div style="width:70%; ">
             <asp:Literal ID="litCategoryPageName" runat="server" Visible="false"></asp:Literal>
             <asp:Literal ID="litForumPageName" runat="server" Visible="false"></asp:Literal>
             <table width="100%" cellpadding="5" cellspacing="0">
-                        <tr style="background-color:#bbbbbb;font-weight:bold;">
-                            <td colspan="2">By</td>
-                            <td>On</td>
-                            <td>Updated</td>
-                            <td>Views</td>
-                            <td>Replies</td>
-                            <td colspan="1">Last Reply By</td>
-                            <td><asp:HyperLink ID="linkNewThread" runat="server" Text="New Thread"></asp:HyperLink></td>
+                        <tr style="background-color:#ccffaa;font-weight:bold;">
+                            <td colspan="2">Người tạo</td>
+                            <td>Vào ngày</td>
+                            <td>Cập nhật</td>
+                            <td>Lượt xem</td>
+                            <td>Phản hồi</td>
+                            <td colspan="1">Cập nhật cuối</td>
+                            <td><asp:HyperLink ID="linkNewThread" runat="server" Text="Tạo bài mới"></asp:HyperLink></td>
                         </tr>
             <asp:Repeater ID="repTopics" runat="server" OnItemDataBound="repTopics_ItemDataBound">
                 <ItemTemplate>
@@ -56,7 +56,7 @@
                         </tr>
 
                 </ItemTemplate>
-                <AlternatingItemTemplate>
+<%--                <AlternatingItemTemplate>
                         <tr style="background-color:#ffffff;">
                             <td colspan="8">
                                 <asp:HyperLink ID="linkViewTopic" runat="server" Text='<%#((BoardPost)Container.DataItem).Name %>'></asp:HyperLink>
@@ -72,7 +72,7 @@
                             <td><asp:HyperLink ID="linkReplyUsername" runat="server" Text='<%#((BoardPost)Container.DataItem).ReplyByUsername %>' NavigateUrl=' <%# "~/" + ((BoardPost)Container.DataItem).ReplyByUsername %>'></asp:HyperLink></td>
                             
                         </tr>
-                </AlternatingItemTemplate>
+                </AlternatingItemTemplate>--%>
             </asp:Repeater>
             </table>
         </div>

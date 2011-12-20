@@ -99,6 +99,7 @@
     <Compile Include="Core\IConfiguration.cs" />
     <Compile Include="Core\IContentFilterService.cs" />
     <Compile Include="Core\IFileService.cs" />
+    <Compile Include="Core\IForumPermissionService.cs" />
     <Compile Include="Core\Impl\Cache.cs" />
     <Compile Include="Core\Impl\Configuration.cs" />
     <Compile Include="Core\Impl\ContentFilterService.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Core\Impl\Captcha.cs" />
     <Compile Include="Core\Impl\Cryptography.cs" />
     <Compile Include="Core\Impl\FileService.cs" />
+    <Compile Include="Core\Impl\ForumPermissionService.cs" />
     <Compile Include="Core\Impl\FriendService.cs" />
     <Compile Include="Core\Impl\GroupService.cs" />
     <Compile Include="Core\Impl\MessageService.cs" />

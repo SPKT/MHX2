@@ -13,7 +13,16 @@ namespace SPKTCore.Core.DataAccess.Impl
         {
             _conn = new Connection();
         }
-
+        public BoardPost GetLastPost(long PostID)
+        {
+            BoardPost result;
+            using (SPKTDataContext dc = _conn.GetContext())
+            {
+                result = dc.BoardPosts.Where(p => p.ThreadID == PostID).LastOrDefault();
+               
+            }
+            return result;
+        }
         public bool CheckPostPageNameIsUnique(string PageName)
         {
             bool result;

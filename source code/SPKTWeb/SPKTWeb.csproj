@@ -92,10 +92,19 @@
     <Content Include="Comments\UseComment.aspx" />
     <Content Include="Comments\UserControl\BoxComment.ascx" />
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
+    <Content Include="Forums\AllForum.aspx" />
     <Content Include="Forums\Forum.aspx" />
+    <Content Include="Forums\NewPost.aspx" />
     <Content Include="Forums\Post.aspx" />
+    <Content Include="Forums\UserControl\ForumHeader.ascx" />
+    <Content Include="Forums\UserControl\Post.ascx" />
+    <Content Include="Forums\UserControl\ViewAllPost.ascx" />
+    <Content Include="Forums\UserControl\Viewpost.ascx" />
     <Content Include="Forums\ViewForum.aspx" />
+    <Content Include="Forums\ViewForum1.aspx" />
     <Content Include="Forums\ViewPost.aspx" />
+    <Content Include="Forums\ViewPost1.aspx" />
+    <Content Include="ForumTest.aspx" />
     <Content Include="Friends\ConfirmFriendshipRequest.aspx" />
     <Content Include="Friends\Invite.aspx" />
     <Content Include="Friends\ShowFriend.aspx" />
@@ -448,11 +457,11 @@
     <Content Include="Searchs\Search.aspx" />
     <Content Include="Style1.css" />
     <Content Include="Style2.css" />
+    <Content Include="Styles\MXH.css" />
     <Content Include="Styles\MXH1.css" />
     <Content Include="Styles\FOOTER.ascx" />
     <Content Include="Styles\LEFT_MENU.ascx" />
     <Content Include="Styles\MENU.ascx" />
-    <Content Include="Styles\MXH.css" />
     <Content Include="Styles\RIGHT_MENU.ascx" />
     <Content Include="Styles\RIGHT_MENU1.ascx" />
     <Content Include="Styles\Site.css" />
@@ -462,6 +471,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="temp.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="UserControl\ButtonComment.ascx" />
     <Content Include="UserControl\Comment.ascx" />
     <Content Include="UserControl\Comments.ascx" />
@@ -469,8 +479,8 @@
     <None Include="Image\menu_d1.psd" />
     <None Include="Image\Untitled-2.psd" />
     <Content Include="MXH_NEW.Master" />
-    <Content Include="MXH_P.Master" />
     <Content Include="MXH_1.Master" />
+    <Content Include="MXH_P.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -2003,6 +2013,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forums\AllForum.aspx.cs">
+      <DependentUpon>AllForum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\AllForum.aspx.designer.cs">
+      <DependentUpon>AllForum.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forums\Forum.aspx.cs">
       <DependentUpon>Forum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2014,6 +2031,13 @@
     <Compile Include="Forums\Interface\IPost.cs" />
     <Compile Include="Forums\Interface\IViewForum.cs" />
     <Compile Include="Forums\Interface\IViewPost.cs" />
+    <Compile Include="Forums\NewPost.aspx.cs">
+      <DependentUpon>NewPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\NewPost.aspx.designer.cs">
+      <DependentUpon>NewPost.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forums\Post.aspx.cs">
       <DependentUpon>Post.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2022,6 +2046,55 @@
       <DependentUpon>Post.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forums\Presenter\ForumPresenter.cs" />
+    <Compile Include="Forums\UserControl\ForumHeader.ascx.cs">
+      <DependentUpon>ForumHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\UserControl\ForumHeader.ascx.designer.cs">
+      <DependentUpon>ForumHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\UserControl\Post.ascx.cs">
+      <DependentUpon>Post.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\UserControl\Post.ascx.designer.cs">
+      <DependentUpon>Post.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\UserControl\ViewAllPost.ascx.cs">
+      <DependentUpon>ViewAllPost.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\UserControl\ViewAllPost.ascx.designer.cs">
+      <DependentUpon>ViewAllPost.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\UserControl\Viewpost.ascx.cs">
+      <DependentUpon>Viewpost.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\UserControl\Viewpost.ascx.designer.cs">
+      <DependentUpon>Viewpost.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\ViewForum1.aspx.cs">
+      <DependentUpon>ViewForum1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\ViewForum1.aspx.designer.cs">
+      <DependentUpon>ViewForum1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\ViewPost1.aspx.cs">
+      <DependentUpon>ViewPost1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\ViewPost1.aspx.designer.cs">
+      <DependentUpon>ViewPost1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumTest.aspx.cs">
+      <DependentUpon>ForumTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumTest.aspx.designer.cs">
+      <DependentUpon>ForumTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Friends\UserControl\BoxFriend.ascx.cs">
       <DependentUpon>BoxFriend.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2627,6 +2700,13 @@
     </Compile>
     <Compile Include="Temp.Master.designer.cs">
       <DependentUpon>Temp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\ButtonComment.ascx.cs">
       <DependentUpon>ButtonComment.ascx</DependentUpon>

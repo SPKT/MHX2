@@ -25,6 +25,7 @@
                 <asp:Panel ID="pnlPrivate" runat="server">
                     <asp:LinkButton ID="lbForum" Visible="false"  Text="View Forum" runat="server"></asp:LinkButton>&nbsp;
                     <asp:LinkButton ID="lbViewMembers" OnClick="lbViewMembers_Click" Text="Members" runat="server"></asp:LinkButton>
+                    
                     <asp:Label ID="lblBody" runat="server"></asp:Label>
                 </asp:Panel>
 </div>

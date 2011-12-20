@@ -64,7 +64,7 @@
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <tr style="background-image: url('../Image/thanh.JPG');;font-weight:bold; color:Red">
+                    <tr style="font-weight:bold; color:Red">
                         <td class="content"><%# ((BoardCategory)Container.DataItem).Name %></td>
                         <td class="content"><%# ((BoardCategory)Container.DataItem).Subject %></td>
                         <td class="content"><%# ((BoardCategory)Container.DataItem).ThreadCount %></td>
@@ -74,7 +74,7 @@
                     </tr>
                     <asp:Repeater ID="repForums" runat="server" OnItemDataBound="repForums_ItemDataBound">
                         <ItemTemplate>
-                            <tr style="background-image: url('../Image/thanh.JPG'); color:Blue;">
+                            <tr style=" color:Blue;">
                                 <td>
                                     <asp:LinkButton ID="lbForum" runat="server" Text='<%# ((BoardForum)Container.DataItem).Name %>' OnClick="lbForum_Click"></asp:LinkButton>
                                     <asp:Literal ID="litPageName" runat="server" Text='<%# ((BoardForum)Container.DataItem).PageName%>' Visible="false"></asp:Literal>

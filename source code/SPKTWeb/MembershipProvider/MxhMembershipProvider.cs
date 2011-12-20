@@ -6,6 +6,9 @@ using System.Configuration;
 using System.Configuration.Provider;
 using System.Collections.Specialized;
 using System.Web.Security;
+using SPKTCore.Core.DataAccess;
+using SPKTCore.Core.Impl;
+using SPKTCore.Core.Domain;
 
 namespace SPKTWeb.MembershipProvider
 {
@@ -109,7 +112,7 @@ namespace SPKTWeb.MembershipProvider
 
     #endregion
 
-
+  
     #region Initialization
 
     //
@@ -189,7 +192,39 @@ namespace SPKTWeb.MembershipProvider
 
     public override bool ChangePassword(string username, string oldPassword, string newPassword)
     {
-      throw new NotImplementedException();
+        IAccountRepository accRepos = ObjectFactory.GetInstance<IAccountRepository>();
+        Account account = accRepos.GetAccountByUsername(username);
+        if (account.UseAuthenticationService != null && ((bool)account.UseAuthenticationService))
+        {
+            try
+            {
+                DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
+                if (service.ValidateUser(account.UserName, oldPassword))
+                {
+                    account.Password = newPassword.Encrypt(account.UserName);
+                    accRepos.SaveAccount(account);
+                    return true;
+
+                }
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+        else
+
+            if (account.Password.Decrypt(account.UserName) == oldPassword)
+            {
+                account.Password = newPassword.Encrypt(account.UserName);
+                accRepos.SaveAccount(account);
+                return true;
+            }
+            else
+                return false;
     }
 
     public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer)
@@ -204,7 +239,7 @@ namespace SPKTWeb.MembershipProvider
 
     public override bool DeleteUser(string username, bool deleteAllRelatedData)
     {
-      throw new NotImplementedException();
+        throw new NotImplementedException();
     }
 
 
@@ -220,7 +255,9 @@ namespace SPKTWeb.MembershipProvider
 
     public override System.Web.Security.MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
     {
-      throw new NotImplementedException();
+        IAccountRepository accRepos = ObjectFactory.GetInstance<IAccountRepository>();
+        accRepos.GetAllAccounts(pageIndex, pageSize);
+        throw new NotImplementedException();
     }
 
     public override int GetNumberOfUsersOnline()
@@ -245,7 +282,9 @@ namespace SPKTWeb.MembershipProvider
 
     public override string GetUserNameByEmail(string email)
     {
-      throw new NotImplementedException();
+        IAccountRepository accRepos = ObjectFactory.GetInstance<IAccountRepository>();
+        Account account = accRepos.GetAccountByEmail(email);
+        return account.UserName;
     }
 
 
@@ -267,7 +306,19 @@ namespace SPKTWeb.MembershipProvider
 
     public override bool ValidateUser(string username, string password)
     {
-      throw new NotImplementedException();
+        IAccountRepository accRepos = ObjectFactory.GetInstance<IAccountRepository>();
+        Account account = accRepos.GetAccountByUsername(username);
+        if (account != null)
+        {
+            if (account.Password.Decrypt(username) == password)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+            return false;
     }
     #endregion
   }

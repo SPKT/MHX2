@@ -21,8 +21,8 @@ namespace SPKTWeb.Forums.Presenter
         private IWebContext _webContext;
         public ForumPresenter()
         {
-            
-            _boardService = new BoardService();
+
+            _boardService = ObjectFactory.GetInstance<IBoardService>();
             _forumRepository =new BoardForumRepository();
             _categoryRepository = new BoardCategoryRepository();
             _redirector = new Redirector();
