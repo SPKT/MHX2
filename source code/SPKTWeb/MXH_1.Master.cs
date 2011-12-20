@@ -17,7 +17,6 @@ namespace SPKTWeb
         MXH1MasterPresenter _presenter;
         IUserSession _usersession;
         IWebContext _webContext;
-        AccountService _as;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,27 +25,13 @@ namespace SPKTWeb
             _presenter.Init(this);
             _usersession = new UserSession();
             _webContext = new WebContext();
-            _as = new AccountService();
             img_av.ImageUrl = "~/Image/ProfileAvatar.aspx";
-            if (_usersession != null)
-            {
-                lb_dangky.Visible = false;
-                lb_dangnhap.Visible = false;
-                
-            }
-            else
-            {
-                lb_dangky.Visible = true;
-                lb_dangnhap.Visible = true;
-               
-            }
-            lblUserName.ForeColor = System.Drawing.Color.White;
         }
         public void ShowUserName(string userName)
         {
             if (userName == "")
                 lblUserName.Text = "Khách";
-            lblUserName.Text = userName.ToUpper();
+            lblUserName.Text = "Xin chào " + userName.ToUpper();
             
             
         }
@@ -54,20 +39,6 @@ namespace SPKTWeb
         protected void thaydoi_Click(object sender, EventArgs e)
         {
             _redirector.Redirect("~/Accounts/EditAccount.aspx");
-        }
-        protected void ketnhom(object sender, EventArgs e)
-        {
-            _redirector.Redirect("~/Groups/ViewAllGroup.aspx");
-        }
-        protected void diendan(object sender, EventArgs e)
-        {
-            _redirector.Redirect("~/Forums/Forum.aspx");
-        }
-        protected void dangxuat_Click(object sender, EventArgs e)
-        {
-            _as.Logout();
-            lb_dangky.Visible = true;
-            lb_dangnhap.Visible = true;
         }
         protected void lb_edit_ac_Click(object sender, EventArgs e)
         {
@@ -100,6 +71,13 @@ namespace SPKTWeb
         protected void lb_manageProfile_Click(object sender, EventArgs e)
         {
             _redirector.GotoManageProfile();
+        }
+
+        protected void dangxuat_Click(object sender, EventArgs e)
+        {
+            SPKTCore.Core.Impl.AccountService ac = new AccountService();
+            ac.Logout();
+            _redirector.Redirect("~/Default.aspx");
         }
     }
 }

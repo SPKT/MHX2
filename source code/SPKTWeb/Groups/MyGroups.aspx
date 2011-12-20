@@ -1,10 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyGroups.aspx.cs" Inherits="SPKTWeb.Groups.MyGroups" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="MyGroups.aspx.cs" Inherits="SPKTWeb.Groups.MyGroups" EnableEventValidation="false" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <style type="text/css">
             .divMain
             {
@@ -47,8 +45,14 @@
         .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
         .divContent{margin:5px;}
     </style>
-</head>
-<body>&nbsp;<form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="cont" ContentPlaceHolderID="left" runat="server">
+    <div style="margin-top:0px;">
+        <uc4:menu ID="menu" runat="server" />
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="divMain">
     <div class="divContainer">
         <div class="divContainerBox">
@@ -106,6 +110,5 @@
         </div>
     </div>
     </div>
-    </form>
-</body>
-</html>
+    </asp:Content>
+

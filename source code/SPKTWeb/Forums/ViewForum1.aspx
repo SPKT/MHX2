@@ -11,12 +11,12 @@
 </div>
 <div>
     
-    <uc1:ForumHeader ID="ForumHeader1" runat="server" />
+    <uc1:ForumHeader ID="UCForumHeader" runat="server" />
     
 </div>
 <div>
     
-   <uc2:ViewAllPost Id="ViewAllPost" runat="server"/>
+   <uc2:ViewAllPost Id="UCViewAllPost" runat="server"/>
 </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="right1" runat="server">

@@ -19,7 +19,7 @@ namespace SPKTWeb.Forums.UserControl {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litCategoryPageName;
+        public global::System.Web.UI.WebControls.Literal litCategoryPageName;
         
         /// <summary>
         /// litForumPageName control.
@@ -28,7 +28,16 @@ namespace SPKTWeb.Forums.UserControl {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litForumPageName;
+        public global::System.Web.UI.WebControls.Literal litForumPageName;
+        
+        /// <summary>
+        /// tdAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell tdAdmin;
         
         /// <summary>
         /// repTopics control.

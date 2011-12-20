@@ -12,15 +12,17 @@
             Tổng số bài viết: <asp:Label ID="lblPostCount" runat="server"></asp:Label><br />
          </div>
          <div>
-            <a ID="A1" href="/Forums/ViewForum.aspx" runat="server">Tất cả bài viết</a> 
-            &nbsp;&nbsp; 
-            <a ID="HyperLink2" href="/Forums/Post.aspx" runat="server">Đăng bài mới</a>
+            <asp:HyperLink ID="alkTatCaBaiViet" NavigateUrl="/Forums/ViewForum.aspx" Text="Tất cả bài viết" runat="server"></asp:HyperLink>
+                        &nbsp;&nbsp; 
+            <asp:HyperLink ID="alkDangBaiMoi" NavigateUrl="/Forums/Post.aspx" Text="Đăng bài mới" runat="server"></asp:HyperLink>
+                        &nbsp;&nbsp;
+            <asp:HyperLink ID="alkBaiVietGanNhat" NavigateUrl="/Forums/ViewForum.aspx" Text="Bài viết gần nhất" runat="server"></asp:HyperLink>
+            
             &nbsp;&nbsp;
-            <a ID="HyperLink3" href="/Forums/ViewForum.aspx" runat="server">Bài viết gần nhất</a>
+            <asp:HyperLink ID="alkXemNhieuNhat" NavigateUrl="/Forums/ViewForum.aspx" Text="Bài được xem nhiều nhất" runat="server"></asp:HyperLink>
+            
             &nbsp;&nbsp;
-            <a ID="HyperLink4"  href="/Forums/ViewForum.aspx" runat="server">Bài được xem nhiều nhất</a>
-            &nbsp;&nbsp;
-            <a ID="HyperLink5"  href="/Forums/ViewForum.aspx" runat="server">Bài viết quan trọng</a>
+            <asp:HyperLink ID="alkQuanTrong" NavigateUrl="/Forums/ViewForum.aspx" Text="Bài viết quan trọng" runat="server"></asp:HyperLink>
         </div>  
     </div>
     </div>

@@ -40,48 +40,48 @@ namespace SPKTWeb.Forums.UserControl {
         protected global::System.Web.UI.WebControls.Label lblPostCount;
         
         /// <summary>
-        /// A1 control.
+        /// alkTatCaBaiViet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.WebControls.HyperLink alkTatCaBaiViet;
         
         /// <summary>
-        /// HyperLink2 control.
+        /// alkDangBaiMoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor HyperLink2;
+        protected global::System.Web.UI.WebControls.HyperLink alkDangBaiMoi;
         
         /// <summary>
-        /// HyperLink3 control.
+        /// alkBaiVietGanNhat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor HyperLink3;
+        protected global::System.Web.UI.WebControls.HyperLink alkBaiVietGanNhat;
         
         /// <summary>
-        /// HyperLink4 control.
+        /// alkXemNhieuNhat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor HyperLink4;
+        protected global::System.Web.UI.WebControls.HyperLink alkXemNhieuNhat;
         
         /// <summary>
-        /// HyperLink5 control.
+        /// alkQuanTrong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor HyperLink5;
+        protected global::System.Web.UI.WebControls.HyperLink alkQuanTrong;
     }
 }

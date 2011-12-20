@@ -1,11 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Members.aspx.cs" Inherits="SPKTWeb.Groups.Members" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/MXH_P.master"  CodeBehind="Members.aspx.cs" Inherits="SPKTWeb.Groups.Members" %>
 <%@Register Src="~/UserControl/ProfileDisplay.ascx" TagPrefix="SPKT" TagName="ProfileDisplay" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
             <style type="text/css">
             .divMain
             {
@@ -35,10 +33,15 @@
         .Wizard { width:90%;padding:10px 10px 10px 10px; }
         .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
         </style>
-</head>
-<body>
+</asp:Content>
+<asp:Content ID="cont" ContentPlaceHolderID="left" runat="server">
+    <div style="margin-top:0px;">
+        <uc4:menu ID="menu" runat="server" />
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <form id="form1" runat="server">
-    <div class="divMain">
+    <div>
             <div class="divContainer">
         <div class="divContainerBox">
             <div class="divContainerRow">
@@ -89,5 +92,4 @@
     </div>
     </div>
     </form>
-</body>
-</html>
+</asp:Content>

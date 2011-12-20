@@ -1,6 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Temp.Master" AutoEventWireup="true" CodeBehind="Post.aspx.cs" Inherits="SPKTWeb.Forums.Post" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="Post.aspx.cs" Inherits="SPKTWeb.Forums.Post" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+
+
+
+<%@ Register src="/Forums/UserControl/ForumHeader.ascx" tagname="ForumHeader" tagprefix="uc1" %>
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
@@ -21,24 +27,31 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Main" runat="server">
-    <div class="divContainer">
-        <div class="divContainerBox">
-            <div class="divContainerRow">
-                <div class="divContainerCell"><asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></div>
-                <div class="divContainerCellHeader">Name:</div>
-                <div class="divContainerCell"><asp:TextBox Width="400" ID="txtName" runat="server"></asp:TextBox></div>
-                
+   <div>
+    <div>
+        
+        <uc1:ForumHeader ID="ForumHeader1" runat="server" />
+        
+    </div>
+    <div>
+        Tiêu đề:
+    </div>
+    <div>
+         <div class="divContainerRow">
+
+                <div >Tên bài viết:<div class="divContainerCell"><asp:TextBox Width="400" ID="txtName" runat="server"></asp:TextBox></div>
+                </div>
                 <br />
-                <br />
+                Nội dung:<br />
                 <cc1:Editor ID="Editor1" runat="server" />
                 <br />
             </div>
-            <div class="divContainerFooter"><asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" /></div>
-        </div>
+            <div class="divContainerFooter"><asp:Button ID="btnSubmit" runat="server" Text="Đăng" OnClick="btnSubmit_Click" /></div>
     </div>
-    
-<%--    <script type="text/javascript">
-        xinha_editors[xinha_editors.length] = 'ctl00_Content_txtPost';
-    </script>--%>
+   </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="right1" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="right" runat="server">
 </asp:Content>
 

@@ -11,7 +11,7 @@
       <siteMapNode url="~/Forums/AllForum.aspx" title="Diễn Đàn"  description="" >
       </siteMapNode>
       <siteMapNode url="~/Groups/ViewAllGroup.aspx" title="Nhóm"  description="" >
-        <siteMapNode url="~/Groups/MyGroup.aspx" title="Nhóm Của Bạn"/>
+        <siteMapNode url="~/Groups/MyGroups.aspx" title="Nhóm Của Bạn"/>
         <siteMapNode url="~/Groups/ManageGroup.aspx" title="Tạo Nhóm Mới"/>
       </siteMapNode>
       <siteMapNode url="~/News.aspx" title="Tin Mới"/>

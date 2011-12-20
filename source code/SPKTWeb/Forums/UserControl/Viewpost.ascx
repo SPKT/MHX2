@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Viewpost.ascx.cs" Inherits="SPKTWeb.Forums.UserControl.Viewpost" %>
+<%@ Import Namespace="SPKTCore.Core.Domain"%>
 <div class="divContainerUC" style="border-width:0px; border-color:White">
         <div class="divContainerBox" style="border-width:0px; border-color:White">
             <div class="divContainerRow" style="border-width:0px; border-color:White">
@@ -27,18 +28,18 @@
                 <div>
                 <div style="float:left"></div>
                  <div style="float:right">
-                        <asp:HyperLink ID="linkReply" Text="Bình luận" runat="server"></asp:HyperLink>
+                        <asp:HyperLink ID="linkReply" Text="Trả Lời" runat="server"></asp:HyperLink>
                  </div>
                  </div>
 
             </div>
             <div style="margin-top:30px; margin-left:80px; color: Red; border-bottom-width:3px">
-                Bình luận
+               Trả Lời
             </div>
             <img width="100px" alt="k" height="2px" id="img" src="../../Image/bground2.gif" />
             <img width="100px" alt="k" height="2px" id="img1" src="../../Image/bground2.gif" />
             <asp:Panel ID="pnlComment" runat="server">
-            <asp:Repeater ID="repPosts" runat="server" OnItemDataBound="repPosts_ItemDataBound">
+            <asp:Repeater ID="repPosts" runat="server">
                         <ItemTemplate>
             <div style=" margin-top: 10px;">
                 <div style="">
@@ -63,8 +64,8 @@
                     <div style="float:left">
                     </div>
                     <div style="float:right; margin-bottom:30px;">
-                        <asp:HyperLink runat="server" ID="hlkShowReply" NavigateUrl='<%#  "~/Forums/Viewpost.aspx?PostID="+((BoardPost)Container.DataItem).PostID%>' Text="Xem Bình Luận"></asp:HyperLink>
-                        <asp:HyperLink runat="server" ID="linkReply" NavigateUrl='<%#  "/Forums/Viewpost.aspx?" + "IsThread=" + 0 + "&ForumID=" + ((BoardPost)Container.DataItem).ForumID +"&PostID="+ ((BoardPost)Container.DataItem).PostID%>' Text="Bình Luận"></asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="hlkShowReply" NavigateUrl='<%#  "/Forums/Viewpost1.aspx?PostID="+((BoardPost)Container.DataItem).PostID%>' Text="Xem"></asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="linkReply" NavigateUrl='<%#  "/Forums/Post.aspx?" + "IsThread=" + 0 + "&ForumID=" + ((BoardPost)Container.DataItem).ForumID +"&PostID="+ ((BoardPost)Container.DataItem).PostID%>' Text="Trả Lời"></asp:HyperLink>
                     </div>
                 </div>
                

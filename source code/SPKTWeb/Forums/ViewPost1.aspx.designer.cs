@@ -13,21 +13,21 @@ namespace SPKTWeb.Forums {
     public partial class ViewPost1 {
         
         /// <summary>
-        /// ForumHeader1 control.
+        /// UCForumHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SPKTWeb.Forums.UserControl.ForumHeader ForumHeader1;
+        protected global::SPKTWeb.Forums.UserControl.ForumHeader UCForumHeader;
         
         /// <summary>
-        /// Viewpost2 control.
+        /// UCViewpost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SPKTWeb.Forums.UserControl.Viewpost Viewpost2;
+        protected global::SPKTWeb.Forums.UserControl.Viewpost UCViewpost;
     }
 }

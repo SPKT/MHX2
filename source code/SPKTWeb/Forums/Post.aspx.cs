@@ -37,7 +37,7 @@ namespace SPKTWeb.Forums
 
         public void SetErrorMessage(string Message)
         {
-            lblMessage.Text = Message;
+            //lblMessage.Text = Message;
         }
 
 

@@ -64,7 +64,7 @@ namespace SPKTWeb.Forums.Presenter
                         post.ThreadID = postToReplyToo.PostID;
                     else
                     {
-                        post.ThreadID = postToReplyToo.ThreadID;
+                        post.ThreadID = postToReplyToo.PostID;
                     }
 
                     post.ForumID = postToReplyToo.ForumID;
@@ -117,7 +117,10 @@ namespace SPKTWeb.Forums.Presenter
                     if (group != null)
                         _alertService.AddNewBoardPostAlert(category, forum, post, thread, group);
                     else
+                    {
                         _alertService.AddNewBoardPostAlert(category, forum, post, thread);
+                        _redirector.GotoViewPostForum(thread.PostID);
+                    }
                 }
                 _redirector.GoToForumsViewPost(forum.PageName, category.PageName, thread.PageName);
             }

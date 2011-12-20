@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-//using StructureMap;
+
 using SPKTCore.Core;
 
 namespace SPKTCore.Core.Impl
 {
-    //[Pluggable("Default")]
+
     public class Redirector : IRedirector
     {
         public void GotoManageProfile()
@@ -20,7 +20,10 @@ namespace SPKTCore.Core.Impl
             Redirect("~/Accounts/AccessDenied.aspx");
 
         }
-
+        public void GotoViewPostForum(long PostID)
+        {
+            Redirect("~/Forums/ViewPost1.aspx?PostID=" + PostID.ToString());
+        }
         public void GoToAccountRecoverPasswordPage()
         {
             Redirect("~/Accounts/RecoverPassword.aspx");

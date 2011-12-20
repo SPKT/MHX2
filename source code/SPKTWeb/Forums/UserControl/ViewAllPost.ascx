@@ -8,7 +8,7 @@
       .style2
       {
           width: 419px;
-          text-align:center;
+         
       }
       .style3
       {
@@ -19,6 +19,14 @@
       {
           width: 90px;
           text-align:center;
+      }
+      .style5
+      {
+          width: 157px;
+      }
+      .style6
+      {
+          width: 162px;
       }
   </style>
   <div style=" ">
@@ -36,8 +44,12 @@
                             Lượt xem</td>
                         <td class="style4">
                             Phản hồi</td>
-                        <td>
-                            Cập nhật cuối</td>
+                        <td class="style5">
+                            Cập nhật cuối
+                        </td>
+                        <td id="tdAdmin" runat="server" class="style6">
+                            Quản lý
+                        </td>
                     </tr>
               <asp:Repeater ID="repTopics" runat="server" OnItemDataBound="repTopics_ItemDataBound">
                 <ItemTemplate>
@@ -50,20 +62,28 @@
                                <asp:Image Width="50" Height="50" ID="Image2" ImageUrl='<%# "/image/ProfileAvatar.aspx?AccountID=" + ((BoardPost)Container.DataItem).AccountID %>' runat="server" />
                                </div>
                                <div style="margin-top:20px; margin-left:20px; font-size:larger; color:Blue;">
-                               <a ID="linkViewTopic" runat="server" href='/Forums/ViewPost.aspx' ><%#((BoardPost)Container.DataItem).Name %></a>
+                               <%--<a ID="linkViewTopic" runat="server" href='/Forums/ViewPost.aspx' ><%#((BoardPost)Container.DataItem).Name %></a>--%>
+                               <a id="linkViewTopic" href='/Forums/<%#litCategoryPageName.Text%>/<%#litForumPageName.Text%>/<%# Eval("PageName")%>.aspx' ><%#((BoardPost)Container.DataItem).Name %></a>
                                <br />
                                <asp:Label id="lblCreateDate" Font-Size="Small" runat="server" Text="Ngày tạo:"></asp:Label>
                                 </div>
                            </div>
                         </td>
                         <td class="style3">
-                            <%#((BoardPost)Container.DataItem).ViewCount %></td>
+                            <%#((BoardPost)Container.DataItem).ViewCount %>
+                        </td>
                         <td class="style4">
-                            <%#((BoardPost)Container.DataItem).ReplyCount %></td>
+                            <%#((BoardPost)Container.DataItem).ReplyCount %>
+                        </td>
                         <td>
-                            <a ID="linkReplyUsername" runat="server"  href=' <%# "/" + ((BoardPost)Container.DataItem).ReplyByUsername %>'><%#((BoardPost)Container.DataItem).ReplyByUsername %></a></td>
-                            <asp:ImageButton Width="20px" Height="20px" ID="ibDelete" runat="server" ImageUrl="~/image/icon_close.gif" />
-                            <asp:ImageButton Width="20px" Height="20px" ID="ibEdit" runat="server" ImageUrl="~/image/pencil.jpg" />
+                            <a ID="linkReplyUsername" runat="server"  href=' <%# "/" + ((BoardPost)Container.DataItem).ReplyByUsername %>'><%#((BoardPost)Container.DataItem).ReplyByUsername %></a>
+                       
+
+                             </td>
+                             <td id="tdAdmin">
+                             <asp:ImageButton Width="20px" Height="20px" ID="ibDelete" runat="server" ImageUrl="/image/icon_close.gif" />
+                            <asp:ImageButton Width="20px" Height="20px" ID="ibEdit" runat="server" ImageUrl="/image/pencil.jpg" />
+                             </td>
                     </tr>
                  </ItemTemplate>
                  </asp:Repeater>

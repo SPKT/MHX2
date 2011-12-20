@@ -1,11 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewAllGroup.aspx.cs" Inherits="SPKTWeb.Groups.ViewAllGroup" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="ViewAllGroup.aspx.cs" Inherits="SPKTWeb.Groups.ViewAllGroup" EnableEventValidation="false" %>
 <%@ Import Namespace="SPKTCore.Core.Domain" %>
 <%@ Register Src="~/UserControl/Comments.ascx" TagName="Comment" TagPrefix="uc2" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <style type="text/css">
             .divMain
             {
@@ -42,17 +40,19 @@
         }
         .divContent{margin:5px;}
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-
+</asp:Content>
+<asp:Content ID="cont" ContentPlaceHolderID="left" runat="server">
+    <div style="margin-top:0px;">
+        <uc4:menu ID="menu" runat="server" />
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="divMain">
         <div class="divtitle">All Group</div>
      <div class="divContainer">
         <div class="divContainerBox">
         <div class="divContainerRow" style="margin:10px">
-              <asp:ScriptManager ID="ScriptManager1" runat="server">
-</asp:ScriptManager>
+
                 <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
                 
  <asp:ListView id="lvGroups" runat="server" OnItemDataBound="lvGroups_ItemDataBound">
@@ -136,6 +136,4 @@
         </div>
     </div>
     
-    </form>
-</body>
-</html>
+    </asp:Content>

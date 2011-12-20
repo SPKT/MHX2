@@ -77,7 +77,7 @@ namespace SPKTWeb.Handler
                         return;
                     }
                 }
- 
+
                 else if (application.Request.PhysicalPath.ToLower().Contains("groups") && _webContext.GroupID == 0)
                 {
                     string[] arr = application.Request.PhysicalPath.ToLower().Split('\\');
@@ -118,7 +118,7 @@ namespace SPKTWeb.Handler
                         forumPageName = arr[arr.Length - 1];
                         forumPageName = forumPageName.Replace(".aspx", "");
                         BoardForum forum = _forumRepository.GetForumByPageName(forumPageName);
-                        context.RewritePath("/forums/ViewForum.aspx?ForumID=" + forum.ForumID.ToString() +
+                        context.RewritePath("/forums/ViewForum1.aspx?ForumID=" + forum.ForumID.ToString() +
                                             "&CategoryPageName=" + categoryPageName + "&ForumPageName=" + forumPageName, true);
                     }
                     else if (itemsAfterForums == 3)
@@ -128,7 +128,9 @@ namespace SPKTWeb.Handler
                         postPageName = arr[arr.Length - 1];
                         postPageName = postPageName.Replace(".aspx", "");
                         BoardPost post = _postRepository.GetPostByPageName(postPageName);
-                        context.RewritePath("/forums/ViewPost.aspx?PostID=" + post.PostID.ToString(), true);
+                        if (post != null)
+                            context.RewritePath("/forums/ViewPost1.aspx?PostID=" + post.PostID.ToString(), true);
+                        
                     }
                 }
                 else
@@ -151,4 +153,5 @@ namespace SPKTWeb.Handler
         }
     }
 }
+
 

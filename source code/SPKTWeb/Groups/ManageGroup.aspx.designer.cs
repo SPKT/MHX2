@@ -13,13 +13,13 @@ namespace SPKTWeb.Groups {
     public partial class ManageGroup {
         
         /// <summary>
-        /// form1 control.
+        /// menu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::SPKTWeb.Styles.LEFT_MENU menu;
         
         /// <summary>
         /// lblMessage control.
@@ -83,15 +83,6 @@ namespace SPKTWeb.Groups {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
         /// txtDescriptionEditor control.

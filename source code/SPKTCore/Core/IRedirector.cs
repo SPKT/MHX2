@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//using StructureMap;
+
 
 namespace SPKTCore.Core
 {
-    //[PluginFamily("Default")]
+
     public interface IRedirector
     {
         void GoToHomePage();
@@ -40,5 +40,6 @@ namespace SPKTCore.Core
         void GoToBlogsPostEdit(Int64 BlogID);
        
         void GoToForumsViewPost(string ForumPageName, string CategoryPageName, string PostPageName);
+        void GotoViewPostForum(long PostID);
     }
 }

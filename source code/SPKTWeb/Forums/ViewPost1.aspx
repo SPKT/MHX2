@@ -12,7 +12,7 @@
     </div>
     <div>
 
-        <uc1:ForumHeader ID="ForumHeader1" runat="server" />
+        <uc1:ForumHeader ID="UCForumHeader" runat="server" />
 
     </div>
     <div>
@@ -20,7 +20,7 @@
     </div>
     <div>
 
-        <uc2:Viewpost ID="Viewpost2" runat="server" />
+        <uc2:Viewpost ID="UCViewpost" runat="server" />
 
     </div>
 </div>

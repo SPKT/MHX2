@@ -1,18 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageGroup.aspx.cs" Inherits="SPKTWeb.Groups.ManageGroup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="ManageGroup.aspx.cs" Inherits="SPKTWeb.Groups.ManageGroup" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
             .divMain
             {
                 width:600px;
                 height: auto;
-                background-color:#CCFFCC;
+               
                 border-color: Blue;
             }
             .divContainer
@@ -41,10 +38,14 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div class="divMain">
+</asp:Content>
+<asp:Content ID="cont" ContentPlaceHolderID="left" runat="server">
+    <div style="margin-top:0px;">
+        <uc4:menu ID="menu" runat="server" />
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
+    <div style="margin-left:5%; width:80%">
         <div class="style1">
             Tạo Group mới
         </div>
@@ -56,15 +57,14 @@
                 <div class="divContainerCellHeader">Name:
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator></div>
                 <div class="divContainerCell"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></div>
-                <div class="divContainerCellHeader">Public:</div>
+                <div class="divContainerCellHeader" style="margin-left:-8px;">Public:</div>
                 <div class="divContainerCell"><asp:CheckBox id="chkIsPublic" runat="server" /></div>
-                <div class="divContainerCellHeader">Logo:</div>
+                <div class="divContainerCellHeader" style=" margin-left:-160px;">Logo:</div>
                 <div class="divContainerCell"><asp:FileUpload ID="fuLogo" runat="server" /></div>
                 <div class="divContainerCell"><asp:Image ID="imgLogo" runat="server" /></div>
                 
-                <div class="divContainerCellHeader">Description:<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescriptionEditor" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator></div><div class="divContainerCell">&nbsp;<asp:ScriptManager 
-                    ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
+                <div class="divContainerCellHeader">Description:<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescriptionEditor" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator></div><div class="divContainerCell">&nbsp;
+               
                 </div>
                 <div class="divContainerCell">
                     <cc1:Editor ID="txtDescriptionEditor" runat="server" />
@@ -94,6 +94,6 @@
         </div>
   
     </div>
-    </form>
-</body>
-</html>
+    
+</asp:Content>
+

@@ -2195,6 +2195,13 @@
     </Compile>
     <Compile Include="Groups\Interface\IViewGroupForumPost.cs" />
     <Compile Include="Groups\Interface\IMyGroups.cs" />
+    <Compile Include="Groups\ManageGroup.aspx.cs">
+      <DependentUpon>ManageGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Groups\ManageGroup.aspx.designer.cs">
+      <DependentUpon>ManageGroup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Groups\Members.aspx.cs">
       <DependentUpon>Members.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2270,13 +2277,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Groups\ManageGroup.aspx.cs">
-      <DependentUpon>ManageGroup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Groups\ManageGroup.aspx.designer.cs">
-      <DependentUpon>ManageGroup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Groups\Interface\IGroup.cs" />
     <Compile Include="Groups\Interface\IManageGroup.cs" />
@@ -2870,7 +2870,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>29465</DevelopmentServerPort>
+          <DevelopmentServerPort>2367</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

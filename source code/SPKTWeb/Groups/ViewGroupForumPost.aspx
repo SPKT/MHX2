@@ -1,14 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewGroupForumPost.aspx.cs" Inherits="SPKTWeb.Groups.ViewGroupForumPost" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master"  CodeBehind="ViewGroupForumPost.aspx.cs" Inherits="SPKTWeb.Groups.ViewGroupForumPost" %>
 
 <%@ Register src="UserControl/GroupHeader.ascx" tagname="GroupHeader" tagprefix="uc1" %>
 <%@ Register src="UserControl/ViewMemberUC.ascx" tagname="ViewMemberUC" tagprefix="uc2" %>
 <%@ Register src="UserControl/ViewPostUC.ascx" tagname="ViewPostUC" tagprefix="uc3" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
             .divMain
             {
@@ -65,9 +63,13 @@
         }
         .divContent{margin:5px;}
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="cont" ContentPlaceHolderID="left" runat="server">
+    <div style="margin-top:0px;">
+        <uc4:menu ID="menu" runat="server" />
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="divMain">
 
     <div class="divContainer">
@@ -93,6 +95,4 @@
         Danh sách các forum của group
     </div>
     </div>
-    </form>
-</body>
-</html>
+    </asp:Content>
