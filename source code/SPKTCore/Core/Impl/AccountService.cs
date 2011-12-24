@@ -54,7 +54,8 @@ namespace SPKTCore.Core.Impl
 
         public void Logout()
         {
-            _webContext.RemoveFromSession("Login");
+            _webContext.RemoveFromSession("LoggedIn");
+            _webContext.RemoveCookie("Login");
             _userSession.LoggedIn = false;
             _userSession.CurrentUser = null;
             _userSession.Username = "";

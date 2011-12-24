@@ -14,7 +14,7 @@ namespace SPKTCore.Core.DataAccess
         void DeletePost(BoardPost boardPost);
         List<BoardPost> GetPostsByThreadID(Int64 ThreadID);
         List<BoardPost> GetThreadsByForumID(Int32 ForumID);
-        bool CheckPostPageNameIsUnique(string PageName);
+        bool CheckPostPageNameIsUnique(string PageName, int ForumID);
         void DeletePostsByForumID(int ForumID);
 
         BoardPost GetLastPost(long PostID);

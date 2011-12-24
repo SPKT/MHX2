@@ -99,5 +99,6 @@ namespace SPKTCore.Core.DataAccess.Impl
                 dc.SubmitChanges();
             }
         }
+
     }
 }

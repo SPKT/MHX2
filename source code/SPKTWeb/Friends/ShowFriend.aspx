@@ -11,7 +11,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-<div style="margin-left:23%; width:98%; margin-top:0px; padding-top:58px; background-image: url('../../Image/bo8.gif'); background-repeat: repeat-y; height:1000px; background-color:White;">
+<div>
 <div align="center" class="move" style="margin-top:20px; width:70%; margin-left:3%">
     <uc1:ShowFriend ID="ShowFriend2" runat="server" />
 </div>

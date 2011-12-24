@@ -25,17 +25,20 @@ namespace SPKTWeb
             _presenter.Init(this);
             _usersession = new UserSession();
             _webContext = new WebContext();
-            img_av.ImageUrl = "/Image/ProfileAvatar.aspx";
+            
         }
         public void ShowUserName(string userName)
         {
             if (userName == "")
             {
-                lblUserName.Text = "Khách";
+                lblUserName.Text = "Chưa đăng nhập";
+                img_1.Visible = false;
+                img_av.Visible = false;
             }
             else
             {
                 lblUserName.Text = "Xin chào " + userName.ToUpper();
+                img_av.ImageUrl = "~/Image/ProfileAvatar.aspx";
                 lb_dangky.Visible = false;
                 lb_dangnhap.Visible = false;
             }    

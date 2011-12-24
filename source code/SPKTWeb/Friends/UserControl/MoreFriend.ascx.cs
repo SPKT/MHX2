@@ -64,13 +64,12 @@ namespace SPKTWeb.Friends.UserControl
                 status.Text = sta[0].Status;
                 date.Text = sta[0].CreateDate.ToString();
             }
-            status.Text = "Status của bạn";
+            status.Text = ac.DisplayName + "Chưa đang status nào cả";
            
             Label1.Text = ac.DisplayName;
-            Label1.Visible = false;
             Label2.Text = acid.ToString();
             Label3.Text = ac.AccountID.ToString();
-            lb_gioithieu.Text = "Thông tin của ";// + ac.UserName.ToUpper();
+            lb_gioithieu.Text = "Thông tin của " + ac.UserName.ToUpper();
         }
         public void setacid(int accountID)
         {

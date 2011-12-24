@@ -50,7 +50,7 @@ namespace SPKTWeb.Forums.Presenter
                 {
                     post.ForumID = _webContext.ForumID;
                     post.IsThread = _webContext.IsThread;
-                    if (!_postRepository.CheckPostPageNameIsUnique(post.PageName))
+                    if (!_postRepository.CheckPostPageNameIsUnique(post.PageName,post.ForumID))
                     {
                         _view.SetErrorMessage("The page name you are trying to use is already in use!");
                         return;

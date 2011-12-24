@@ -239,7 +239,6 @@ namespace SPKTCore.Core.Impl
 
         public string RootUrl
         {
-            //TODO: Chua biet lam gi
             get
             {
                 string result;

@@ -23,12 +23,12 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return result;
         }
-        public bool CheckPostPageNameIsUnique(string PageName)
+        public bool CheckPostPageNameIsUnique(string PageName, int ForumID)
         {
             bool result;
             using (SPKTDataContext dc = _conn.GetContext())
             {
-                BoardPost bp = dc.BoardPosts.Where(p => p.PageName == PageName).FirstOrDefault();
+                BoardPost bp = dc.BoardPosts.Where(p => (p.PageName == PageName)&&(p.ForumID==ForumID)).FirstOrDefault();
                 if (bp != null)
                     result = false;
                 else
