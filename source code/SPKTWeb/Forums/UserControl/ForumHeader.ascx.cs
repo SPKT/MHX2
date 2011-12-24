@@ -50,8 +50,18 @@ namespace SPKTWeb.Forums.UserControl
             set { alkXemNhieuNhat = value; }
         }
         protected void Page_Load(object sender, EventArgs e)
+        {            
+        }
+
+        public void LoadForum()
+        { 
+        
+        }
+
+        public void LoadForum(SPKTCore.Core.Domain.BoardForum forum)
         {
-            
+            lblForumName.Text = forum.Name;
+            hlkDangBaiMoi.NavigateUrl = "/Forums/Post.aspx?IsThread=1&ForumID=" + forum.ForumID.ToString();
         }
     }
 }

@@ -88,7 +88,7 @@
                         <ItemTemplate>
                             <tr style=" color:Blue;">
                                 <td>
-                                    <asp:LinkButton ID="lbForum" runat="server" Text='<%# ((BoardForum)Container.DataItem).Name %>' OnClick="lbForum_Click"></asp:LinkButton>
+                                <a href='ViewForum1.aspx?ForumID=<%#((BoardForum)Container.DataItem).ForumID %>' ><%#((BoardForum)Container.DataItem).Name %></a>                                    
                                     <asp:Literal ID="litPageName" runat="server" Text='<%# ((BoardForum)Container.DataItem).PageName%>' Visible="false"></asp:Literal>
                                 </td>
                                 <td  class="content"><%# ((BoardForum)Container.DataItem).Subject%></td>

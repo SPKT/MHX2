@@ -19,9 +19,7 @@
         
     </div>
     <div>
-
         <uc2:Viewpost ID="UCViewpost" runat="server" />
-
     </div>
 </div>
 </asp:Content>

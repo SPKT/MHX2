@@ -12,6 +12,6 @@ namespace SPKTCore.Core
         //public bool HasEditPermission { get; }
         //public bool HasDeletePermission { get; }
         //public bool HasCreatePermission { get; }
-        PermissionType Permission { get; }
+        PermissionType UserPermission { get; }
     }
 }

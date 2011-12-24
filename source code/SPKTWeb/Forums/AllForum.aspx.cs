@@ -40,12 +40,12 @@ namespace SPKTWeb.Forums
 
         public void repForums_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                Literal litPageName = e.Item.FindControl("litPageName") as Literal;
-                LinkButton lbForum = e.Item.FindControl("lbForum") as LinkButton;
-                lbForum.Attributes.Add("ForumPageName", litPageName.Text);
-            }
+            //if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            //{
+            //    Literal litPageName = e.Item.FindControl("litPageName") as Literal;
+            //    LinkButton lbForum = e.Item.FindControl("lbForum") as LinkButton;
+            //    lbForum.Attributes.Add("ForumPageName", litPageName.Text);
+            //}
         }
 
         public void lbForum_Click(object sender, EventArgs e)

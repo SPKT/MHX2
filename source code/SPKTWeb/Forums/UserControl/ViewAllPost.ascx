@@ -31,8 +31,7 @@
   </style>
   <div style=" ">
             <asp:Literal ID="litCategoryPageName" runat="server" Visible="false"></asp:Literal>
-            <asp:Literal ID="litForumPageName" runat="server" Visible="false"></asp:Literal>
-            
+            <asp:Literal ID="litForumPageName" runat="server" Visible="false"></asp:Literal>            
             <br />
             <div>
                 
@@ -51,7 +50,7 @@
                             Quản lý
                         </td>
                     </tr>
-              <asp:Repeater ID="repTopics" runat="server" OnItemDataBound="repTopics_ItemDataBound">
+              <asp:Repeater ID="repTopics" runat="server">
                 <ItemTemplate>
                     <tr>
                         <td class="style2">
@@ -61,11 +60,10 @@
                                <br />
                                <asp:Image Width="50" Height="50" ID="Image2" ImageUrl='<%# "/image/ProfileAvatar.aspx?AccountID=" + ((BoardPost)Container.DataItem).AccountID %>' runat="server" />
                                </div>
-                               <div style="margin-top:20px; margin-left:20px; font-size:larger; color:Blue;">
-                               <%--<a ID="linkViewTopic" runat="server" href='/Forums/ViewPost.aspx' ><%#((BoardPost)Container.DataItem).Name %></a>--%>
-                               <a id="linkViewTopic" href='/Forums/<%#litCategoryPageName.Text%>/<%#litForumPageName.Text%>/<%# Eval("PageName")%>.aspx' ><%#((BoardPost)Container.DataItem).Name %></a>
+                               <div style="margin-top:20px; margin-left:20px; font-size:larger; color:Blue;">                               
+                               <a href='/forums/ViewPost1.aspx?PostID=<%#((BoardPost)Container.DataItem).PostID%>' > <%#((BoardPost)Container.DataItem).Name %></a>
                                <br />
-                               <asp:Label id="lblCreateDate" Font-Size="Small" runat="server" Text="Ngày tạo:"></asp:Label>
+                               <asp:Label id="lblCreateDate" Font-Size="Small" runat="server" Text="Ngày tạo:"><%#((BoardPost)Container.DataItem).CreateDate.ToString("dd/MM/yyyy Lúc HH:mm:ss")%></asp:Label>
                                 </div>
                            </div>
                         </td>

@@ -168,5 +168,44 @@ namespace SPKTCore.Core.Impl
         {
             Redirect("~/Photos/AddPhotos.aspx?AlbumID=" + AlbumID.ToString());
         }
+
+
+       public string PathViewAllForums
+       {
+           get
+           {
+              return "/forums/AllForum.aspx";
+           }
+       }
+
+       public string PathViewForum
+       {
+           get
+           {
+               return "/forums/ViewForum1.aspx";
+           }
+       }
+
+       public string PathViewForumCategory
+       {
+           get
+           {
+            return "/forums/AllForum.aspx";
+           }
+       }
+       public string PathViewForumPost
+       {
+           get
+           {
+               return "/forums/ViewPost1.aspx";
+           }
+       }
+
+
+       public void GoToForums()
+       {
+           Redirect(PathViewAllForums);
+       }
+
     }
 }

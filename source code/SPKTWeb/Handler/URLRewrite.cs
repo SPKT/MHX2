@@ -34,7 +34,7 @@ namespace SPKTWeb.Handler
             _postRepository = new BoardPostRepository();
             _webContext = new WebContext();
             _groupRepository = new GroupRepository();
-
+            _redirector = new Redirector();   
 
         }
 
@@ -51,105 +51,106 @@ namespace SPKTWeb.Handler
 
             if (!System.IO.File.Exists(application.Request.PhysicalPath))
             {
-                if (application.Request.PhysicalPath.ToLower().Contains("blogs"))
+                String executionPath = application.Request.CurrentExecutionFilePath.ToLower().Trim('/', ' ');
+                string[] arr = executionPath.Split('/');
+                switch (arr[0])
                 {
-                    string[] arr = application.Request.PhysicalPath.ToLower().Split('\\');
-                    string blogPageName = arr[arr.Length - 1];
-                    string blogUserName = arr[arr.Length - 2];
-                    blogPageName = blogPageName.Replace(".aspx", "");
-
-                    if (blogPageName.ToLower() != "profileimage" && blogUserName.ToLower() != "profileavatar")
-                    {
-                        if (blogPageName == "default")
+                    case "blogs":
+                        XuLyBlogs(context, arr);
+                        break;
+                    case "groups":
+                        XuLyGroup(context, arr);
+                        break;
+                    case "mygroups":
+                        XuLyMyGroups(context, arr);
+                        break;
+                    case "forums":
+                        XuLyForums(context, arr);
+                        break;
+                    default:
+                        HttpResponse Response = context.Response;
+                        HttpRequest Request = context.Request;
+                        String Username = Request.Path.Replace("/", "");
+                        //
+                        Account account = _accountRepository.GetAccountByUsername(Username);
+                        _redirector = new Redirector();
+                        if (account != null)
+                            _redirector.Redirect("~/Profiles/UserProfile2.aspx?AccountID=" + account.AccountID.ToString());
+                        else
                             return;
-
-                        Account accountBlog = _accountRepository.GetAccountByUsername(blogUserName);
-
-                        if (accountBlog == null)
-                            return;
-
-                        Blog blog = _blogRepository.GetBlogByPageName(blogPageName, accountBlog.AccountID);
-
-                        context.RewritePath("~/blogs/ViewPost.aspx?BlogID=" + blog.BlogID.ToString());
-                    }
-                    else
-                    {
-                        return;
-                    }
+                        break;
                 }
-
-                else if (application.Request.PhysicalPath.ToLower().Contains("groups") && _webContext.GroupID == 0)
-                {
-                    string[] arr = application.Request.PhysicalPath.ToLower().Split('\\');
-                    string groupPageName = arr[arr.Length - 1];
-                    groupPageName = groupPageName.Replace(".aspx", "");
-                    Group group = _groupRepository.GetGroupByPageName(groupPageName);
-                    context.RewritePath("/groups/viewgroup.aspx?GroupID=" + group.GroupID.ToString());
-                }
-                else if (application.Request.PhysicalPath.ToLower().Contains("mygroups") && application.Request.PhysicalPath.ToLower().Contains("groups"))
-                {
-
-                    context.RewritePath("/groups/mygroups.aspx");
-                }
-
-                else if (application.Request.PhysicalPath.ToLower().Contains("forums"))
-                {
-                    string[] arr = application.Request.PhysicalPath.ToLower().Split('\\');
-                    int forumsPosition = 0;
-                    int itemsAfterForums = 0;
-                    string categoryPageName = "";
-                    string forumPageName = "";
-                    string postPageName = "";
-
-                    for (int i = 0; i < arr.Length; i++)
-                    {
-                        if (arr[i].ToLower() == "forums")
-                        {
-                            forumsPosition = i;
-                            break;
-                        }
-                    }
-
-                    itemsAfterForums = (arr.Length - 1) - forumsPosition;
-
-                    if (itemsAfterForums == 2)
-                    {
-                        categoryPageName = arr[arr.Length - 2];
-                        forumPageName = arr[arr.Length - 1];
-                        forumPageName = forumPageName.Replace(".aspx", "");
-                        BoardForum forum = _forumRepository.GetForumByPageName(forumPageName);
-                        context.RewritePath("/forums/ViewForum1.aspx?ForumID=" + forum.ForumID.ToString() +
-                                            "&CategoryPageName=" + categoryPageName + "&ForumPageName=" + forumPageName, true);
-                    }
-                    else if (itemsAfterForums == 3)
-                    {
-                        categoryPageName = arr[arr.Length - 3];
-                        forumPageName = arr[arr.Length - 2];
-                        postPageName = arr[arr.Length - 1];
-                        postPageName = postPageName.Replace(".aspx", "");
-                        BoardPost post = _postRepository.GetPostByPageName(postPageName);
-                        if (post != null)
-                            context.RewritePath("/forums/ViewPost1.aspx?PostID=" + post.PostID.ToString(), true);
-                        
-                    }
-                }
-                else
-                {
-                    HttpResponse Response = context.Response;
-                    HttpRequest Request = context.Request;
-                    String Username = Request.Path.Replace("/", "");
-                    //
-                    Account account = _accountRepository.GetAccountByUsername(Username);
-                    _redirector = new Redirector();
-                    if (account != null)
-                        _redirector.Redirect("~/Profiles/UserProfile2.aspx?AccountID=" + account.AccountID.ToString());
-                    else
-                        return;
-                }
-
-
             }
 
+        }
+
+        private void XuLyBlogs(HttpContext context, string[] arr)
+        {
+            string blogPageName = arr[arr.Length - 1];
+            string blogUserName = arr[arr.Length - 2];
+            blogPageName = blogPageName.Replace(".aspx", "");
+            if (blogPageName.ToLower() != "profileimage" && blogUserName.ToLower() != "profileavatar")
+            {
+                if (blogPageName == "default")
+                    return;
+                Account accountBlog = _accountRepository.GetAccountByUsername(blogUserName);
+                if (accountBlog == null)
+                    return;
+                Blog blog = _blogRepository.GetBlogByPageName(blogPageName, accountBlog.AccountID);
+                context.RewritePath("~/blogs/ViewPost.aspx?BlogID=" + blog.BlogID.ToString());
+            }
+        }
+
+        private void XuLyForums(HttpContext context, string[] arr)
+        {
+            int forumsPosition = 0;
+            int itemsAfterForumCount = 0;
+            string categoryPageName = "";
+            string forumPageName = "";
+            string postPageName = "";
+
+            itemsAfterForumCount = (arr.Length - 1) - forumsPosition;
+            switch (itemsAfterForumCount)
+            {
+                case 0:
+                    context.RewritePath(_redirector.PathViewAllForums);
+                    break;
+                case 1:
+                    categoryPageName = arr[1];                    
+                    BoardCategory cat = _categoryRepository.GetCategoryByPageName(categoryPageName);
+                    if (cat != null)
+                        context.RewritePath(_redirector.PathViewForumCategory + "?CatID=" + cat.CategoryID);
+                    break;
+                case 2:
+                    categoryPageName = arr[1];
+                    forumPageName = arr[2];
+                    forumPageName = forumPageName.Replace(".aspx", "");
+                    BoardForum forum = _forumRepository.GetForumByPageName(forumPageName);
+                    if (forum != null)
+                        context.RewritePath(_redirector.PathViewForum + "?ForumID=" + forum.ForumID.ToString(), true);
+                    break;
+                case 3:
+                    categoryPageName = arr[1];
+                    forumPageName = arr[2];
+                    postPageName = arr[3];
+                    postPageName = postPageName.Replace(".aspx", "");
+                    BoardPost post = _postRepository.GetPostByPageName(postPageName);
+                    if (post != null)
+                        context.RewritePath(_redirector.PathViewForumPost+"?PostID=" + post.PostID.ToString(), true);
+                    break;
+            }            
+        }
+        private static void XuLyMyGroups(HttpContext context, string[] arr)
+        {
+            context.RewritePath("/groups/mygroups.aspx");
+        }
+
+        private void XuLyGroup(HttpContext context, string[] arr)
+        {
+            string groupPageName = arr[arr.Length - 1];
+            groupPageName = groupPageName.Replace(".aspx", "");
+            Group group = _groupRepository.GetGroupByPageName(groupPageName);
+            context.RewritePath("/groups/viewgroup.aspx?GroupID=" + group.GroupID.ToString());
         }
     }
 }
