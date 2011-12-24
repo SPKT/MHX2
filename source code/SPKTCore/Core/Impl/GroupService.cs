@@ -80,6 +80,16 @@ namespace SPKTCore.Core.Impl
                 gf.GroupID = group.GroupID;
                 gf.CreateDate = DateTime.Now;
                 _groupForumRepository.SaveGroupForum(gf);
+
+                //add Groupleader is member
+                GroupMember gm = new GroupMember();
+                gm.AccountID = _webContext.CurrentUser.AccountID;
+                gm.GroupID = group.GroupID;
+                gm.CreateDate = DateTime.Now;
+                gm.IsAdmin = true;
+                gm.IsApproved = true;
+                _groupMemberRepository.SaveGroupMember(gm);
+               
             }
 
             return result;
@@ -95,6 +105,15 @@ namespace SPKTCore.Core.Impl
                 accounts.Add(_accountRepository.GetAccountByID(i));
             }
             return accounts;
+        }
+
+
+
+
+
+        public List<Group> GetAllGroupByAccountID(int AccountID)
+        {
+            throw new NotImplementedException();
         }
     }
 }

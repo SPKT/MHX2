@@ -56,10 +56,10 @@ namespace SPKTWeb.Profiles.Presenter
             accountID = _webContext.AccountID;
                 if (_userSession.LoggedIn)
                 {
-                    viewerID = _userSession.CurrentUser.AccountID;
-                  
+                    viewerID = _userSession.CurrentUser.AccountID; 
 
                 }
+                
                 if (accountID == 0)
                 {
                     _view.DisplayAccountInfo(viewerID, viewerID);

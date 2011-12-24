@@ -14,5 +14,6 @@ namespace SPKTCore.Core
         bool IsAdministrator(Int32 AccountID, Int32 GroupID);
         bool IsMember(Int32 AccountID, Int32 GroupID);
         List<Account> GetAllMemberByGroupID(Int32 GroupID);
+        List<Group> GetAllGroupByAccountID(Int32 AccountID);
     }
 }

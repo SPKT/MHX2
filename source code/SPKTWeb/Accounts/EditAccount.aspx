@@ -35,7 +35,7 @@
         .accordionContent
         {
             background-color: #D3DEEF;
-            border: 1px dashed #2F4F4F;
+            
             border-top: none;
             padding: 5px;
             padding-top: 10px;

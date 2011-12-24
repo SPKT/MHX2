@@ -30,10 +30,15 @@ namespace SPKTWeb
         public void ShowUserName(string userName)
         {
             if (userName == "")
+            {
                 lblUserName.Text = "Khách";
-            lblUserName.Text = "Xin chào " + userName.ToUpper();
-            
-            
+            }
+            else
+            {
+                lblUserName.Text = "Xin chào " + userName.ToUpper();
+                lb_dangky.Visible = false;
+                lb_dangnhap.Visible = false;
+            }    
         }
 
         protected void thaydoi_Click(object sender, EventArgs e)

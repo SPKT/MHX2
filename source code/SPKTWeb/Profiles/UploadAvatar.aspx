@@ -98,7 +98,7 @@
             OnClick="btnOK_Click" />
                        
    </div>
-	<div id="results">
+	<div id="results" style="visibility:hidden">
 		<p>
 			<label for="x1">x1:</label>
 			<input type="text" name="x1" id="x1" runat="server" clientidmode="Static" />

@@ -36,7 +36,7 @@ namespace SPKTCore.Core.Impl
 
         public void GoToAccountLoginPage()
         {
-            Redirect("~/Accounts/Login.aspx");
+            Redirect("~/Accounts/ManageAccount.aspx");
         }
 
         public void GoToAccountRegisterPage()

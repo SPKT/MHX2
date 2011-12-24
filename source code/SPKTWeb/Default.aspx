@@ -1,15 +1,36 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/MXH_1.master" AutoEventWireup="true"
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/MXH_NEW.master" AutoEventWireup="true"
     CodeBehind="Default.aspx.cs" Inherits="SPKTWeb._Default" %>
 
-<%@ Register src="Styles/LEFT_MENU.ascx" tagname="LEFT_MENU" tagprefix="uc1" %>
-
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
+<%@ Register src="~/Accounts/UserControl/Register.ascx" tagname="Register" tagprefix="uc1" %>
+<%@ Register src="~/Accounts/UserControl/LoginDesign1.ascx" tagname="LoginDesign1" tagprefix="uc2" %>
+<%@ Register src="~/Accounts/UserControl/LoginDesign.ascx" tagname="pass" tagprefix="uc3" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="content1" runat="server" ContentPlaceHolderID="left">
-    <div style="height: 182px">
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
+    <div style="border: 1px solid #999999; height:100%; width:100%; -moz-border-radius:10px; -webkit-border-radius:10px;position:fixed; left:0;top:52px; right:0px;margin-left:1%; margin-top:2px; margin-right:1%;width:98%; background-color:White;">
+    <div id="cc" runat="server" 
+        style="float:left; margin:10px; margin-left:10px; width:60%; height:100%;" align="center">
+        <div style=" margin:30px; margin-left:100px;">
+            <uc1:Register ID="Register1" runat="server" Visible="false" />
+        </div>
+    
     </div>
-</asp:Content>
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Main">
-    <div style="height: 584px">
+    <div style="border: 1px solid #9999FF; float:right; margin:0px; width:25%; height:100%; -moz-border-radius:10px; -webkit-border-radius:10px; background-image: url('../../Image/y.gif');">
+        <div style="margin:20px; margin-top:20px;">
+            
+            <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Đăng ký tài khoản</asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="LinkButton2" runat="server">Thông tin quy định</asp:LinkButton>
+            
+        </div>
+        <div style="margin:20px; margin-top:20px;">
+        
+            <uc2:LoginDesign1 ID="LoginDesign11" runat="server" />
+        
+        </div>
+        
     </div>
+</div>
+<div style="border: 1px solid #999999;height:30px; width:100%; background-color:White; -moz-border-radius:10px;-webkit-border-radius:10px; background-image: url('../Image/footer.gif');position:fixed; left:0;bottom:0px; right:0px;margin-left:1%; margin-top:2px; margin-right:1%;width:98%;">
+</div>
 </asp:Content>

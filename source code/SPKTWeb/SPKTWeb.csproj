@@ -92,6 +92,7 @@
     <Content Include="Comments\UseComment.aspx" />
     <Content Include="Comments\UserControl\BoxComment.ascx" />
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
+    <Content Include="Default.aspx" />
     <Content Include="Forums\AllForum.aspx" />
     <Content Include="Forums\Forum.aspx" />
     <Content Include="Forums\NewPost.aspx" />
@@ -465,7 +466,6 @@
     <Content Include="Styles\RIGHT_MENU.ascx" />
     <Content Include="Styles\RIGHT_MENU1.ascx" />
     <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />

@@ -38,6 +38,8 @@ namespace SPKTWeb.Profiles.Presenter
                 if (profile == null || profile.ProfileID < 1)
                     _redirector.GoToAccountLoginPage();
             }
+            else
+                _redirector.GoToAccountLoginPage();
         }
 
         public void UseGravatar()

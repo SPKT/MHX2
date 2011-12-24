@@ -50,6 +50,32 @@ namespace SPKTWeb.Accounts.Presenter
             _view.DisplayMessage(message);
         }
 
+        //public void Login(string username, string password, bool rememberMe, bool UseDKMHAccount)
+        //{
+        //    string message;
+        //    if ( UseDKMHAccount==false)
+        //    {
+        //        if(_accountService.Login(username, password, rememberMe, out message))
+        //            _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
+        //    }
+        //    else
+        //    {
+        //        DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
+        //        if (service.ValidateUser(username, password))
+        //        {
+        //            if (_accountService.IsAccountExisted(username))
+        //                _accountService.SetLogedIn(username);
+        //            else
+        //            {
+        //                DkmhWebservice.users user = service.GetUserByUserName(username);
+        //                _accountService.ImportAccount(user.Username, user.Email);
+        //                _accountService.SetLogedIn(username);
+        //            }
+        //            _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
+        //        }
+        //    }
+        //}
+
         public void GoToRegister()
         {
             _redirector.GoToAccountRegisterPage();

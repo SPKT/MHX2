@@ -56,6 +56,7 @@ namespace SPKTWeb.Homes
         public void LoadStatusControl(List<VisibilityLevel> ListVisibilityLevel, bool IsUser)
         {
             pnlStatusUpdate.Visible = true;
+            ddlRange.Items.Clear();
             foreach (VisibilityLevel level in ListVisibilityLevel)
             {
                 ListItem li = new ListItem(level.Name, level.VisibilityLevelID.ToString());

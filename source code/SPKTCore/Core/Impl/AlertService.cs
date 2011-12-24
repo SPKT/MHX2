@@ -110,7 +110,7 @@ namespace SPKTCore.Core.Impl
         }
         private string GetProfileImage(Int32 AccountID)
         {
-            return "<img width=\"50\" height=\"50\" src=\"~/image/ProfileAvatar.aspx?AccountID=" +
+            return "<img width=\"50\" height=\"50\" src=\"/image/ProfileAvatar.aspx?AccountID=" +
                    AccountID.ToString() + "&w=50&h=50\" align=\"absmiddle\">";
         }
 
@@ -118,7 +118,7 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alertMessage =
-                "<div class=\"AlertHeader\"><img src=\"~/image/ProfileAvatar.aspx?AccountID=" +
+                "<div class=\"AlertHeader\"><img src=\"/image/ProfileAvatar.aspx?AccountID=" +
                 account.AccountID.ToString() + "\" width=\"100\" height=\"100\" align=\"absmiddle\">" + GetProfileUrl(account.UserName) + " đổi avatar mới.</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewAvatar;

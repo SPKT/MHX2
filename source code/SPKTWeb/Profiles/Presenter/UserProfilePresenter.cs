@@ -37,17 +37,19 @@ namespace SPKTWeb.Profiles.Presenter
             _StatusUpdateService = new StatusUpdateService();
 
         }
-        public void Init(IUserProfile view,bool IsPostBack)
+        public void Init(IUserProfile view, bool IsPostBack)
         {
-            _view = view;
+            if ((_userSession.LoggedIn == false) && (_webContext.AccountID <= 0))
+                _redirector.GoToAccountLoginPage();
+            else
+            {
+                _view = view;
 
-                int accountID=_webContext.AccountID;
+                int accountID = _webContext.AccountID;
                 bool IsUser = false;
                 List<Alert> listAlert = new List<Alert>();
                 List<VisibilityLevel> _listVisibilityLevel = new List<VisibilityLevel>();
                 _listVisibilityLevel = _privacyService.GetListVisibilityLevel();
-
-
                 if (!IsPostBack)
                 {
                     int viewerID = -1;
@@ -88,7 +90,7 @@ namespace SPKTWeb.Profiles.Presenter
                 }
 
             }
-            
+        }
        //}
 
         internal void SaveStatusUpdate(String statusContent, int range)

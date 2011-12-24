@@ -57,8 +57,8 @@ namespace SPKTWeb.Forums
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Permission & PermissionType.View )== PermissionType.View)
-                throw new Exception("Khong được xem nội dung này, Code lại xử lý chỗ này");
+            //if ((Permission & PermissionType.View )== PermissionType.View)
+            //    throw new Exception("Khong được xem nội dung này, Code lại xử lý chỗ này");
             _presenter = new ViewForumPresenter();
             _presenter.Init(this);
             _redirector = new Redirector();

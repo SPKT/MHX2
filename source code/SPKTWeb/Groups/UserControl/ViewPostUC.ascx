@@ -23,8 +23,8 @@
                      <asp:Label ID="lblSubject" runat="server" style="font-weight:bold;font-size:20px; color: Blue"></asp:Label>
                 </div>
                 <div style="">
-                    <div style="float:left; width:60px; height:50px;">
-                         <asp:Image Width="60px"  Height="100%" ID="imgProfile" runat="server" />
+                    <div style="float:left; width:40px; height:30px;">
+                         <asp:Image Width="30px"  Height="20px" ID="imgProfile" runat="server" />
                     </div>
                     <div style="float:none" >
                         <div style="font-size:small; width:80%;color:Gray">

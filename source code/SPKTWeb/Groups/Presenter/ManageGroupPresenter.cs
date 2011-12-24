@@ -55,8 +55,8 @@ namespace SPKTWeb.Groups.Presenter
         {
             if (group.Description.Length > 2000)
             {
-                _view.ShowMessage("Your description is " + group.Description.Length.ToString() +
-                                  " characters long and can only be 2000 characters!");
+                _view.ShowMessage("Mô tả của bạn về " + group.Description.Length.ToString() +
+                                  " dài quá 2000 ký tứ!");
             }
             else
             {

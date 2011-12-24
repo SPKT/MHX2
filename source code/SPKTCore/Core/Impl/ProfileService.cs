@@ -17,11 +17,6 @@ namespace SPKTCore.Core.Impl
         private IUserSession _userSession;
         public ProfileService()
         {
-            //_profileRepository = ObjectFactory.GetInstance<IProfileRepository>();
-            //_profileAttributeRepository = ObjectFactory.GetInstance<IProfileAttributeRepository>();
-            //_profileAttributeService = ObjectFactory.GetInstance<IProfileAttributeService>();
-            //_levelOfExperienceTypeRepository = ObjectFactory.GetInstance<ILevelOfExperienceTypeRepository>();
-            //_userSession = ObjectFactory.GetInstance<IUserSession>();
             _profileRepository = new ProfileRepository();
             _profileAttributeRepository = new ProfileAttributeRepository();
             _levelOfExperienceRepository = new LevelOfExperienceRepository();

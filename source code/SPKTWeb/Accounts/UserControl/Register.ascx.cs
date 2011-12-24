@@ -52,35 +52,17 @@ namespace SPKTWeb.Accounts.UserControl
 
         public void LoadMessageCheckUserName(string Message)
         {
-            //lblCheckUsername.Text = Message;
+            lblCheckUsername.Text = Message;
         }
 
-        //protected void txtPasswordPre_TextChanged(object sender, EventArgs e)
-        //{
-        //    string passpre = txtPasswordPre.Text;
-        //    if (_Presenter.CheckPassword(txtPasswordPre.Text, txtPassword.Text))
-        //        txtPasswordPre.Text = passpre;
-        //    else
-        //        txtPasswordPre.Text = null;
-
-        //}
-
-        //protected void txtPassword_TextChanged(object sender, EventArgs e)
-        //{
-        //  string pass=txtPassword.Text;
-        //  if (_Presenter.CheckPasswordLength(pass))
-        //      txtPassword.Text = pass;
-        //  else
-        //      txtPassword.Text = null;
-        //}
-
+       
         public void LoadMessagePassWord(string Message)
         {
-            //lblMessagepass.Text = Message;
+            lblMessagepass.Text = Message;
         }
         public void LoadMessagePassWordLength(string Message)
         {
-            //lblMessageLegthPass.Text = Message;
+            lblMessageLegthPass.Text = Message;
         }
 
         protected void PasswordCustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
@@ -89,14 +71,14 @@ namespace SPKTWeb.Accounts.UserControl
             string pass = txtPassword.Text;
             if (pass != passpre)
             {
-                //PasswordCustomValidator.ErrorMessage = "Mật khẩu nhập lại không khớp";
+                PasswordCustomValidator.ErrorMessage = "Mật khẩu nhập lại không khớp";
                 args.IsValid = false;
                 return;
             }
 
             if (!_Presenter.CheckPasswordLength(pass))
             {
-                //PasswordCustomValidator.ErrorMessage = "Độ dài mật khẩu chưa đạt";
+                PasswordCustomValidator.ErrorMessage = "Độ dài mật khẩu chưa đạt";
                 args.IsValid = false;
                 return;
             }
@@ -110,6 +92,19 @@ namespace SPKTWeb.Accounts.UserControl
                 args.IsValid = false;
                 return;
             }
+        }
+        public bool l;
+        public bool getL()
+        {
+            return l;
+        }
+        public void setL(bool b)
+        {
+            l = b;
+        }
+        protected void btnLogin0_Click(object sender, EventArgs e)
+        {
+            l = true;
         }
     }
 }
