@@ -60,21 +60,31 @@ namespace SPKTWeb.Forums
             //if ((Permission & PermissionType.View )== PermissionType.View)
             //    throw new Exception("Khong được xem nội dung này, Code lại xử lý chỗ này");
             _presenter = new ViewForumPresenter();
-            _presenter.Init(this);
             _redirector = new Redirector();
             _webContext = new WebContext();
+            _presenter.Init(this);
+            
         }
 
         public void LoadDisplay(List<BoardPost> Threads, string CategoryPageName, string ForumPageName, Int32 ForumID)
         {
             UCForumHeader.lblForumName.Text += ForumPageName;
             UCForumHeader.hlkDangBaiMoi.NavigateUrl = "/Forums/Post.aspx?IsThread=1&ForumID=" + ForumID.ToString();
+            
             UCViewAllPost.litCatePageName.Text = CategoryPageName;
             UCViewAllPost.litForPageName.Text = ForumPageName;
 
             UCViewAllPost.repViewAllPost.DataSource = Threads;
             UCViewAllPost.repViewAllPost.DataBind();
 
+        }
+        public void LoadDisplay(List<BoardPost> Threads,BoardForum forum)
+        {
+                        
+            UCForumHeader.LoadForum(forum);
+
+            UCViewAllPost.LoadForumPost(Threads, forum);            
+            
         }
         public void LoadName(BoardForum forum)
         {

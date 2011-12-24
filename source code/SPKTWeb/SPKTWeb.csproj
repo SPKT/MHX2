@@ -101,11 +101,9 @@
     <Content Include="Forums\UserControl\Post.ascx" />
     <Content Include="Forums\UserControl\ViewAllPost.ascx" />
     <Content Include="Forums\UserControl\Viewpost.ascx" />
-    <Content Include="Forums\ViewForum.aspx" />
     <Content Include="Forums\ViewForum1.aspx" />
     <Content Include="Forums\ViewPost.aspx" />
     <Content Include="Forums\ViewPost1.aspx" />
-    <Content Include="ForumTest.aspx" />
     <Content Include="Friends\ConfirmFriendshipRequest.aspx" />
     <Content Include="Friends\Invite.aspx" />
     <Content Include="Friends\ShowFriend.aspx" />
@@ -2088,13 +2086,6 @@
     <Compile Include="Forums\ViewPost1.aspx.designer.cs">
       <DependentUpon>ViewPost1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ForumTest.aspx.cs">
-      <DependentUpon>ForumTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ForumTest.aspx.designer.cs">
-      <DependentUpon>ForumTest.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Friends\UserControl\BoxFriend.ascx.cs">
       <DependentUpon>BoxFriend.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2230,13 +2221,6 @@
     <Compile Include="Forums\Presenter\PostPresenter.cs" />
     <Compile Include="Forums\Presenter\ViewForumPresenter.cs" />
     <Compile Include="Forums\Presenter\ViewPostPresenter.cs" />
-    <Compile Include="Forums\ViewForum.aspx.cs">
-      <DependentUpon>ViewForum.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forums\ViewForum.aspx.designer.cs">
-      <DependentUpon>ViewForum.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Forums\ViewPost.aspx.cs">
       <DependentUpon>ViewPost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

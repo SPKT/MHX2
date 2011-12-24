@@ -25,7 +25,7 @@ namespace SPKTWeb
             _presenter.Init(this);
             _usersession = new UserSession();
             _webContext = new WebContext();
-            img_av.ImageUrl = "~/Image/ProfileAvatar.aspx";
+            img_av.ImageUrl = "/Image/ProfileAvatar.aspx";
         }
         public void ShowUserName(string userName)
         {

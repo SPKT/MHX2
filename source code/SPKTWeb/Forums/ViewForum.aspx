@@ -42,6 +42,7 @@
                 <ItemTemplate>
                         <tr style="background-color:#ffffff;">
                             <td colspan="8">
+                                <a href="ViewForum1.aspx"><%#((BoardPost)Container.DataItem).Name %></a>
                                 <asp:HyperLink ID="linkViewTopic" runat="server" Text='<%#((BoardPost)Container.DataItem).Name %>'></asp:HyperLink>
                             </td>
                         </tr>

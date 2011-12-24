@@ -7,18 +7,21 @@ using SPKTCore.Core.DataAccess.Impl;
 using SPKTWeb.Forums.Interface;
 using SPKTCore.Core;
 using SPKTCore.Core.DataAccess;
+using SPKTCore.Core.Domain;
 
 namespace SPKTWeb.Forums.Presenter
 {
     public class ViewForumPresenter
     {
         private IBoardPostRepository _postRepository;
+        private IBoardForumRepository _forumRepository;
         private IViewForum _view;
         private IWebContext _webContext;
         public ViewForumPresenter()
         {
             _postRepository = new BoardPostRepository();
             _webContext = new WebContext();
+            _forumRepository = new BoardForumRepository();
         }
 
         public void Init(IViewForum view)
@@ -29,7 +32,9 @@ namespace SPKTWeb.Forums.Presenter
 
         private void LoadThreads()
         {
-            _view.LoadDisplay(_postRepository.GetThreadsByForumID(_webContext.ForumID), _webContext.CategoryPageName, _webContext.ForumPageName, _webContext.ForumID);
+            BoardForum forum = _forumRepository.GetForumByID(_webContext.ForumID);
+
+            _view.LoadDisplay(_postRepository.GetThreadsByForumID(_webContext.ForumID),forum);
         }
     }
 }

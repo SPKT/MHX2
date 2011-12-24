@@ -41,5 +41,13 @@ namespace SPKTCore.Core
        
         void GoToForumsViewPost(string ForumPageName, string CategoryPageName, string PostPageName);
         void GotoViewPostForum(long PostID);
+
+        string PathViewAllForums { get;  }
+
+        string PathViewForum { get;  }
+
+        string PathViewForumCategory { get;  }
+
+        string PathViewForumPost { get; }
     }
 }

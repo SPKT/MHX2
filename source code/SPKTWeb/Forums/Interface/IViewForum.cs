@@ -9,6 +9,8 @@ namespace SPKTWeb.Forums.Interface
 
     public interface IViewForum
     {
-        void LoadDisplay(List<BoardPost> Threads, string CategoryPageName, string ForumPageName, Int32 ForumID);
+        //void LoadDisplay(List<BoardPost> Threads, string CategoryPageName, string ForumPageName, Int32 ForumID);
+
+        void LoadDisplay(List<BoardPost> list, BoardForum forum);
     }
 }
