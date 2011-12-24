@@ -29,16 +29,6 @@ namespace SPKTWeb.Forums.UserControl
         {
 
         }
-        protected void repTopics_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            //if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            //{
-            //    HyperLink linkViewTopic = e.Item.FindControl("linkViewTopic") as HyperLink;
-            //    if( linkViewTopic!=null)
-            //        linkViewTopic.NavigateUrl = "/Forums/" + litCategoryPageName.Text + "/" + litForumPageName.Text + "/" +
-            //                                ((BoardPost)e.Item.DataItem).PageName + ".aspx";
-            //}
-        }
 
         public void LoadForumPost(List<BoardPost> Threads, BoardForum forum)
         {            

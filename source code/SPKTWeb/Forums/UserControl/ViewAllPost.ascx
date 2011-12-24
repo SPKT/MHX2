@@ -50,7 +50,7 @@
                             Quản lý
                         </td>
                     </tr>
-              <asp:Repeater ID="repTopics" runat="server" OnItemDataBound="repTopics_ItemDataBound">
+              <asp:Repeater ID="repTopics" runat="server">
                 <ItemTemplate>
                     <tr>
                         <td class="style2">

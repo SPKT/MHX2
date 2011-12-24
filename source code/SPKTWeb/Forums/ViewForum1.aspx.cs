@@ -12,56 +12,25 @@ using SPKTCore.Core.Domain;
 
 namespace SPKTWeb.Forums
 {
-    public partial class ViewForum1 : System.Web.UI.Page, IViewForum,IPermissionContent
+    public partial class ViewForum1 : SecurityPageBase, IViewForum
     {
         private ViewForumPresenter _presenter;
-        protected IRedirector _redirector;
-        private IWebContext _webContext;
-
-        #region IPermissionContent Interface
-
-        //PermissionType _Permission;
-
-        //public bool HasViewPermission
-        //{
-        //    get
-        //    {
-        //        return true;
-        //    }
-        //}
-
-        //public bool HasEditPermission
-        //{
-        //    get { throw new NotImplementedException(); }
-        //}
-
-        //public bool HasDeletePermission
-        //{
-        //    get { throw new NotImplementedException(); }
-        //}
-
-        //public bool HasCreatePermission
-        //{
-        //    get { throw new NotImplementedException(); }
-        //}
-
-        public PermissionType Permission
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
         
-        #endregion
+
+        // phuong thuc cua lop SecurityPageBase
+
+        public override PermissionType InitPermistionBeforPageLoad()
+        {
+            if (_webContext.ForumID <= 0)
+                _redirector.GoToForums();
+            return PermissionType.View | PermissionType.Edit | PermissionType.Delete | PermissionType.Delete;
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if ((Permission & PermissionType.View )== PermissionType.View)
-            //    throw new Exception("Khong được xem nội dung này, Code lại xử lý chỗ này");
+            
             _presenter = new ViewForumPresenter();
-            _redirector = new Redirector();
-            _webContext = new WebContext();
+                     
             _presenter.Init(this);
             
         }
@@ -89,14 +58,7 @@ namespace SPKTWeb.Forums
         public void LoadName(BoardForum forum)
         {
         }
-       /* protected void repTopics_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                HyperLink linkViewTopic = e.Item.FindControl("linkViewTopic") as HyperLink;
-                linkViewTopic.NavigateUrl = "/Forums/" + litCategoryPageName.Text + "/" + litForumPageName.Text + "/" +
-                                            ((BoardPost)e.Item.DataItem).PageName + ".aspx";
-            }
-        }*/
-       }
+
+
+    }
 }

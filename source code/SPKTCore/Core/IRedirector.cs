@@ -16,6 +16,7 @@ namespace SPKTCore.Core
         void GoToAccountEditAccountPage();
         void GoToAccountRecoverPasswordPage();
         void GoToAccountAccessDenied();
+
         void GoToProfilesProfile();
         void GoToFriendInvite();
         void GoToAccountLoginPage(string FriendInvitationKey);
@@ -49,5 +50,7 @@ namespace SPKTCore.Core
         string PathViewForumCategory { get;  }
 
         string PathViewForumPost { get; }
+
+        void GoToForums();
     }
 }

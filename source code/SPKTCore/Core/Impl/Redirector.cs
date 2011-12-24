@@ -174,7 +174,7 @@ namespace SPKTCore.Core.Impl
        {
            get
            {
-              return "/forums/AllForums.aspx";
+              return "/forums/AllForum.aspx";
            }
        }
 
@@ -200,5 +200,12 @@ namespace SPKTCore.Core.Impl
                return "/forums/ViewPost1.aspx";
            }
        }
+
+
+       public void GoToForums()
+       {
+           Redirect(PathViewAllForums);
+       }
+
     }
 }

@@ -17,15 +17,19 @@ namespace SPKTWeb.Forums.Presenter
         private IBoardForumRepository _forumRepository;
         private IViewForum _view;
         private IWebContext _webContext;
+        private IRedirector _redirector;
         public ViewForumPresenter()
         {
             _postRepository = new BoardPostRepository();
             _webContext = new WebContext();
             _forumRepository = new BoardForumRepository();
+            _redirector = new Redirector();
         }
 
         public void Init(IViewForum view)
         {
+            if (_webContext.ForumID<= 0)
+                _redirector.GoToForums();
             _view = view;
             LoadThreads();
         }

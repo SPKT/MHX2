@@ -38,7 +38,7 @@ namespace SPKTWeb
             else
             {
                 lblUserName.Text = "Xin chào " + userName.ToUpper();
-                img_av.ImageUrl = "~/Image/ProfileAvatar.aspx";
+                img_av.ImageUrl = "/Image/ProfileAvatar.aspx";
                 lb_dangky.Visible = false;
                 lb_dangnhap.Visible = false;
             }    
