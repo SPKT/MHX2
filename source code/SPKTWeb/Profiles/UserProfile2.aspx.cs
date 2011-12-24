@@ -14,15 +14,10 @@ namespace SPKTWeb.Profiles
     public partial class UserProfile2 : System.Web.UI.Page, IUserProfile
     {
         UserProfilePresenter _presenter;
-        protected override void OnInit(EventArgs e)
-        {
-            _presenter = new UserProfilePresenter();
-            _presenter.Init(this, IsPostBack);
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            _presenter.Init(this, IsPostBack);
+            _presenter = new UserProfilePresenter();
+            _presenter.Init(this, IsPostBack);  
         }
         public void LoadAlert(List<Alert> listAlert, List<StatusUpdate> listStatus)
         {

@@ -2,6 +2,7 @@
     Inherits="SPKTWeb.Styles.RIGHT_MENU1" %>
 <%@ Register Src="~/Messages/UserControl/ButtonMessage.ascx" TagName="Message" TagPrefix="uc1" %>
 <%@ Register Src="~/Friends/UserControl/ButtonAddFriend.ascx" TagName="Friend" TagPrefix="uc2" %>
+<%@ Register Src="~/Friends/UserControl/ButtonInviteFriend.ascx" TagName="Friend1" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
 
 <div style="padding: 10px 20px 10px 20px; border: 1px solid #9999FF; height:auto;-moz-border-radius:5px;
@@ -14,7 +15,8 @@
                 ImageUrl="~/Image/redstyle-10-add.png" 
                  Width="15px" Height="15px" /></div>
         <div style="float:left; margin-left:14%; width:84%; margin-top:-30px; height:100%";">
-            <uc2:Friend ID="Friend1" runat="server" />
+            <uc2:Friend ID="Friend1" runat="server" Visible="false" />
+            <uc3:Friend1 ID="Friend2" runat="server" Visible="false"/>
         </div>
     </div>
    

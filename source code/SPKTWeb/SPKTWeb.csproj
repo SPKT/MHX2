@@ -113,6 +113,7 @@
     <Content Include="Friends\UserControl\BoxInvite.ascx" />
     <Content Include="Friends\UserControl\ButtonAdd.ascx" />
     <Content Include="Friends\UserControl\ButtonAddFriend.ascx" />
+    <Content Include="Friends\UserControl\ButtonInviteFriend.ascx" />
     <Content Include="Friends\UserControl\Friend.ascx" />
     <Content Include="Friends\UserControl\FriendList.ascx" />
     <Content Include="Friends\UserControl\FriendProfile.ascx" />
@@ -1977,7 +1978,6 @@
     <Compile Include="Admins\AddForum.aspx.designer.cs">
       <DependentUpon>AddForum.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admins\IAddCategory.cs" />
     <Compile Include="Admins\Interface\IAddForum.cs" />
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
@@ -2095,6 +2095,27 @@
     <Compile Include="ForumTest.aspx.designer.cs">
       <DependentUpon>ForumTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.cs">
+      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.designer.cs">
+      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\Invite.aspx.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\Invite.aspx.designer.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\ShowFriend.aspx.cs">
+      <DependentUpon>ShowFriend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\ShowFriend.aspx.designer.cs">
+      <DependentUpon>ShowFriend.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Friends\UserControl\BoxFriend.ascx.cs">
       <DependentUpon>BoxFriend.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2122,6 +2143,13 @@
     </Compile>
     <Compile Include="Friends\UserControl\ButtonAddFriend.ascx.designer.cs">
       <DependentUpon>ButtonAddFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ButtonInviteFriend.ascx.cs">
+      <DependentUpon>ButtonInviteFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ButtonInviteFriend.ascx.designer.cs">
+      <DependentUpon>ButtonInviteFriend.ascx</DependentUpon>
     </Compile>
     <Compile Include="Friends\UserControl\Friend.ascx.cs">
       <DependentUpon>Friend.ascx</DependentUpon>
@@ -2244,37 +2272,16 @@
     <Compile Include="Forums\ViewPost.aspx.designer.cs">
       <DependentUpon>ViewPost.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.cs">
-      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.designer.cs">
-      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Friends\Interface\IBoxFriend.cs" />
     <Compile Include="Friends\Interface\IConfirmFriendshipRequest.cs" />
     <Compile Include="Friends\Interface\IInviteFriends.cs" />
     <Compile Include="Friends\Interface\IProfileDisplay.cs" />
     <Compile Include="Friends\Interface\IShowFriend.cs" />
-    <Compile Include="Friends\Invite.aspx.cs">
-      <DependentUpon>Invite.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\Invite.aspx.designer.cs">
-      <DependentUpon>Invite.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Friends\Presenter\BoxFriendPresenter.cs" />
     <Compile Include="Friends\Presenter\ConfirmFriendshipRequestPresenter.cs" />
     <Compile Include="Friends\Presenter\InviteFriend.cs" />
     <Compile Include="Friends\Presenter\ProfileDisplayPresenter.cs" />
     <Compile Include="Friends\Presenter\ShowFriendPresenter.cs" />
-    <Compile Include="Friends\ShowFriend.aspx.cs">
-      <DependentUpon>ShowFriend.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Friends\ShowFriend.aspx.designer.cs">
-      <DependentUpon>ShowFriend.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

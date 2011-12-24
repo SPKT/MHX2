@@ -30,17 +30,20 @@ namespace SPKTWeb.Styles
             _fi = new FriendInvitationRepository();
             _ac = new AccountRepository();
             _f = new FriendService();
-            if (_usersession != null)
+            if (_usersession.LoggedIn == true)
             {
                 if (_webcontext.AccountID != _usersession.CurrentUser.AccountID && _webcontext.AccountID != 0)
                 {
-                    
+                    Friend1.Visible = true;
                 }
                 else
                 {
-                    
+                    Friend2.Visible = true;
                 }
             }
+            else
+                Friend1.Visible = true;
+
            
         }
 

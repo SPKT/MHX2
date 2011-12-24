@@ -39,8 +39,6 @@ namespace SPKTWeb.Friends
             _presenter = new ProfileDisplayPresenter();
             _ac = new AccountRepository();
             _presenter.Init(this);
-            lblUsername.Visible = false;
-            lblName.Visible = false;
             btn_de.Attributes.Add("onclick", "javascript:return confirm('Ban co muon xoa bạn?')");
             if (_usersession.CurrentUser == null)
             {
