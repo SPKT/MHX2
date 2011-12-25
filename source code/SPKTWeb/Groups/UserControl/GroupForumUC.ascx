@@ -15,16 +15,21 @@
                             <td colspan="1">Cập nhật cuối</td>
                             <td><asp:HyperLink ID="linkNewThread" runat="server" Text="Tạo bài mới"></asp:HyperLink></td>
                         </tr>
+                     
             <asp:Repeater ID="repTopics" runat="server" OnItemDataBound="repTopics_ItemDataBound">
                 <ItemTemplate>
+                        
                         <tr style="background-color:#ffffff;">
                             <td colspan="8">
+                                
                                 <asp:HyperLink ID="linkViewTopic" runat="server" Text='<%#((BoardPost)Container.DataItem).Name %>'></asp:HyperLink>
                             </td>
                         </tr>
                         <tr style="background-color:#ffffff;">
-                            <td><asp:HyperLink ID="linkUsername1" runat="server" Text='<%#((BoardPost)Container.DataItem).Username %>' NavigateUrl='<%# "/" + ((BoardPost)Container.DataItem).Username %>'></asp:HyperLink></td>
-                            <td><asp:Image Width="100" Height="100" ID="Image2" ImageUrl='<%# "/image/ProfileAvatar.aspx?AccountID=" + ((BoardPost)Container.DataItem).AccountID %>' runat="server" /></td>
+                            <td><asp:HyperLink ID="linkUsername1" runat="server" Text='<%#((BoardPost)Container.DataItem).Username %>' NavigateUrl='<%# "/" + ((BoardPost)Container.DataItem).Username %>'></asp:HyperLink>
+                            
+                            <br /><asp:Image Width="80" Height="80" ID="Image2" ImageUrl='<%# "/image/ProfileAvatar.aspx?AccountID=" + ((BoardPost)Container.DataItem).AccountID %>' runat="server" /></td>
+                            <td></td>
                             <td><%#((BoardPost)Container.DataItem).CreateDate.ToShortDateString() %></td>
                             <td><%#((BoardPost)Container.DataItem).UpdateDate.ToShortDateString() %></td>
                             <td><%#((BoardPost)Container.DataItem).ViewCount %></td>

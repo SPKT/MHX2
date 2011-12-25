@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="Invite.aspx.cs" Inherits="SPKTWeb.Friends.Invite" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="Invite.aspx.cs" Inherits="SPKTWeb.Friends.Invite" %>
 <%@ Register src="~/Friends/UserControl/InviteFriends.ascx" tagname="InviteFriends" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">

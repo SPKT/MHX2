@@ -63,28 +63,28 @@ namespace SPKTWeb.Groups.Presenter
         {
             _groupMemberRepository.ApproveGroupMembers(MemberIDs, _webContext.GroupID);
             LoadData();
-            _view.ShowMessage("Members approved!");
+            _view.ShowMessage("Đã chấp nhận thành công!");
         }
 
         public void DeleteMembers(List<int> MemberIDs)
         {
             _groupMemberRepository.DeleteGroupMembers(MemberIDs, _webContext.GroupID);
             LoadData();
-            _view.ShowMessage("Members deleted!");
+            _view.ShowMessage("Đã xóa thành viên thành công!");
         }
 
         public void PromoteMembers(List<int> MemberIDs)
         {
             _groupMemberRepository.PromoteGroupMembersToAdmin(MemberIDs, _webContext.GroupID);
             LoadData();
-            _view.ShowMessage("Members promoted!");
+            _view.ShowMessage("Thêm Admin thành công");
         }
 
         public void DemoteMembers(List<int> MemberIDs)
         {
             _groupMemberRepository.DemoteGroupMembersFromAdmin(MemberIDs, _webContext.GroupID);
             LoadData();
-            _view.ShowMessage("Members demoted!");
+            _view.ShowMessage("Xóa Admin thành công!");
         }
 
         public void Back()

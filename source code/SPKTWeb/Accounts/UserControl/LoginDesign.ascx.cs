@@ -9,38 +9,40 @@ using SPKTWeb.Accounts.Presenter;
 
 namespace MXH
 {
-    public partial class LoginDesign : System.Web.UI.UserControl, ILogin
+    public partial class LoginDesign : System.Web.UI.UserControl, IRecoverPassword
     {
-        private LoginPresenter _Presenter;
+        RecoverPasswordPresenter _presenter;
         protected void Page_Load(object sender, EventArgs e)
         {
-            _Presenter = new LoginPresenter();
-            _Presenter.Init(this);
+            _presenter = new RecoverPasswordPresenter();
+            _presenter.Init(this);
         }
 
-        public void DisplayMessage(string Message)
+        public void ShowMessage(string Message)
         {
-            //Label1.Text = Message;
+            
+                lblErrorMessage.Text = Message;
+            
+                lblMessage.Text = Message;
+            
         }
 
-        protected void lbRecoverPassword_Click(object sender, EventArgs e)
+        public void ShowRecoverPasswordPanel(bool Value)
         {
-            _Presenter.GoToRecoverPassword();
+
+            //pnlRecoverPassword.Visible = Value;
+
         }
 
-        protected void lbRegister_Click(object sender, EventArgs e)
+        protected void btnRecoverPassword_Click(object sender, EventArgs e)
         {
-            _Presenter.GoToRegister();
+            _presenter.RecoverPassword(txtEmail.Text);
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void login_Click(object sender, EventArgs e)
         {
-            _Presenter.Login(txtUserName.Text, txtPassword.Text,ckbAutoLogin.Checked);
+            this.Visible = false;
         }
 
-        protected void lbRecoverPassword_Click1(object sender, EventArgs e)
-        {
-            _Presenter.GoToRecoverPassword();
-        }
     }
 }

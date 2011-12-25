@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" EnableEventValidation="false" %>
 <%@ Import Namespace="SPKTCore.Core.Domain"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    <style type="text/css">
@@ -97,7 +97,7 @@
                                 <td  class="content"><%# ((BoardForum)Container.DataItem).LastPostByUsername%></td>
                                 <td  class="content">
                                 <%# ((BoardForum)Container.DataItem).LastPostDate.ToString() %>
-                                 <asp:ImageButton Width="20px" Height="20px" ID="ibEdit" runat="server" ImageUrl="~/image/pencil.jpg" />
+                                 <asp:ImageButton Width="20px" Height="20px" ID="ibEdit" OnClick="EditButton_Click" runat="server" ImageUrl="~/image/pencil.jpg" />
                                 </td>
                             </tr>
                         </ItemTemplate>

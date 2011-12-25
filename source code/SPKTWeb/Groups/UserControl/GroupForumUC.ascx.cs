@@ -16,6 +16,7 @@ namespace SPKTWeb.Groups.UserControl
             litForumPageName.Text = forum.PageName;
             //linkNewThread.NavigateUrl = "/Forums/Post.aspx?IsThread=1&ForumID=" + ForumID.ToString();
             linkNewThread.NavigateUrl = "/Groups/PostGroupforum.aspx?" + "IsThread=" + 1 + "&ForumID=" + forum.ForumID + "&GroupID=" + group.GroupID+"&PostID=0";
+            
             repTopics.DataSource = Threads;
             repTopics.DataBind();
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="NewPost.aspx.cs" Inherits="SPKTWeb.Forums.NewPost" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="NewPost.aspx.cs" Inherits="SPKTWeb.Forums.NewPost" %>
 <%@ Register src="UserControl/ForumHeader.ascx" tagname="ForumHeader" tagprefix="uc1" %>
 
 <%@ Register src="UserControl/Post.ascx" tagname="Post" tagprefix="uc2" %>

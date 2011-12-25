@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="ViewManageMember.aspx.cs" Inherits="SPKTWeb.Groups.ViewManageMember" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_PE.master" CodeBehind="ViewManageMember.aspx.cs" Inherits="SPKTWeb.Groups.ViewManageMember" %>
 <%@ Register src="UserControl/GroupHeader.ascx" tagname="GroupHeader" tagprefix="uc1" %>
 <%@ Register src="UserControl/ViewMemberUC.ascx" tagname="ViewMemberUC" tagprefix="uc2" %>
 <%@ Register src="UserControl/ViewPostUC.ascx" tagname="ViewPostUC" tagprefix="uc3" %>
@@ -11,8 +11,7 @@
             {
                 width:100%;
                 height: auto;
-                background-color:#CCFFCC;
-                border-color: Blue;
+                border-color: White;
             }
             .divContainer
             {
@@ -47,7 +46,7 @@
         .divContainerHelpText { font-size:10px; color:#777777; font-weight:normal; }
         .divContainerSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
         .Wizard { width:90%;padding:10px 10px 10px 10px; }
-        .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
+        .divContainerBox {border:solid 1px #ffffff; background-color:#ffffff;}
         .style1
         {
             color: #FF6666;
@@ -85,8 +84,5 @@
         </div>
     </div>
 
-    <div class="divForum">
-        Danh sách các forum của group
-    </div>
     </div>
    </asp:Content>

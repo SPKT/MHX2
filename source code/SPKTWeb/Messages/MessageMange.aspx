@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_PE.master" AutoEventWireup="true"
     CodeBehind="MessageMange.aspx.cs" Inherits="SPKTWeb.Messages.MessageMange" %>
 
 <%@ Register Src="~/Friends/UserControl/BoxInvite.ascx" TagName="BoxInvite" TagPrefix="uc1" %>
@@ -8,10 +8,9 @@
 <%@ Register Src="UserControl/LoadInbox.ascx" TagName="LoadInbox" TagPrefix="uc4" %>
 <%@ Register Src="UserControl/ReadMessage.ascx" TagName="ReadMessage" TagPrefix="uc5" %>
 <asp:Content ID="content4" ContentPlaceHolderID="head" runat="server"></asp:Content>
-<asp:Content ID="content3" ContentPlaceHolderID="right" runat="server"></asp:Content>
-<asp:Content ID="content5" ContentPlaceHolderID="right1" runat="server"></asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="left" runat="server">
-    <div style="border: 1px solid #999999;width:17%; margin-left:1%; background-color:White;position:fixed; left:0;top:91px; ">
+    <div style="border: 1px solid #999999;background-color:White;">
         <div align="center" style="border: 1px solid #CCCCCC; background-image: url('../Image/htitle.gif');
             background-repeat: repeat-x; height: 25px;">
             <asp:LinkButton ID="lbt_Box" runat="server" Font-Underline="False" Font-Bold="True"
@@ -39,7 +38,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div style="border: 1px solid #999999; height:auto; width: 100%">
-        <div style="border-color: #CCCCCC; background-image: url('../Image/main_background_gradient.jpg'); width:100%; height:25px;">
+        <div style="border-color: #CCCCCC; background-image: url('../Image/1g.gif'); width:100%; height:25px; background-repeat: repeat-x;">
             
         </div>
         <div style="border-color:White; border-width:0px;">

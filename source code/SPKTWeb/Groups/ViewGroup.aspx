@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="ViewGroup.aspx.cs" Inherits="SPKTWeb.Groups.ViewGroup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_PE.master" CodeBehind="ViewGroup.aspx.cs" Inherits="SPKTWeb.Groups.ViewGroup" %>
 <%@ Import Namespace="SPKTCore.Core.Domain"%>
 <%@ Register src="UserControl/GroupForumUC.ascx" tagname="GroupForumUC" tagprefix="uc1" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
@@ -10,7 +10,6 @@
                 width:100%;
                 height: auto;
                 background-color:#CCFFCC;
-                border-color: Blue;
             }
             .divContainer
             {
@@ -21,7 +20,7 @@
             .divContainerunder
             {
             
-               width:20%;
+               width:17%;
                float:left;
                border-color: Blue;
             }
@@ -45,7 +44,7 @@
         .divContainerHelpText { font-size:10px; color:#777777; font-weight:normal; }
         .divContainerSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
         .Wizard { width:90%;padding:10px 10px 10px 10px; }
-        .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
+        .divContainerBox {border:solid 1px #ffffff; background-color:#ffffff;}
         .style1
         {
             color: #FF6666;
@@ -89,8 +88,8 @@
                     <br />
                 </asp:Panel>
                 <asp:Panel ID="pnlPrivate" runat="server">
-                    <asp:HyperLink ID="hylinkForum" Text="View Forum" Visible="false" runat="server"></asp:HyperLink>&nbsp;
-                    <asp:HyperLink ID="hylinkViewMembers" Text="Members" NavigateUrl="" runat="server"></asp:HyperLink>
+                    <asp:HyperLink ID="hylinkForum" Text="Xem Forum" Visible="false" runat="server"></asp:HyperLink>&nbsp;
+                    <asp:HyperLink ID="hylinkViewMembers" Text="Thành viên" NavigateUrl="" runat="server"></asp:HyperLink>
                     
                 </asp:Panel>
             </div>
@@ -114,17 +113,13 @@
             </asp:Repeater>
             </asp:Panel>
         </div>
-        <div style="float: right; width: 80%">
+        <div style="width: 80%">
          <asp:Panel ID="pnlForum" runat="server">
              <uc1:GroupForumUC ID="uc" runat="server" />
                         
         </asp:Panel>
-
+        
         </div>
-    </div>
-
-    <div class="divForum">
-        Danh sách các forum của group
     </div>
     </div>
     </asp:Content>

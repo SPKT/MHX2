@@ -25,8 +25,7 @@ namespace SPKTWeb
             
             _usersession = new UserSession();
             _webContext = new WebContext();
-            lb_dangky.Visible = false;
-            lb_dangnhap.Visible = false;
+           
         }
        
     }

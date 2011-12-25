@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH1.Master" AutoEventWireup="true" CodeBehind="ConfirmFriendshipRequest.aspx.cs" Inherits="SPKTWeb.Friends.ConfirmFriendshipRequest" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_PE.Master" AutoEventWireup="true" CodeBehind="ConfirmFriendshipRequest.aspx.cs" Inherits="SPKTWeb.Friends.ConfirmFriendshipRequest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
     .divContainerCell

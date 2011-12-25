@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="PostGroupforum.aspx.cs" Inherits="SPKTWeb.Groups.PostGroupforum" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_PE.master" CodeBehind="PostGroupforum.aspx.cs" Inherits="SPKTWeb.Groups.PostGroupforum" %>
 <%@ Register src="UserControl/GroupHeader.ascx" tagname="GroupHeader" tagprefix="uc1" %>
 <%@ Register src="UserControl/ViewMemberUC.ascx" tagname="ViewMemberUC" tagprefix="uc2" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
@@ -11,7 +11,6 @@
                 width:100%;
                 height: auto;
                 background-color:#CCFFCC;
-                border-color: Blue;
             }
             .divContainer
             {
@@ -46,7 +45,7 @@
         .divContainerHelpText { font-size:10px; color:#777777; font-weight:normal; }
         .divContainerSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
         .Wizard { width:90%;padding:10px 10px 10px 10px; }
-        .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
+        .divContainerBox {border:solid 1px #ffffff; background-color:#ffffff;}
         .style1
         {
             color: #FF6666;
@@ -76,17 +75,13 @@
             <uc2:ViewMemberUC ID="ViewMemberUC" runat="server" />
         </asp:Panel>
         </div>
-        <div style="float: right; width: 80%">
+        <div style="float:left; width: 80%">
          <asp:Panel ID="pnlForum" runat="server">
              <uc3:Post ID="Post1" runat="server" />
                      
         </asp:Panel>
 
         </div>
-    </div>
-
-    <div class="divForum">
-        Danh sách các forum của group
     </div>
     </div>
     </asp:Content>

@@ -46,7 +46,7 @@ namespace SPKTWeb.Friends.Presenter
         }
         public void LoadFriend()
         {
-            if (_userSession != null)
+            if (_userSession.CurrentUser != null)
             {
                 if (_webcontext.AccountID != _userSession.CurrentUser.AccountID && _webcontext.AccountID != 0)
                 {
@@ -63,6 +63,19 @@ namespace SPKTWeb.Friends.Presenter
                 Account ac = _ac.GetAccountByID(idac);
                 _view.LoadFriend(_friendService.SearchFriend(ac));
             }
+           /* else
+            {
+                if (_webcontext.AccountID > 0)
+                {
+                    Account ac = _ac.GetAccountByID(_webcontext.AccountID);
+                    _view.LoadFriend(_friendService.SearchFriend(ac));
+                }
+                else
+                {
+                    Redirector re = new Redirector();
+                    re.GoToAccountLoginPage();
+                }
+            }*/
            
         }
         public void LoadFriend1()

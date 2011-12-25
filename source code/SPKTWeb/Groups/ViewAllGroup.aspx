@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="ViewAllGroup.aspx.cs" Inherits="SPKTWeb.Groups.ViewAllGroup" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_PE.master" CodeBehind="ViewAllGroup.aspx.cs" Inherits="SPKTWeb.Groups.ViewAllGroup" EnableEventValidation="false" %>
 <%@ Import Namespace="SPKTCore.Core.Domain" %>
 <%@ Register Src="~/UserControl/Comments.ascx" TagName="Comment" TagPrefix="uc2" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
@@ -9,7 +9,7 @@
             {
                 width:600px;
                 height: auto;
-                background-color:#CCFFCC;
+               
                 border-color: Blue;
             }
             .divContainer
@@ -31,7 +31,7 @@
         .divContainerHelpText { font-size:10px; color:#777777; font-weight:normal; }
         .divContainerSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
         .Wizard { width:90%;padding:10px 10px 10px 10px; }
-        .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
+        .divContainerBox {border:solid 0px #FFFFFF; background-color:#ffffff;}
         .style1
         {
             color: #FF6666;

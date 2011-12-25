@@ -213,7 +213,7 @@ namespace SPKTCore.Core.Impl
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardPost;
             alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
-                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new post: <b>" +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới thêm bài viết: <b>" +
                            post.Name + "</b></div>";
 
             /*alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
@@ -231,15 +231,15 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardThread;
-            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
-                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new thread on the board: <b>" +
+            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + "vừa mới thêm bài viết mới ở trên: <b>" +
                            post.Name + "</b></div>";
 
             /*alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + post.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + post.PageName +
                            ".aspx</a></div>";*/
-            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" + post.PostID + "&GroupID=" + group.GroupID + "</a></div>";
+            alertMessage += "<div ><a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" + post.PostID + "&GroupID=" + group.GroupID + "</a></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToGroup(alert, group);
@@ -249,11 +249,11 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardPost;
-            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
-                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new post: <b>" +
+            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới viết bài viết: <b>" +
                            post.Name + "</b></div>";
 
-            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+            alertMessage += "<div ><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + thread.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + thread.PageName +
                            ".aspx</a></div>";
@@ -266,11 +266,11 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardThread;
-            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
-                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new thread on the board: <b>" +
+            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới thêm bài viết mới: <b>" +
                            post.Name + "</b></div>";
 
-            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+            alertMessage += "<div ><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + post.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + post.PageName +
                            ".aspx</a></div>";

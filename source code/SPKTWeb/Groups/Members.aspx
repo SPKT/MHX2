@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/MXH_P.master"  CodeBehind="Members.aspx.cs" Inherits="SPKTWeb.Groups.Members" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/MXH_PE.master"  CodeBehind="Members.aspx.cs" Inherits="SPKTWeb.Groups.Members" %>
 <%@Register Src="~/UserControl/ProfileDisplay.ascx" TagPrefix="SPKT" TagName="ProfileDisplay" %>
 
 

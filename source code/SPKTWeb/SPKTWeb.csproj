@@ -75,6 +75,7 @@
     <Content Include="AddData.aspx" />
     <Content Include="Admins\AddCategory.aspx" />
     <Content Include="Admins\AddForum.aspx" />
+    <Content Include="Admins\Manage.aspx" />
     <Content Include="App.js" />
     <Content Include="App_Data\SPKT.mdf" />
     <Content Include="App_Data\SPKT_log.ldf">
@@ -93,6 +94,7 @@
     <Content Include="Comments\UserControl\BoxComment.ascx" />
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="Error\FileLog.txt" />
     <Content Include="Forums\AllForum.aspx" />
     <Content Include="Forums\Forum.aspx" />
     <Content Include="Forums\NewPost.aspx" />
@@ -158,6 +160,15 @@
     <Content Include="Image\1.gif" />
     <Content Include="Image\110934_27850_48_email_forward_letter_send_icon1.png" />
     <Content Include="Image\123.jpg" />
+    <Content Include="Image\1a.gif" />
+    <Content Include="Image\1b.gif" />
+    <Content Include="Image\1c.gif" />
+    <Content Include="Image\1d.gif" />
+    <Content Include="Image\1e.gif" />
+    <Content Include="Image\1f.gif" />
+    <Content Include="Image\1g.gif" />
+    <Content Include="Image\1h.gif" />
+    <Content Include="Image\1q.gif" />
     <Content Include="Image\1_170.png" />
     <Content Include="Image\2.gif" />
     <Content Include="Image\3.gif" />
@@ -182,9 +193,12 @@
     <Content Include="Image\bbl-head-bg.png" />
     <Content Include="Image\bbl-head-bg_2.png" />
     <Content Include="Image\bg.png" />
+    <Content Include="Image\bgDIVIDER.gif" />
     <Content Include="Image\bgd_footer.gif" />
     <Content Include="Image\bgIndexOptionsTop.gif" />
     <Content Include="Image\bgm.gif" />
+    <Content Include="Image\bgOFF.gif" />
+    <Content Include="Image\bgON.gif" />
     <Content Include="Image\Bground.gif" />
     <Content Include="Image\bground1.gif" />
     <Content Include="Image\bground2.gif" />
@@ -225,6 +239,7 @@
     <Content Include="Image\events.gif" />
     <Content Include="Image\expand.jpg" />
     <Content Include="Image\find.gif" />
+    <Content Include="Image\foot.jpg" />
     <Content Include="Image\footer.gif" />
     <Content Include="Image\gray Icon.png" />
     <Content Include="Image\gray-grad.png" />
@@ -240,6 +255,7 @@
     <Content Include="Image\icinfo.jpg" />
     <Content Include="Image\icon_close.gif" />
     <Content Include="Image\icon_friends.gif" />
+    <Content Include="Image\img02.gif" />
     <Content Include="Image\j.gif" />
     <Content Include="Image\l.gif" />
     <Content Include="Image\leftground1.gif" />
@@ -254,6 +270,7 @@
     <Content Include="Image\menu_d2.jpg" />
     <Content Include="Image\menu_n.jpg" />
     <Content Include="Image\menu_n1.jpg" />
+    <Content Include="Image\mn1.gif" />
     <Content Include="Image\mpd.gif" />
     <Content Include="Image\mpg.gif" />
     <Content Include="Image\mpt.gif" />
@@ -310,6 +327,7 @@
     <Content Include="Image\tile_cat.gif" />
     <Content Include="Image\tim.gif" />
     <Content Include="Image\tim.png" />
+    <Content Include="Image\tim1.gif" />
     <Content Include="Image\timn.gif" />
     <Content Include="Image\timnp.gif" />
     <Content Include="Image\timntrai.gif" />
@@ -457,6 +475,9 @@
     <Content Include="Searchs\Search.aspx" />
     <Content Include="Style1.css" />
     <Content Include="Style2.css" />
+    <Content Include="Styles\dropdown.js" />
+    <Content Include="Styles\ga.js" />
+    <Content Include="Styles\gatag.js" />
     <Content Include="Styles\MXH.css" />
     <Content Include="Styles\MXH1.css" />
     <Content Include="Styles\FOOTER.ascx" />
@@ -469,6 +490,8 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\style_002.css" />
     <Content Include="temp.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="UserControl\ButtonComment.ascx" />
@@ -476,10 +499,11 @@
     <Content Include="UserControl\Comments.ascx" />
     <Content Include="UserControl\ProfileDisplay.ascx" />
     <None Include="Image\menu_d1.psd" />
-    <None Include="Image\Untitled-2.psd" />
     <Content Include="MXH_NEW.Master" />
     <Content Include="MXH_1.Master" />
     <Content Include="MXH_P.Master" />
+    <Content Include="MXH_E.Master" />
+    <Content Include="MXH_PE.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -508,6 +532,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
     <Content Include="Xinha\examples\custom.css" />
     <Content Include="Xinha\examples\dynamic.css" />
     <Content Include="Xinha\examples\Extended.html" />
@@ -1977,6 +2002,13 @@
       <DependentUpon>AddForum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\Interface\IAddForum.cs" />
+    <Compile Include="Admins\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
     <Compile Include="Comments\Interface\IBoxComment.cs" />
@@ -2011,6 +2043,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Error\myLogImp.cs" />
     <Compile Include="Forums\AllForum.aspx.cs">
       <DependentUpon>AllForum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2495,6 +2528,13 @@
     <Compile Include="MXH_2.Master.designer.cs">
       <DependentUpon>MXH_2.Master</DependentUpon>
     </Compile>
+    <Compile Include="MXH_E.Master.cs">
+      <DependentUpon>MXH_E.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_E.Master.designer.cs">
+      <DependentUpon>MXH_E.Master</DependentUpon>
+    </Compile>
     <Compile Include="MXH_NEW.Master.cs">
       <DependentUpon>MXH_NEW.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2508,6 +2548,13 @@
     </Compile>
     <Compile Include="MXH_P.Master.designer.cs">
       <DependentUpon>MXH_P.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH_PE.Master.cs">
+      <DependentUpon>MXH_PE.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_PE.Master.designer.cs">
+      <DependentUpon>MXH_PE.Master</DependentUpon>
     </Compile>
     <Compile Include="NestedMasterPage1.master.cs">
       <DependentUpon>NestedMasterPage1.master</DependentUpon>
@@ -2741,6 +2788,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

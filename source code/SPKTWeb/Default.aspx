@@ -7,7 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-    <div style="border: 1px solid #999999; height:100%; width:100%; -moz-border-radius:10px; -webkit-border-radius:10px;position:fixed; left:0;top:52px; right:0px;margin-left:1%; margin-top:2px; margin-right:1%;width:98%; background-color:White;">
+     <div style="border: 1px solid #CCCCCC; height:85%; -moz-border-radius:10px; -webkit-border-radius:10px;position:fixed; left:0;top:52px; right:0px;margin-left:50px; margin-top:0px; margin-right:50px; background-color:White;">
     <div id="cc" runat="server" 
         style="float:left; margin:10px; margin-left:10px; width:60%; height:100%;" align="center">
         <div style=" margin:30px; margin-left:100px;">
@@ -24,13 +24,9 @@
             
         </div>
         <div style="margin:20px; margin-top:20px;">
-        
-            <uc2:LoginDesign1 ID="LoginDesign11" runat="server" />
-        
+        <uc2:LoginDesign1 ID="LoginDesign11" runat="server" />
         </div>
         
     </div>
-</div>
-<div style="border: 1px solid #999999;height:30px; width:100%; background-color:White; -moz-border-radius:10px;-webkit-border-radius:10px; background-image: url('../Image/footer.gif');position:fixed; left:0;bottom:0px; right:0px;margin-left:1%; margin-top:2px; margin-right:1%;width:98%;">
 </div>
 </asp:Content>

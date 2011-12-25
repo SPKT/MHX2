@@ -18,7 +18,6 @@
     <link rel="shortcut icon" type="image/ico" href="Image/spkticon1.png" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    
     <script type="text/javascript">
         var styleToSelect;
         function onOk() {
@@ -26,34 +25,25 @@
         }
     </script>
 </head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <div style="height: 50px">
-            <div id="banner">
-                <div align="left" class="item_banner_logo">
-                </div>
-                <div class="item_banner_text">
-                    <div id="item_banner_2" style="height: 23px;" align="center">
-                     
-                    </div>
-                    <div align="right" id="item_banner">
-                        <div align="center" class="item_banner_1">
-                            <asp:LinkButton ID="lb_dangky" runat="server" CssClass="linkbuton" Width="100%">Đăng ký</asp:LinkButton>
-                        </div>
-                        <div align="center" class="item_banner_1">
-                            <asp:LinkButton ID="lb_dangnhap" runat="server" CssClass="linkbuton" Width="100%">Đăng nhập</asp:LinkButton>
-                            
-                        </div>
-                    </div>
+<body style="background-image: url('/Image/1f.gif'); padding: 0px; margin: 0px; height: 100%;">
+    <form id="form1" runat="server" style="padding: 0px; margin: 0px 50px 0px 50px; margin-top: 0px;
+    height: 100%; background-image: url('/Image/1e.gif'); background-repeat: repeat-y;">
+    <div id="Div1" style="width: auto; height: 100%; padding: 20px; padding-top: 0px;
+        padding-bottom: 0px; margin: 0px;" runat="server">
+        <div>
+            <div style="height: 50px; float: none; background-color: White;-moz-border-radius:10px; -webkit-border-radius:10px;">
+                <div class="item_banner_logo">
+                    &nbsp;&nbsp;&nbsp;<asp:Image ID="imga" runat="server" ImageUrl="~/Image/logo3.jpg"
+                        Width="330px" Height="100%" />
                 </div>
             </div>
-          </div>
-          <div style="height:100%;margin-left:1%; margin-top:2px; margin-right:1%;">
-           <aspt:ToolkitScriptManager ID="ScriptManager1" runat="server" />
-            <asp:ContentPlaceHolder ID="Main" runat="server"></asp:ContentPlaceHolder>
-          </div>
-    </div>
+        </div>
+        <div style="height: 100%; margin-left: 0px; margin-top: 0px; margin-right: 0px;">
+            <aspt:ToolkitScriptManager ID="ScriptManager1" runat="server" />
+            <asp:ContentPlaceHolder ID="Main" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        </div>
     </form>
 </body>
 </html>

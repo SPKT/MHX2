@@ -1,5 +1,5 @@
 ﻿<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
-<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.master" AutoEventWireup="true" CodeBehind="ManageProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ManageProfile" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.master" AutoEventWireup="true" CodeBehind="ManageProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ManageProfile" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .winzard

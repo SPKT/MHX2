@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="SPKTWeb.Admins.AddCategory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="SPKTWeb.Admins.AddCategory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <style type="text/css">
  .divContainer {font-size:12px;background-image:url(/images/transparent.gif); padding: 10px; width:90%; margin-left:auto;margin-right:auto;text-align:center; }
@@ -40,6 +40,8 @@
         SortOrder: <asp:TextBox ID="txtSortOrder" runat="server"></asp:TextBox>
     </div>
     <asp:Button ID="btnAdd" runat="server" Text="Add" onclick="btnAdd_Click" />
+    <br />
+    <a href="AddForum.aspx" >Thêm Forum</a>
    
 </div>
 </asp:Content>

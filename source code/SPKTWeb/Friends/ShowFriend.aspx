@@ -1,6 +1,6 @@
 ﻿<%@ Import namespace="SPKTCore.Core.Domain"%>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
-<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_P.Master" AutoEventWireup="true" CodeBehind="ShowFriend.aspx.cs" Inherits="SPKTWeb.Friends.ShowFriend1" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_PE.Master" AutoEventWireup="true" CodeBehind="ShowFriend.aspx.cs" Inherits="SPKTWeb.Friends.ShowFriend1" %>
 <%@ Register src="~/Friends/UserControl/ShowFriend.ascx" tagname="ShowFriend" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

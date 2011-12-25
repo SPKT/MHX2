@@ -20,18 +20,30 @@ namespace SPKTWeb.Accounts
             _Presenter=new RegisterPresenter();
             _Presenter.Init(this);
             DoiTuong = EnumObject.OutSider;
+            
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!this.IsValid)
-                return;
-            string passWord=txtPassword.Text;
-            string userName = txtUserName.Text;
-            string email = txtEmail.Text;
-            String captCha = txtCaptCha.Text;
-            _Presenter.Register(userName, passWord, email, DoiTuong,captCha);
+                DateTime t = new DateTime();
+                t = DateTime.Now;
+                if (!this.IsValid)
+                    return;
+                string passWord = txtPassword.Text;
+                string userName = txtUserName.Text;
+                string email = txtEmail.Text;
+                String captCha = txtCaptCha.Text;
+                string ex = t.ToLongTimeString() + ":  Khách vừa mới đăng ký với tên là: " + txtUserName.Text;
+                Log(ex);
+                _Presenter.Register(userName, passWord, email, DoiTuong, captCha);
            
+        }
+
+        private void Log(string ex)
+        {
+            String path = "~/Error/FileLog.txt";
+            myLogImp log = new myLogImp();
+            log.LogError(Request.Path, ex, Server.MapPath(path));
         }
 
         public void ShowErrorMessage(string Message)

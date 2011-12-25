@@ -18,6 +18,7 @@ namespace SPKTWeb.Accounts
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             re.Redirect("~/Accounts/Register.aspx");
+            //Register1.Visible = true;
         }
     }
 }

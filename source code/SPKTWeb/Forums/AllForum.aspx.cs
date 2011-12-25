@@ -7,12 +7,15 @@ using System.Web.UI.WebControls;
 using SPKTWeb.Forums.Interface;
 using SPKTWeb.Forums.Presenter;
 using SPKTCore.Core.Domain;
+using SPKTCore.Core;
+using SPKTCore.Core.Impl;
 
 namespace SPKTWeb.Forums
 {
     public partial class AllForum : System.Web.UI.Page, IForum
     {
         private ForumPresenter _presenter;
+        IRedirector _redirector;
         protected void Page_Load(object sender, EventArgs e)
         {
             _presenter = new ForumPresenter();
@@ -37,7 +40,6 @@ namespace SPKTWeb.Forums
                 }
             }
         }
-
         public void repForums_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             //if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -52,6 +54,11 @@ namespace SPKTWeb.Forums
         {
             LinkButton lbForum = sender as LinkButton;
             _presenter.GoToForum(lbForum.Attributes["ForumPageName"]);
+        }
+        public void EditButton_Click(object sender, EventArgs e)
+        {
+            _redirector = new Redirector();
+            _redirector.Redirect("~/Admins/Manage.aspx");
         }
     }
 }

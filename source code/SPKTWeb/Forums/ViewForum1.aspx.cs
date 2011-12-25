@@ -23,14 +23,13 @@ namespace SPKTWeb.Forums
         {
             if (_webContext.ForumID <= 0)
                 _redirector.GoToForums();
-            return PermissionType.View | PermissionType.Edit | PermissionType.Delete | PermissionType.Delete;
+            return PermissionType.View;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            _presenter = new ViewForumPresenter();
-                     
+            _presenter = new ViewForumPresenter();             
             _presenter.Init(this);
             
         }

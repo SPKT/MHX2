@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="SPKTWeb.Homes.Home" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="SPKTWeb.Homes.Home" EnableEventValidation="false" %>
 
 <%@ Register Src="~/UserControl/Comments.ascx" TagName="Comment" TagPrefix="uc2" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
@@ -32,7 +32,7 @@
                         BorderColor="#99CCFF" BorderStyle="Solid" BorderWidth="1px" ForeColor="White" />
                 </div>
                 </asp:Panel>
-                      <asp:Timer ID="Timer1" runat="server" Interval="10000" ontick="Timer1_Tick" >
+                      <asp:Timer ID="Timer1" runat="server" Interval="20000" ontick="Timer1_Tick" >
                     </asp:Timer>
                 <asp:Panel  runat="server" >
                     <div  runat="server">

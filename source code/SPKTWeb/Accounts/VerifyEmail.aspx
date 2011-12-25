@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="VerifyEmail.aspx.cs" Inherits="SPKTWeb.Accounts.VerifyEmail" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_NEW.Master" AutoEventWireup="true" CodeBehind="VerifyEmail.aspx.cs" Inherits="SPKTWeb.Accounts.VerifyEmail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">

@@ -21,18 +21,26 @@ namespace SPKTWeb.Friends
         protected ShowFriendPresenter _showfriendpresenter;
         IWebContext _webcontext;
         IUserSession _usersession;
+        IRedirector _ri;
         protected void Page_Load(object sender, EventArgs e)
         {
             _showfriendpresenter = new ShowFriendPresenter();
             _showfriendpresenter.Init(this);
             _webcontext=new WebContext();
             _usersession=new UserSession();
-            if (_usersession.CurrentUser.AccountID != _webcontext.AccountID)
+            _ri=new Redirector();
+
+            if (_usersession.CurrentUser!= null)
             {
-                lblSearchTerm.Text = "Danh sách bạn bè của " + _webcontext.Username;
+                if (_usersession.CurrentUser.AccountID != _webcontext.AccountID)
+                {
+                    lblSearchTerm.Text = "Danh sách bạn bè của " + _webcontext.Username;
+                }
+                else
+                    lblSearchTerm.Text = "Danh sách bạn bè của " + _usersession.CurrentUser.UserName;
             }
             else
-                lblSearchTerm.Text = "Danh sách bạn bè của "+ _usersession.CurrentUser.UserName;
+                _ri.GoToAccountLoginPage();
         }
         protected void repFriends_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.master" AutoEventWireup="true"
     CodeBehind="UserProfile2.aspx.cs" Inherits="SPKTWeb.Profiles.UserProfile2" EnableEventValidation="false" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
 <%@ Register Src="UserControls/StatusControl.ascx" TagName="StatusControl" TagPrefix="uc1" %>
@@ -61,7 +61,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="right" runat="server">
 <div style="width:100%; height:100%; background-color:Black; margin-top:0px;">
-    <div >
+    <!--<div >
         <asp:UpdatePanel ID="UpdatePanel2" runat="server" >
             <ContentTemplate>
                 <asp:Panel ID="Panel2" runat="server">
@@ -101,7 +101,7 @@
                 </asp:Panel>
             </ContentTemplate>
         </asp:UpdatePanel>
-    </div>
+    </div>-->
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
@@ -121,7 +121,7 @@
                         BorderColor="#99CCFF" BorderStyle="Solid" BorderWidth="1px" ForeColor="White" />
                 </div>
                 </asp:Panel>
-                    <asp:Timer ID="Timer1" runat="server" Interval="10000" ontick="Timer1_Tick" >
+                    <asp:Timer ID="Timer1" runat="server" Interval="20000" ontick="Timer1_Tick" >
                     </asp:Timer>
                 <asp:Panel ID="Panel1"  runat="server" >
                     <div>

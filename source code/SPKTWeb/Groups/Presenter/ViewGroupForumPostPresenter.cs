@@ -44,35 +44,41 @@ namespace SPKTWeb.Groups.Presenter
         public void LoadData()
         {
             Group group = _groupRepository.GetGroupByID(_webContext.GroupID);
-            List<Account> accounts = _groupService.GetAllMemberByGroupID(group.GroupID);
-            _view.LoadData(group, accounts);
+            if (group != null)
+            {
+                List<Account> accounts = _groupService.GetAllMemberByGroupID(group.GroupID);
+                _view.LoadData(group, accounts);
 
-            if (_webContext.CurrentUser != null)
-                _view.ShowRequestMembership(true);
-            else
-                _view.ShowRequestMembership(false);
+                if (_webContext.CurrentUser != null)
+                    _view.ShowRequestMembership(true);
+                else
+                    _view.ShowRequestMembership(false);
 
-            //is this public or private data?
-            if (group.IsPublic)
-            {
-                _view.ShowPrivate(true);
-                _view.ShowPublic(true);
-            }
-            else if (ViewerIsMember())
-            {
-                _view.ShowPrivate(true);
-                _view.ShowPublic(true);
+                //is this public or private data?
+                if (group.IsPublic)
+                {
+                    _view.ShowPrivate(true);
+                    _view.ShowPublic(true);
+                }
+                else if (ViewerIsMember())
+                {
+                    _view.ShowPrivate(true);
+                    _view.ShowPublic(true);
+                }
+                else
+                {
+                    _view.ShowPrivate(false);
+                    _view.ShowPublic(true);
+                }
+                BoardForum forum = _boardForumRepository.GetForumByGroupID(group.GroupID);
+                BoardCategory category = _boardCategoryRepository.GetCategoryByPageName("Group Forum");
+                List<BoardPost> threads = _boardPostRepository.GetThreadsByForumID(forum.ForumID);
+                //_view.LoadForum(forum,threads,category);
+                _view.LoadDataPost(_boardPostRepository.GetPostByID(_webContext.PostID), _boardPostRepository.GetPostsByThreadID(_webContext.PostID), forum, group);
             }
             else
-            {
-                _view.ShowPrivate(false);
-                _view.ShowPublic(true);
-            }
-            BoardForum forum= _boardForumRepository.GetForumByGroupID(group.GroupID);
-            BoardCategory category = _boardCategoryRepository.GetCategoryByPageName("Group Forum");
-            List<BoardPost> threads = _boardPostRepository.GetThreadsByForumID(forum.ForumID);
-            //_view.LoadForum(forum,threads,category);
-            _view.LoadDataPost(_boardPostRepository.GetPostByID(_webContext.PostID), _boardPostRepository.GetPostsByThreadID(_webContext.PostID),forum, group);
+                _redirector.Redirect("~/Groups/ViewAllGroup.aspx");
+
             
         }
 

@@ -76,7 +76,7 @@ namespace SPKTWeb.Groups.UserControl
                 gm.IsAdmin = false;
                 gm.IsApproved = false;
                 _groupMemberRepository.SaveGroupMember(gm);
-                ShowMessage("Membership requested successfully!");
+                ShowMessage("Yêu cầu thành công!Cảm ơn bạn đã quan tâm đến nhóm! Chờ Admin Group chấp nhận yêu cầu của bạn");
             }
         }
         public void ShowMessage(string Message)

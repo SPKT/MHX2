@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="ViewForum1.aspx.cs" Inherits="SPKTWeb.Forums.ViewForum1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="ViewForum1.aspx.cs" Inherits="SPKTWeb.Forums.ViewForum1" %>
 <%@ Register src="UserControl/ForumHeader.ascx" tagname="ForumHeader" tagprefix="uc1" %>
 <%@ Register src="~/Forums/UserControl/ViewAllPost.ascx"tagname="ViewAllPost" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

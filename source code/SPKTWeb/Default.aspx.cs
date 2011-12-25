@@ -13,12 +13,12 @@ namespace SPKTWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             re = new SPKTCore.Core.Impl.Redirector();
-            if (Register1.l == true)
-                Register1.Visible = false;
         }
+
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Register1.Visible = true;
+            re.Redirect("~/Accounts/Register.aspx");
+            //Register1.Visible = true;
         }
     }
 }

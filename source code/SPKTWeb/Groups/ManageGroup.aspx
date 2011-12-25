@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="ManageGroup.aspx.cs" Inherits="SPKTWeb.Groups.ManageGroup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_PE.master" CodeBehind="ManageGroup.aspx.cs" Inherits="SPKTWeb.Groups.ManageGroup" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
@@ -59,7 +59,7 @@
                 <div class="divContainerCell"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></div>
                 <div class="divContainerCellHeader" style="margin-left:-8px;">Public:</div>
                 <div class="divContainerCell"><asp:CheckBox id="chkIsPublic" runat="server" /></div>
-                <div class="divContainerCellHeader" style=" margin-left:-160px;">Logo:</div>
+                <div class="divContainerCellHeader" style=" margin-left:-10px;">Logo:</div>
                 <div class="divContainerCell"><asp:FileUpload ID="fuLogo" runat="server" /></div>
                 <div class="divContainerCell"><asp:Image ID="imgLogo" runat="server" /></div>
                 

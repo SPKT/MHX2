@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_P.master" CodeBehind="MyGroups.aspx.cs" Inherits="SPKTWeb.Groups.MyGroups" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MXH_PE.master" CodeBehind="MyGroups.aspx.cs" Inherits="SPKTWeb.Groups.MyGroups" EnableEventValidation="false" %>
 
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 
