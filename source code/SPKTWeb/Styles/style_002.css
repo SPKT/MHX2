@@ -1,0 +1,511 @@
+/*
+Theme Name: CanadaWood
+Theme URI: http://canadawood.org/
+Description: Custom theme for CanadaWood.
+Author: brp
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu
+*/
+
+/*
+LAYOUT: Two columns
+DESCRIPTION: Two-column fixed layout with one sidebar right of content
+*/
+
+/*
+adjust padding in main menu to fit Blog in without other items jumping to 2 lines
+
+#mainmenu td table td{padding:0 13px 0 11px;}
+*/
+
+#blog_container {
+	text-align: left;
+	margin:15px 0px 20px;
+	background: url("images/bg_blog.jpg") repeat-y scroll 0 0 transparent;
+	font-size:14px;
+
+}
+#content {
+	float: left;
+	padding:0px 20px 0px 10px;
+	width:680px;
+}
+#blog_title {
+	height:34px;
+	border-bottom:2px solid #E5E5E5;
+}
+
+#authors_title {
+	padding:16px 0px 6px;
+	border-bottom:1px solid #E5E5E5;
+	font-size:20px;
+	font-weight:bold;
+}
+
+
+.wrap_sidebar {
+	float: right;
+	overflow: hidden;
+	width: 250px;
+	font-size:12px;
+	color:#676767;
+}
+
+.wrap_sidebar ul {
+	padding: 0px 10px;
+}
+
+.wrap_sidebar ul a {
+	font-weight: bold;
+	color:#960000;
+	text-decoration:none;
+}
+
+.side_recent, .side_calendar, .side_dyk, .side_contributors, .side_categories, .side_archives {
+	padding: 0px 0px 14px;
+}
+
+.side_recent h2, .side_calendars h2, .side_dyk h2, .side_contributors h2, .side_categories h2, .side_archives h2 {
+	height: 37px;
+}
+
+.side_recent li {
+	padding-bottom: 10px;
+}
+
+.side_post_time {
+	font-weight: bold;
+	color:#666666;
+	padding:0px 0px 4px;
+}
+
+.side_calendar li {
+	padding:3px 0 10px 30px;
+	background: url("images/icon_calendar.jpg") no-repeat scroll 0 5px transparent;
+}
+
+.side_dyk .dyk_frame {
+	padding:4px 0px 6px 8px;
+	margin:0 0 10px 0;
+	height:200px;
+	overflow-y:scroll;
+}
+
+.side_dyk .dyk_frame h4 {
+	font-size:14px;
+	font-weight:bold;
+}
+
+.side_dyk .dyk_frame ul {
+	padding:0 0 0 14px;
+}
+
+.side_dyk .dyk_frame ul li {
+	padding:6px 2px 0 0;
+	list-style-type:disc;
+	list-style-position:outside;
+}
+
+.side_contributors ul {
+	padding:0px 0px 0px 10px;
+}
+
+.side_contributors li {
+	float: left;
+	width:50px;
+	padding:0px 10px 10px 0px;
+}
+
+.side_categories ul {
+	padding-bottom:4px;
+}
+
+.side_categories li {
+	padding:0px 10px 0px 22px;
+	margin-bottom:6px;
+	vertical-align:middle;
+	line-height:14px;
+}
+
+.side_categories li.cat_china {
+	float:left;
+	width:42px;
+	background: url("images/flag_china.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.side_categories li.cat_canada {
+	float:right;
+	width:122px;
+	background: url("images/flag_canada.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.side_categories li.cat_korea {
+	float:left;
+	width:42px;
+	background: url("images/flag_korea.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.side_categories li.cat_uk {
+	float:right;
+	width:122px;
+	background: url("images/flag_uk.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.side_categories li.cat_japan {
+	float:left;
+	width:42px;
+	background: url("images/flag_japan.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.side_categories li.cat_europe {
+	float:right;
+	width:122px;
+	background: url("images/flag_europe.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.side_categories li.cat_india {
+	float:left;
+	width:42px;
+	background: url("images/flag_india.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.side_archives li {
+	padding: 0px 0px 8px;
+}
+
+
+#primary,
+#secondary {
+	float: right;
+	overflow: hidden;
+	width: 250px;
+}
+#secondary {
+	clear: right;
+}
+
+
+.postwrapper {
+	margin:23px 0px 7px;
+}
+.authorbox {
+	float: left;
+	width:120px;
+	padding-right:20px;
+}
+
+.authorbox a, .other_links a {
+	color:#A51E22;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.authorbox p {
+	padding:5px 0px 0px;
+	color:#676767;
+}
+
+p.posttime {
+	font-size:12px;
+	color:#999999;
+}
+
+p.jobtitle {
+}
+
+p.postcomments {
+	font-size:12px;
+	padding:2px 0px 2px 20px;
+	background: url("images/bg_comment_icon.jpg") no-repeat scroll 0 0 transparent;
+	line-height:12px;
+	margin:10px 0px 0px;
+}
+
+
+
+.postbox {
+	display:inline-block;
+	margin:0px 0px 0px 0px;
+	width:540px;
+	_width:530px;
+	color:#333333;
+}
+
+.posttitle {
+	font-size:20px;
+	font-weight:bold;
+}
+
+.posttitle a {
+	text-decoration:none;
+	color:#333333;
+}
+
+.posttitle a:hover {
+	text-decoration:underline;
+	color:#333333;
+}
+
+.postbox p {
+	padding:8px 0px 0px 0px;
+}
+
+.entry {
+	padding:0px 0px 8px 0px;
+	border-bottom:1px solid #E5E5E5;
+}
+
+.more-link {
+	text-decoration:underline;
+	color:#A51E22;
+	font-weight:bold;
+}
+
+.other_links {
+	padding:8px 0px 0px;
+}
+
+.posted_in {
+	float:left;
+	padding-right:20px;
+}
+
+.add_this {
+	float:left;
+}
+
+.add_comment {
+	float:right;
+	font-size:12px;
+	padding:2px 0px 2px 20px;
+	background: url("images/bg_comment_icon.jpg") no-repeat scroll 0 0 transparent;
+	line-height:12px;
+}
+
+
+.navigation {
+	padding:12px 0px 0px 140px;
+}
+
+/* style for wp-paginavi */
+.wp-pagenavi {
+	clear: both;
+	padding:12px 0px 0px 140px;
+	height:24px;
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+	text-decoration: none;
+	border: 1px solid #8B97A3;
+	color:#A51E22; 
+	margin-right:4px; 
+	padding:3px 6px; 
+	text-align:center; 
+	text-decoration:none;	
+	padding: 3px 5px;
+}
+
+.wp-pagenavi a:hover, .wp-pagenavi a:active, .wp-pagenavi span.current {
+	background:#A51E22; 
+	color:#ffffff;
+}
+
+.wp-pagenavi span.current {
+	font-weight: bold;
+}
+
+
+/* style for wp-paginate
+.wp-paginate {padding:0; margin:0;}
+.wp-paginate li {display:inline; list-style:none;}
+.wp-paginate a {background:#ffffff; border:1px solid #8B97A3; color:#A51E22; margin-right:4px; padding:3px 6px; text-align:center; text-decoration:none;}
+.wp-paginate a:hover, .wp-paginate a:active {background:#A51E22; color:#ffffff;}
+.wp-paginate .title {color:#A51E22; margin-right:4px;}
+.wp-paginate .gap {color:#999; margin-right:4px;}
+.wp-paginate .current {color:#fff; background:#A51E22; border:1px solid #A51E22; margin-right:4px; padding:3px 6px;}
+.wp-paginate .page {}
+.wp-paginate .prev, .wp-paginate .next {}
+
+*** style overrides for comments pagination ***
+.wp-paginate-comments {}
+.wp-paginate-comments li {}
+.wp-paginate-comments a {}
+.wp-paginate-comments a:hover, .wp-paginate-comments a:active {}
+.wp-paginate-comments .title {}
+.wp-paginate-comments .gap {}
+.wp-paginate-comments .current {}
+.wp-paginate-comments .page {}
+.wp-paginate-comments .prev, .wp-paginate-comments .next {}
+ */
+ 
+#comments-title {
+	font-size:16px;
+	font-weight:bold;
+	padding:0px 0px 0px 140px;
+}
+#comments-title div {
+	background: url("images/bg_comment_icon.jpg") no-repeat scroll 0 1px transparent;
+	border-bottom:1px solid #E5E5E5;
+	padding:0px 0px 16px 20px;
+}
+
+#comments {
+	padding:14px 0px 0px 0px;
+	clear:both;
+}
+
+.commentlist {
+	clear:both;
+}
+
+.comment {
+	padding:14px 0px 0px 0px;
+	margin-left:-20px;
+	clear:both;
+}
+
+.comment_meta {
+	float:left;
+	width:140px;
+	padding-right:20px;
+	font-size:12px;
+}
+
+.comment_author {
+	color:#A51E22;
+	font-weight:bold;
+	text-align:right;
+	padding-bottom:6px;
+}
+
+.comment_author a {
+	color:#A51E22;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.comment_date {
+	color:#d0d0d0d;
+	text-align:right;
+	font-size:11px;
+}
+
+.comment-body {
+	float:left;
+	width:540px;
+	border-bottom:1px solid #E5E5E5;
+	padding:0px 0px 16px 0px;
+	min-height:32px;
+	line-height:20px;
+}
+
+.comment-awaiting-moderation {
+	font-weight:bold;
+	font-style:italic;
+	color:#d0d0d0d;
+}
+
+#respond {
+	clear:both;
+	padding:30px 0px 0px 140px;
+}
+
+#respond h3 {
+	font-size:16px;
+	font-weight:bold;
+}
+
+#respond p {
+	padding:15px 0px 0px 0px;
+}
+
+#respond p.comment-form-submit {
+	padding:20px 0px 0px 0px;
+}
+
+#respond p label {
+	display:block;
+	font-size:12px;
+	font-weight:bold;
+	padding:0px 0px 8px 0px;
+}
+
+#respond p input, #respond p textarea {
+	padding:4px;
+}
+
+
+
+.authorwrapper {
+	margin:20px 0px 0px;
+	padding-bottom:16px;
+	border-bottom:1px solid #E5E5E5;
+}
+
+.authorwrapper .authorbox {
+	float: left;
+	width:100px;
+}
+
+.auth_details {
+	margin:0px 0px 0px 0px;
+	width:560px;
+	float: left;
+}
+
+.auth_name {
+	font-size:18px;
+	font-weight:bold;
+	line-height:18px;
+}
+
+.auth_title {
+	padding:5px 0px 0px;
+	color:#676767;
+}
+
+.auth_mail {
+	padding:5px 0px 0px;
+	color:#A51E22;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.auth_mail a {
+	color:#A51E22;
+	text-decoration:none;
+}
+
+.auth_desc {
+	padding:8px 0px 0px;
+}
+
+
+.alignright, img.alignright {
+	display: inline;
+	float: right;
+	margin:8px 0px 8px 24px;
+}
+
+.alignleft, img.alignleft {
+	display: inline;
+	float: left;
+	margin:8px 24px 8px 0px;
+}
+
+.aligncenter, dl.aligncenter {
+	display: block;
+	margin-top:8px;
+	margin-bottom:8px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption-text {
+	font-size:12px;
+	font-style:italic;
+}
+
+
