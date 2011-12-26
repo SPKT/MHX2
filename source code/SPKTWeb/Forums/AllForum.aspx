@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" EnableEventValidation="false" %>
 <%@ Import Namespace="SPKTCore.Core.Domain"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    <style type="text/css">

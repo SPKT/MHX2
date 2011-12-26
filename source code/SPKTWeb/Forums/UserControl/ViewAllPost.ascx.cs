@@ -32,8 +32,6 @@ namespace SPKTWeb.Forums.UserControl
 
         public void LoadForumPost(List<BoardPost> Threads, BoardForum forum)
         {            
-            //UCViewAllPost.litCatePageName.Text = CategoryPageName;
-            //UCViewAllPost.litForPageName.Text = ForumPageName;
             repViewAllPost.DataSource = Threads;
             repViewAllPost.DataBind();
 

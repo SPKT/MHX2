@@ -75,7 +75,6 @@
     <Content Include="AddData.aspx" />
     <Content Include="Admins\AddCategory.aspx" />
     <Content Include="Admins\AddForum.aspx" />
-    <Content Include="Admins\Manage.aspx" />
     <Content Include="App.js" />
     <Content Include="App_Data\SPKT.mdf" />
     <Content Include="App_Data\SPKT_log.ldf">
@@ -94,7 +93,6 @@
     <Content Include="Comments\UserControl\BoxComment.ascx" />
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
     <Content Include="Default.aspx" />
-    <Content Include="Error\FileLog.txt" />
     <Content Include="Forums\AllForum.aspx" />
     <Content Include="Forums\Forum.aspx" />
     <Content Include="Forums\NewPost.aspx" />
@@ -502,8 +500,6 @@
     <Content Include="MXH_NEW.Master" />
     <Content Include="MXH_1.Master" />
     <Content Include="MXH_P.Master" />
-    <Content Include="MXH_E.Master" />
-    <Content Include="MXH_PE.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -532,7 +528,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
     <Content Include="Xinha\examples\custom.css" />
     <Content Include="Xinha\examples\dynamic.css" />
     <Content Include="Xinha\examples\Extended.html" />
@@ -2002,13 +1997,6 @@
       <DependentUpon>AddForum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\Interface\IAddForum.cs" />
-    <Compile Include="Admins\Manage.aspx.cs">
-      <DependentUpon>Manage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admins\Manage.aspx.designer.cs">
-      <DependentUpon>Manage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
     <Compile Include="Comments\Interface\IBoxComment.cs" />
@@ -2043,7 +2031,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Error\myLogImp.cs" />
     <Compile Include="Forums\AllForum.aspx.cs">
       <DependentUpon>AllForum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2528,13 +2515,6 @@
     <Compile Include="MXH_2.Master.designer.cs">
       <DependentUpon>MXH_2.Master</DependentUpon>
     </Compile>
-    <Compile Include="MXH_E.Master.cs">
-      <DependentUpon>MXH_E.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH_E.Master.designer.cs">
-      <DependentUpon>MXH_E.Master</DependentUpon>
-    </Compile>
     <Compile Include="MXH_NEW.Master.cs">
       <DependentUpon>MXH_NEW.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2548,13 +2528,6 @@
     </Compile>
     <Compile Include="MXH_P.Master.designer.cs">
       <DependentUpon>MXH_P.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MXH_PE.Master.cs">
-      <DependentUpon>MXH_PE.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH_PE.Master.designer.cs">
-      <DependentUpon>MXH_PE.Master</DependentUpon>
     </Compile>
     <Compile Include="NestedMasterPage1.master.cs">
       <DependentUpon>NestedMasterPage1.master</DependentUpon>
@@ -2789,13 +2762,6 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\ar\" />
@@ -2814,6 +2780,7 @@
     <Folder Include="bin\tr-TR\" />
     <Folder Include="bin\zh-CHS\" />
     <Folder Include="bin\zh-CHT\" />
+    <Folder Include="Error\" />
     <Folder Include="Searchs\UserControl\" />
     <Folder Include="Xinha\plugins\CSS\lang\" />
     <Folder Include="Xinha\plugins\HorizontalRule\img\" />

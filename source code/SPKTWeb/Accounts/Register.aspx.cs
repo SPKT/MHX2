@@ -41,9 +41,9 @@ namespace SPKTWeb.Accounts
 
         private void Log(string ex)
         {
-            String path = "~/Error/FileLog.txt";
-            myLogImp log = new myLogImp();
-            log.LogError(Request.Path, ex, Server.MapPath(path));
+            //String path = "~/Error/FileLog.txt";
+            //myLogImp log = new myLogImp();
+            //log.LogError(Request.Path, ex, Server.MapPath(path));
         }
 
         public void ShowErrorMessage(string Message)
