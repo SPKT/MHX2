@@ -28,6 +28,8 @@
                 <div class="item_banner_text">
                     <div id="item_banner_2" style="height: 23px;" align="center">
                         <asp:Image ID="img_av" runat="server" Width="20px" Height="15px" />
+                        <a href="Default.aspx" style="color:DarkBlue" visible="false" id="linkLogin" runat="server">Đăng nhập</a>
+                        <a href="/Accounts/Register.aspx" style="color:DarkBlue" visible="false" id="linkRegister" runat="server">Đăng ký</a>
                         <asp:Label ID="lblUserName" runat="server" ForeColor="DarkBlue" Text="Xin chao" Font-Size="Small"></asp:Label>
                         <asp:Image Width="13px" Height="13px" ImageUrl="Image/expand.jpg" runat="server"
                             ID="img_1" />
@@ -98,7 +100,7 @@
                     </div>
                     <div id="box_right1"style="background-color:White;">
                         <div>
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            <asp:ContentPlaceHolder ID="right" runat="server">
                             </asp:ContentPlaceHolder>
                         </div>
                     </div>

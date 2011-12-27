@@ -31,8 +31,11 @@ namespace SPKTWeb
         {
             if (userName == "")
             {
-                lblUserName.Text = "Chưa đăng nhập";
+                lblUserName.Text = "";
                 img_1.Visible = false;
+                linkLogin.Visible = true;
+                linkRegister.Visible = true;
+                Panel1.Visible = img_1.Visible;
                 img_av.Visible = false;
             }
             else
@@ -43,7 +46,7 @@ namespace SPKTWeb
             }
         }
 
-        protected void thaydoi_Click(object sender, EventArgs e)
+        protected void lb_thaydoi_Click(object sender, EventArgs e)
         {
             _redirector.Redirect("~/Accounts/EditAccount.aspx");
         }

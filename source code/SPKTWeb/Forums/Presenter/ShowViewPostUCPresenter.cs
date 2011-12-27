@@ -39,7 +39,7 @@ namespace SPKTWeb.Forums.Presenter
 
         public List<BoardPost> LoadPosts()
         {
-            return _postRepository.GetTopPost(forum.ForumID);
+            return _postRepository.GetTopPost(_webContext.ForumID);
         }
     }
 }

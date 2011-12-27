@@ -15,12 +15,13 @@ namespace SPKTWeb.Forums.UserControl
         ShowViewPostUCPresenter _presenter;
         protected void Page_Load(object sender, EventArgs e)
         {
-            _presenter = new ShowViewPostUCPresenter();
+           // _presenter = new ShowViewPostUCPresenter();
             _presenter.Init(this);
-        }
 
+        }
         public void LoadPost()
         {
+            _presenter = new ShowViewPostUCPresenter();
             List<BoardPost> posts = _presenter.LoadPosts();
             repPosts.DataSource = posts;
             repPosts.DataBind();
