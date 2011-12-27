@@ -16,5 +16,6 @@ namespace SPKTCore.Core
         List<Account> GetListFriendByAccount(int AccountID);
         List<Account> FriendMutual(Account account);
         int CountFiendMutual(Account account, Account accountview);
+        List<Account> SearchFriend(Account account);
     }
 }

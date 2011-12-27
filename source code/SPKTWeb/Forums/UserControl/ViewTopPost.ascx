@@ -11,6 +11,7 @@
              <div>                  
                     <a href='/forums/ViewPost1.aspx?PostID=<%#((BoardPost)Container.DataItem).PostID%>' > <%#((BoardPost)Container.DataItem).Name.ToLower() %></a>
                     <asp:Label id="lblCreateDate" Font-Size="Smaller" runat="server" Text="Ngày tạo:"><%#((BoardPost)Container.DataItem).CreateDate.ToString("dd/MM/yyyy HH:mm:ss")%></asp:Label>
+                    <asp:Label id="lblCategory" Visible="false" Font-Size="Smaller" runat="server" Text="Trên:"><%#((BoardPost)Container.DataItem).categoryName%></asp:Label>
                     Đăng bởi: <asp:HyperLink ID="linkUsername" NavigateUrl='<%# "/" + ((BoardPost)Container.DataItem).Username %>' runat="server" Text=' <%#((BoardPost)Container.DataItem).Username %>'></asp:HyperLink>
                 <div style="">
                     <asp:Label ID="lblViewCount" Text="Tổng lượt xem:" runat="server"> <%#((BoardPost)Container.DataItem).ViewCount.ToString() %></asp:Label>

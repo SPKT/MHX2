@@ -86,7 +86,7 @@ namespace SPKTCore.Core.Impl
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.ProfileModified;
             SaveAlert(alert);
-            SendAlertToFriends(alert);
+            //SendAlertToFriends(alert);
         }
         public void AddStatusUpdateAlert(StatusUpdate statusUpdate)
         {
@@ -101,14 +101,14 @@ namespace SPKTCore.Core.Impl
                             "   " + statusUpdate.Status + "</div>";*/
             if (statusUpdate.SenderID == statusUpdate.AccountID)
             {
-                if (statusUpdate.VisibilityLevel.VisibilityLevelID != 3)
+                if (statusUpdate.VisibilityLevelID != 3)
                 {
                     alertMessage = "<a href=\"/UserProfile2.aspx?AccountID=" + statusUpdate.SenderID.ToString() + "\">" +
                         _accountRepository.GetAccountByID(statusUpdate.SenderID).UserName + "</a>" +
                          "vừa mới đăng trạng thái: " + statusUpdate.Status;
                     alert.Message = alertMessage;
                     SaveAlert(alert);
-                    SendAlertToFriends(alert);    
+                    //SendAlertToFriends(alert);    
                 }
             }
 
@@ -135,7 +135,7 @@ namespace SPKTCore.Core.Impl
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewAvatar;
             SaveAlert(alert);
-            SendAlertToFriends(alert);
+            //SendAlertToFriends(alert);
         }
 
         public List<Alert> GetAlertsByAccountID(Int32 AccountID)
@@ -204,7 +204,7 @@ namespace SPKTCore.Core.Impl
                 {
                     alert.AlertID = 0;
                     alert.AccountID = id;
-                    SaveAlert(alert);
+                    //SaveAlert(alert);
                     notify.AccountID = alert.AccountID;
                     notify.Body = alert.Message;
                     notify.IsRead = false;
@@ -277,7 +277,7 @@ namespace SPKTCore.Core.Impl
                            "/" + forum.PageName.ToLower() + "/" + thread.PageName.ToLower() + ".aspx" + "\">"+thread.Name+":"+post.Post.Substring(0,10)+"..."+"</a></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
-            SendAlertToFriends(alert);
+            //SendAlertToFriends(alert);
         }
 
          public void AddNewBoardThreadAlert(BoardCategory category, BoardForum forum, BoardPost post)
@@ -300,7 +300,7 @@ namespace SPKTCore.Core.Impl
             alert.Message = alertMessage;
             alert.Message = alertMessage;
             SaveAlert(alert);
-            SendAlertToFriends(alert);
+            //SendAlertToFriends(alert);
         }
 
           public void AddNewBlogPostAlert(Blog blog)

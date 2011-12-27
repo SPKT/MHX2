@@ -9,7 +9,7 @@ namespace SPKTWeb.Homes.Interface
     public interface IHome
     {
         void DisplayCurrentAccount(Account account);
-        void LoadStatus(List<StatusUpdate> listStatus);
+        void LoadStatus(List<StatusUpdate> listStatus, List<Alert> listAlert);
         void LoadStatusControl(List<VisibilityLevel> ListVisibilityLevel, bool IsUser);
 
     }

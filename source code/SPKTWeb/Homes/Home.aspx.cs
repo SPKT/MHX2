@@ -37,12 +37,13 @@ namespace SPKTWeb.Homes
             else
                 lblXinChao.Text = "Chưa Đăng Nhập";
         }
-        public void LoadStatus( List<StatusUpdate> listStatus)
+        public void LoadStatus(List<StatusUpdate> listStatus, List<Alert> listAlert)
         {
             LogUtil.Logger.Writeln(String.Format("<font color='red'><b>LoadStatus: PostBack:{0}</b> </font>", IsPostBack));
             gvStatus.DataSource = listStatus;
             gvStatus.DataBind();
-
+            gvAlert.DataSource = listAlert;
+            gvAlert.DataBind();
         }
         protected void btnUpdate_Click(object sender, EventArgs e)
         {

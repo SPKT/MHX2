@@ -11,6 +11,7 @@ namespace SPKTCore.Core.Domain
     {
         IGroupRepository _groupRepository;
         IBoardPostRepository _boardPostRepository;
+        IBoardForumRepository _boardforumRepository;
         public int groupID
         {
             get
@@ -19,6 +20,15 @@ namespace SPKTCore.Core.Domain
                  return _groupRepository.GetGroupByForumID(this.ForumID).GroupID;
             }
             
+        }
+        public string categoryName
+        {
+            get
+            {
+                _boardforumRepository = ObjectFactory.GetInstance<IBoardForumRepository>();
+                return _boardforumRepository.GetForumByID(this.ForumID).Name;
+            }
+
         }
     
     }

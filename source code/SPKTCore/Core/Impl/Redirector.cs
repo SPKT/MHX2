@@ -61,7 +61,7 @@ namespace SPKTCore.Core.Impl
 
         public void GotoHomePage()
         {
-            Redirect("~/Home/Home.aspx");
+            Redirect("~/Homes/Home.aspx");
         }
 
 

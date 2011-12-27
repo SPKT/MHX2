@@ -63,6 +63,7 @@ namespace SPKTWeb.Forums.UserControl
             lblForumName.Text = forum.Name;
             lblCreateDate.Text = forum.CreateDate.ToLongDateString();
             lblPostCount.Text = forum.PostCount.ToString();
+            hlkTatCaBaiViet.NavigateUrl = "/Forums/ViewForum1.aspx?ForumID=" + forum.ForumID.ToString();
             hlkDangBaiMoi.NavigateUrl = "/Forums/Post.aspx?IsThread=1&ForumID=" + forum.ForumID.ToString();
         }
     }

@@ -3,6 +3,10 @@
 <%@ Register src="UserControl/GroupForumUC.ascx" tagname="GroupForumUC" tagprefix="uc1" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 
+<%@ Register src="UserControl/GroupHeader.ascx" tagname="GroupHeader" tagprefix="uc2" %>
+
+<%@ Register src="UserControl/ViewMemberUC.ascx" tagname="ViewMemberUC" tagprefix="uc3" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
             .divMain
@@ -64,7 +68,7 @@
 
     <div class="divContainer">
         <div class="divContainerBox">
-            <div class="divContainerRow" style="width:100%;">
+            <%--<div class="divContainerRow" style="width:100%;">
                 <asp:Label ForeColor="Red" ID="lblMessage" runat="server"></asp:Label>
                 <asp:Panel ID="pnlPublic" runat="server">
                     <div style="float: none;">
@@ -92,10 +96,13 @@
                     <asp:HyperLink ID="hylinkViewMembers" Text="Thành viên" NavigateUrl="" runat="server"></asp:HyperLink>
                     
                 </asp:Panel>
-            </div>
+            </div>--%>
+            <asp:Panel ID="pnlHeader" runat="server">
+            <uc2:GroupHeader ID="UCGroupHeader" runat="server" />
+            </asp:Panel>
         </div>
         <div class="divContainerunder">
-        <asp:Panel ID="pnlMember" runat="server">
+<%--        <asp:Panel ID="pnlMember" runat="server">
             Danh sách thành viên
             <br />
             <asp:Repeater ID="reMember" runat="server" OnItemCommand="reMember_ItemCommand">
@@ -111,6 +118,9 @@
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
+            </asp:Panel>--%>
+            <asp:Panel ID="pnlMember" runat="server">
+            <uc3:ViewMemberUC ID="ViewMemberUC" runat="server" />
             </asp:Panel>
         </div>
         <div style="width: 80%">

@@ -27,7 +27,7 @@ namespace SPKTWeb.Groups
         public void LoadData(Group group, List<Account> accounts)
         {
             //((SiteMaster)Master).Title = group.Name;
-            lblName.Text = group.Name;
+            /*lblName.Text = group.Name;
             imgGroupLogo.ImageUrl = "/files/photos/" + _fileService.GetFullFilePathByFileID(group.FileID, File.Sizes.S);
             lblCreateDate.Text = group.CreateDate.ToShortDateString();
             lblUpdateDate.Text = group.UpdateDate.ToShortDateString();
@@ -35,25 +35,33 @@ namespace SPKTWeb.Groups
            
             hylinkViewMembers.NavigateUrl = "~/Groups/ViewManageMember.aspx?GroupID=" + group.GroupID;
             reMember.DataSource = accounts;
-            reMember.DataBind();
+            reMember.DataBind();*/
+            UCGroupHeader.accounts = accounts;
+            UCGroupHeader.group = group;
+            pnlHeader.Controls.Add(UCGroupHeader);
+            ViewMemberUC.accounts = accounts;
+            pnlMember.Controls.Add(ViewMemberUC);
         }
 
         public void ShowPublic(bool Visible)
         {
-            pnlPublic.Visible = Visible;
+            //pnlPublic.Visible = Visible;
+            UCGroupHeader.ShowPublic(Visible);
         }
 
         public void ShowPrivate(bool Visible)
         {
-            pnlPrivate.Visible = Visible;
-            pnlForum.Visible = Visible;
-            pnlMember.Visible = Visible;
-            lblPrivateMessage.Visible = !Visible;
+            //pnlPrivate.Visible = Visible;
+            //pnlForum.Visible = Visible;
+            //pnlMember.Visible = Visible;
+            //lblPrivateMessage.Visible = !Visible;
+            UCGroupHeader.ShowPrivate(Visible);
         }
 
         public void ShowRequestMembership(bool Visible)
         {
-            lbRequestMembership.Visible = Visible;
+            //lbRequestMembership.Visible = Visible;
+            UCGroupHeader.ShowRequestMembership(Visible);
         }
 
 
@@ -65,7 +73,8 @@ namespace SPKTWeb.Groups
 
         public void ShowMessage(string Message)
         {
-            lblMessage.Text = Message;
+            //lblMessage.Text = Message;
+            UCGroupHeader.ShowMessage(Message);
         }
 
 

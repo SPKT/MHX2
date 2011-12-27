@@ -10,6 +10,45 @@
     <div style="width:100%; height:100px; background-color:White; margin-top:0px;">
        <uc5:rightmenu ID="uc" runat="server" />
     </div>
+    <div style="width:100%; height:100%; background-color:white; margin-top:0px;">
+    <div >
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server" >
+            <ContentTemplate>
+                <asp:Panel ID="Panel2" runat="server">
+                    <asp:GridView ID="gvAlert" runat="server" AutoGenerateColumns="False" BorderColor="#9999FF"
+                        BorderWidth="1px" BackColor="White" PageSize="20" AllowPaging="true" CellPadding="2" ForeColor="Black"
+                        GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+  
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <div style="color:Blue";">
+                                        <%#Eval("Message") %>
+                                    </div>
+                                    <div style="color:Gray; font-size:small">
+                                        Ngày:
+                                        <%#((DateTime)Eval("CreateDate")).ToString("dd:MM:yyy HH:mm:ss") %>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <EditRowStyle  />
+                        <EmptyDataRowStyle  />
+                        <FooterStyle  />
+                        <HeaderStyle  />
+                        <PagerStyle />
+                        <SelectedRowStyle  />
+                        <SortedAscendingCellStyle BackColor="#FAFAE7" />
+                        <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+                        <SortedDescendingCellStyle BackColor="#E1DB9C" />
+                        <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+                    </asp:GridView>
+                </asp:Panel>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
 <div class="box" style="width:100%; height:100%;">

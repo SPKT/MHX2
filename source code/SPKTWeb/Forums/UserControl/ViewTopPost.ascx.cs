@@ -15,14 +15,26 @@ namespace SPKTWeb.Forums.UserControl
         ShowViewPostUCPresenter _presenter;
         protected void Page_Load(object sender, EventArgs e)
         {
-           // _presenter = new ShowViewPostUCPresenter();
+            _presenter = new ShowViewPostUCPresenter();
             _presenter.Init(this);
 
         }
-        public void LoadPost()
+        public void LoadTopPostInForum()
         {
             _presenter = new ShowViewPostUCPresenter();
             List<BoardPost> posts = _presenter.LoadPosts();
+            repPosts.DataSource = posts;
+            repPosts.DataBind();
+        }
+
+
+        public void LoadTopPostInCategory()
+        {
+            _presenter = new ShowViewPostUCPresenter();
+            List<BoardPost> posts = _presenter.LoadPostsInCate();
+            Label lblDate = repPosts.FindControl("lblCreateDate") as Label;
+            if (lblDate != null)
+                lblDate.Text = "";
             repPosts.DataSource = posts;
             repPosts.DataBind();
         }

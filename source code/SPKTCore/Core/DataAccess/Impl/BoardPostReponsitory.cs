@@ -179,7 +179,7 @@ namespace SPKTCore.Core.DataAccess.Impl
             using (SPKTDataContext dc = _conn.GetContext())
             {
                 IEnumerable<BoardPost> posts =
-                    dc.BoardPosts.Where(p => p.ForumID == ForumID && p.IsThread).OrderBy(p => p.ViewCount).Take(10);
+                    dc.BoardPosts.Where(p => p.ForumID == ForumID && p.IsThread).OrderBy(p => p.ViewCount).Take(6);
                 result = posts.ToList();
             }
             result.Reverse();

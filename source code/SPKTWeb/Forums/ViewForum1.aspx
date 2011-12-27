@@ -20,8 +20,13 @@
 </div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="right" runat="server">
-
+<div>
     <uc3:ViewTopPost ID="UCViewTopPost" runat="server" />
+</div>
+<div>
 
+    <uc3:ViewTopPost ID="UCViewTopPost1" runat="server" />
+
+</div>
 </asp:Content>
 
