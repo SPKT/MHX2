@@ -96,7 +96,12 @@
                             </asp:ContentPlaceHolder>
                         </div>
                     </div>
-
+                    <div id="box_right1"style="background-color:White;">
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
                     
         </div>
             <div style="height: 20px; margin-top: 100%; margin-bottom: 0px; float: none; background-image: url('/Image/foot.jpg');

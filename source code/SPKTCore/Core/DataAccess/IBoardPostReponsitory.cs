@@ -18,5 +18,6 @@ namespace SPKTCore.Core.DataAccess
         void DeletePostsByForumID(int ForumID);
 
         BoardPost GetLastPost(long PostID);
+        List<BoardPost> GetTopPost(int ForumID);//
     }
 }

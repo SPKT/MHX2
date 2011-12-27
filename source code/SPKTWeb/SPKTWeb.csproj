@@ -97,12 +97,12 @@
     <Content Include="Error\FileLog.txt" />
     <Content Include="Forums\AllForum.aspx" />
     <Content Include="Forums\Forum.aspx" />
-    <Content Include="Forums\NewPost.aspx" />
     <Content Include="Forums\Post.aspx" />
     <Content Include="Forums\UserControl\ForumHeader.ascx" />
     <Content Include="Forums\UserControl\Post.ascx" />
     <Content Include="Forums\UserControl\ViewAllPost.ascx" />
     <Content Include="Forums\UserControl\Viewpost.ascx" />
+    <Content Include="Forums\UserControl\ViewTopPost.ascx" />
     <Content Include="Forums\ViewForum1.aspx" />
     <Content Include="Forums\ViewPost.aspx" />
     <Content Include="Forums\ViewPost1.aspx" />
@@ -2062,15 +2062,9 @@
     </Compile>
     <Compile Include="Forums\Interface\IForum.cs" />
     <Compile Include="Forums\Interface\IPost.cs" />
+    <Compile Include="Forums\Interface\IShowViewPostUC.cs" />
     <Compile Include="Forums\Interface\IViewForum.cs" />
     <Compile Include="Forums\Interface\IViewPost.cs" />
-    <Compile Include="Forums\NewPost.aspx.cs">
-      <DependentUpon>NewPost.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forums\NewPost.aspx.designer.cs">
-      <DependentUpon>NewPost.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Forums\Post.aspx.cs">
       <DependentUpon>Post.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2079,6 +2073,7 @@
       <DependentUpon>Post.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forums\Presenter\ForumPresenter.cs" />
+    <Compile Include="Forums\Presenter\ShowViewPostUCPresenter.cs" />
     <Compile Include="Forums\UserControl\ForumHeader.ascx.cs">
       <DependentUpon>ForumHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2106,6 +2101,13 @@
     </Compile>
     <Compile Include="Forums\UserControl\Viewpost.ascx.designer.cs">
       <DependentUpon>Viewpost.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forums\UserControl\ViewTopPost.ascx.cs">
+      <DependentUpon>ViewTopPost.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forums\UserControl\ViewTopPost.ascx.designer.cs">
+      <DependentUpon>ViewTopPost.ascx</DependentUpon>
     </Compile>
     <Compile Include="Forums\ViewForum1.aspx.cs">
       <DependentUpon>ViewForum1.aspx</DependentUpon>

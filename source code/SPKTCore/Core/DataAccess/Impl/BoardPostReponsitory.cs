@@ -171,5 +171,19 @@ namespace SPKTCore.Core.DataAccess.Impl
                 dc.SubmitChanges();
             }
         }
+
+
+        public List<BoardPost> GetTopPost(int ForumID)//lấy posts nhiều người xem nhất
+        {
+            List<BoardPost> result;
+            using (SPKTDataContext dc = _conn.GetContext())
+            {
+                IEnumerable<BoardPost> posts =
+                    dc.BoardPosts.Where(p => p.ForumID == ForumID && p.IsThread).OrderBy(p => p.ViewCount).Take(10);
+                result = posts.ToList();
+            }
+            result.Reverse();
+            return result;
+        }
     }
 }

@@ -271,6 +271,16 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
     border-right-color:Silver;
     border-right-style:solid;
 }
+#box_right1
+{
+    width:20%;
+    height:100%;
+    margin-top:10px;
+    float:right;
+    border-right-width:0px;
+    border-right-color:Silver;
+    border-right-style:solid;
+}
 #box_main
 {
     width:60%;
