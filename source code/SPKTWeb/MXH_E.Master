@@ -22,13 +22,13 @@
         <div>
         <div style=" height:40px; float:none; background-color:White;">
         <div class="item_banner_logo">
-        &nbsp;&nbsp;&nbsp;<asp:Image ID="imga" runat="server" ImageUrl="~/Image/logo3.jpg" Width="300px" Height="100%" />
+        &nbsp;&nbsp;&nbsp;<asp:Image ID="imga" runat="server" ImageUrl="/Image/logo3.jpg" Width="300px" Height="100%" />
         </div>
         <div class="item_banner_text">
                     <div id="item_banner_2" style="height: 23px;" align="center">
                         <asp:Image ID="img_av" runat="server" Width="20px" Height="15px" />
                         <asp:Label ID="lblUserName" runat="server" ForeColor="DarkBlue" Text="Xin chao" Font-Size="Small"></asp:Label>
-                        <asp:Image Width="13px" Height="13px" ImageUrl="Image/expand.jpg" runat="server"
+                        <asp:Image Width="13px" Height="13px" ImageUrl="/Image/expand.jpg" runat="server"
                             ID="img_1" />
                         <asp:Panel ID="Panel1" runat="server" Style="display: block; width: 120px; height: 80px;">
                             <div style="margin-left: 86%; margin-top: 7px; float: left">

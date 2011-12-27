@@ -75,6 +75,7 @@
     <Content Include="AddData.aspx" />
     <Content Include="Admins\AddCategory.aspx" />
     <Content Include="Admins\AddForum.aspx" />
+    <Content Include="Admins\Manage.aspx" />
     <Content Include="App.js" />
     <Content Include="App_Data\SPKT.mdf" />
     <Content Include="App_Data\SPKT_log.ldf">
@@ -283,7 +284,6 @@
     <Content Include="Image\nuttim.gif" />
     <Content Include="Image\page_top_bkgr.gif" />
     <Content Include="Image\pencil.jpg" />
-    <Content Include="Image\pencil_note.jpg" />
     <Content Include="Image\post_entry_bkgr.png" />
     <Content Include="Image\ProfileAvatar.aspx" />
     <Content Include="Image\pro_15_0.gif" />
@@ -319,7 +319,6 @@
     <Content Include="Image\ta_p.gif" />
     <Content Include="Image\ta_trai.gif" />
     <Content Include="Image\ta_tren.gif" />
-    <Content Include="Image\thanh.JPG" />
     <Content Include="Image\thanhtren.gif.png" />
     <Content Include="Image\thead.gif" />
     <Content Include="Image\tile_cat.gif" />
@@ -330,10 +329,6 @@
     <Content Include="Image\timnp.gif" />
     <Content Include="Image\timntrai.gif" />
     <Content Include="Image\titlemenu.gif" />
-    <Content Include="Image\tt03-310.png" />
-    <Content Include="Image\tt07-610.png" />
-    <Content Include="Image\tt09-410.png" />
-    <Content Include="Image\ttt01110.png" />
     <Content Include="Image\undo.png" />
     <Content Include="Image\up.jpg" />
     <Content Include="Image\upload_icon.gif" />
@@ -500,6 +495,7 @@
     <Content Include="MXH_NEW.Master" />
     <Content Include="MXH_1.Master" />
     <Content Include="MXH_P.Master" />
+    <Content Include="MXH_E.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1997,6 +1993,13 @@
       <DependentUpon>AddForum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\Interface\IAddForum.cs" />
+    <Compile Include="Admins\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
     <Compile Include="Comments\Interface\IBoxComment.cs" />
@@ -2045,6 +2048,7 @@
     <Compile Include="Forums\Forum.aspx.designer.cs">
       <DependentUpon>Forum.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forums\ForumContextRole.cs" />
     <Compile Include="Forums\Interface\IForum.cs" />
     <Compile Include="Forums\Interface\IPost.cs" />
     <Compile Include="Forums\Interface\IViewForum.cs" />
@@ -2402,7 +2406,9 @@
     <Compile Include="Interface\IMXH1Master.cs" />
     <Compile Include="Interface\IProfileDisplay.cs" />
     <Compile Include="LogUtil.cs" />
+    <Compile Include="MembershipProvider\MxhForumRoleProvider.cs" />
     <Compile Include="MembershipProvider\MxhMembershipProvider.cs" />
+    <Compile Include="MembershipProvider\MXHRoleProvider.cs" />
     <Compile Include="Messages\Interface\ILoadMessage.cs" />
     <Compile Include="Messages\Interface\INewMessage.cs" />
     <Compile Include="Messages\Interface\IReadMessage.cs" />
@@ -2514,6 +2520,13 @@
     </Compile>
     <Compile Include="MXH_2.Master.designer.cs">
       <DependentUpon>MXH_2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MXH_E.Master.cs">
+      <DependentUpon>MXH_E.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_E.Master.designer.cs">
+      <DependentUpon>MXH_E.Master</DependentUpon>
     </Compile>
     <Compile Include="MXH_NEW.Master.cs">
       <DependentUpon>MXH_NEW.Master</DependentUpon>

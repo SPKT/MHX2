@@ -9,6 +9,7 @@ using SPKTWeb.Forums.Presenter;
 using SPKTCore.Core;
 using SPKTCore.Core.Impl;
 using SPKTCore.Core.Domain;
+using System.Web.Security;
 
 namespace SPKTWeb.Forums
 {

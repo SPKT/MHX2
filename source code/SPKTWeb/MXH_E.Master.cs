@@ -91,6 +91,7 @@ namespace SPKTWeb
         {
             SPKTCore.Core.Impl.AccountService ac = new AccountService();
             ac.Logout();
+            System.Web.Security.FormsAuthentication.SignOut();
             _redirector.Redirect("~/Default.aspx");
         }
 

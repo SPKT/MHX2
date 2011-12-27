@@ -5,6 +5,7 @@ using System.Web;
 //using StructureMap;
 using SPKTWeb.Accounts.Interface;
 using SPKTCore.Core;
+using System.Web.Security;
 
 
 namespace SPKTWeb.Accounts.Presenter
@@ -30,7 +31,13 @@ namespace SPKTWeb.Accounts.Presenter
         {
             string message;
             if (_accountService.Login(username, password, rememberMe, out message))
-                _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
+            {
+                FormsAuthentication.SetAuthCookie(username, rememberMe);
+                if (_webContext.ReturnURL != null)
+                    FormsAuthentication.RedirectFromLoginPage(username, true);
+                else
+                    _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
+            }
             else
             {
                 DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
@@ -44,7 +51,11 @@ namespace SPKTWeb.Accounts.Presenter
                         _accountService.ImportAccount(user.Username, user.Email);
                         _accountService.SetLogedIn(username);
                     }
-                    _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
+                    System.Web.Security.FormsAuthentication.SetAuthCookie(username, rememberMe);
+                    if (_webContext.ReturnURL != null)
+                        FormsAuthentication.RedirectFromLoginPage(username, true);
+                    else
+                        _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
                 }
             }
             _view.DisplayMessage(message);

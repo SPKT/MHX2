@@ -42,5 +42,7 @@ namespace SPKTCore.Core
         Int32 GroupID { get; }
         string FilePath { get; }
         HttpFileCollection Files { get; }
+
+        string ReturnURL { get; }
     }
 }

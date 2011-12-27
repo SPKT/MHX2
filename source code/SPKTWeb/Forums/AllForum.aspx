@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" EnableEventValidation="false" %>
 <%@ Import Namespace="SPKTCore.Core.Domain"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    <style type="text/css">
@@ -88,7 +88,7 @@
                         <ItemTemplate>
                             <tr style=" color:Blue;">
                                 <td>
-                                <a href='ViewForum1.aspx?ForumID=<%#((BoardForum)Container.DataItem).ForumID %>' ><%#((BoardForum)Container.DataItem).Name %></a>                                    
+                                <a href='/Forums/ViewForum1.aspx?ForumID=<%#((BoardForum)Container.DataItem).ForumID %>' ><%#((BoardForum)Container.DataItem).Name %></a>                                    
                                     <asp:Literal ID="litPageName" runat="server" Text='<%# ((BoardForum)Container.DataItem).PageName%>' Visible="false"></asp:Literal>
                                 </td>
                                 <td  class="content"><%# ((BoardForum)Container.DataItem).Subject%></td>

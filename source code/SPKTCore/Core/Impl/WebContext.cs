@@ -440,7 +440,7 @@ namespace SPKTCore.Core.Impl
                 return result;
             }
         }
-        //CHAPTER 9
+
         public string ForumPageName
         {
             get
@@ -453,6 +453,15 @@ namespace SPKTCore.Core.Impl
                 return result;
             }
         }
+
+
+        public string ReturnURL
+        {
+            get {
+                return GetQueryStringValue("ReturnUrl");
+            }
+        }
+
     }
 
  }
