@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SPKTWeb.Forums {
+namespace SPKTWeb.Profiles {
     
     
-    public partial class NewPost {
+    public partial class ViewAllNotifycation {
         
         /// <summary>
-        /// ForumHeader1 control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SPKTWeb.Forums.UserControl.ForumHeader ForumHeader1;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// lblTen control.
+        /// pnlNotify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTen;
+        protected global::System.Web.UI.WebControls.Panel pnlNotify;
         
         /// <summary>
-        /// Post1 control.
+        /// repNotify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SPKTWeb.Forums.UserControl.Post Post1;
+        protected global::System.Web.UI.WebControls.Repeater repNotify;
     }
 }

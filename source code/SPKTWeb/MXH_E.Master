@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link type="text/css" rel="Stylesheet" href="Styles/MXH.css" />
+    <link type="text/css" rel="Stylesheet" href="/Styles/MXH.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -27,6 +27,8 @@
         <div class="item_banner_text">
                     <div id="item_banner_2" style="height: 23px;" align="center">
                         <asp:Image ID="img_av" runat="server" Width="20px" Height="15px" />
+                        <a href="Default.aspx" style="color:DarkBlue" visible="false" id="linkLogin" runat="server">Đăng nhập</a>
+                        <a href="/Accounts/Register.aspx" style="color:DarkBlue" visible="false" id="linkRegister" runat="server">Đăng ký</a>
                         <asp:Label ID="lblUserName" runat="server" ForeColor="DarkBlue" Text="Xin chao" Font-Size="Small"></asp:Label>
                         <asp:Image Width="13px" Height="13px" ImageUrl="/Image/expand.jpg" runat="server"
                             ID="img_1" />

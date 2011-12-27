@@ -47,7 +47,7 @@ namespace SPKTCore.Core.Impl
         public void AddAccountCreatedAlert()
         {
             Init();
-            alertMessage = "<div class=\"AlertHeader\">" + GetProfileUrl(account.UserName) + " just signed up!</div>";
+            alertMessage = "<div >" + GetProfileUrl(account.UserName) + " just signed up!</div>";
             //alertMessage += "<div class=\"AlertRow\">" + GetSendMessageUrl(account.AccountID) + "</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.AccountCreated;
@@ -81,8 +81,8 @@ namespace SPKTCore.Core.Impl
         public void AddProfileModifiedAlert()
         {
             Init();
-            alertMessage = "<div class=\"AlertHeader\">" +"<a href='Profiles/UserProfile2.aspx?AccountID='"+account.UserName+"</a>" +
-                           " vừa mới thay đổi thông tin cá nhân.</div>";
+            alertMessage = "<div >" +"<a href=\"Profiles/viewProfile.aspx?AccountID="+account.AccountID.ToString()+"\">"+account.UserName+"</a>" +
+                           " vừa mới thay đổi hồ sơ cá nhân.</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.ProfileModified;
             SaveAlert(alert);
@@ -95,31 +95,43 @@ namespace SPKTCore.Core.Impl
             alert.CreateDate = DateTime.Now;
             alert.AccountID = statusUpdate.SenderID;
             alert.AlertTypeID = (int)AlertType.AlertTypes.StatusUpdate;
-            alertMessage = "<div class=\"AlertHeader\">" +
+            /*alertMessage = "<div >" +
                             GetProfileImage(_userSession.CurrentUser.AccountID)
                             + GetProfileUrl(_userSession.CurrentUser.UserName) +
-                            "   " + statusUpdate.Status + "</div>";
+                            "   " + statusUpdate.Status + "</div>";*/
+            if (statusUpdate.SenderID == statusUpdate.AccountID)
+            {
+                if (statusUpdate.VisibilityLevel.VisibilityLevelID != 3)
+                {
+                    alertMessage = "<a href=\"/UserProfile2.aspx?AccountID=" + statusUpdate.SenderID.ToString() + "\">" +
+                        _accountRepository.GetAccountByID(statusUpdate.SenderID).UserName + "</a>" +
+                         "vừa mới đăng trạng thái: " + statusUpdate.Status;
+                    alert.Message = alertMessage;
+                    SaveAlert(alert);
+                    SendAlertToFriends(alert);    
+                }
+            }
 
-            /*alertMessage ="<a href='/UserProfile2.aspx?AccountID='"+ _accountRepository.GetAccountByID(statusUpdate.SenderID).UserName+"</a" + " viết lên tường nhà "
-                    +"<a href='~/Profiles/UserProfile2.aspx?AccountID='"+ _accountRepository.GetAccountByID((int)statusUpdate.AccountID).UserName+"<\a>" + " : " + statusUpdate.Status;
-             */
-           
-            alert.Message = alertMessage;
-            SaveAlert(alert);
-            SendAlertToFriends(alert);
+            /*else
+            {
+                alertMessage = "<a href='/UserProfile2.aspx?AccountID='" +statusUpdate.SenderID+">" + _accountRepository.GetAccountByID(statusUpdate.SenderID).UserName + "</a" + " viết lên tường nhà "
+                        + "<a href='~/Profiles/UserProfile2.aspx?AccountID='" + statusUpdate.AccountID+">" + _accountRepository.GetAccountByID((int)statusUpdate.AccountID).UserName + "<\a>" + " : " + statusUpdate.Status;
+            }*/
+      
+
         }
         private string GetProfileImage(Int32 AccountID)
         {
             return "<img width=\"50\" height=\"50\" src=\"/image/ProfileAvatar.aspx?AccountID=" +
-                   AccountID.ToString() + "&w=50&h=50\" align=\"absmiddle\">";
+                   AccountID.ToString() + "&w=30&h=30\" align=\"absmiddle\">";
         }
 
         public void AddNewAvatarAlert()
         {
             Init();
             alertMessage =
-                "<div class=\"AlertHeader\"><img src=\"/image/ProfileAvatar.aspx?AccountID=" +
-                account.AccountID.ToString() + "\" width=\"100\" height=\"100\" align=\"absmiddle\">" + GetProfileUrl(account.UserName) + " đổi avatar mới.</div>";
+                "<div ><img src=\"/image/ProfileAvatar.aspx?AccountID=" +
+                account.AccountID.ToString() + "\" width=\"50\" height=\"50\" align=\"absmiddle\">" + GetProfileUrl(account.UserName) + " đổi avatar mới.</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewAvatar;
             SaveAlert(alert);
@@ -188,13 +200,16 @@ namespace SPKTCore.Core.Impl
             List<int> groupMembers = _groupMemberRepository.GetMemberAccountIDsByGroupID(group.GroupID);
             foreach (int id in groupMembers)
             {
-                alert.AlertID = 0;
-                alert.AccountID = id;
-                SaveAlert(alert);
-                notify.AccountID = alert.AccountID;
-                notify.Body = alert.Message;
-                notify.IsRead = false;
-                _notifycationRepository.SaveNotification(notify);
+                if (alert.AccountID != id)
+                {
+                    alert.AlertID = 0;
+                    alert.AccountID = id;
+                    SaveAlert(alert);
+                    notify.AccountID = alert.AccountID;
+                    notify.Body = alert.Message;
+                    notify.IsRead = false;
+                    _notifycationRepository.SaveNotification(notify);
+                }
             }
         }
 
@@ -212,15 +227,18 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardPost;
-            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+           /* alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
                            GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới thêm bài viết: <b>" +
-                           post.Name + "</b></div>";
-
+                           post.Name + "</b></div>";*/
+            // GetProfileImage(_userSession.CurrentUser.AccountID) 
             /*alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + thread.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + thread.PageName +
                            ".aspx</a></div>";*/
-            alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" +post.PostID + "&GroupID=" + group.GroupID +"</a></div>";
+
+            alertMessage += "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) + "</br>" +
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + "vừa mới thêm bài viết mới <b>" + "<a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" + post.PostID + "&GroupID=" + group.GroupID + "\">" +
+                           post.Name + "</a></div>"; 
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToGroup(alert, group);
@@ -229,17 +247,20 @@ namespace SPKTCore.Core.Impl
 
         public void AddNewBoardThreadAlert(BoardCategory category, BoardForum forum, BoardPost post, Group group)
         {
+            //Right
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardThread;
-            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+            /*alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
                            GetProfileUrl(_userSession.CurrentUser.UserName) + "vừa mới thêm bài viết mới ở trên: <b>" +
-                           post.Name + "</b></div>";
+                           post.Name + "</b></div>";*/
 
-            /*alertMessage += "<div class=\"AlertRow\"><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+            /*alertMessage += "<div ><a href=\'" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + post.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + post.PageName +
-                           ".aspx</a></div>";*/
-            alertMessage += "<div ><a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" + post.PostID + "&GroupID=" + group.GroupID + "</a></div>";
+                           ".aspx'>"+post.Name+"</a></div>";*/
+            alertMessage += "<div >"+ GetProfileImage(_userSession.CurrentUser.AccountID)+"</br>"+
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + "vừa mới thêm bài viết mới <b>"+ "<a href=\"" + _webContext.RootUrl + "Groups/ViewGroupForumPost" + ".aspx?PostID=" + post.PostID + "&GroupID=" + group.GroupID + "\">"+
+                           post.Name + "</a></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToGroup(alert, group);
@@ -249,14 +270,11 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardPost;
-            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
-                           GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới viết bài viết: <b>" +
-                           post.Name + "</b></div>";
+            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +"<br>"+
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới trả lời bài viết: ";
 
-            alertMessage += "<div ><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
-                           "/" + forum.PageName + "/" + thread.PageName + ".aspx" + "\">" + _webContext.RootUrl +
-                           "forums/" + category.PageName + "/" + forum.PageName + "/" + thread.PageName +
-                           ".aspx</a></div>";
+            alertMessage += "<a href=\"" + _webContext.RootUrl + "forums/" + category.PageName.ToLower() +
+                           "/" + forum.PageName.ToLower() + "/" + thread.PageName.ToLower() + ".aspx" + "\">"+thread.Name+":"+post.Post.Substring(0,10)+"..."+"</a></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToFriends(alert);
@@ -266,14 +284,20 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBoardThread;
-            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+            /*alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
                            GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới thêm bài viết mới: <b>" +
                            post.Name + "</b></div>";
 
             alertMessage += "<div ><a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
                            "/" + forum.PageName + "/" + post.PageName + ".aspx" + "\">" + _webContext.RootUrl +
                            "forums/" + category.PageName + "/" + forum.PageName + "/" + post.PageName +
-                           ".aspx</a></div>";
+                           ".aspx</a></div>";*/
+            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) + "<br>" +
+               GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới đăng bài viết: ";
+
+            alertMessage += "<a href=\"" + _webContext.RootUrl + "forums/" + category.PageName +
+                           "/" + forum.PageName.ToLower() + "/" + post.PageName.ToLower() + ".aspx" + "\">" + post.Name + "</a></div>";
+            alert.Message = alertMessage;
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToFriends(alert);
@@ -285,7 +309,7 @@ namespace SPKTCore.Core.Impl
             alert.CreateDate = DateTime.Now;
             alert.AccountID = _userSession.CurrentUser.AccountID;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBlogPost;
-            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
                            GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new blog post: <b>" +
                            blog.Title + "</b></div>";
             alert.Message = alertMessage;
@@ -299,7 +323,7 @@ namespace SPKTCore.Core.Impl
             alert.CreateDate = DateTime.Now;
             alert.AccountID = _userSession.CurrentUser.AccountID;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBlogPost;
-            alertMessage = "<div class=\"AlertHeader\">" + GetProfileImage(_userSession.CurrentUser.AccountID) +
+            alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
                            GetProfileUrl(_userSession.CurrentUser.UserName) + " has updated the <b>" + blog.Title +
                            "</b> blog post!</div>";
             alert.Message = alertMessage;

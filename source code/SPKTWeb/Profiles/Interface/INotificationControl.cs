@@ -8,6 +8,6 @@ namespace SPKTWeb.Profiles.Interface
 {
     public interface INotificationControl
     {
-        void LoadData(List<Notification> notifycations);
+        void LoadData();
     }
 }

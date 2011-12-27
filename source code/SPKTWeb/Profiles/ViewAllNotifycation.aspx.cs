@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SPKTCore.Core.Domain;
 using SPKTWeb.Profiles.Interface;
 using SPKTWeb.Profiles.Presenter;
+using SPKTCore.Core.Domain;
 
-namespace SPKTWeb.Profiles.UserControls
+namespace SPKTWeb.Profiles
 {
-    public partial class NotifycationControl : System.Web.UI.UserControl, INotificationControl
+    public partial class ViewAllNotifycation : System.Web.UI.Page, INotificationControl
     {
         NotifycationControlPresenter _presenter;
         protected void Page_Load(object sender, EventArgs e)
@@ -20,9 +20,15 @@ namespace SPKTWeb.Profiles.UserControls
         }
         public void LoadData()
         {
-            List<Notification> notifications = _presenter.LoadData();
-            repNotify.DataSource = notifications;
-            repNotify.DataBind();
+            List<Notification> notifications = _presenter.LoadAllData();
+            if (notifications.Count != 0)
+            {
+                repNotify.DataSource = notifications;
+                repNotify.DataBind();
+            }
+            else
+                lblMessage.Text = "Chưa có tin đáng chú ý nào!";
+            
         }
     }
 }

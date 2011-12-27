@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SPKTCore.Core;
 using SPKTCore.Core.Impl;
-using SPKTWeb.Interface;
+using SPKTCore.Core;
 using SPKTWeb.Presenter;
+using SPKTWeb.Interface;
 
 namespace SPKTWeb
 {
-    public partial class MXH_E : System.Web.UI.MasterPage, IMXH1Master
+    public partial class MXH_R : System.Web.UI.MasterPage, IMXH1Master
     {
         private IRedirector _redirector;
         MXH1MasterPresenter _presenter;
@@ -31,18 +31,15 @@ namespace SPKTWeb
         {
             if (userName == "")
             {
-                lblUserName.Text = "";
+                lblUserName.Text = "Chưa đăng nhập";
                 img_1.Visible = false;
-                linkLogin.Visible = true;
-                linkRegister.Visible = true;
-                Panel1.Visible = img_1.Visible;
                 img_av.Visible = false;
             }
             else
             {
                 lblUserName.Text = "Xin chào " + userName.ToUpper();
                 img_av.ImageUrl = "/Image/ProfileAvatar.aspx";
-                
+
             }
         }
 
@@ -94,13 +91,7 @@ namespace SPKTWeb
         {
             SPKTCore.Core.Impl.AccountService ac = new AccountService();
             ac.Logout();
-            System.Web.Security.FormsAuthentication.SignOut();
             _redirector.Redirect("~/Default.aspx");
-        }
-
-        protected void lb_thaydoi_Click(object sender, EventArgs e)
-        {
-            _redirector.Redirect("~/Accounts/EditAccount.aspx");
         }
     }
 }

@@ -39,7 +39,6 @@ namespace SPKTWeb.Forums
         {
             UCForumHeader.lblForumName.Text += ForumPageName;
             UCForumHeader.hlkDangBaiMoi.NavigateUrl = "/Forums/Post.aspx?IsThread=1&ForumID=" + ForumID.ToString();
-            
             UCViewAllPost.litCatePageName.Text = CategoryPageName;
             UCViewAllPost.litForPageName.Text = ForumPageName;
 
@@ -49,9 +48,8 @@ namespace SPKTWeb.Forums
         }
         public void LoadDisplay(List<BoardPost> Threads,BoardForum forum)
         {
-                        
+            UCForumHeader.lblForumName.Text += forum.Name;            
             UCForumHeader.LoadForum(forum);
-
             UCViewAllPost.LoadForumPost(Threads, forum);            
             
         }

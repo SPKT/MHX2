@@ -6,10 +6,8 @@ using SPKTCore.Core.Domain;
 
 namespace SPKTWeb.Forums.Interface
 {
-
-    public interface IViewPost
+    public interface IShowViewPostUC
     {
-        void LoadData(BoardPost Thread, List<BoardPost> Posts);
-        void LoadHeaderData(BoardForum forum);
+        void LoadPost();
     }
 }

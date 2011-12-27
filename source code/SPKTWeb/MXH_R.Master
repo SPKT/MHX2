@@ -1,15 +1,16 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_PE.master.cs" Inherits="SPKTWeb.MXH_PE" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_R.master.cs" Inherits="SPKTWeb.MXH_R" %>
 <%@ Register Src="~/Accounts/UserControl/InfoAccount.ascx" TagName="info" TagPrefix="uc5" %>
 <%@ Register Src="~/Accounts/UserControl/EditAc.ascx" TagName="edit" TagPrefix="uc6" %>
 <%@ Register Src="~/Friends/UserControl/InviteFriends.ascx" TagName="in" TagPrefix="uc7" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menul" TagPrefix="uc8" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head runat="server">
     <title></title>
-    <link type="text/css" rel="Stylesheet" href="/Styles/MXH.css" />
+        <link type="text/css" rel="Stylesheet" href="/Styles/MXH.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -89,15 +90,15 @@
             <div style="background-color: #CC0000; height: 1px;">
             </div>
              <div style="float:none;">
-        <div id="box_left">
-                        <div class="left_box">
-                        </div>
-                        <asp:ContentPlaceHolder ID="left" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                    <div id="box_main"style="background-image: url('/Image/1e.gif'); background-repeat: repeat-y; width:79%">
+                    <div id="box_main1"style="background-image: url('/Image/1e.gif'); background-repeat: repeat-y; width:79%;">
                         <div>
                             <asp:ContentPlaceHolder ID="Main" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                    <div id="box_right1"style="background-color:White;">
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
                         </div>
                     </div>

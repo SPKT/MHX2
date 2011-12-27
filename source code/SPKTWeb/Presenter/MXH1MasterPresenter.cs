@@ -31,11 +31,6 @@ namespace SPKTWeb.Presenter
                 _view.ShowUserName("");
         }
 
-        internal void Logout()
-        {
-            _userSession.LoggedIn = false;
-            _webContext.RemoveCookie("login");
-            
-        }
+
     }
 }

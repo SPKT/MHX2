@@ -46,5 +46,11 @@ namespace SPKTWeb.Forums
 
             }
         }
+
+
+        public void LoadHeaderData(BoardForum forum)
+        {
+            linkUsername.Text = forum.Name;
+        }
     }
 }

@@ -40,5 +40,11 @@ namespace SPKTWeb.Groups.UserControl
         {
             lblMessage.Text = Message;
         }
+
+
+        public void SetData(BoardForum forum, BoardPost thread)
+        {
+            
+        }
     }
 }

@@ -61,6 +61,8 @@ namespace SPKTWeb.Forums.UserControl
         public void LoadForum(SPKTCore.Core.Domain.BoardForum forum)
         {
             lblForumName.Text = forum.Name;
+            lblCreateDate.Text = forum.CreateDate.ToLongDateString();
+            lblPostCount.Text = forum.PostCount.ToString();
             hlkDangBaiMoi.NavigateUrl = "/Forums/Post.aspx?IsThread=1&ForumID=" + forum.ForumID.ToString();
         }
     }

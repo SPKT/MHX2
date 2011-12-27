@@ -13,13 +13,22 @@ namespace SPKTWeb.Forums {
     public partial class Post {
         
         /// <summary>
-        /// ForumHeader1 control.
+        /// UcForumHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SPKTWeb.Forums.UserControl.ForumHeader ForumHeader1;
+        protected global::SPKTWeb.Forums.UserControl.ForumHeader UcForumHeader;
+        
+        /// <summary>
+        /// lblName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblName;
         
         /// <summary>
         /// txtName control.

@@ -32,7 +32,7 @@ namespace SPKTWeb.Forums
         //not necessary
         public void SetDisplay(bool IsThread)
         {
-            txtName.Enabled = IsThread;
+            
         }
 
         public void SetErrorMessage(string Message)
@@ -40,6 +40,16 @@ namespace SPKTWeb.Forums
             //lblMessage.Text = Message;
         }
 
-
+        public void SetData(BoardForum forum, BoardPost thread)
+        {
+            UcForumHeader.LoadForum(forum);
+            if (thread != null)
+            {
+                lblName.Text = "Trả lời bài viết " + thread.Name + " !";
+                txtName.Text = "Re: " + thread.Name;
+            }
+            else
+                lblName.Text = "Đăng bài mới";
+        }
     }
 }
