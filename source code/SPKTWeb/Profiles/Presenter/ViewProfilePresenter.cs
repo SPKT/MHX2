@@ -74,9 +74,12 @@ namespace SPKTWeb.Profiles.Presenter
                 
                 LoadProfile(IsPostback,accountID);
                 profile = _profileService.LoadProfileByAccountID(accountID);
-                _listPrivacyFlags = _privacyService.GetListPrivacyFlag(profile.ProfileID);
-                _listProfileAttributeType = _profileAttributeService.GetProfileAttributeType();
-                _view.loadProfileAttribute(_listProfileAttributeType, profile);
+                if (profile != null)
+                {
+                    _listPrivacyFlags = _privacyService.GetListPrivacyFlag(profile.ProfileID);
+                    _listProfileAttributeType = _profileAttributeService.GetProfileAttributeType();
+                    _view.loadProfileAttribute(_listProfileAttributeType, profile);
+                }
            // }
         }
 

@@ -15,9 +15,6 @@ namespace SPKTCore.Core.Impl
         {
             _notificationRepository=new NotificationRepository();
         }
-
-
-
         public List<Notification> GetNotify(int AccountID, int n)
         {
              return _notificationRepository.GetNotificationByAccountID(AccountID, n);
@@ -33,6 +30,10 @@ namespace SPKTCore.Core.Impl
                     result++;
             }
             return result;
+        }
+        public List<Notification> GetAllNotify(int AccountID)
+        {
+            return _notificationRepository.GetAllNotificationByAccountID(AccountID);
         }
     }
 }

@@ -27,16 +27,17 @@ namespace SPKTWeb.Profiles.Presenter
         {
             _view = view;
             if (_userSession.LoggedIn)
-            {
-                LoadData();
-            }
-           
-        }
+                _view.LoadData();
 
-        private void LoadData()
+        }
+        public List<Notification> LoadData()
         {
-            List<Notification> notifycations= _notifycationService.GetNotify(_userSession.CurrentUser.AccountID, 10);
-            _view.LoadData(notifycations);
+            return _notifycationService.GetNotify(_userSession.CurrentUser.AccountID, 10);
+            
+        }
+        public List<Notification> LoadAllData()
+        {
+            return _notifycationService.GetAllNotify(_userSession.CurrentUser.AccountID);
         }
 
     }

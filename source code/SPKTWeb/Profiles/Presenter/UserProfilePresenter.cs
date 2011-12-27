@@ -73,7 +73,7 @@ namespace SPKTWeb.Profiles.Presenter
                             _view.LoadAlert(listAlert, GetStatusToShow(_userSession.CurrentUser, _accountService.GetAccountByAccountID(accountID)));
                         }
                         else
-                            _view.LoadAlert(_alertService.GetAlertsByAccountID(accountID));
+                            _view.LoadAlert(_alertService.GetAlertsByAccountID(accountID), GetStatusToShow(_userSession.CurrentUser, _accountService.GetAccountByAccountID(accountID)));
                     }
                     if (accountID == 0)
                     {
@@ -127,7 +127,6 @@ namespace SPKTWeb.Profiles.Presenter
             //List<Account> listFriend = new List<Account>();
             //listFriend = _friendService.GetListFriendByAccount(AccountBeingViewer.AccountID);
             return _StatusUpdateService.GetStatusUpdateByID(AccountViewer, AccountBeingViewer, false);
-            
         }
 
         internal void LoadStatus()

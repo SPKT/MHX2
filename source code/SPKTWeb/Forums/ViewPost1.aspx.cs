@@ -21,6 +21,7 @@ namespace SPKTWeb.Forums
 
         public void LoadData(BoardPost Thread, List<BoardPost> Posts)
         {
+            
             UCViewpost.lkUsername.Text = Thread.Username;
             UCViewpost.lkUsername.NavigateUrl = "../" + Thread.Username;
             UCViewpost.lblCreDate.Text = Thread.UpdateDate.ToShortDateString();
@@ -34,6 +35,12 @@ namespace SPKTWeb.Forums
 
             UCViewpost.repPost.DataSource = Posts;
             UCViewpost.repPost.DataBind();
+        }
+
+
+        public void LoadHeaderData(BoardForum forum)
+        {
+            UCForumHeader.LoadForum(forum);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_1.master" AutoEventWireup="true" CodeBehind="ViewProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ViewProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.master" AutoEventWireup="true" CodeBehind="ViewProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ViewProfile" %>
  <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">

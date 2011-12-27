@@ -10,7 +10,7 @@
 namespace SPKTWeb {
     
     
-    public partial class MXH_E {
+    public partial class MXH_R {
         
         /// <summary>
         /// head control.
@@ -31,6 +31,15 @@ namespace SPKTWeb {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Div1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        
+        /// <summary>
         /// imga control.
         /// </summary>
         /// <remarks>
@@ -47,24 +56,6 @@ namespace SPKTWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img_av;
-        
-        /// <summary>
-        /// linkLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkLogin;
-        
-        /// <summary>
-        /// linkRegister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkRegister;
         
         /// <summary>
         /// lblUserName control.
@@ -175,15 +166,6 @@ namespace SPKTWeb {
         protected global::System.Web.UI.WebControls.LinkButton lbt_tim;
         
         /// <summary>
-        /// left control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder left;
-        
-        /// <summary>
         /// Main control.
         /// </summary>
         /// <remarks>
@@ -191,23 +173,5 @@ namespace SPKTWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Main;
-        
-        /// <summary>
-        /// right1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder right1;
-        
-        /// <summary>
-        /// right control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder right;
     }
 }

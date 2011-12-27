@@ -25,20 +25,31 @@ namespace SPKTCore.Core.Impl
         List<PrivacyFlag> Flags)
         {
             bool result;
-            if (Account.AccountID == AccountBeingViewed.AccountID)
-                return true;
-            bool isFriend = _friendService.IsFriend(Account, AccountBeingViewed);
-            if (Flags.Where(f => f.PrivacyFlagTypeID == PrivacyFlagTypeID && f.VisibilityLevelID == (int)VisibilityLevel.VisibilityLevels.Private).FirstOrDefault() != null)
-                result = false;
-            
-            else if (Flags.Where(f => f.PrivacyFlagTypeID == PrivacyFlagTypeID && f.VisibilityLevelID == (int)VisibilityLevel.VisibilityLevels.Friends).FirstOrDefault() != null && isFriend)
-                result = true;
-            else if (Flags.Where(f => f.PrivacyFlagTypeID == PrivacyFlagTypeID && f.VisibilityLevelID == (int)VisibilityLevel.VisibilityLevels.Public).FirstOrDefault() != null)
-                result = true;
-            else
-                result = false;
+            if (Account != null)
+            {
+                if (Account.AccountID == AccountBeingViewed.AccountID)
+                    return true;
 
+                bool isFriend = _friendService.IsFriend(Account, AccountBeingViewed);
+                if (Flags.Where(f => f.PrivacyFlagTypeID == PrivacyFlagTypeID && f.VisibilityLevelID == (int)VisibilityLevel.VisibilityLevels.Private).FirstOrDefault() != null)
+                    result = false;
+
+                else if (Flags.Where(f => f.PrivacyFlagTypeID == PrivacyFlagTypeID && f.VisibilityLevelID == (int)VisibilityLevel.VisibilityLevels.Friends).FirstOrDefault() != null && isFriend)
+                    result = true;
+                else if (Flags.Where(f => f.PrivacyFlagTypeID == PrivacyFlagTypeID && f.VisibilityLevelID == (int)VisibilityLevel.VisibilityLevels.Public).FirstOrDefault() != null)
+                    result = true;
+                else
+                    result = false;
+            }
+            else
+            {
+                if (Flags.Where(f => f.PrivacyFlagTypeID == PrivacyFlagTypeID && f.VisibilityLevelID == (int)VisibilityLevel.VisibilityLevels.Public).FirstOrDefault() != null)
+                    result = true;
+                else
+                    result = false;
+            }
             return result;
+
         }
 
         public List<PrivacyFlagType> GetListPrivacyFlagType(Account Account, Account AccountBeingViewed)

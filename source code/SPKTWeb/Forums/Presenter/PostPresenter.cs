@@ -36,7 +36,18 @@ namespace SPKTWeb.Forums.Presenter
         {
             _view = View;
             _view.SetDisplay(_webContext.IsThread);
-      
+            BoardForum forum=_forumRepository.GetForumByID(_webContext.ForumID);
+            BoardPost thread=_postRepository.GetPostByID(_webContext.PostID);
+            if (forum != null && thread != null)
+                _view.SetData(forum, thread);
+            else
+                if (forum != null)
+                    _view.SetData(forum, thread);
+                else
+                {
+                    forum = _forumRepository.GetForumByID(thread.ForumID);
+                    _view.SetData(forum, thread);
+                }
         }
 
         public void Save(BoardPost post)

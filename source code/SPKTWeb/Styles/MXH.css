@@ -282,6 +282,17 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
     background-repeat:repeat-y;
     margin-bottom:10px;
 }
+#box_main1 
+{
+    width:60%;
+    margin-left:0%;
+    height:100%;
+    float:left;
+    margin-top:10px;
+    background-image: url('../Image/1e.gif');
+    background-repeat:repeat-y;
+    margin-bottom:10px;
+}
 .main_box
 {
     margin-left:1%;

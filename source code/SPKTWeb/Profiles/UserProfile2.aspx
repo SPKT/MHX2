@@ -61,7 +61,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="right" runat="server">
 <div style="width:100%; height:100%; background-color:Black; margin-top:0px;">
-    <!--<div >
+    <div >
         <asp:UpdatePanel ID="UpdatePanel2" runat="server" >
             <ContentTemplate>
                 <asp:Panel ID="Panel2" runat="server">
@@ -73,14 +73,10 @@
   
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <div class="AlertHeader">
-                                        <a href='UserProfile2.aspx?AccountID=<%# Eval("AccountID")%>'>
-                                            <%#Eval("SenderName") %></a>
-                                    </div>
                                     <div style="color:Blue";">
                                         <%#Eval("Message") %>
                                     </div>
-                                    <div>
+                                    <div style="color:Gray; font-size:small">
                                         Ngày:
                                         <%#((DateTime)Eval("CreateDate")).ToString("dd:MM:yyy HH:mm:ss") %>
                                     </div>
@@ -101,7 +97,7 @@
                 </asp:Panel>
             </ContentTemplate>
         </asp:UpdatePanel>
-    </div>-->
+    </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">

@@ -470,6 +470,7 @@
     <Content Include="Profiles\UserControls\StatusControl.ascx" />
     <Content Include="Profiles\UserProfile.aspx" />
     <Content Include="Profiles\UserProfile2.aspx" />
+    <Content Include="Profiles\ViewAllNotifycation.aspx" />
     <Content Include="Profiles\ViewProfile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Searchs\Search.aspx" />
@@ -504,6 +505,7 @@
     <Content Include="MXH_P.Master" />
     <Content Include="MXH_E.Master" />
     <Content Include="MXH_PE.Master" />
+    <Content Include="MXH_R.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -2556,6 +2558,13 @@
     <Compile Include="MXH_PE.Master.designer.cs">
       <DependentUpon>MXH_PE.Master</DependentUpon>
     </Compile>
+    <Compile Include="MXH_R.Master.cs">
+      <DependentUpon>MXH_R.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH_R.Master.designer.cs">
+      <DependentUpon>MXH_R.Master</DependentUpon>
+    </Compile>
     <Compile Include="NestedMasterPage1.master.cs">
       <DependentUpon>NestedMasterPage1.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2656,6 +2665,13 @@
     </Compile>
     <Compile Include="Profiles\UserProfile2.aspx.designer.cs">
       <DependentUpon>UserProfile2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\ViewAllNotifycation.aspx.cs">
+      <DependentUpon>ViewAllNotifycation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\ViewAllNotifycation.aspx.designer.cs">
+      <DependentUpon>ViewAllNotifycation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profiles\ViewProfile.aspx.cs">
       <DependentUpon>ViewProfile.aspx</DependentUpon>

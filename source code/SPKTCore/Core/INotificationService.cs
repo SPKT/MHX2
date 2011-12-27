@@ -10,5 +10,6 @@ namespace SPKTCore.Core
     {
         int UnRead(int AccountID);
         List<Notification> GetNotify(int AccountID, int n);
+        List<Notification> GetAllNotify(int AccountID);
     }
 }

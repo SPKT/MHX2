@@ -1,16 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="Post.aspx.cs" Inherits="SPKTWeb.Forums.Post" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_R.Master" AutoEventWireup="true" CodeBehind="Post.aspx.cs" Inherits="SPKTWeb.Forums.Post" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 
 
 
-<%@ Register src="/Forums/UserControl/ForumHeader.ascx" tagname="ForumHeader" tagprefix="uc1" %>
+
+
+
+
+<%@ Register src="UserControl/ForumHeader.ascx" tagname="ForumHeader" tagprefix="uc1" %>
+
+
+
+
 
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
- .divContainer {font-size:12px;background-image:url(/images/transparent.gif); padding: 10px; width:90%; margin-left:auto;margin-right:auto;text-align:center; }
+<%-- .divContainer {font-size:12px;background-image:url(/images/transparent.gif); padding: 10px; width:90%; margin-left:auto;margin-right:auto;text-align:center; }
         .divContainerBox {border:solid 1px #a3bdef; background-color:#ffffff;}
         .divContainerRow { background-color:#ffffff;text-align:left; float:none; padding:5px;}
         .divContainerCell { display: block; text-align:left; }
@@ -21,20 +29,21 @@
         .divInnerRowCell { width: 100%; font-size: 10px; color: #000000; padding-left: 5px; }
         .divContainerHelpText { font-size:10px; color:#777777; font-weight:normal; }
         .divContainerSeparator { border-top:solid 1px #a3bdef; padding-top: 5px; padding-bottom: 5px; }
-        .Wizard { width:90%;padding:10px 10px 10px 10px; }
+        .Wizard { width:90%;padding:10px 10px 10px 10px; }--%>
 </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="Main" runat="server">
    <div>
     <div>
+     
         
-        <uc1:ForumHeader ID="ForumHeader1" runat="server" />
+        <uc1:ForumHeader ID="UcForumHeader" runat="server" />
+     
         
     </div>
     <div>
-        Tiêu đề:
+        <asp:Label ID="lblName" runat="server"></asp:Label>
     </div>
     <div>
          <div class="divContainerRow">
@@ -50,8 +59,5 @@
     </div>
    </div>
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="right1" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="right" runat="server">
-</asp:Content>
+
 
