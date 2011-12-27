@@ -1,0 +1,1 @@
+1) Vao trang AllForum.aspx, chua dang nhap nhung van hien ra phan Quan ly tai khoan, Dang Xuat o goc tren phai man hinh. Khong co nut dang nhap.
