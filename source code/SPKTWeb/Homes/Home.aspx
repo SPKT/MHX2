@@ -7,48 +7,7 @@
 </asp:Content>
 <asp:Content ID="content6" ContentPlaceHolderID="right1" runat="server">
    
-    <div style="width:100%; height:100px; background-color:White; margin-top:0px;">
-       <uc5:rightmenu ID="uc" runat="server" />
-    </div>
-    <div style="width:100%; height:100%; background-color:white; margin-top:0px;">
-    <div >
-        <asp:UpdatePanel ID="UpdatePanel2" runat="server" >
-            <ContentTemplate>
-                <asp:Panel ID="Panel2" runat="server">
-                    <asp:GridView ID="gvAlert" runat="server" AutoGenerateColumns="False" BorderColor="#9999FF"
-                        BorderWidth="1px" BackColor="White" PageSize="20" AllowPaging="true" CellPadding="2" ForeColor="Black"
-                        GridLines="None">
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-  
-                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <div style="color:Blue";">
-                                        <%#Eval("Message") %>
-                                    </div>
-                                    <div style="color:Gray; font-size:small">
-                                        Ngày:
-                                        <%#((DateTime)Eval("CreateDate")).ToString("dd:MM:yyy HH:mm:ss") %>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                        <EditRowStyle  />
-                        <EmptyDataRowStyle  />
-                        <FooterStyle  />
-                        <HeaderStyle  />
-                        <PagerStyle />
-                        <SelectedRowStyle  />
-                        <SortedAscendingCellStyle BackColor="#FAFAE7" />
-                        <SortedAscendingHeaderStyle BackColor="#DAC09E" />
-                        <SortedDescendingCellStyle BackColor="#E1DB9C" />
-                        <SortedDescendingHeaderStyle BackColor="#C2A47B" />
-                    </asp:GridView>
-                </asp:Panel>
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </div>
-    </div>
+    
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
 <div class="box" style="width:100%; height:100%;">
@@ -56,7 +15,7 @@
             <asp:Label ID="lblXinChao" runat="server" Visible="false"></asp:Label>
             <asp:LinkButton Visible="false" ID="lbtnProfile" runat="server" OnClick="lbtnProfile_Click"></asp:LinkButton>
         </div>
-        <asp:UpdatePanel runat="server">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
                 <asp:Panel ID="pnlStatusUpdate" runat="server" Width="100%" Height="91px">
                  <div style="height: 85px; width: 91%; margin-left:4%; margin-top:2%">
@@ -73,9 +32,9 @@
                 </asp:Panel>
                       <asp:Timer ID="Timer1" runat="server" Interval="20000" ontick="Timer1_Tick" >
                     </asp:Timer>
-                <asp:Panel  runat="server" >
-                    <div  runat="server">
-                        <div   runat="server" style="width:91%; margin-left:4%;">
+                <asp:Panel ID="Panel1"  runat="server" >
+                    <div id="Div1"  runat="server">
+                        <div id="Div2"   runat="server" style="width:91%; margin-left:4%;">
                               <asp:GridView ID="gvStatus" CssClass="mGrid-boder" runat="server" AutoGenerateColumns="False"
                 Width="100%" Style="margin-right: 30px"
                 CellPadding="4" GridLines="Horizontal" PageSize="10" 
@@ -137,7 +96,48 @@
  </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="right" runat="server">
-
+<div style="width: 100%; height: 30px; margin-bottom: 0px; background-image: url('/Image/2a.jpg');
+        background-repeat: no-repeat;">
+        <asp:Image ID="im1" runat="server" Width="100%" Height="100%" ImageUrl="/Image/2d.jpg" />
+    </div>
+    <div style="width: 100%; height: auto; padding:10px; margin-top: 0px;">
+        <div>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <asp:Panel ID="Panel2" runat="server">
+                        <asp:GridView ID="gvAlert" runat="server" AutoGenerateColumns="False" BorderColor="#9999FF"
+                            BorderWidth="0px" PageSize="20" AllowPaging="true" CellPadding="2" ForeColor="Black"
+                            GridLines="None">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div style="color: Blue">
+                                            <%#Eval("Message") %>
+                                        </div>
+                                        <div style="color: Gray; font-size: small">
+                                            Ngày:
+                                            <%#((DateTime)Eval("CreateDate")).ToString("dd:MM:yyy HH:mm:ss") %>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <EditRowStyle />
+                            <EmptyDataRowStyle />
+                            <FooterStyle />
+                            <HeaderStyle />
+                            <PagerStyle />
+                            <SelectedRowStyle />
+                            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+                            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+                            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+                            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+                        </asp:GridView>
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">
     <div>

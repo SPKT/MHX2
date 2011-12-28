@@ -5,8 +5,9 @@
         <div>
             <asp:Literal ID="litCategoryPageName" runat="server" Visible="false"></asp:Literal>
             <asp:Literal ID="litForumPageName" runat="server" Visible="false"></asp:Literal>
-            <table width="100%" cellpadding="5" cellspacing="0">
-                        <tr style="background-color:#ccffaa;font-weight:bold;">
+            <table width="100%" cellpadding="5" cellspacing="0" 
+                style="background-image: url('../../Image/thead.gif'); background-repeat: repeat-x">
+                        <tr style="font-weight:bold; background-image: url('../../Image/thead.gif'); background-repeat: repeat-x;">
                             <td colspan="2">Người tạo</td>
                             <td>Vào ngày</td>
                             <td>Cập nhật</td>

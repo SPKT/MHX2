@@ -73,8 +73,8 @@
     <div class="divMain">
 
     <div class="divContainer">
-        <div class="divContainerBox">
-          <asp:Panel ID="pnlHeader" runat="server">
+        <div class="divContainerBox"; style=" border-width:0px;">
+          <asp:Panel ID="pnlHeader" runat="server" BorderStyle="None">
             <uc1:GroupHeader ID="GroupHeaderUC" runat="server" />
           </asp:Panel>
         </div>

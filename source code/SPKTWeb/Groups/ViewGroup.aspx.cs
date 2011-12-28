@@ -95,7 +95,7 @@ namespace SPKTWeb.Groups
             uc.category= category;
             uc.Threads=threads;
             uc.group = group;
-            pnlForum.Controls.Add(uc);
+           pnlForum.Controls.Add(uc);
             
         }
     }

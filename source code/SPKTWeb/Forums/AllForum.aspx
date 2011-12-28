@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_R.Master" AutoEventWireup="true" CodeBehind="AllForum.aspx.cs" Inherits="SPKTWeb.Forums.AllForum" EnableEventValidation="false" %>
 <%@ Import Namespace="SPKTCore.Core.Domain"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    <style type="text/css">
@@ -31,7 +31,7 @@
         .Wizard { width:90%;padding:10px 10px 10px 10px; }
         .Content
         {
-            padding: 10px;
+            padding: 0px;
             background-image: url('../Image/thanhtren.gif'); background-repeat:repeat-x;
         }
         #Container
@@ -41,7 +41,7 @@
             -moz-border-radius:10px; -webkit-border-radius:10px;
             border-color:#666666;
             border-style:solid;
-            border-width:1px;
+            border-width:0px;
             margin-top:-2px;
             padding-left:4%;
             padding-bottom:20px;
@@ -51,38 +51,36 @@
         }
 </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="Main" runat="server">
-    
-    <div  style="width:100%; height:100%; padding-top:30px;">
-    <div class="divContainerTitle" align="center" 
-            style="background-image: url('../Image/pro_15_0.gif'); background-repeat: repeat-x">
-    Danh mục các forum
+    <div  style="width:100%; height:100%; padding-top:0px;">
+    <div align="left" class="Main_Subject">
+    <asp:Label ID="lb" runat="server" Width="100%" Height="100%" Text="Danh sách diễn đàn"></asp:Label>
     </div>
-    
+    <div style="background-color: #CCCCCC; width:90%; height:2px; margin-bottom:0px;">
+    </div>
     <div>
-        <div id="Container" class="divContainerRow" >
+        <div align="left" class="Container">
             <asp:Repeater ID="repCategories" runat="server" OnItemDataBound="repCategories_ItemDataBound">
                 <HeaderTemplate>
-                    <table width="98%"  style="margin-right:20px;" >
-                        <tr style="font-weight:bold; color:Gray; vertical-align:middle;background-image: url('../Image/thanhtren1.gif.png'); margin-top:2px; margin-bottom:2px; margin:0px; background-repeat:repeat-x;">
-                            <td class="Content">Title</td>
-                            <td class="Content">Subject</td>
-                            <td class="Content">Threads</td>
-                            <td class="Content">Posts</td>
-                            <td class="Content">Last Post by</td>
-                            <td class="Content">Last Post on</td>
+                    <table width="100%"  style="margin-right:0px; padding:0px; margin:0px;" >
+                        <tr align="left" style="width:20px;color:Gray;background-image: url('/Image/thanhtren1.gif.png'); margin-top:0px; margin-bottom:2px; margin:0px; background-repeat:repeat-x;">
+                            <td>Title</td>
+                            <td>Subject</td>
+                            <td>Threads</td>
+                            <td>Posts</td>
+                            <td>Last Post by</td>
+                            <td>Last Post on</td>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <tr style="background-image: url('../Image/thanhtren.gif');font-weight:bold; color:Red">
-                        <td class="content"><%# ((BoardCategory)Container.DataItem).Name %></td>
-                        <td class="content"><%# ((BoardCategory)Container.DataItem).Subject %></td>
-                        <td class="content"><%# ((BoardCategory)Container.DataItem).ThreadCount %></td>
-                        <td class="content"><%# ((BoardCategory)Container.DataItem).PostCount %></td>
-                        <td class="content"><%# ((BoardCategory)Container.DataItem).LastPostByUsername %></td>
-                        <td class="content"><%# ((BoardCategory)Container.DataItem).LastPostDate.ToString() %></td>
+                    <tr style="padding-left:0px;font-weight:bold; color:Red; font-family:Arial">
+                        <td><%# ((BoardCategory)Container.DataItem).Name %></td>
+                        <td><%# ((BoardCategory)Container.DataItem).Subject %></td>
+                        <td><%# ((BoardCategory)Container.DataItem).ThreadCount %></td>
+                        <td><%# ((BoardCategory)Container.DataItem).PostCount %></td>
+                        <td><%# ((BoardCategory)Container.DataItem).LastPostByUsername %></td>
+                        <td><%# ((BoardCategory)Container.DataItem).LastPostDate.ToString() %></td>
                     </tr>
                     <asp:Repeater ID="repForums" runat="server" OnItemDataBound="repForums_ItemDataBound">
                         <ItemTemplate>
@@ -111,7 +109,6 @@
     </div>
 </div>
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="right1" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content5" ContentPlaceHolderID="right" runat="server">
 </asp:Content>

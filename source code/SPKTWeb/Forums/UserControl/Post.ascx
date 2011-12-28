@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Post.ascx.cs" Inherits="SPKTWeb.Forums.UserControl.Post" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor"
     TagPrefix="cc1" %>
-   <div class="divContainer">
+   <div class="divContainer" style="margin-top:2%">
         <div class="divContainerBox">
             <div class="divContainerRow">
 

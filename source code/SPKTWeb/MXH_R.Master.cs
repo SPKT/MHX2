@@ -96,5 +96,10 @@ namespace SPKTWeb
             ac.Logout();
             _redirector.Redirect("~/Default.aspx");
         }
+
+        protected void thaydoi_Click(object sender, EventArgs e)
+        {
+            _redirector.Redirect("~/Accounts/EditAccount.aspx");
+        }
     }
 }
