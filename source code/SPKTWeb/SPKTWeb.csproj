@@ -2419,7 +2419,9 @@
     <Compile Include="Interface\IMXH1Master.cs" />
     <Compile Include="Interface\IProfileDisplay.cs" />
     <Compile Include="LogUtil.cs" />
+    <Compile Include="MembershipProvider\MxhForumRoleProvider.cs" />
     <Compile Include="MembershipProvider\MxhMembershipProvider.cs" />
+    <Compile Include="MembershipProvider\MXHRoleProvider.cs" />
     <Compile Include="Messages\Interface\ILoadMessage.cs" />
     <Compile Include="Messages\Interface\INewMessage.cs" />
     <Compile Include="Messages\Interface\IReadMessage.cs" />

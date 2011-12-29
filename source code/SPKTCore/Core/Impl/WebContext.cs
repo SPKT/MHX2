@@ -125,7 +125,7 @@ namespace SPKTCore.Core.Impl
             WriteToCookie(cook);
         }
         public bool LoginInUseCookie()
-        {
+        {            
             HttpCookie cookLogin = GetInCookie("Login");
             if (cookLogin == null)
                 return false;            
@@ -138,6 +138,7 @@ namespace SPKTCore.Core.Impl
         {
             get
             {
+                //TODO: sử dụng Membership
                 if(ContainsInSession("LoggedIn"))
                 {
                     if((bool)GetFromSession("LoggedIn"))

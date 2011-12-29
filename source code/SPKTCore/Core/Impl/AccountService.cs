@@ -54,6 +54,7 @@ namespace SPKTCore.Core.Impl
 
         public void Logout()
         {
+            System.Web.Security.FormsAuthentication.SignOut();
             _webContext.RemoveFromSession("LoggedIn");
             _webContext.ContainsInSession("");
             _webContext.RemoveCookie("Login");
@@ -79,6 +80,7 @@ namespace SPKTCore.Core.Impl
                 return Login(Username, Password,out returnMessage);
             IWebContext webContext = new WebContext();
             webContext.SaveLoginInfoToCookie(Username, Password);
+
             return Login(Username, Password, out returnMessage); 
         }
         public bool Login(string Username, string Password)
@@ -183,6 +185,7 @@ namespace SPKTCore.Core.Impl
 
         public void SetLogedIn(string Username)
         {
+            System.Web.Security.FormsAuthentication.SetAuthCookie(UserName, false);
             Account account = _accountRepository.GetAccountByUsername(Username);
             _userSession.LoggedIn = true;
             _userSession.Username = Username;

@@ -34,10 +34,7 @@ namespace SPKTWeb.Accounts.UserControl
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {            
-            _Presenter.Login(txtUserName.Text, txtPassword.Text, ckbAutoLogin.Checked);
-            //txtPassword.Text = "";
-            //txtUserName.Text = "";
-            //pass.Visible = false;
+            _Presenter.Login(txtUserName.Text, txtPassword.Text, ckbAutoLogin.Checked);            
         }
 
        

@@ -30,12 +30,7 @@ namespace SPKTWeb.Forums.Presenter
         }
 
         public void Init(IForum View)
-        {
-            if (System.Web.Security.Roles.IsUserInRole("admin"))
-            {
-                HttpContext.Current.Response.Write("<br><b>Co quyen ADMIN</B><br>");
-            }else
-                HttpContext.Current.Response.Write("<br><b>Khong co quyen ADMIN</B><br>");
+        {            
             _view = View;
             bool IsLogin = _webContext.LoggedIn;
             _view.LoadCategories(_boardService.GetCategoriesWithForums());

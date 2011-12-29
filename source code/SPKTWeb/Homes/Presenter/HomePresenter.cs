@@ -109,7 +109,6 @@ namespace SPKTWeb.Homes.Presenter
             accountID = _webContext.AccountID;
             if (accountID <= 0)
                 accountID = senderID;
-
             StatusUpdate status;
             status = new StatusUpdate();
             status.AccountID = accountID;
