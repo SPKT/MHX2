@@ -29,10 +29,11 @@ namespace SPKTWeb.Accounts.Presenter
         
         public void Login(string username, string password,bool rememberMe)
         {
-            string message;
-            if (_accountService.Login(username, password, rememberMe, out message))
+            string message="";
+            if (_accountService.ValidateUser(username, password, out message))
+            //if(_accountService.ValidateUser(username,password))
             {
-                FormsAuthentication.SetAuthCookie(username, rememberMe);
+                _webContext.Login(username, rememberMe);
                 if (_webContext.ReturnURL != null)
                     FormsAuthentication.RedirectFromLoginPage(username, true);
                 else
@@ -43,20 +44,20 @@ namespace SPKTWeb.Accounts.Presenter
                 DkmhWebservice.UsrSer service = new DkmhWebservice.UsrSer();
                 if (service.ValidateUser(username, password))
                 {
-                    if (_accountService.IsAccountExisted(username))
-                        _accountService.SetLogedIn(username);
-                    else
+                    if (!_accountService.IsAccountExisted(username))
                     {
                         DkmhWebservice.users user = service.GetUserByUserName(username);
                         _accountService.ImportAccount(user.Username, user.Email);
-                        _accountService.SetLogedIn(username);
                     }
+                    _webContext.Login(username,rememberMe);
                     System.Web.Security.FormsAuthentication.SetAuthCookie(username, rememberMe);
                     if (_webContext.ReturnURL != null)
                         FormsAuthentication.RedirectFromLoginPage(username, true);
                     else
                         _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
                 }
+                else
+                    message = "Đăng nhập không thành công!";
             }
             _view.DisplayMessage(message);
         }

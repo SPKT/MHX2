@@ -10,14 +10,13 @@ namespace SPKTCore.Core
     public interface IWebContext
     {
         void ClearSession();
-        void RemoveCookie(string name);
-        void SaveLoginInfoToCookie(String username, String password);
+        void RemoveCookie(string name);        
         bool ContainsInSession(string key);
         void RemoveFromSession(string key);
-        bool LoggedIn { get; set; }
+        bool LoggedIn { get; }
         Account CurrentUser { get; set; }
         Profile CurrentProfile { get; set; }
-        string Username { get; set; }
+        string Username { get; }
         string CaptchaImageText { get; set; }
         string GetQueryStringValue(string key);
         String UsernameToVerify { get; }
@@ -44,5 +43,8 @@ namespace SPKTCore.Core
         HttpFileCollection Files { get; }
 
         string ReturnURL { get; }
+
+        void Login(string username, bool rememberMe);
+        void Logout();
     }
 }

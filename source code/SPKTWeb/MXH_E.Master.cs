@@ -86,14 +86,14 @@ namespace SPKTWeb
         protected void dangxuat_Click(object sender, EventArgs e)
         {
             SPKTCore.Core.Impl.AccountService ac = new AccountService();
-            ac.Logout();
+            _webContext.Logout();
             _redirector.Redirect("~/Default.aspx");
         }
 
         protected void lb_thoat_Click(object sender, EventArgs e)
         {
             SPKTCore.Core.Impl.AccountService ac = new AccountService();
-            ac.Logout();
+            _webContext.Logout();
             System.Web.Security.FormsAuthentication.SignOut();
             _redirector.Redirect("~/Default.aspx");
         }

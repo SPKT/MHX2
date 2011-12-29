@@ -52,17 +52,17 @@ namespace SPKTCore.Core.Impl
             return false;
         }
 
-        public void Logout()
-        {
-            System.Web.Security.FormsAuthentication.SignOut();
-            _webContext.RemoveFromSession("LoggedIn");
-            _webContext.ContainsInSession("");
-            _webContext.RemoveCookie("Login");
-            _userSession.LoggedIn = false;
-            _userSession.CurrentUser = null;
-            _userSession.Username = "";
-            _redirector.GoToAccountLoginPage();
-        }
+        //public void Logout()
+        //{
+        //    System.Web.Security.FormsAuthentication.SignOut();
+        //    _webContext.RemoveFromSession("LoggedIn");
+        //    _webContext.ContainsInSession("");
+        //    _webContext.RemoveCookie("Login");
+        //    _userSession.LoggedIn = false;
+        //    _userSession.CurrentUser = null;
+        //    _userSession.Username = "";
+        //    _redirector.GoToAccountLoginPage();
+        //}
         public void Register(Account a, string permission)
         {
             //_accountRepository.SaveAccount(a);
@@ -74,22 +74,22 @@ namespace SPKTCore.Core.Impl
             _accountRepository.AddPermission(newAccount, registeredPermission);
             _email.SendEmailAddressVerificationEmail(a.UserName, a.Email);
         }
-        public bool Login(string Username, string Password, bool rememberMe, out String returnMessage)
-        {
-            if (rememberMe == false)
-                return Login(Username, Password,out returnMessage);
-            IWebContext webContext = new WebContext();
-            webContext.SaveLoginInfoToCookie(Username, Password);
+        //public bool Login(string Username, string Password, bool rememberMe, out String returnMessage)
+        //{
+        //    if (rememberMe == false)
+        //        return Login(Username, Password,out returnMessage);
+        //    IWebContext webContext = new WebContext();
+        //    webContext.SaveLoginInfoToCookie(Username, Password);
 
-            return Login(Username, Password, out returnMessage); 
-        }
-        public bool Login(string Username, string Password)
+        //    return Login(Username, Password, out returnMessage); 
+        //}
+        public bool ValidateUser(string Username, string Password)
         {
             String message;
-            return Login(Username, Password,out message );
+            return ValidateUser(Username, Password, out message);
         }
 
-        public bool Login(string Username, string Password,out String returnMessage)
+        public bool ValidateUser(string Username, string Password, out String returnMessage)
         {
             
             Password = Password.Encrypt(Username);
@@ -102,7 +102,6 @@ namespace SPKTCore.Core.Impl
                 {
                     if (account.EmailVerified)
                     {
-                        SetLogedIn(Username);
                         returnMessage = "Đăng nhập thành công";
                         if (!string.IsNullOrEmpty(_webContext.FriendshipRequest))
                         {
@@ -183,13 +182,32 @@ namespace SPKTCore.Core.Impl
 
         }
 
-        public void SetLogedIn(string Username)
+        //public void SetLogedIn(string Username)
+        //{
+        //    System.Web.Security.FormsAuthentication.SetAuthCookie(Username, false);
+        //    Account account = _accountRepository.GetAccountByUsername(Username);
+        //    _userSession.LoggedIn = true;
+        //    _userSession.Username = Username;
+        //    _userSession.CurrentUser = GetAccountByID(account.AccountID);
+
+        //}
+        public Account GetAccountByUsername(string Username)
         {
             Account account = _accountRepository.GetAccountByUsername(Username);
-            _userSession.LoggedIn = true;
-            _userSession.Username = Username;
-            _userSession.CurrentUser = GetAccountByID(account.AccountID);
-
+            if (account == null)
+                return null;
+            Profile profile = _profileService.LoadProfileByAccountID(account.AccountID);
+            if (profile != null)
+            {
+                account.Profile = profile;
+            }
+            List<Permission> permissions = _permissionRepository.GetPermissionsByAccountID(account.AccountID);
+            foreach (Permission permission in permissions)
+            {
+                account.AddPermission(permission);
+            }
+            return account;
         }
+
     }
 }

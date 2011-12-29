@@ -11,8 +11,8 @@ namespace SPKTCore.Core
     //[PluginFamily("Default")]
     public interface IUserSession
     {
-        bool LoggedIn { get; set; }
-        string Username { get; set; }
+        bool LoggedIn { get; }
+        string Username { get;  }
         Account CurrentUser { get; set; }
         Profile CurrentProfile { get; set; }
     }

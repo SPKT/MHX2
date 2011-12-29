@@ -14,8 +14,6 @@ namespace SPKTCore.Core.Impl
 
         public UserSession()
         {
-            //TODO: StructrureMap
-           // _webContext = ObjectFactory.GetInstance<IWebContext>();
             _webContext = new WebContext();
         }
 
@@ -24,10 +22,6 @@ namespace SPKTCore.Core.Impl
             get
             {
                 return _webContext.LoggedIn;
-            }
-            set
-            {
-                _webContext.LoggedIn = value;
             }
         }
 
@@ -58,11 +52,6 @@ namespace SPKTCore.Core.Impl
             get
             {
                 return _webContext.Username;
-            }
-
-            set
-            {
-                _webContext.Username = value;
             }
         }
     }

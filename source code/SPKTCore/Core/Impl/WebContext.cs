@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using SPKTCore.Core.Domain;
+using System.Web.Security;
 
 namespace SPKTCore.Core.Impl
 {
@@ -69,11 +70,11 @@ namespace SPKTCore.Core.Impl
         {
             get
             {
-                if(ContainsInSession("CurrentUser"))
-                {
-                    return GetFromSession("CurrentUser") as Account;
-                }
-                return null;
+                if (!LoggedIn)
+                    return null;
+                if (!ContainsInSession("CurrentUser"))
+                    SetLogedInSession(Username);
+                return GetFromSession("CurrentUser") as Account;
             }
             set
             {
@@ -84,12 +85,11 @@ namespace SPKTCore.Core.Impl
         {
             get
             {
-                if (ContainsInSession("CurrentProfile"))
-                {
-                    return GetFromSession("CurrentProfile") as Profile;
-                }
-
-                return null;
+                if (!LoggedIn)
+                    return null;
+                if (!ContainsInSession("CurrentProfile"))
+                    SetLogedInSession(Username);
+                return GetFromSession("CurrentProfile") as Profile;
             }
             set
             {
@@ -101,59 +101,27 @@ namespace SPKTCore.Core.Impl
         {
             get
             {
-                if(ContainsInSession("Username"))
-                {
-                    return GetFromSession("Username").ToString();
-                }
-
-                return "";
-            }
-
-            set
-            {
-                SetInSession("Username",value);
+                if (LoggedIn)
+                    return HttpContext.Current.User.Identity.Name;
+                return null;                
             }
         }
 
-        public void SaveLoginInfoToCookie(String username, String password)
-        {
-            HttpCookie cook = new HttpCookie("Login");
-            cook["Username"] = username;
-            cook["Password"] = password;
-            cook.Expires = DateTime.Now.AddDays(20);
-            WriteToCookie(cook);
-        }
-        public bool LoginInUseCookie()
-        {            
-            HttpCookie cookLogin = GetInCookie("Login");
-            if (cookLogin == null)
-                return false;            
-            String username = cookLogin["UserName"];
-            String pass = cookLogin["Password"];
-            IAccountService accountService = new SPKTCore.Core.Impl.AccountService();
-            return accountService.Login(username, pass);
-        }
+        //public void SaveLoginInfoToCookie(String username, String password)
+        //{
+        //    HttpCookie cook = new HttpCookie("Login");
+        //    cook["Username"] = username;
+        //    cook["Password"] = password;
+        //    cook.Expires = DateTime.Now.AddDays(20);
+        //    WriteToCookie(cook);
+        //}
+        
         public bool LoggedIn
         {
             get
             {
-                //TODO: sử dụng Membership
-                if(ContainsInSession("LoggedIn"))
-                {
-                    if((bool)GetFromSession("LoggedIn"))
-                        return true;
-                    else
-                        return false;
-                }
-                else
-                {
-                    return LoginInUseCookie();
-                }
+                return (HttpContext.Current.User.Identity != null && HttpContext.Current.User.Identity.IsAuthenticated);
             }   
-            set
-            {
-                SetInSession("LoggedIn", value);
-            }
         }
 
         private HttpCookie GetInCookie(string name)
@@ -462,6 +430,34 @@ namespace SPKTCore.Core.Impl
             }
         }
 
+        public void Login(string username,bool remember)
+        {
+            FormsAuthentication.SetAuthCookie(username, remember);
+            SetLogedInSession(username);
+        }
+
+        private void SetLogedInSession(string username)
+        {
+            IAccountService accountService = new AccountService();
+            Account account = accountService.GetAccountByUsername(username);
+            IUserSession _userSession = new UserSession();            
+            _userSession.CurrentUser = account;
+            _userSession.CurrentProfile = account.Profile;
+        }
+
+        public void Logout()
+        {
+            System.Web.Security.FormsAuthentication.SignOut();
+            ClearLogedinSession();
+            IRedirector _redirector = new Redirector();
+            _redirector.GoToAccountLoginPage();
+        }
+
+        private static void ClearLogedinSession()
+        {
+            IUserSession _userSession = new UserSession();            
+            _userSession.CurrentUser = null;     
+        }
     }
 
  }

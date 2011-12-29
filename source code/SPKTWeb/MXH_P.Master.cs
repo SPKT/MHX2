@@ -65,7 +65,7 @@ namespace SPKTWeb
         }
         protected void dangxuat_Click(object sender, EventArgs e)
         {
-            _as.Logout();
+            _webContext.Logout();
             lb_dangky.Visible = true;
             lb_dangnhap.Visible = true;
         }

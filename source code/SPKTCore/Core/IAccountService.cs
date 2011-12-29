@@ -12,15 +12,17 @@ namespace SPKTCore.Core
     {
         bool UsernameInUse(string Username);
         bool EmailInUse(string Email);
-        bool Login(string Username, string Password);
-        bool Login(string Username, string Password, out String returnMessage);        
-        bool Login(string Username, string Password,bool rememberMe, out String returnMessage);
-        void Logout();
+        bool ValidateUser(string Username, string Password);
+        bool ValidateUser(string Username, string Password, out String returnMessage);        
+        //bool Login(string Username, string Password,bool rememberMe, out String returnMessage);
+        //void Logout();
         void Register(Account a, string permission);
         Account GetAccountByAccountID(Int32 accountID);
         bool IsAccountExisted(string username);
         
         void ImportAccount(string username, string email);
-        void SetLogedIn(string username);
+        //void SetLogedIn(string username);
+
+        Account GetAccountByUsername(string Username);
     }
 }
