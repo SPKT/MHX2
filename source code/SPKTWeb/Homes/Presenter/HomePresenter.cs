@@ -18,6 +18,7 @@ namespace SPKTWeb.Homes.Presenter
         IUserSession _userSession;
         IHome _view;
         IAccountService _accountService;
+        IAlertService _alertService;
         IRedirector _redirector;
         Account account;
         IProfileService _profileService;
@@ -32,10 +33,12 @@ namespace SPKTWeb.Homes.Presenter
         {
             _userSession = new UserSession();
             _accountService=new AccountService();
+            
             _redirector = new Redirector();
             _profileService = new ProfileService();
                         _privacyService = new PrivacyService();
             _friendService = new FriendService();
+            _alertService = new AlertService();
             _StatusUpdateService = new StatusUpdateService();
             _webContext = new WebContext();
         }
@@ -55,7 +58,10 @@ namespace SPKTWeb.Homes.Presenter
                     _view.LoadStatusControl(_listVisibilityLevel, true);
                     account = _userSession.CurrentUser;
                     if (!IsPostBack)
-                        _view.LoadStatus(GetStatusToShow(account));
+                    {
+                        _view.LoadStatus(GetStatusToShow(account), GetAlertToShow(account));
+                        
+                    }
                 }
             }
             else
@@ -83,7 +89,7 @@ namespace SPKTWeb.Homes.Presenter
             LogUtil.Logger.Writeln("GetStatusToShow: ");
             List<Account> listFriend = new List<Account>();
             List<StatusUpdate> list = new List<StatusUpdate>();
-            listFriend = _friendService.GetListFriendByAccount(Account.AccountID);
+            listFriend = _friendService.SearchFriend(account);
             List<StatusUpdate> listStatus = new List<StatusUpdate>();
             foreach (Account friend in listFriend)
             {
@@ -95,6 +101,18 @@ namespace SPKTWeb.Homes.Presenter
             listStatus.Sort(new Comparison<StatusUpdate>((st1, st2) => st2.CreateDate.CompareTo(st1.CreateDate)));
             LogUtil.Logger.Writeln(".  - GetStatusToShow return count: "+listStatus.Count.ToString());
             return listStatus;
+        }
+        public List<Alert> GetAlertToShow(Account account)
+        {
+            List<Account> listFriend = new List<Account>();
+            List<Alert> list = new List<Alert>();
+            listFriend = _friendService.SearchFriend(account);
+            foreach (Account friend in listFriend)
+            {
+                list = _alertService.GetAlertsByAccountID(friend.AccountID);
+            }
+            
+            return list;
         }
         internal void SaveStatusUpdate(String statusContent, int range)
         {
@@ -120,12 +138,12 @@ namespace SPKTWeb.Homes.Presenter
             _statusUpdateService = new StatusUpdateService();
             _statusUpdateService.SaveStatusUpdate(status);
             LogUtil.Logger.Writeln("SaveStatusUpdate: " + statusContent);
-            _view.LoadStatus(GetStatusToShow(account));
+            _view.LoadStatus(GetStatusToShow(account), GetAlertToShow(account));
         }
 
         internal void LoadStatus()
         {
-            _view.LoadStatus(GetStatusToShow(account));   
+            _view.LoadStatus(GetStatusToShow(account), GetAlertToShow(account));   
         }
     }
 }

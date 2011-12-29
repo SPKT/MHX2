@@ -20,6 +20,7 @@ namespace SPKTWeb.Groups.UserControl
         IRedirector _redirector;
         IGroupMemberRepository _groupMemberRepository;
         GroupHeaderPresenter _presenter;
+        IBoardForumRepository _forumRepository;
         protected void Page_Load(object sender, EventArgs e)
         {
             _fileService = new FileService();
@@ -27,6 +28,7 @@ namespace SPKTWeb.Groups.UserControl
             _webContext = new WebContext();
             _groupMemberRepository = new GroupMemberRepository();
             _redirector = new Redirector();
+            _forumRepository = new BoardForumRepository();
         }
         public Group group{get;set;}
         public List<Account> accounts { get; set; }
@@ -38,8 +40,11 @@ namespace SPKTWeb.Groups.UserControl
             lblCreateDate.Text = group.CreateDate.ToShortDateString();
             lblUpdateDate.Text = group.UpdateDate.ToShortDateString();
             lblDescription.Text = group.Description;
-            lblBody.Text = group.Body;
- 
+            //lblBody.Text = group.Body;
+            IBoardForumRepository _forumRepository;
+            _forumRepository = new BoardForumRepository();
+            BoardForum forum = _forumRepository.GetForumByGroupID(group.GroupID);
+            linkNewThread.NavigateUrl = "/Groups/PostGroupforum.aspx?" + "IsThread=" + 1 + "&ForumID=" + forum.ForumID + "&GroupID=" + group.GroupID + "&PostID=0";
         }
 
         public void ShowPublic(bool Visible)

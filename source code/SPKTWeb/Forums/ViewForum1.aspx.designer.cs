@@ -29,5 +29,23 @@ namespace SPKTWeb.Forums {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SPKTWeb.Forums.UserControl.ViewAllPost UCViewAllPost;
+        
+        /// <summary>
+        /// UCViewTopPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SPKTWeb.Forums.UserControl.ViewTopPost UCViewTopPost;
+        
+        /// <summary>
+        /// UCViewTopPost1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SPKTWeb.Forums.UserControl.ViewTopPost UCViewTopPost1;
     }
 }

@@ -8,6 +8,7 @@ namespace SPKTWeb.Forums.Interface
 {
     public interface IShowViewPostUC
     {
-        void LoadPost();
+        void LoadTopPostInForum();
+        void LoadTopPostInCategory();
     }
 }

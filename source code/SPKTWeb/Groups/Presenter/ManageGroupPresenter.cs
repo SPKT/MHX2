@@ -40,8 +40,11 @@ namespace SPKTWeb.Groups.Presenter
         public void Init(IManageGroup view, bool IsPostBack)
         {
             _view = view;
+            
             bool IsLogin=_webContext.LoggedIn;
             //TODO: _webContext.CurrentUser.AccountID có thể bị Null Reference?
+            if (IsLogin == false)
+                _redirector.GoToAccountLoginPage();
             if (_webContext.GroupID > 0 && !_groupService.IsOwnerOrAdministrator(_webContext.CurrentUser.AccountID, _webContext.GroupID))
                 _redirector.GoToAccountAccessDenied();
 

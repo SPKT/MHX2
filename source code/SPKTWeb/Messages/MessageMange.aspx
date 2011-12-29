@@ -11,10 +11,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="left" runat="server">
     <div style="border: 1px solid #999999;background-color:White;">
-        <div align="center" style="border: 1px solid #CCCCCC; background-image: url('../Image/htitle.gif');
-            background-repeat: repeat-x; height: 25px;">
+        <div align="center" style="border: 1px solid #CCCCCC;
+            background-repeat: repeat-x; height: 25px; background-color: #CC0000;">
             <asp:LinkButton ID="lbt_Box" runat="server" Font-Underline="False" Font-Bold="True"
-                ForeColor="#006600">Hộp tin nhắn</asp:LinkButton>
+                ForeColor="#FFFFFF">Hộp tin nhắn</asp:LinkButton>
         </div>
         <div style="border: 1px solid #CCCCCC; height: 2px; background-color: #333333;">
         </div>

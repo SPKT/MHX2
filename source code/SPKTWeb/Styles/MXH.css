@@ -6,7 +6,7 @@
     height:957px;
     margin-left:0;
     margin-top:0;
-
+    font-family:Verdana, Sans-Serif, Tahoma;
 }
 #banner 
 {
@@ -226,7 +226,7 @@ div.menu_ngang a:visited
     width: 50px;
     margin-left:0px;
     margin-top:0px;
-    height:24px;
+    height:86%;
     margin-left:-1px;
 }
 .nuttim
@@ -273,8 +273,8 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
 }
 #box_right1
 {
-    width:20%;
-    height:100%;
+    width:23%;
+    height:auto;
     margin-top:10px;
     float:right;
     border-right-width:0px;
@@ -285,7 +285,7 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
 {
     width:60%;
     margin-left:2%;
-    height:100%;
+    height:auto;
     float:left;
     margin-top:10px;
     background-image: url('../Image/1e.gif');
@@ -296,11 +296,9 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
 {
     width:60%;
     margin-left:0%;
-    height:100%;
+    height:auto;
     float:left;
-    margin-top:10px;
-    background-image: url('../Image/1e.gif');
-    background-repeat:repeat-y;
+    margin-top:0px;
     margin-bottom:10px;
 }
 .main_box
@@ -348,7 +346,7 @@ div.menu_ngang_timkiem_nut a:hover,div.menu_ngang_timkiem_nut a:visited,div.menu
 	padding-left:5px;
 	border-color:#666666;
     border-style:solid;
-    border-width:1px;
+    border-width:0px;
 }
 div.menu_left a:hover
 {
@@ -618,4 +616,55 @@ div.icon a:hover
     font-size:11px;
     color:Blue;
     font-variant:small-caps;
+}
+.Main_Subject
+{
+    width:100%;
+    height:auto;
+    font-family:Tahoma;
+    font-size:x-large;
+    font-weight:bolder;
+    color:#d70711;
+    padding:3px;
+    padding-top:0px;
+    padding-left:20px;
+}
+.Container
+{
+    margin-right:0%;
+    width: 90%;
+    height:100%;
+    border-color:#CCCCCC;
+    border-style:solid;
+    border-width:0px;
+    margin-top:-2px;
+    padding-left:1%;
+    padding-bottom:20px;
+    background-image:url('../Image/thead.gif'); background-repeat:repeat-x;
+    padding-top:0px;
+    
+}
+.Subject
+{
+    font-family:Arial;
+    font-size:small;
+    color:Gray;
+    width:100%;
+}
+.Sub_Link
+{
+    font-family:Tahoma;
+    font-size:x-small;
+    color:#413030;
+    width:100%;
+    margin-bottom:3px;
+}
+.Sub_Link1
+{
+    font-family:Times New Roman;
+    font-size:large;
+    color:#000066;
+    width:100%;
+    font-variant:small-caps;
+    margin-bottom:3px;
 }

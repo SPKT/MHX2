@@ -112,7 +112,20 @@ namespace SPKTCore.Core.DataAccess.Impl
             return result;
         }
 
-        
+        public List<Account> GetAllAccounts()
+        {
+            List<Account> result = new List<Account>();
+
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                IEnumerable<Account> accounts = (from a in dc.Accounts
+                                                 orderby a.UserName
+                                                 select a);
+                result = accounts.ToList();
+            }
+
+            return result;
+        }
 
         public List<Account> GetApprovedAccountsByGroupID(int GroupID, int PageNumber)
         {

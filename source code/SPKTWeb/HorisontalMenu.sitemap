@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="" title=""  description="">
-       <siteMapNode url="~/Homes/Home.aspx" title="TRANG CHỦ"  description="" />
-        <siteMapNode url="~/Profiles/UserProfile2.aspx" title="TRANG CÁ NHÂN"  description="" >
-            <siteMapNode url="~/Profiles/ManageProfile.aspx" title="Quản Lý Hồ Sơ Cá Nhân"/>
-            <siteMapNode url="~/Messages/MessageMange.aspx" title="Hộp Thư"/>
-      </siteMapNode>
-      <siteMapNode url="~/Friends/ShowFriend.aspx" title="BẠN BÈ"  description="" >
-      </siteMapNode>
-      <siteMapNode url="~/Forums/AllForum.aspx" title="DIỄN ĐÀN"  description="" >
-        <siteMapNode url="~/Admins/Manage.aspx" title="Quản Lý Diễn Đàn"/>
-      </siteMapNode>
-      <siteMapNode url="~/Groups/ViewAllGroup.aspx" title="NHÓM"  description="" >
-        <siteMapNode url="~/Groups/MyGroups.aspx" title="Nhóm Của Bạn"/>
-        <siteMapNode url="~/Groups/ManageGroup.aspx" title="Tạo Nhóm Mới"/>
-      </siteMapNode>
-      <siteMapNode url="~/News.aspx" title="TIN MỚI"/>
-      <siteMapNode url="~/Notes.aspx" title="THÔNG BÁO"/>
+          <siteMapNode url="~/Homes/Home.aspx" title="TRANG CHỦ"  description="" />
+          <siteMapNode url="~/Profiles/UserProfile2.aspx" title="TRANG CÁ NHÂN"  description="" >
+              <siteMapNode url="~/Profiles/ManageProfile.aspx" title="Quản Lý Hồ Sơ Cá Nhân"/>
+              <siteMapNode url="~/Messages/MessageMange.aspx" title="Hộp Thư"/>
+          </siteMapNode>
+          <siteMapNode url="~/Friends/ShowFriend.aspx" title="BẠN BÈ"  description="" >
+          </siteMapNode>
+          <siteMapNode url="~/Forums/AllForum.aspx" title="DIỄN ĐÀN"  description="" >
+            <siteMapNode url="~/Admins/Manage.aspx" title="Quản Lý Diễn Đàn"/>
+          </siteMapNode>
+          <siteMapNode url="~/Groups/ViewAllGroup.aspx" title="NHÓM"  description="" >
+            <siteMapNode url="~/Groups/MyGroups.aspx" title="Nhóm Của Bạn"/>
+            <siteMapNode url="~/Groups/ManageGroup.aspx" title="Tạo Nhóm Mới"/>
+          </siteMapNode>
+          <siteMapNode url="~/Notes.aspx" title="THÔNG BÁO"/>
       </siteMapNode>
 </siteMap>

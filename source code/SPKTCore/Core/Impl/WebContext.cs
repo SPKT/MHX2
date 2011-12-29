@@ -73,7 +73,6 @@ namespace SPKTCore.Core.Impl
                 {
                     return GetFromSession("CurrentUser") as Account;
                 }
-
                 return null;
             }
             set

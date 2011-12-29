@@ -185,7 +185,6 @@ namespace SPKTCore.Core.Impl
 
         public void SetLogedIn(string Username)
         {
-            System.Web.Security.FormsAuthentication.SetAuthCookie(UserName, false);
             Account account = _accountRepository.GetAccountByUsername(Username);
             _userSession.LoggedIn = true;
             _userSession.Username = Username;

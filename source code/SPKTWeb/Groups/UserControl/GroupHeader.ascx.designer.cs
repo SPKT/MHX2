@@ -22,6 +22,15 @@ namespace SPKTWeb.Groups.UserControl {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
+        /// lblPrivateMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrivateMessage;
+        
+        /// <summary>
         /// pnlPublic control.
         /// </summary>
         /// <remarks>
@@ -40,24 +49,6 @@ namespace SPKTWeb.Groups.UserControl {
         protected global::System.Web.UI.WebControls.Label lblName;
         
         /// <summary>
-        /// imgGroupLogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgGroupLogo;
-        
-        /// <summary>
-        /// lblPrivateMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrivateMessage;
-        
-        /// <summary>
         /// lbRequestMembership control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace SPKTWeb.Groups.UserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbRequestMembership;
+        
+        /// <summary>
+        /// imgGroupLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgGroupLogo;
         
         /// <summary>
         /// lblCreateDate control.
@@ -121,12 +121,12 @@ namespace SPKTWeb.Groups.UserControl {
         protected global::System.Web.UI.WebControls.LinkButton lbViewMembers;
         
         /// <summary>
-        /// lblBody control.
+        /// linkNewThread control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBody;
+        protected global::System.Web.UI.WebControls.HyperLink linkNewThread;
     }
 }

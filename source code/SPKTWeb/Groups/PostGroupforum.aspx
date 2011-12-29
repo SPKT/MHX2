@@ -63,7 +63,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="divMain">
-
     <div class="divContainer">
         <div class="divContainerBox">
           <asp:Panel ID="pnlHeader" runat="server">

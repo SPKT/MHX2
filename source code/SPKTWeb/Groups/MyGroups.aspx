@@ -53,19 +53,16 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-    <div class="divMain">
-    <div class="divContainer">
-        <div class="divContainerBox">
-            <div class="divContainerRow">
-              
+    <div >
+    <div align="left" class="Main_Subject">
+             <asp:Label ID="lb" runat="server" Width="100%" Height="100%" Text="Group của bạn"></asp:Label>
+         </div>
+        <div style="background-color: #CCCCCC; width: 100%; height: 2px; margin-bottom: 0px;">
+        </div>
                 <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
                 
  <asp:ListView id="lvGroups" runat="server" OnItemDataBound="lvGroups_ItemDataBound">
-                    <LayoutTemplate>
-                        <ul class="groupsList">
-                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
-                        </ul>
-                    </LayoutTemplate>
+               
                     
                     <ItemTemplate>
                    
@@ -73,23 +70,25 @@
                      
                             <asp:Literal Visible="false" ID="litImageID" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).FileID %>'></asp:Literal>
                             <asp:Literal ID="litPageName" Visible="false" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).PageName %>'></asp:Literal>
-                            <div>
+                            <div style="padding-left:20px;">
                                 <div style="float:left;">
-                                    <div style="float:left;">
-                                        <div>
+                                    <div style="float:left; width:80px; height:80px;">
+                                        <div class="Sub_Link">
                                         <asp:LinkButton OnClick="lbPageName_Click" id="lbPageName" runat="server" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).Name %>'></asp:LinkButton>
                                         </div>
-                                        <asp:Image ID="imgGroupImage" Width="60px" Height="60px" runat="server" />
+                                        <div style="width:60px; height:60px">
+                                        <asp:Image ID="imgGroupImage" Width="100%" Height="100%"  runat="server" />
+                                        </div>
                                     </div>
-                                    <div >
+                                    <div style="margin-left:100px; margin-right:50px; font-family:Times New Roman; font-style:italic; color:Gray;">
                                         <br />
-                                        Ngày tạo:<asp:Label ID="Label1" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).CreateDate %>' runat="server"></asp:Label><br />
-                                        Mô tả:<asp:Label ID="lbl" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).MemberCount %>' runat="server"></asp:Label><br />
-                                        Số lượng thành viên:<asp:Label ID="Label2" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).Description %>' runat="server"></asp:Label>
+                                        Ngày tạo:<asp:Label  Font-Italic="true" ID="Label1" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).CreateDate %>' runat="server"></asp:Label><br />
+                                        Mô tả:<asp:Label ID="lbl"  ForeColor="Maroon" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).Description %>' runat="server"></asp:Label><br />
+                                        Số lượng thành viên:<asp:Label ID="Label2" ForeColor="Blue" Text='<%# ((SPKTCore.Core.Domain.Group)Container.DataItem).MemberCount %>' runat="server"></asp:Label>
                                     </div>
                                 </div>
                                 
-                                <div style="text-align:right;"><asp:ImageButton Width="20px" Height="20px" ID="ibDelete" OnClick="ibDelete_Click" runat="server" ImageUrl="~/image/icon_close.gif" />
+                                <div style="text-align:right; padding-right:50px; vertical-align:middle;"><asp:ImageButton Width="20px" Height="20px" ID="ibDelete" OnClick="ibDelete_Click" runat="server" ImageUrl="~/image/icon_close.gif" />
                                 <asp:ImageButton Width="20px" Height="20px" ID="ibEdit" OnClick="ibEdit_Click" runat="server" ImageUrl="~/image/pencil.jpg" />
                                 </div>
                             </div>  
@@ -106,9 +105,7 @@
                     </EmptyDataTemplate>
                 </asp:ListView>
                
-            </div>
-        </div>
-    </div>
+            
     </div>
     </asp:Content>
 

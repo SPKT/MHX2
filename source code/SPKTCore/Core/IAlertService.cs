@@ -21,5 +21,8 @@ namespace SPKTCore.Core
         void AddNewBoardThreadAlert(BoardCategory category, BoardForum forum, BoardPost post, Group group);
         void AddNewBoardPostAlert(BoardCategory category, BoardForum forum, BoardPost post, BoardPost thread,
                                   Group group);
+
+        void AddComment(Comment c);
+
     }
 }

@@ -1,17 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ForumHeader.ascx.cs" Inherits="SPKTWeb.Forums.UserControl.ForumHeader" %>
-<div class="divContainer" id="com" style="border: 1px solid #999999; width: 100%;
-    -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: White;">
-    <div class="div" style="border-color:Blue; width: 100%; height:100px;">
-        <div class="divContainerTitle" style="border: 0px none #000066;  -moz-border-radius: 5px; -webkit-border-radius: 5px;font-family: 'Times New Roman', Times, serif;
-             width: 621px; height: 33px; background-image: url('/Image/thead.gif');
-            background-repeat: repeat-y;">
-            <asp:Label  ID="lblTen"  font-weight=" bold " Text="Diễn Đàn" color= "#3366FF" font-size=" 22px"  runat="server"></asp:Label>
+<div class="divContainer" id="com" style="width: 100%;background-color: White; margin-top:0px;">
+    <div class="div" style="border-color:White; width: 100%; height:50px;">
+        <div class="Subject">
+            <asp:Label  class="Main_Subject" ID="lblTen"  runat="server"></asp:Label> | Ngày Tạo: <asp:Label Text=" | " ID="lblCreateDate" runat="server" CssClass="Subject"></asp:Label> | Tổng Số Bài Viết: <asp:Label Text=" | " ID="lblPostCount" runat="server" CssClass="Subject"></asp:Label>
         </div>
-        <div>
-            Ngày tạo: <asp:Label ID="lblCreateDate" runat="server"></asp:Label><br />
-            Tổng số bài viết: <asp:Label ID="lblPostCount" runat="server"></asp:Label><br />
-         </div>
-         <div>
+        <div style="background-color: #CCCCCC; width:100%; height:2px; margin-bottom:10px;">
+        </div>
+         <div align="right">
             <asp:HyperLink ID="alkTatCaBaiViet" NavigateUrl="/Forums/ViewForum1.aspx" Text="Tất cả bài viết" runat="server"></asp:HyperLink>
                         &nbsp;&nbsp; 
             <asp:HyperLink ID="alkDangBaiMoi" NavigateUrl="/Forums/Post.aspx" Text="Đăng bài mới" runat="server"></asp:HyperLink>

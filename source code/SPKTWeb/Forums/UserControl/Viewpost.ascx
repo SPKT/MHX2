@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Viewpost.ascx.cs" Inherits="SPKTWeb.Forums.UserControl.Viewpost" %>
 <%@ Import Namespace="SPKTCore.Core.Domain"%>
-<div class="divContainerUC" style="border-width:0px; border-color:White">
+<div class="divContainerUC" style="border-width:0px; border-color:White; margin-top:2%;">
         <div class="divContainerBox" style="border-width:0px; border-color:White">
             <div class="divContainerRow" style="border-width:0px; border-color:White">
                <div style="">

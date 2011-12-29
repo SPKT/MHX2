@@ -1,20 +1,19 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_R.master.cs" Inherits="SPKTWeb.MXH_R" %>
+
 <%@ Register Src="~/Accounts/UserControl/InfoAccount.ascx" TagName="info" TagPrefix="uc5" %>
 <%@ Register Src="~/Accounts/UserControl/EditAc.ascx" TagName="edit" TagPrefix="uc6" %>
 <%@ Register Src="~/Friends/UserControl/InviteFriends.ascx" TagName="in" TagPrefix="uc7" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menul" TagPrefix="uc8" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
-        <link type="text/css" rel="Stylesheet" href="/Styles/MXH.css" />
+    <link type="text/css" rel="Stylesheet" href="/Styles/MXH.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body style="background-image: url('/Image/1f.gif'); padding: 0px; margin: 0px; height: 100%;">
+<body style="background-image: url('/Image/1f.gif'); padding: 0px; margin: 0px; height: 100%;font-family:Verdana, Sans-Serif, Tahoma; font-size:small">
     <form id="form1" runat="server" style="padding: 0px; margin: 0px 50px 0px 50px; margin-top: 0px;
     height: 100%; background-image: url('/Image/1e.gif'); background-repeat: repeat-y;">
     <div id="Div1" style="width: auto; height: 100%; padding: 20px; padding-top: 0px;
@@ -28,8 +27,11 @@
                 <div class="item_banner_text">
                     <div id="item_banner_2" style="height: 23px;" align="center">
                         <asp:Image ID="img_av" runat="server" Width="20px" Height="15px" />
+                        <a href="Default.aspx" style="color: DarkBlue" visible="false" id="linkLogin" runat="server">
+                            Đăng nhập</a> <a href="/Accounts/Register.aspx" style="color: DarkBlue" visible="false"
+                                id="linkRegister" runat="server">Đăng ký</a>
                         <asp:Label ID="lblUserName" runat="server" ForeColor="DarkBlue" Text="Xin chao" Font-Size="Small"></asp:Label>
-                        <asp:Image Width="13px" Height="13px" ImageUrl="Image/expand.jpg" runat="server"
+                        <asp:Image Width="13px" Height="13px" ImageUrl="/Image/expand.jpg" runat="server"
                             ID="img_1" />
                         <asp:Panel ID="Panel1" runat="server" Style="display: block; width: 120px; height: 80px;">
                             <div style="margin-left: 86%; margin-top: 7px; float: left">
@@ -41,7 +43,7 @@
                                 -moz-border-radius: 5px; -webkit-border-radius: 5px;">
                                 <div class="link">
                                     <asp:LinkButton ID="lb_thaydoi" runat="server" Text="Quản lý tài khoản" Font-Strikeout="false"
-                                        Width="100%" Height="18px"></asp:LinkButton>
+                                        Width="100%" Height="18px" OnClick="thaydoi_Click"></asp:LinkButton>
                                 </div>
                                 <div class="link">
                                     <asp:LinkButton ID="lb_thoat" runat="server" Text="Đăng xuất" Font-Strikeout="false"
@@ -89,26 +91,23 @@
             </div>
             <div style="background-color: #CC0000; height: 1px;">
             </div>
-             <div style="float:none;">
-                    <div id="box_main1"style="background-image: url('/Image/1e.gif'); background-repeat: repeat-y; width:79%;">
-                        <div>
-                            <asp:ContentPlaceHolder ID="Main" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </div>
-                    </div>
-                    <div id="box_right1"style="background-color:White;">
-                        <div>
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </div>
-                    </div>
-                    
-        </div>
-            <div style="height: 20px; margin-top: 100%; margin-bottom: 0px; float: none; background-image: url('/Image/foot.jpg');
-                background-repeat: repeat-x;">
+            <div style="float: none; height:1500px">
+                <div id="box_main1" style=" background-color:White;
+                    width: 77%">
+                    <asp:ContentPlaceHolder ID="Main" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="box_right1">
+                    <asp:ContentPlaceHolder ID="right" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </div>
+            
         </div>
     </div>
+    <div style="height: 20px; margin-top: 100%; margin-bottom: 0px; float: none; background-image: url('/Image/foot.jpg');
+                background-repeat: repeat-x;">
+            </div>
     </form>
 </body>
 </html>

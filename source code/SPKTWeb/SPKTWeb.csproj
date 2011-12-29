@@ -90,6 +90,7 @@
     <Content Include="bin\StructureMap.AutoMocking.dll" />
     <Content Include="bin\StructureMap.AutoMocking.xml" />
     <Content Include="bin\StructureMap.dll" />
+    <Content Include="Blogs\Post.aspx" />
     <Content Include="Comments\UseComment.aspx" />
     <Content Include="Comments\UserControl\BoxComment.ascx" />
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
@@ -171,6 +172,15 @@
     <Content Include="Image\1q.gif" />
     <Content Include="Image\1_170.png" />
     <Content Include="Image\2.gif" />
+    <Content Include="Image\2a.jpg" />
+    <Content Include="Image\2b.jpg" />
+    <Content Include="Image\2c.jpg" />
+    <Content Include="Image\2d.jpg" />
+    <Content Include="Image\2e.jpg" />
+    <Content Include="Image\2f.gif" />
+    <Content Include="Image\2g.gif" />
+    <Content Include="Image\2h.gif" />
+    <Content Include="Image\2i.gif" />
     <Content Include="Image\3.gif" />
     <Content Include="Image\4.gif" />
     <Content Include="Image\5.gif" />
@@ -186,13 +196,15 @@
     <Content Include="Image\arrow.jpg" />
     <Content Include="Image\arrow1.jpg" />
     <Content Include="Image\b.gif" />
+    <Content Include="Image\b111.jpg" />
+    <Content Include="Image\b112.jpg" />
+    <Content Include="Image\b113.jpg" />
     <Content Include="Image\banner.jpg" />
     <Content Include="Image\banner_menu_bg.gif" />
     <Content Include="Image\bbl-body-bg.png" />
     <Content Include="Image\bbl-body-bg_2.png" />
     <Content Include="Image\bbl-head-bg.png" />
     <Content Include="Image\bbl-head-bg_2.png" />
-    <Content Include="Image\bg.png" />
     <Content Include="Image\bgDIVIDER.gif" />
     <Content Include="Image\bgd_footer.gif" />
     <Content Include="Image\bgIndexOptionsTop.gif" />
@@ -230,6 +242,10 @@
     <Content Include="Image\box_mtl_ctr.gif" />
     <Content Include="Image\box_top.gif" />
     <Content Include="Image\bt2.jpg" />
+    <Content Include="Image\btn_comment.jpg" />
+    <Content Include="Image\bt_c1.jpg" />
+    <Content Include="Image\bt_c2.jpg" />
+    <Content Include="Image\bt_tim.jpg" />
     <Content Include="Image\button-search-header.jpg" />
     <Content Include="Image\but_razd.gif" />
     <Content Include="Image\camera.gif" />
@@ -260,6 +276,12 @@
     <Content Include="Image\l.gif" />
     <Content Include="Image\leftground1.gif" />
     <Content Include="Image\lista.png" />
+    <Content Include="Image\logo.gif" />
+    <Content Include="Image\logo.jpg" />
+    <Content Include="Image\logo1.gif" />
+    <Content Include="Image\logo1.jpg" />
+    <Content Include="Image\logo2.jpg" />
+    <Content Include="Image\logo3.jpg" />
     <Content Include="Image\main_background_gradient.jpg" />
     <Content Include="Image\main_menu_bg.jpg" />
     <Content Include="Image\menu-1.gif" />
@@ -285,7 +307,6 @@
     <Content Include="Image\nuttim.gif" />
     <Content Include="Image\page_top_bkgr.gif" />
     <Content Include="Image\pencil.jpg" />
-    <Content Include="Image\pencil_note.jpg" />
     <Content Include="Image\post_entry_bkgr.png" />
     <Content Include="Image\ProfileAvatar.aspx" />
     <Content Include="Image\pro_15_0.gif" />
@@ -321,7 +342,6 @@
     <Content Include="Image\ta_p.gif" />
     <Content Include="Image\ta_trai.gif" />
     <Content Include="Image\ta_tren.gif" />
-    <Content Include="Image\thanh.JPG" />
     <Content Include="Image\thanhtren.gif.png" />
     <Content Include="Image\thead.gif" />
     <Content Include="Image\tile_cat.gif" />
@@ -332,10 +352,6 @@
     <Content Include="Image\timnp.gif" />
     <Content Include="Image\timntrai.gif" />
     <Content Include="Image\titlemenu.gif" />
-    <Content Include="Image\tt03-310.png" />
-    <Content Include="Image\tt07-610.png" />
-    <Content Include="Image\tt09-410.png" />
-    <Content Include="Image\ttt01110.png" />
     <Content Include="Image\undo.png" />
     <Content Include="Image\up.jpg" />
     <Content Include="Image\upload_icon.gif" />
@@ -495,17 +511,14 @@
     <Content Include="Styles\style_002.css" />
     <Content Include="temp.aspx" />
     <Content Include="Test.aspx" />
-    <Content Include="UserControl\ButtonComment.ascx" />
-    <Content Include="UserControl\Comment.ascx" />
-    <Content Include="UserControl\Comments.ascx" />
-    <Content Include="UserControl\ProfileDisplay.ascx" />
-    <None Include="Image\menu_d1.psd" />
     <Content Include="MXH_NEW.Master" />
     <Content Include="MXH_1.Master" />
     <Content Include="MXH_P.Master" />
     <Content Include="MXH_E.Master" />
     <Content Include="MXH_PE.Master" />
     <Content Include="MXH_R.Master" />
+    <None Include="Image\menu_d1.psd" />
+    <None Include="Image\Untitled-2.psd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -524,6 +537,10 @@
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\DkmhWebservice\UsrSer.disco" />
+    <Content Include="UserControl\ButtonComment.ascx" />
+    <Content Include="UserControl\Comment.ascx" />
+    <Content Include="UserControl\Comments.ascx" />
+    <Content Include="UserControl\ProfileDisplay.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2013,6 +2030,15 @@
     </Compile>
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
+    <Compile Include="Blogs\Interface\IPost.cs" />
+    <Compile Include="Blogs\Post.aspx.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blogs\Post.aspx.designer.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blogs\Presenter\PostPresenter.cs" />
     <Compile Include="Comments\Interface\IBoxComment.cs" />
     <Compile Include="Comments\Interface\IPostComment.cs" />
     <Compile Include="Comments\Presenter\BoxCommentPresenter.cs" />
@@ -2600,7 +2626,6 @@
     <Compile Include="Profiles\Interface\IUploadNewAvatar.cs" />
     <Compile Include="Profiles\Interface\IUserProfile.cs" />
     <Compile Include="Profiles\Interface\IViewProfile.cs" />
-    <Compile Include="Profiles\LeftMenuPresenter.cs" />
     <Compile Include="Profiles\ManageProfile.aspx.cs">
       <DependentUpon>ManageProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2834,6 +2859,7 @@
     <Folder Include="bin\tr-TR\" />
     <Folder Include="bin\zh-CHS\" />
     <Folder Include="bin\zh-CHT\" />
+    <Folder Include="Blogs\UserControl\" />
     <Folder Include="Searchs\UserControl\" />
     <Folder Include="Xinha\plugins\CSS\lang\" />
     <Folder Include="Xinha\plugins\HorizontalRule\img\" />
@@ -2850,7 +2876,9 @@
     <Content Include="MXH2.master" />
     <Content Include="MXH_2.Master" />
     <Content Include="MXH_11.Master" />
-    <Content Include="HorisontalMenu.sitemap" />
+    <Content Include="HorisontalMenu.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Picture\Untitled-1.psd" />
     <Content Include="Temp.Master" />
     <None Include="Web References\DkmhWebservice\UsrSer.wsdl" />

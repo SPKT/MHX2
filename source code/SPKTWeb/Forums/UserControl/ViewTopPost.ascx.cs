@@ -17,11 +17,24 @@ namespace SPKTWeb.Forums.UserControl
         {
             _presenter = new ShowViewPostUCPresenter();
             _presenter.Init(this);
+
+        }
+        public void LoadTopPostInForum()
+        {
+            _presenter = new ShowViewPostUCPresenter();
+            List<BoardPost> posts = _presenter.LoadPosts();
+            repPosts.DataSource = posts;
+            repPosts.DataBind();
         }
 
-        public void LoadPost()
+
+        public void LoadTopPostInCategory()
         {
-            List<BoardPost> posts = _presenter.LoadPosts();
+            _presenter = new ShowViewPostUCPresenter();
+            List<BoardPost> posts = _presenter.LoadPostsInCate();
+            Label lblDate = repPosts.FindControl("lblCreateDate") as Label;
+            if (lblDate != null)
+                lblDate.Text = "";
             repPosts.DataSource = posts;
             repPosts.DataBind();
         }

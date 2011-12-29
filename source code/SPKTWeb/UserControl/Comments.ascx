@@ -12,11 +12,15 @@
         <asp:Timer ID="Timer1" runat="server" Interval="20000" ontick="Timer1_Tick" >
        </asp:Timer>
             <asp:PlaceHolder ID="phComments" runat="server"></asp:PlaceHolder>
-                    <div style="margin-bottom:5px;">
-            <asp:TextBox ID="txtComment" runat="server" Width= "400px"></asp:TextBox>
-                        <asp:Button Text="Gửi lời bình" ID="btnAddComment" runat="server" 
-                            OnClick="btnAddComment_Click"  BackColor="#0066FF"
-                        BorderColor="#99CCFF" BorderStyle="Solid" BorderWidth="1px" ForeColor="White" />
+             <div style=" width:100%; height:20px;">
+                <div style="width:70%; height:85%; float:left; margin:0px;">
+                <asp:TextBox ID="txtComment" runat="server" Width= "100%" Height="80%"></asp:TextBox>
+                </div>
+                 <div style="float:left; width:10%; height:100%; margin:0px;">
+                  <asp:ImageButton  ID="btnAddComment" runat="server" OnClick="btnAddComment_Click" Width="100%" Height="100%" ImageUrl="/Image/bt_c1.jpg" />
+                 </div>        
+                        
+                       
             </div>
 <!--<asp:GridView ID="gvComment" runat="server" 
                 AutoGenerateColumns="False" Width="100%" Style="margin-right: 0px" 

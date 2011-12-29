@@ -3,6 +3,10 @@
 <%@ Register src="UserControl/GroupForumUC.ascx" tagname="GroupForumUC" tagprefix="uc1" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 
+<%@ Register src="UserControl/GroupHeader.ascx" tagname="GroupHeader" tagprefix="uc2" %>
+
+<%@ Register src="UserControl/ViewMemberUC.ascx" tagname="ViewMemberUC" tagprefix="uc3" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
             .divMain
@@ -60,66 +64,21 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-    <div class="divMain">
-
-    <div class="divContainer">
-        <div class="divContainerBox">
-            <div class="divContainerRow" style="width:100%;">
-                <asp:Label ForeColor="Red" ID="lblMessage" runat="server"></asp:Label>
-                <asp:Panel ID="pnlPublic" runat="server">
-                    <div style="float: none;">
-                        
-                        <div style="float: left;">
-                        <asp:Label ID="lblName" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label><br />
-                            <asp:Image ID="imgGroupLogo" Width="120px" Height="80px" runat="server" /></div>
-                        <div style="text-align: right;">
-                            <asp:Label ID="lblPrivateMessage" ForeColor="Red" runat="server" Text="Nhóm đang ở chế độ riêng tư!"></asp:Label>
-                            <asp:LinkButton ID="lbRequestMembership" OnClick="lbRequestMembership_Click" Text="Tham gia nhóm"
-                                runat="server"></asp:LinkButton>
-                        </div>
-                    </div>
-                    <br />
-                    Ngày tạo:
-                    <asp:Label ID="lblCreateDate" runat="server"></asp:Label>
-                    Cập nhật cuối:
-                    <asp:Label ID="lblUpdateDate" runat="server"></asp:Label>
-                    <br />
-                    <asp:Label ID="lblDescription" runat="server"></asp:Label>
-                    <br />
-                </asp:Panel>
-                <asp:Panel ID="pnlPrivate" runat="server">
-                    <asp:HyperLink ID="hylinkForum" Text="Xem Forum" Visible="false" runat="server"></asp:HyperLink>&nbsp;
-                    <asp:HyperLink ID="hylinkViewMembers" Text="Thành viên" NavigateUrl="" runat="server"></asp:HyperLink>
-                    
-                </asp:Panel>
-            </div>
-        </div>
-        <div class="divContainerunder">
-        <asp:Panel ID="pnlMember" runat="server">
-            Danh sách thành viên
-            <br />
-            <asp:Repeater ID="reMember" runat="server" OnItemCommand="reMember_ItemCommand">
-                <ItemTemplate>
-                    <a href='/Profiles/UserProfile2.aspx?AccountID= <%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>'>
-                        <img alt='avatar' style="padding: 5px; margin-top: 4px;" id="imgAvatar" width="40px" height="40px"  class="img" src='/image/ProfileAvatar.aspx?AccountID=<%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>' />
-                    </a>
-                   <br />
-                    <a style="margin-bottom:35px;" href='/Profiles/UserProfile2.aspx?AccountID=<%# ((SPKTCore.Core.Domain.Account)Container.DataItem).AccountID %>'>
-                        <%# ((SPKTCore.Core.Domain.Account)Container.DataItem).UserName %>
-                    </a>
-                    
-                    <br />
-                </ItemTemplate>
-            </asp:Repeater>
-            </asp:Panel>
-        </div>
-        <div style="width: 80%">
-         <asp:Panel ID="pnlForum" runat="server">
-             <uc1:GroupForumUC ID="uc" runat="server" />
-                        
+<div style="width:100%; height:100%;"> 
+<asp:Panel ID="pnlHeader" runat="server" BorderStyle="None">
+    <uc2:GroupHeader ID="UCGroupHeader" runat="server" />
+    </asp:Panel>
+</div>
+    <div style="width:100%; height:100%; float:left">
+    <div style="width:20%; height:100%; margin:0px; float:left">
+    <asp:Panel ID="pnlMember" runat="server">
+        <uc3:ViewMemberUC ID="ViewMemberUC" runat="server" />
         </asp:Panel>
-        
-        </div>
+    </div>
+    <div style="width:78%; height:100%; margin:0px; margin-left:21%">
+    <asp:Panel ID="pnlForum" runat="server">
+        <uc1:GroupForumUC ID="uc" runat="server" />
+        </asp:Panel>
     </div>
     </div>
     </asp:Content>

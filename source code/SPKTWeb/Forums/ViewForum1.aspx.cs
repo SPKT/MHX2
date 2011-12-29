@@ -44,14 +44,16 @@ namespace SPKTWeb.Forums
 
             UCViewAllPost.repViewAllPost.DataSource = Threads;
             UCViewAllPost.repViewAllPost.DataBind();
-
+            UCViewTopPost.LoadTopPostInForum();
+            UCViewTopPost1.LoadTopPostInCategory();
         }
         public void LoadDisplay(List<BoardPost> Threads,BoardForum forum)
         {
             UCForumHeader.lblForumName.Text += forum.Name;            
             UCForumHeader.LoadForum(forum);
-            UCViewAllPost.LoadForumPost(Threads, forum);            
-            
+            UCViewAllPost.LoadForumPost(Threads, forum);
+            UCViewTopPost.LoadTopPostInForum();
+            UCViewTopPost1.LoadTopPostInCategory();
         }
         public void LoadName(BoardForum forum)
         {

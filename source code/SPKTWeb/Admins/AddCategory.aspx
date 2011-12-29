@@ -41,7 +41,7 @@
     </div>
     <asp:Button ID="btnAdd" runat="server" Text="Add" onclick="btnAdd_Click" />
     <br />
-    <a href="AddForum.aspx" >Thêm Forum</a>
+    <a href="AddForum.aspx" >Add Forum</a>
    
 </div>
 </asp:Content>

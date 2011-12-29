@@ -48,7 +48,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="divMain">
-        <div class="divtitle">All Group</div>
+        <div align="left" class="Main_Subject">
+             <asp:Label ID="lb" runat="server" Width="100%" Height="100%" Text="Quản Lý Group"></asp:Label>
+         </div>
+        <div style="background-color: #CCCCCC; width: 100%; height: 2px; margin-bottom: 0px;">
+        </div>
      <div class="divContainer">
         <div class="divContainerBox">
         <div class="divContainerRow" style="margin:10px">

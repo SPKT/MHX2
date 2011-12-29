@@ -20,7 +20,7 @@ namespace SPKTWeb.Forums
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
-        {
+        {            
             BoardPost post = new BoardPost();
             post.Name = txtName.Text;
             post.PageName = txtName.Text;
