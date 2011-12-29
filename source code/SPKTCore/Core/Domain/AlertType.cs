@@ -24,7 +24,8 @@ namespace SPKTCore.Core.Domain
             AccountModified=12,
             NewBoardPost=13,
             NewBoardThread=14,
-            NewBlogPost=15
+            NewBlogPost=15,
+            Comment
         }
     }
 }

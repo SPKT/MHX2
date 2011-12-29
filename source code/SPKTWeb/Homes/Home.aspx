@@ -1,13 +1,36 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="SPKTWeb.Homes.Home" EnableEventValidation="false" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
 <%@ Register Src="~/UserControl/Comments.ascx" TagName="Comment" TagPrefix="uc2" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 <%@ Register Src="~/Styles/RIGHT_MENU1.ascx" TagName="rightmenu" TagPrefix="uc5" %>
+<%@ Register src="../Profiles/UserControls/NotifycationControl.ascx" tagname="NotifycationControl" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="content6" ContentPlaceHolderID="right1" runat="server">
+   <div style="background-color: #CC0000; font-family: Verdana; font-weight: bold; color: #FFFFFF; font-size: small; margin-bottom:3px; padding-left:10px;">
+    <asp:LinkButton ID="lbt" Text="Tin mới" runat="server" Font-Underline="false" ForeColor="White"></asp:LinkButton>
+       
+   </div>
+   <div style="margin: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;">
+            <asp:Panel ID="pnregist" runat="server" Width="500px" ForeColor="White">
+                <div align="center" style="width: 100%; height: 86%; margin-top:10px;">
+                    <div style="float: left; margin-left: 0%; height: 100%; width: 96%; margin-top: 0px;">
+                        
+                        <uc1:NotifycationControl ID="NotifycationControl1" runat="server" />
+                        
+                    </div>
+                    <div style="float: left; margin-left:23%; margin-top:-10px; width: 58px; height: 22px;">
+                        <asp:Button ID="bt" Text="X" runat="server" BackColor="White" 
+                            ForeColor="Black" Height="16px" Font-Bold="True" 
+                            Font-Names="Times New Roman" Font-Size="8px" />
+                    </div>
+                </div>
+            </asp:Panel>
+            <aspt:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="lbt"
+                PopupControlID="pnregist" BackgroundCssClass="modalBackground" DropShadow="false"
+                OkControlID="bt" OnOkScript="onOk()" />
+        </div>
    
-    
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
 <div class="box" style="width:100%; height:100%;">

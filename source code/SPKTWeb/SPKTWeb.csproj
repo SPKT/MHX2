@@ -90,6 +90,7 @@
     <Content Include="bin\StructureMap.AutoMocking.dll" />
     <Content Include="bin\StructureMap.AutoMocking.xml" />
     <Content Include="bin\StructureMap.dll" />
+    <Content Include="Blogs\Post.aspx" />
     <Content Include="Comments\UseComment.aspx" />
     <Content Include="Comments\UserControl\BoxComment.ascx" />
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
@@ -195,6 +196,9 @@
     <Content Include="Image\arrow.jpg" />
     <Content Include="Image\arrow1.jpg" />
     <Content Include="Image\b.gif" />
+    <Content Include="Image\b111.jpg" />
+    <Content Include="Image\b112.jpg" />
+    <Content Include="Image\b113.jpg" />
     <Content Include="Image\banner.jpg" />
     <Content Include="Image\banner_menu_bg.gif" />
     <Content Include="Image\bbl-body-bg.png" />
@@ -2026,6 +2030,15 @@
     </Compile>
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
+    <Compile Include="Blogs\Interface\IPost.cs" />
+    <Compile Include="Blogs\Post.aspx.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blogs\Post.aspx.designer.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blogs\Presenter\PostPresenter.cs" />
     <Compile Include="Comments\Interface\IBoxComment.cs" />
     <Compile Include="Comments\Interface\IPostComment.cs" />
     <Compile Include="Comments\Presenter\BoxCommentPresenter.cs" />
@@ -2611,7 +2624,6 @@
     <Compile Include="Profiles\Interface\IUploadNewAvatar.cs" />
     <Compile Include="Profiles\Interface\IUserProfile.cs" />
     <Compile Include="Profiles\Interface\IViewProfile.cs" />
-    <Compile Include="Profiles\LeftMenuPresenter.cs" />
     <Compile Include="Profiles\ManageProfile.aspx.cs">
       <DependentUpon>ManageProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2845,6 +2857,7 @@
     <Folder Include="bin\tr-TR\" />
     <Folder Include="bin\zh-CHS\" />
     <Folder Include="bin\zh-CHT\" />
+    <Folder Include="Blogs\UserControl\" />
     <Folder Include="Searchs\UserControl\" />
     <Folder Include="Xinha\plugins\CSS\lang\" />
     <Folder Include="Xinha\plugins\HorizontalRule\img\" />
@@ -2861,7 +2874,9 @@
     <Content Include="MXH2.master" />
     <Content Include="MXH_2.Master" />
     <Content Include="MXH_11.Master" />
-    <Content Include="HorisontalMenu.sitemap" />
+    <Content Include="HorisontalMenu.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Picture\Untitled-1.psd" />
     <Content Include="Temp.Master" />
     <None Include="Web References\DkmhWebservice\UsrSer.wsdl" />

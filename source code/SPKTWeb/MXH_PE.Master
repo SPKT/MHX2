@@ -13,7 +13,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body style="background-image: url('/Image/1f.gif'); padding: 0px; margin: 0px; height: 100%;">
+<body style="background-image: url('/Image/1f.gif'); padding: 0px; margin: 0px; height: 100%;font-family:Verdana, Sans-Serif, Tahoma;font-size:small">
     <form id="form1" runat="server" style="padding: 0px; margin: 0px 50px 0px 50px; margin-top: 0px;
     height: 100%; background-image: url('/Image/1e.gif'); background-repeat: repeat-y;">
     <div id="Div1" style="width: auto; height: 100%; padding: 20px; padding-top: 0px;

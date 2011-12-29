@@ -17,12 +17,13 @@ namespace SPKTWeb.Presenter
         private ICommentRepository _commentRepository;
         private IWebContext _webContext;
         private IUserSession _userSession;
-
+        private IAlertService _alertService;
         public CommentsPresenter()
         {
             _commentRepository = new CommentRepository();
             _webContext = new WebContext();
             _userSession = new UserSession();
+            _alertService = new AlertService();
         }
 
         public void Init(IComments view, bool IsPostBack)
@@ -48,7 +49,7 @@ namespace SPKTWeb.Presenter
         }
 
         public void AddComment(string comment)
-        {
+        {   
 
             Comment c = new Comment();
             c.Body = comment;
@@ -58,7 +59,7 @@ namespace SPKTWeb.Presenter
             c.SystemObjectID = _view.SystemObjectID;
             c.SystemObjectRecordID = _view.SystemObjectRecordID;
             long kq = _commentRepository.SaveComment(c);
-
+            _alertService.AddComment(c);
             _view.ClearComments();
             LoadComments();
         }

@@ -21,14 +21,14 @@
         <div class="link" style="color:White; margin-top:2px;">
             <asp:LinkButton ID="lbtnChangeAvatar" runat="server" Text="Đối Avatar" OnClick="lbtnChangeAvatar_Click"
                 Font-Underline="False" Width="100%" Height="100%" ForeColor="#666666" 
-                Font-Bold="True"></asp:LinkButton>
+                Font-Bold="False"></asp:LinkButton>
         </div></asp:Panel>
         
         <asp:Panel ID="pn2" runat="server" Height="25px">
         <div class="link">
            <asp:LinkButton ID="LinkButton1" ForeColor="#666666" runat="server" Text="Thông tin cá nhân" 
                 Font-Underline="False" Width="100%" Height="100%" 
-                onclick="LinkButton1_Click" Font-Bold="True" ></asp:LinkButton>
+                onclick="LinkButton1_Click" Font-Bold="False" ></asp:LinkButton>
         </div></asp:Panel>
     </div>
     <div style="border: 1px solid #CCCCCC; -moz-border-radius: 5px; -webkit-border-radius: 5px;

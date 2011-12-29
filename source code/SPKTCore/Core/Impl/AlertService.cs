@@ -11,6 +11,7 @@ namespace SPKTCore.Core.Impl
     public class AlertService:IAlertService
     {
         private IUserSession _userSession;
+        private IStatusUpdateRepository _statusUpdateRepository;
         private IAlertRepository _alertRepository;
         private IWebContext _webContext;
         private IFriendRepository _friendRepository;
@@ -32,7 +33,7 @@ namespace SPKTCore.Core.Impl
             _accountRepository = new AccountRepository();
             _groupMemberRepository = new GroupMemberRepository();
             _notifycationRepository = new NotificationRepository();
-
+            
         }
 
         private void Init()
@@ -331,5 +332,32 @@ namespace SPKTCore.Core.Impl
             SendAlertToFriends(alert);
         }
 
+
+
+        public void AddComment(Comment c)
+        {
+            alert = new Alert();
+            alert.CreateDate = c.CreateDate;
+            if (c.SystemObjectID == 1)
+            {
+                _statusUpdateRepository = new StatusUpdateRepository();
+                StatusUpdate st = _statusUpdateRepository.GetStatusUpdateByID((int)c.SystemObjectRecordID);
+                account=_accountRepository.GetAccountByID(st.SenderID);
+                alertMessage = GetProfileUrl(c.CommentByUsername)+" bình luận status của "+ GetProfileUrl(account.UserName)+":" + c.Body;
+                alert.Message = alertMessage;
+                alert.AccountID = c.CommentByAccountID;
+                SaveAlert(alert);
+
+                Notification notification = new Notification();
+                string notify = "<a href=\"/UserProfile2.aspx?AccountID=" + c.CommentByAccountID.ToString() + "\">" +
+                c.CommentByUsername + "</a>" +
+                 "vừa mới bình luận status của bạn: " + c.Body;
+                notification.AccountID = st.SenderID;
+                notification.CreateDate = c.CreateDate;
+                notification.IsRead =false;
+                notification.Body = notify;
+                _notifycationRepository.SaveNotification(notification);
+            }
+        }
     }
 }

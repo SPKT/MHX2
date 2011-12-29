@@ -54,10 +54,10 @@ namespace SPKTWeb.Friends
                         btn_add_de.Visible = false;
                         btn_de.Visible = true;
                         btn_ok.Visible = false;
-                        if (_webcontext.SearchText == lblUsername.Text)
+                        if (_webcontext.SearchText ==_usersession.CurrentUser.UserName)
                         {
-                            btn_de.Visible = true;
-                            btn_de.Text = "Chào bạn";
+                            btn_de.Visible = false;
+                           
                             btn_de.BackColor = System.Drawing.Color.Gray;
                         }
                     }
@@ -67,12 +67,9 @@ namespace SPKTWeb.Friends
                         btn_add_de.Visible = true;
                         btn_de.Visible = false;
                         btn_ok.Visible = false;
-                        if (_webcontext.SearchText == lblUsername.Text)
+                        if (_webcontext.SearchText == _usersession.CurrentUser.UserName)
                         {
-                            btn_add_de.Visible = true;
-                            btn_add_de.Text = "Chào bạn";
-                            btn_add_de.BackColor = System.Drawing.Color.Gray;
-
+                            btn_de.Visible = false;
                         }
                     }
                     imgAvatar.ImageUrl = "~/Image/ProfileAvatar.aspx?AccountID=" + Int32.Parse(lblFriendID.Text);
