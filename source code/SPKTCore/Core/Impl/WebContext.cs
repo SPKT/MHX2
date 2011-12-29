@@ -359,9 +359,17 @@ namespace SPKTCore.Core.Impl
             get { throw new NotImplementedException(); }
         }
 
-        public long BlogID
+        public Int64 BlogID
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                Int64 result = 0;
+                if (!string.IsNullOrEmpty(GetQueryStringValue("BlogID")))
+                {
+                    result = Convert.ToInt64(GetQueryStringValue("BlogID"));
+                }
+                return result;
+            }
         }
 
 

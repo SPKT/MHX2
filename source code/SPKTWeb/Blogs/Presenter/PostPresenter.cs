@@ -14,19 +14,28 @@ namespace SPKTWeb.Blogs.Presenter
         private IBlogRepository _blogRepository;
         private IWebContext _webContext;
         private IPost _view;
+        private IUserSession _userSession;
+        private IRedirector _redirector;
         public PostPresenter()
         {
             _blogRepository = ObjectFactory.GetInstance<IBlogRepository>();
             _webContext = ObjectFactory.GetInstance<IWebContext>();
+            _userSession = ObjectFactory.GetInstance<IUserSession>();
+            _redirector = ObjectFactory.GetInstance<IRedirector>();
         }
 
         public void Init(IPost View)
         {
             _view = View;
-            if(_webContext.BlogID > 0)
+            if (_userSession.LoggedIn)
             {
-                _view.LoadPost(_blogRepository.GetBlogByBlogID(_webContext.BlogID));
+                if (_webContext.BlogID > 0)
+                {
+                    _view.LoadPost(_blogRepository.GetBlogByBlogID(_webContext.BlogID));
+                }
             }
+            else
+                _redirector.GoToAccountLoginPage();
         }
 
         public void SavePost(Blog blog)
@@ -36,11 +45,17 @@ namespace SPKTWeb.Blogs.Presenter
             {
                 blog.AccountID = _webContext.CurrentUser.AccountID;
                 _blogRepository.SaveBlog(blog);
+                _redirector.Redirect("~/Blogs/ViewPost.aspx?BlogID=" + blog.BlogID);
             }
             else
             {
                 _view.ShowError("The page name you have chosen is in use.  Please choose a different page name!");
             }
+        }
+
+        internal void Delete(Blog blog)
+        {
+            _blogRepository.DeleteBlog(blog);
         }
     }
 }

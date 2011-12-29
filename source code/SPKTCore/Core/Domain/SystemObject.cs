@@ -10,7 +10,8 @@ namespace SPKTCore.Core.Domain
         public enum Names
         {
             StatusUpdate = 1,
-            Group=2
+            Group=2,
+            Blog=3
 
         }
     }
