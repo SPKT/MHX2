@@ -91,6 +91,7 @@
     <Content Include="bin\StructureMap.AutoMocking.xml" />
     <Content Include="bin\StructureMap.dll" />
     <Content Include="Blogs\Post.aspx" />
+    <Content Include="Blogs\ViewPost.aspx" />
     <Content Include="Comments\UseComment.aspx" />
     <Content Include="Comments\UserControl\BoxComment.ascx" />
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
@@ -2031,6 +2032,7 @@
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
     <Compile Include="Blogs\Interface\IPost.cs" />
+    <Compile Include="Blogs\Interface\IViewPost.cs" />
     <Compile Include="Blogs\Post.aspx.cs">
       <DependentUpon>Post.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2039,6 +2041,14 @@
       <DependentUpon>Post.aspx</DependentUpon>
     </Compile>
     <Compile Include="Blogs\Presenter\PostPresenter.cs" />
+    <Compile Include="Blogs\Presenter\ViewPostPresenter.cs" />
+    <Compile Include="Blogs\ViewPost.aspx.cs">
+      <DependentUpon>ViewPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blogs\ViewPost.aspx.designer.cs">
+      <DependentUpon>ViewPost.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comments\Interface\IBoxComment.cs" />
     <Compile Include="Comments\Interface\IPostComment.cs" />
     <Compile Include="Comments\Presenter\BoxCommentPresenter.cs" />

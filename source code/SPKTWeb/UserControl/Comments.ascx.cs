@@ -69,7 +69,7 @@ namespace SPKTWeb.UserControl
                 // String innerHtml="<table width=\"100%\">";
                 foreach (Comment comment in comments)
                 {
-                    phComments.Controls.Add(new LiteralControl("<tr><td>" + " <img width=\"25\" height=\"25\" alt=\"avatar\" src='../image/ProfileAvatar.aspx?AccountID=" + comment.CommentByAccountID + "' align=\"top\" style=\"margin-top: 1px; margin-right: 2px;\" />" + "<a href=\"/Profiles/UserProfile2.aspx?AccountID=\"" + comment.CommentByAccountID + "\">"
+                    phComments.Controls.Add(new LiteralControl("<tr><td>" + " <img width=\"25\" height=\"25\" alt=\"avatar\" src='../image/ProfileAvatar.aspx?AccountID=" + comment.CommentByAccountID + "' align=\"top\" style=\"margin-top: 1px; margin-right: 2px;\" />" + "<a href=\"/Profiles/UserProfile2.aspx?AccountID=" + comment.CommentByAccountID.ToString()+ "\">"
                         + comment.CommentByUsername + "</a> " + ": " +"<a style=\"color:Gray;\">" +  comment.Body+ "</a> "+ "<div>" + "<a style=\"color:#c0c0c0;font-size:smaller; margin-left: 25px\">" + " (" + ((DateTime)(comment.CreateDate)).ToString("dd:MM:yyyy HH:mm:ss") + ")</a>" + "</td></tr>"));
                     //   innerHtml += "<tr><td>" + comment.CommentByUsername + " (" + comment.CreateDate.ToShortDateString() + "): " + comment.Body + "</td></tr>";
                     //   LogUtil.Logger.Writeln(String.Format("      + LoadComments RecID: {0},  ID: {1}<br>", comment.SystemObjectRecordID, comment.CommentID));

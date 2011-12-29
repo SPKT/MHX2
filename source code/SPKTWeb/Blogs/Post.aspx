@@ -10,11 +10,17 @@
 <div>
     <div>
         <div>
+            <asp:Literal ID="litBlogID" runat="server" Visible="false"></asp:Literal>
             Tiêu đề
+
         </div>
             
         <div>
             <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+        </div>
+        <div style="float:right">
+                      <asp:ImageButton Width="20px" Height="20px" ID="ibDelete" runat="server" 
+                ImageUrl="/image/icon_close.gif" onclick="ibDelete_Click" />
         </div>
     </div>
     <div>
@@ -35,7 +41,7 @@
     </div>
     <div>
         
-        <asp:Button ID="btnSave" runat="server" Text="Đăng" />
+        <asp:Button ID="btnSave" runat="server" Text="Đăng" onclick="btnSave_Click" />
         
     </div>
 </div>

@@ -8,6 +8,6 @@ namespace SPKTCore.Core.Domain
     [Serializable]
     public partial class Blog
     {
-        //public Account Account { get; set; }
+        public Account account { get; set; }
     }
 }

@@ -10,7 +10,7 @@
 namespace SPKTWeb.Blogs {
     
     
-    public partial class Post {
+    public partial class ViewPost {
         
         /// <summary>
         /// LEFT_MENU1 control.
@@ -22,22 +22,31 @@ namespace SPKTWeb.Blogs {
         protected global::SPKTWeb.Styles.LEFT_MENU LEFT_MENU1;
         
         /// <summary>
-        /// litBlogID control.
+        /// pnlViewPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litBlogID;
+        protected global::System.Web.UI.WebControls.Panel pnlViewPost;
         
         /// <summary>
-        /// txtTitle control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
+        
+        /// <summary>
+        /// ibEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ibEdit;
         
         /// <summary>
         /// ibDelete control.
@@ -49,39 +58,57 @@ namespace SPKTWeb.Blogs {
         protected global::System.Web.UI.WebControls.ImageButton ibDelete;
         
         /// <summary>
-        /// txtSubject control.
+        /// lblSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubject;
+        protected global::System.Web.UI.WebControls.Label lblSubject;
         
         /// <summary>
-        /// ckPubic control.
+        /// lblCreateDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckPubic;
+        protected global::System.Web.UI.WebControls.Label lblCreateDate;
         
         /// <summary>
-        /// editBody control.
+        /// lblUpdateDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.HTMLEditor.Editor editBody;
+        protected global::System.Web.UI.WebControls.Label lblUpdateDate;
         
         /// <summary>
-        /// btnSave control.
+        /// lblBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.Label lblBody;
+        
+        /// <summary>
+        /// UCComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SPKTWeb.UserControl.Comments UCComments;
+        
+        /// <summary>
+        /// lblMessages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessages;
     }
 }
