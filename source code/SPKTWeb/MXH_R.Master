@@ -105,9 +105,7 @@
             
         </div>
     </div>
-    <div style="height: 20px; margin-top: 100%; margin-bottom: 0px; float: none; background-image: url('/Image/foot.jpg');
-                background-repeat: repeat-x;">
-            </div>
+    
     </form>
 </body>
 </html>

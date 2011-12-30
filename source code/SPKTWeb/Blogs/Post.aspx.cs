@@ -31,6 +31,8 @@ namespace SPKTWeb.Blogs
             blog.PageName = txtTitle.Text;
             blog.IsPublished = ckPubic.Checked;
             blog.Post = editBody.Content;
+            if(litCreateDate.Text!="")
+                blog.CreateDate=DateTime.Parse(litCreateDate.Text);
             _presenter.SavePost(blog);
         }
 
@@ -41,6 +43,7 @@ namespace SPKTWeb.Blogs
             editBody.Content = blog.Post;
             ckPubic.Checked = blog.IsPublished;
             litBlogID.Text = blog.BlogID.ToString();
+            litCreateDate.Text = blog.CreateDate.ToString();
         }
 
         public void ShowError(string ErrorMessage)

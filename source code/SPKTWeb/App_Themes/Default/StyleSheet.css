@@ -1,0 +1,100 @@
+/* ****************** Some basic stuff ****************** */
+li 
+{
+	clear:both;
+	margin-bottom:1em;
+	border-bottom:1px solid #eee;
+}
+/* ****************** RatingStar ****************** */
+.ratingStar
+{
+	white-space:nowrap;
+	margin:1em;
+	height:14px;
+}
+.ratingStar .ratingItem {
+    font-size: 0pt;
+    width: 13px;
+    height: 12px;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    background-repeat: no-repeat;
+	cursor:pointer;
+}
+.ratingStar .Filled {
+    background-image: url(images/rating/ratingStarFilled.png);
+}
+.ratingStar .Empty {
+    background-image: url(images/rating/ratingStarEmpty.png);
+}
+.ratingStar .Saved {
+    background-image: url(images/rating/ratingStarSaved.png);
+}
+
+/* ****************** Gauge ****************** */
+.ratingGauge
+{
+	white-space:nowrap;
+    font-size: 0pt;
+	width:122px;
+	height:12px;
+	padding:1px 0 1px 1px;
+	margin:1em;
+	background-color:transparent;
+	background-position:top left;
+	background-repeat:no-repeat;
+	background-image:url(images/rating/ratingGauge.png);
+}
+.ratingGauge .ratingItem {
+    font-size:0pt;
+    width:20px;
+    height:8px;
+    margin:0;
+    padding:0;
+    display:block;
+    background-repeat: repeat-x;
+	cursor:e-resize;
+}
+.ratingGauge .Filled {
+    background-color:transparent;
+}
+.ratingGauge .Empty {
+    background-color:#ff0;
+}
+.ratingGauge .Saved {
+    background-color:#f00;
+}
+
+/* ****************** Thermometer ****************** */
+.ratingThermometer 
+{
+	white-space:nowrap;
+	width:220px;
+	height:0px;
+	padding:26px 20px 20px 16px;
+	margin:1em;
+	background-color:transparent;
+	background-position:top left;
+	background-repeat:no-repeat;
+	background-image:url(images/rating/ratingThermometer2.png);
+}
+.ratingThermometer .ratingItem {
+    font-size: 0pt;
+    width: 10px;
+    height: 8px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-repeat: repeat-x;
+	cursor:e-resize;
+}
+.ratingThermometer .Filled {
+    background-image: url(images/rating/ratingFilled.png);
+}
+.ratingThermometer .Empty {
+    background-image: url(images/rating/ratingEmpty.png);
+}
+.ratingThermometer .Saved {
+    background-image: url(images/rating/ratingSaved.png);
+}

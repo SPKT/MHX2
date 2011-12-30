@@ -16,12 +16,14 @@ namespace SPKTWeb.Blogs.Presenter
         private IPost _view;
         private IUserSession _userSession;
         private IRedirector _redirector;
+        private IAlertService _alertService;
         public PostPresenter()
         {
             _blogRepository = ObjectFactory.GetInstance<IBlogRepository>();
             _webContext = ObjectFactory.GetInstance<IWebContext>();
             _userSession = ObjectFactory.GetInstance<IUserSession>();
             _redirector = ObjectFactory.GetInstance<IRedirector>();
+            _alertService = ObjectFactory.GetInstance<IAlertService>();
         }
 
         public void Init(IPost View)
@@ -45,11 +47,15 @@ namespace SPKTWeb.Blogs.Presenter
             {
                 blog.AccountID = _webContext.CurrentUser.AccountID;
                 _blogRepository.SaveBlog(blog);
+                if (_webContext.BlogID <= 0)
+                    _alertService.AddNewBlogPostAlert(blog);
+                else
+                    _alertService.AddUpdatedBlogPostAlert(blog);
                 _redirector.Redirect("~/Blogs/ViewPost.aspx?BlogID=" + blog.BlogID);
             }
             else
             {
-                _view.ShowError("The page name you have chosen is in use.  Please choose a different page name!");
+                _view.ShowError("Tên bài viết đã tồn tại!");
             }
         }
 

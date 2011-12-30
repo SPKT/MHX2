@@ -83,10 +83,14 @@
                             border-style: none; margin-bottom: 1px; background-image: url('/Image/tim1.gif');
                             background-repeat: repeat-x;" />
                     </div>
+                    <asp:Panel ID="pnlSearch" runat="server" DefaultButton="lbt_tim">
                     <div align="center" class="menu_ngang_timkiem_nut" style="border-width: 0px;">
+                    
                         <asp:ImageButton ID="lbt_tim" runat="server" OnClick="lbt_tim_Click" Height="100%"
                             Width="100%" ImageUrl="/Image/bt_tim.jpg" />
+                    
                     </div>
+                    </asp:Panel>
                 </div>
             </div>
             <div style="background-color: #CC0000; height: 2px;">
@@ -116,9 +120,7 @@
                     </div>
                 </div>
             </div>
-            <div style="height: 20px; margin-top: 100%; margin-bottom: 0px; float: none; background-image: url('/Image/foot.jpg');
-                background-repeat: repeat-x;">
-            </div>
+            
         </div>
     </div>
     </form>

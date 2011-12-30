@@ -1,5 +1,6 @@
 ﻿<%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
 <%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.master" AutoEventWireup="true" CodeBehind="ManageProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ManageProfile" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .winzard
@@ -98,6 +99,9 @@
                                     <asp:TextBox ID="txtNgaySinh" runat="server" BorderColor="#CCCCCC" 
                                         BorderStyle="Solid" BorderWidth="1px" Height="21px" Width="140px" 
                                      ></asp:TextBox>
+                                    <asp:CalendarExtender ID="txtNgaySinh_CalendarExtender" runat="server" 
+                                        Enabled="True" TargetControlID="txtNgaySinh">
+                                    </asp:CalendarExtender>
                                     <asp:DropDownList ID="ddlVisibility2" runat="server">
                                     </asp:DropDownList>
                                 </td>

@@ -46,13 +46,8 @@ namespace SPKTWeb.Accounts
             _presenter.SaveChangePassword(txtOlaPass.Text, txtNewPass.Text );
         }
         protected void btnSaveUserAuthentication_Click(object sender, EventArgs e)
-        {
-            bool use;
-            if (rdbUseDKMH.Checked)
-                use = false;
-            else
-                use = true;
-            _presenter.SaveChangeUserAuthentication(use);
+        {            
+            _presenter.SaveChangeUserAuthentication(rdbUseDKMH.Checked);
         }
 
         public void ShowErrorSavePass(string Message)
