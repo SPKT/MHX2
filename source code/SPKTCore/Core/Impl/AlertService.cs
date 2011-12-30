@@ -82,7 +82,7 @@ namespace SPKTCore.Core.Impl
         public void AddProfileModifiedAlert()
         {
             Init();
-            alertMessage = "<div >" +"<a href=\"Profiles/viewProfile.aspx?AccountID="+account.AccountID.ToString()+"\">"+account.UserName+"</a>" +
+            alertMessage = "<div >" +"<a href=\"/Profiles/viewProfile.aspx?AccountID="+account.AccountID.ToString()+"\">"+account.UserName+"</a>" +
                            " vừa mới thay đổi hồ sơ cá nhân.</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.ProfileModified;
@@ -104,7 +104,7 @@ namespace SPKTCore.Core.Impl
             {
                 if (statusUpdate.VisibilityLevelID != 3)
                 {
-                    alertMessage = "<a href=\"/UserProfile2.aspx?AccountID=" + statusUpdate.SenderID.ToString() + "\">" +
+                    alertMessage = "<a href=\"/Profiles/UserProfile2.aspx?AccountID=" + statusUpdate.SenderID.ToString() + "\">" +
                         _accountRepository.GetAccountByID(statusUpdate.SenderID).UserName + "</a>" +
                          "vừa mới đăng trạng thái: " + statusUpdate.Status;
                     alert.Message = alertMessage;
@@ -306,13 +306,15 @@ namespace SPKTCore.Core.Impl
 
           public void AddNewBlogPostAlert(Blog blog)
         {
+            Init();
             alert = new Alert();
             alert.CreateDate = DateTime.Now;
             alert.AccountID = _userSession.CurrentUser.AccountID;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBlogPost;
             alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
-                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has just added a new blog post: <b>" +
-                           blog.Title + "</b></div>";
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới tạo bài blog: <b>" +
+                           "<a href=\"" + _webContext.RootUrl + "Blogs/ViewBlog" + ".aspx?BlogID=" + blog.BlogID + "\">"+
+                           blog.Title + "</a>" + "</b></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToFriends(alert);
@@ -320,13 +322,15 @@ namespace SPKTCore.Core.Impl
 
         public void AddUpdatedBlogPostAlert(Blog blog)
         {
+            Init();
             alert = new Alert();
             alert.CreateDate = DateTime.Now;
             alert.AccountID = _userSession.CurrentUser.AccountID;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBlogPost;
             alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
-                           GetProfileUrl(_userSession.CurrentUser.UserName) + " has updated the <b>" + blog.Title +
-                           "</b> blog post!</div>";
+                           GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới cập nhật <b>" + "<a href=\"" + _webContext.RootUrl + "Blogs/ViewBlog" + ".aspx?BlogID=" + blog.BlogID + "\">" +
+                           blog.Title + "</a>" +
+                           "!</div>";
             alert.Message = alertMessage;
             SaveAlert(alert);
             SendAlertToFriends(alert);
@@ -346,6 +350,7 @@ namespace SPKTCore.Core.Impl
                 alertMessage = GetProfileUrl(c.CommentByUsername)+" bình luận status của "+ GetProfileUrl(account.UserName)+":" + c.Body;
                 alert.Message = alertMessage;
                 alert.AccountID = c.CommentByAccountID;
+                alert.AlertTypeID = (int)AlertType.AlertTypes.Comment;
                 SaveAlert(alert);
 
                 Notification notification = new Notification();

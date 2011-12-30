@@ -23,6 +23,8 @@ namespace SPKTCore.Core
                                   Group group);
 
         void AddComment(Comment c);
+        void AddNewBlogPostAlert(Blog blog);
+        void AddUpdatedBlogPostAlert(Blog blog);
 
     }
 }

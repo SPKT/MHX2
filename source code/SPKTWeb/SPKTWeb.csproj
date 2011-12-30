@@ -81,6 +81,16 @@
     <Content Include="App_Data\SPKT_log.ldf">
       <DependentUpon>SPKT.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Themes\Default\Images\Rating\ratingEmpty.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingFilled.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingGauge.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingSaved.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingStarEmpty.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingStarFilled.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingStarSaved.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingThermometer.png" />
+    <Content Include="App_Themes\Default\Images\Rating\ratingThermometer2.png" />
+    <Content Include="App_Themes\Default\StyleSheet.css" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="bin\Rhino.Mocks.dll" />
     <Content Include="bin\SPKTCore.dll" />
@@ -90,7 +100,9 @@
     <Content Include="bin\StructureMap.AutoMocking.dll" />
     <Content Include="bin\StructureMap.AutoMocking.xml" />
     <Content Include="bin\StructureMap.dll" />
+    <Content Include="Blogs\MyBlogs.aspx" />
     <Content Include="Blogs\Post.aspx" />
+    <Content Include="Blogs\ViewBlog.aspx" />
     <Content Include="Blogs\ViewPost.aspx" />
     <Content Include="Comments\UseComment.aspx" />
     <Content Include="Comments\UserControl\BoxComment.ascx" />
@@ -2032,8 +2044,17 @@
     </Compile>
     <Compile Include="Admins\Presenter\AddCategoryPresenter.cs" />
     <Compile Include="Admins\Presenter\AddForumPresenter.cs" />
+    <Compile Include="Blogs\Interface\IMyBlogs.cs" />
     <Compile Include="Blogs\Interface\IPost.cs" />
+    <Compile Include="Blogs\Interface\IViewBlog.cs" />
     <Compile Include="Blogs\Interface\IViewPost.cs" />
+    <Compile Include="Blogs\MyBlogs.aspx.cs">
+      <DependentUpon>MyBlogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blogs\MyBlogs.aspx.designer.cs">
+      <DependentUpon>MyBlogs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Blogs\Post.aspx.cs">
       <DependentUpon>Post.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2041,8 +2062,17 @@
     <Compile Include="Blogs\Post.aspx.designer.cs">
       <DependentUpon>Post.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Blogs\Presenter\MyBlogsPresenter.cs" />
     <Compile Include="Blogs\Presenter\PostPresenter.cs" />
+    <Compile Include="Blogs\Presenter\ViewBlogPresenter.cs" />
     <Compile Include="Blogs\Presenter\ViewPostPresenter.cs" />
+    <Compile Include="Blogs\ViewBlog.aspx.cs">
+      <DependentUpon>ViewBlog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blogs\ViewBlog.aspx.designer.cs">
+      <DependentUpon>ViewBlog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Blogs\ViewPost.aspx.cs">
       <DependentUpon>ViewPost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2536,13 +2566,6 @@
     <Compile Include="Messages\WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MXH1.Master.cs">
-      <DependentUpon>MXH1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH1.Master.designer.cs">
-      <DependentUpon>MXH1.Master</DependentUpon>
-    </Compile>
     <Compile Include="MXH2.master.cs">
       <DependentUpon>MXH2.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2556,20 +2579,6 @@
     </Compile>
     <Compile Include="MXH_1.Master.designer.cs">
       <DependentUpon>MXH_1.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MXH_11.Master.cs">
-      <DependentUpon>MXH_11.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH_11.Master.designer.cs">
-      <DependentUpon>MXH_11.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MXH_2.Master.cs">
-      <DependentUpon>MXH_2.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH_2.Master.designer.cs">
-      <DependentUpon>MXH_2.Master</DependentUpon>
     </Compile>
     <Compile Include="MXH_E.Master.cs">
       <DependentUpon>MXH_E.Master</DependentUpon>
@@ -2605,13 +2614,6 @@
     </Compile>
     <Compile Include="MXH_R.Master.designer.cs">
       <DependentUpon>MXH_R.Master</DependentUpon>
-    </Compile>
-    <Compile Include="NestedMasterPage1.master.cs">
-      <DependentUpon>NestedMasterPage1.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NestedMasterPage1.master.designer.cs">
-      <DependentUpon>NestedMasterPage1.master</DependentUpon>
     </Compile>
     <Compile Include="NotificationTemp.aspx.cs">
       <DependentUpon>NotificationTemp.aspx</DependentUpon>
@@ -2889,11 +2891,7 @@
   <ItemGroup>
     <Content Include="StrutureMap.config" />
     <Content Include="MasterPage.Master" />
-    <Content Include="MXH1.Master" />
-    <Content Include="NestedMasterPage1.master" />
     <Content Include="MXH2.master" />
-    <Content Include="MXH_2.Master" />
-    <Content Include="MXH_11.Master" />
     <Content Include="HorisontalMenu.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -2984,7 +2982,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2367</DevelopmentServerPort>
+          <DevelopmentServerPort>13815</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

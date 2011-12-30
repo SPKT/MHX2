@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_PE.Master" AutoEventWireup="true" CodeBehind="Post.aspx.cs" Inherits="SPKTWeb.Blogs.Post" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_PE.Master" AutoEventWireup="true" CodeBehind="Post.aspx.cs" Inherits="SPKTWeb.Blogs.Post" EnableEventValidation="false" %>
 <%@ Register src="../Styles/LEFT_MENU.ascx" tagname="LEFT_MENU" tagprefix="uc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -11,6 +11,7 @@
     <div>
         <div>
             <asp:Literal ID="litBlogID" runat="server" Visible="false"></asp:Literal>
+            <asp:Literal ID="litCreateDate" runat="server" Visible="false"></asp:Literal>
             Tiêu đề
 
         </div>

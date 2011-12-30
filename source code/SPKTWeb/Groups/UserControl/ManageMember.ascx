@@ -42,6 +42,8 @@
             </div>
             <div class="divContainerFooter">&nbsp;
                 <asp:Panel ID="pnlButtons" runat="server">
+                    <asp:Button ID="btnApprove" OnClick="btnApprove_Click" runat="server" 
+                        Text="Chấp nhận" />
                     <asp:Button ID="btnDelete" OnClick="btnDelete_Click" runat="server" 
                         Text="Xóa" />
                     <asp:Button ID="btnPromoteToAdmin" OnClick="btnPromoteToAdmin_Click" 

@@ -1,25 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH_E.master.cs" Inherits="SPKTWeb.MXH_E" %>
-
-<%@ Register Src="~/Accounts/UserControl/InfoAccount.ascx" TagName="info" TagPrefix="uc5" %>
-<%@ Register Src="~/Accounts/UserControl/EditAc.ascx" TagName="edit" TagPrefix="uc6" %>
-<%@ Register Src="~/Friends/UserControl/InviteFriends.ascx" TagName="in" TagPrefix="uc7" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MenuTop.ascx.cs" Inherits="SPKTWeb.UserControl.MenuTop" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menul" TagPrefix="uc8" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="aspt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-    <link type="text/css" rel="Stylesheet" href="/Styles/MXH.css" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body style="background-image: url('/Image/1f.gif'); padding: 0px; margin: 0px; height: 100%;
-    font-family: Verdana, Sans-Serif, Tahoma; font-size: 11px">
-    <form id="form1" runat="server" style="padding: 0px; margin: 0px 50px 0px 50px; margin-top: 0px;
-    height: 100%; background-image: url('/Image/1e.gif'); background-repeat: repeat-y;">
-    <div id="Div1" style="width: auto; height: 100%; padding: 20px; padding-top: 0px;
-        padding-bottom: 0px; margin: 0px;" runat="server">
-        <div>
+<div>
             <div style="height: 40px; float: none; background-color: White;">
                 <div class="item_banner_logo">
                     &nbsp;&nbsp;&nbsp;<asp:Image ID="imga" runat="server" ImageUrl="/Image/logo3.jpg"
@@ -28,7 +10,7 @@
                 <div class="item_banner_text">
                     <div id="item_banner_2" style="height: 23px;" align="center">
                         <asp:Image ID="img_av" runat="server" Width="20px" Height="15px" />
-                        <a href="Default.aspx" style="color: DarkBlue" visible="false" id="linkLogin" runat="server">
+                        <a href="/Default.aspx" style="color: DarkBlue" visible="false" id="linkLogin" runat="server">
                             Đăng nhập</a> <a href="/Accounts/Register.aspx" style="color: DarkBlue" visible="false"
                                 id="linkRegister" runat="server">Đăng ký</a>
                         <asp:Label ID="lblUserName" runat="server" ForeColor="DarkBlue" Text="Xin chao" Font-Size="Small"></asp:Label>
@@ -44,7 +26,7 @@
                                 -moz-border-radius: 5px; -webkit-border-radius: 5px;">
                                 <div class="link">
                                     <asp:LinkButton ID="lb_thaydoi" runat="server" Text="Quản lý tài khoản" Font-Strikeout="false"
-                                        Width="100%" Height="18px" OnClick="lb_thaydoi_Click"></asp:LinkButton>
+                                        Width="100%" Height="18px" OnClick="thaydoi_Click"></asp:LinkButton>
                                 </div>
                                 <div class="link">
                                     <asp:LinkButton ID="lb_thoat" runat="server" Text="Đăng xuất" Font-Strikeout="false"
@@ -78,51 +60,15 @@
                         SiteMapProvider="HorisontalMenu" />
                 </div>
                 <div id="box_menu_top_timkiem">
-                    <asp:Panel runat="server" DefaultButton="lbt_tim">
-                        <div class="menu_ngang_timkiem" style="margin: 0px; padding-left: 25px; border-style: none;
-                            background-image: url('/Image/img02.gif'); background-repeat: no-repeat;">
-                            <input id="timkiem" type="text" name="timkiem" runat="server" style="margin: 2px;
-                                border-style: none; margin-bottom: 1px; background-image: url('/Image/tim1.gif');
-                                background-repeat: repeat-x;" />
-                        </div>
-                        <asp:Panel ID="pnlSearch" runat="server" DefaultButton="lbt_tim">
-                            <div align="center" class="menu_ngang_timkiem_nut" style="border-width: 0px;">
-                                <asp:ImageButton ID="lbt_tim" runat="server" OnClick="lbt_tim_Click" Height="100%"
-                                    Width="100%" ImageUrl="/Image/bt_tim.jpg" />
-                            </div>
-                        </asp:Panel>
-                    </asp:Panel>
-                </div>
-            </div>
-            <div style="background-color: #CC0000; height: 2px;">
-            </div>
-            <div style="float: none; height: 1500px;">
-                <div id="box_left">
-                    <asp:ContentPlaceHolder ID="left" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
-                <div id="box_main" style="background-image: url('/Image/1e.gif'); background-repeat: repeat-y">
-                    <div>
-                        <asp:ContentPlaceHolder ID="Main" runat="server">
-                        </asp:ContentPlaceHolder>
+                    <div class="menu_ngang_timkiem" style="margin: 0px; padding-left: 25px; border-style: none;
+                        background-image: url('/Image/img02.gif'); background-repeat: no-repeat;">
+                        <input id="timkiem" type="text" name="timkiem" runat="server" style="margin: 2px;
+                            border-style: none; margin-bottom: 1px; background-image: url('/Image/tim1.gif');
+                            background-repeat: repeat-x;" />
                     </div>
-                </div>
-                <div id="box_right">
-                    <div>
-                        <asp:ContentPlaceHolder ID="right1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                    <div>
-                        <div style="border-style: solid; border-width: 0px 0px 0px 0px; border-color: #FFFFFF #CCCCCC #CCCCCC #CCCCCC;
-                            background-color: #f2f0f0;">
-                            <asp:ContentPlaceHolder ID="right" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </div>
+                    <div align="center" class="menu_ngang_timkiem_nut" style="background-color: #b50606;">
+                        <asp:LinkButton ID="lbt_tim" runat="server" CssClass="nuttim" Font-Underline="False"
+                            Height="100%" Width="100%" Font-Size="Medium" OnClick="lbt_tim_Click">TÌM</asp:LinkButton>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </form>
-</body>
-</html>

@@ -7,27 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SPKTWeb {
+namespace SPKTWeb.Blogs {
     
     
-    public partial class NestedMasterPage1 {
+    public partial class MyBlogs {
         
         /// <summary>
-        /// Left control.
+        /// LEFT_MENU1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Left;
+        protected global::SPKTWeb.Styles.LEFT_MENU LEFT_MENU1;
         
         /// <summary>
-        /// Main_1 control.
+        /// uppnl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Main_1;
+        protected global::System.Web.UI.UpdatePanel uppnl;
+        
+        /// <summary>
+        /// gvBlogs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvBlogs;
     }
 }

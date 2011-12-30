@@ -1,7 +1,7 @@
 ﻿<%@ Import namespace="SPKTCore.Core.Domain"%>
 <%@ Register Src="~/Friends/UserControl/FriendProfile.ascx" TagPrefix="uc7" TagName="FriendProfile" %>
 <%@ Register Src="~/Styles/LEFT_MENU.ascx" TagName="menu" TagPrefix="uc4" %>
-<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_P.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="SPKTWeb.Search.Search" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_PE.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="SPKTWeb.Search.Search" %>
 
 <asp:Content ID="cont" ContentPlaceHolderID="left" runat="server">
     <div style="margin-top:0px;">

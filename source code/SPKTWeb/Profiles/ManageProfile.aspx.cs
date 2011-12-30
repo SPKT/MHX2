@@ -168,7 +168,7 @@ namespace SPKTWeb.Profiles
                 Profile profile;
                 profile = _presenter.GetProfile();
                 profile.FullName = txtTenThat.Text;
-               // profile.Birthday = DateTime.Parse(txtNgaySinh.Text);
+                profile.Birthday = DateTime.Parse(txtNgaySinh.Text);
                // profile.Birthday = Convert.ToDateTime(txtNgaySinh.Text);
                 profile.Sex = txtSex.Text;
                 profile.Signature = txtChuKy.Text;

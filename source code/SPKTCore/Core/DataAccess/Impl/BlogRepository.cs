@@ -116,6 +116,7 @@ namespace SPKTCore.Core.DataAccess.Impl
             {
                 if (blog.BlogID > 0)
                 {
+    
                     blog.UpdateDate = DateTime.Now;
                     dc.Blogs.Attach(blog, true);
                 }

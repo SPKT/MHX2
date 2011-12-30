@@ -7,28 +7,46 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MXH {
+namespace SPKTWeb.UserControl {
     
     
-    public partial class MXH1 {
+    public partial class MenuTop {
         
         /// <summary>
-        /// head control.
+        /// imga control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Image imga;
         
         /// <summary>
-        /// form1 control.
+        /// img_av control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Image img_av;
+        
+        /// <summary>
+        /// linkLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkLogin;
+        
+        /// <summary>
+        /// linkRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkRegister;
         
         /// <summary>
         /// lblUserName control.
@@ -40,58 +58,13 @@ namespace MXH {
         protected global::System.Web.UI.WebControls.Label lblUserName;
         
         /// <summary>
-        /// Label1 control.
+        /// img_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// lbt_DangKy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbt_DangKy;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// lbt_DangNhap control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbt_DangNhap;
-        
-        /// <summary>
-        /// loginPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel loginPanel;
-        
-        /// <summary>
-        /// LoginDesign1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::MXH.LoginDesign LoginDesign1;
+        protected global::System.Web.UI.WebControls.Image img_1;
         
         /// <summary>
         /// Panel1 control.
@@ -103,66 +76,84 @@ namespace MXH {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// lbt_TinMoi control.
+        /// ii control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbt_TinMoi;
+        protected global::System.Web.UI.WebControls.Button ii;
         
         /// <summary>
-        /// LinkButton5 control.
+        /// lb_thaydoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
+        protected global::System.Web.UI.WebControls.LinkButton lb_thaydoi;
         
         /// <summary>
-        /// LinkButton6 control.
+        /// lb_thoat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton6;
+        protected global::System.Web.UI.WebControls.LinkButton lb_thoat;
         
         /// <summary>
-        /// LinkButton7 control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
+        protected global::AjaxControlToolkit.ToolkitScriptManager ScriptManager1;
         
         /// <summary>
-        /// asbCity control.
+        /// PopupControlExtender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox asbCity;
+        protected global::AjaxControlToolkit.PopupControlExtender PopupControlExtender1;
         
         /// <summary>
-        /// bt_TimKiem control.
+        /// Menu2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_TimKiem;
+        protected global::System.Web.UI.WebControls.Menu Menu2;
         
         /// <summary>
-        /// Main control.
+        /// HorisontalMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Main;
+        protected global::System.Web.UI.WebControls.SiteMapDataSource HorisontalMenu;
+        
+        /// <summary>
+        /// timkiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText timkiem;
+        
+        /// <summary>
+        /// lbt_tim control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbt_tim;
     }
 }

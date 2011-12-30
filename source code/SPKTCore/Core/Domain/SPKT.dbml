@@ -531,12 +531,13 @@
       <Column Name="BlogID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Subject" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Post" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Subject" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="PageName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
       <Association Name="Account_Blog" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
     </Type>
   </Table>

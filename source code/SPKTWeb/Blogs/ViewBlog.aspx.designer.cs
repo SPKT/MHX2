@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SPKTWeb {
+namespace SPKTWeb.Blogs {
     
     
-    public partial class MXH_2 {
+    public partial class ViewBlog {
         
         /// <summary>
-        /// head control.
+        /// LEFT_MENU1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::SPKTWeb.Styles.LEFT_MENU LEFT_MENU1;
         
         /// <summary>
-        /// form1 control.
+        /// uppnl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.UpdatePanel uppnl;
         
         /// <summary>
-        /// MENU1 control.
+        /// gvBlogs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-       // protected global::MENU MENU1;
-        
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.GridView gvBlogs;
     }
 }
