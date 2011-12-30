@@ -541,6 +541,7 @@
     <Content Include="UserControl\ButtonComment.ascx" />
     <Content Include="UserControl\Comment.ascx" />
     <Content Include="UserControl\Comments.ascx" />
+    <Content Include="UserControl\MenuTop.ascx" />
     <Content Include="UserControl\ProfileDisplay.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -2824,6 +2825,13 @@
     </Compile>
     <Compile Include="UserControl\Comments.ascx.designer.cs">
       <DependentUpon>Comments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\MenuTop.ascx.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\MenuTop.ascx.designer.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\ProfileDisplay.ascx.cs">
       <DependentUpon>ProfileDisplay.ascx</DependentUpon>

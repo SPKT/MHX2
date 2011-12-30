@@ -77,6 +77,7 @@
                         SiteMapProvider="HorisontalMenu" />
                 </div>
                 <div id="box_menu_top_timkiem">
+                <asp:Panel runat="server" DefaultButton="lbt_tim">
                     <div class="menu_ngang_timkiem" style="margin: 0px; padding-left: 25px; border-style: none;
                         background-image: url('/Image/img02.gif'); background-repeat: no-repeat;">
                         <input id="timkiem" type="text" name="timkiem" runat="server" style="margin: 2px;
@@ -87,6 +88,7 @@
                         <asp:ImageButton ID="lbt_tim" runat="server" OnClick="lbt_tim_Click" Height="100%"
                             Width="100%" ImageUrl="/Image/bt_tim.jpg" />
                     </div>
+                </asp:Panel>
                 </div>
             </div>
             <div style="background-color: #CC0000; height: 2px;">

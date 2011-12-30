@@ -40,8 +40,8 @@
                             Font-Size="X-Small" style="margin-top: 2px" />
     </div>
     <div align="center" style="margin-top: 0px; background-color:White;">
-						<asp:CheckBox id="ckbAutoLogin" runat="server" TextAlign="Left" />
-						<asp:Label id="Label3" runat="server" Font-Bold="True" Font-Italic="True" ForeColor="Gray" Text="Duy trì trạng thái đăng nhập" Font-Size="Small"></asp:Label>
+						<asp:CheckBox id="ckbAutoLogin" runat="server"  Font-Bold="True" Font-Italic="True" ForeColor="Gray" Font-Size="Small"
+                            Text="Duy trì trạng thái đăng nhập" />						
 	</div>
-    <div style="background-image: url('../../Image/thead.gif'); background-repeat: repeat-x; height: 15px;"></div>
+    <div style="background-image: url('/Image/thead.gif'); background-repeat: repeat-x; height: 15px;"></div>
 </div>
