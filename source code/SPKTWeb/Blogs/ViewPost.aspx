@@ -13,7 +13,12 @@
 <asp:Panel ID="pnlViewPost" runat="server">
         
         <div>Tiêu đề bài viết: 
-        <asp:Label runat="server" ID="lblTitle" ></asp:Label>
+        
+        <div class="Subject">
+            <asp:Label  class="Main_Subject" ID="lblTitle"  runat="server"></asp:Label>
+        </div>
+        <div style="background-color: #CCCCCC; width:100%; height:2px; margin-bottom:10px;">
+        </div>
         <div style="float:right">
         <asp:ImageButton Visible="false" Width="20px" Height="20px" ID="ibEdit" runat="server" 
                 ImageUrl="/image/pencil.jpg" onclick="ibEdit_Click" />

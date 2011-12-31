@@ -25,6 +25,14 @@ namespace SPKTWeb.Profiles
                 gvStatus.DataBind();
                 gvAlert.DataSource = listAlert;
                 gvAlert.DataBind();
+                im1.Visible = true;
+                foreach (StatusUpdate s in listStatus)
+                {
+                    if (s.FileID > 0)
+                    {
+                        im1.ImageUrl = "~/Photo/ProfileAvatar.aspx?FileID=" + s.FileID;
+                    }
+                }
          }
 
         public void LoadStatusControl(List<VisibilityLevel> ListVisibilityLevel, bool IsUser)
@@ -36,6 +44,7 @@ namespace SPKTWeb.Profiles
                 ddlRange.Items.Add(li);
 
             }
+
             ddlRange.Visible = IsUser;
         }
         public void Message(string message)

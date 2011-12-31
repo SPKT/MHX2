@@ -23,6 +23,7 @@ namespace SPKTCore.Core
         bool ShowGravatar { get; }
         string RootUrl { get; }
         Int32 AccountID { get; }
+        Int64 FileID { get; }
         string FriendshipRequest { get; }
         string SearchText { get; }
         Int32 AccoundIdToInvite { get; }

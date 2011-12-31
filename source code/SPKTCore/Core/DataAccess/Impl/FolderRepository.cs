@@ -17,7 +17,18 @@ namespace SPKTCore.Core.DataAccess.Impl
             conn = new Connection();
             _cache = new Cache();
         }
-
+        public List<Folder> GetFoldersByAccountID1(Int32 AccountID)
+        {
+            List<Folder> result = new List<Folder>();
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                IEnumerable<Folder> folders = (from f in dc.Folders
+                                               where f.AccountID == AccountID
+                                               select f);
+                result = folders.ToList();
+                return result;
+            }
+        }
         public List<Folder> GetFoldersByAccountID(Int32 AccountID)
         {
             List<Folder> result = new List<Folder>();
@@ -73,7 +84,15 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return result;
         }
-
+        public Folder GetFolderByFileID(File file)
+        {
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                long folderid = (dc.Files.Where(f => f.DefaultFolderID == file.FileID).FirstOrDefault()).DefaultFolderID;
+                return GetFolderByID(folderid);
+            }
+            
+        }
         public List<Folder> GetFriendsFolders(List<Friend> Friends)
         {
             List<Folder> result = new List<Folder>();
