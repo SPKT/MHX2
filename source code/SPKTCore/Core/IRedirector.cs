@@ -52,5 +52,9 @@ namespace SPKTCore.Core
         string PathViewForumPost { get; }
 
         void GoToForums();
+
+        string GetProfileURL(string p);
+
+        void GoToViewBlogPost(long p);
     }
 }

@@ -7,11 +7,11 @@
     style="border-left: 0px solid #FFFFFF; border-right: 0px solid #FFFFFF; border-top: 0px solid #FFFFFF;
     border-bottom: 1px solid #9999FF; float: left; width: 100%; height: 87px;background-image: url('../../Image/block_topbg2.gif'); -moz-border-radius:5px; -webkit-border-radius:5px; border-width: 1px; border-color: #666666; background-repeat: repeat-x;">
     <div style="height: 86px; float: left; width: 61%;">
-        <a><asp:Image  Style=" margin:10px;"  ImageAlign="Left" Width="70px" Height="66px" ID="imgAvatar"
+        <a id="linkAvatar" runat="server"><asp:Image  Style=" margin:10px;"  ImageAlign="Left" Width="70px" Height="66px" ID="imgAvatar"
             ImageUrl="~/Image/ProfileAvatar.aspx" runat="server" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1" /></a>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tên tài khoản:
-        <asp:Label ID="lblUsername" runat="server" Font-Bold="True" Font-Italic="True" ForeColor="Blue"></asp:Label><br />
+        <a id="linkUsername" runat="server"><asp:Label ID="lblUsername" runat="server" Font-Bold="True" Font-Italic="True" ForeColor="Blue"></asp:Label><br /></a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tên đại diện:
         <asp:Label ID="lblName" runat="server"></asp:Label>
         &nbsp;

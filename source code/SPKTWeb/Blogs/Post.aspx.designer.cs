@@ -22,24 +22,6 @@ namespace SPKTWeb.Blogs {
         protected global::SPKTWeb.Styles.LEFT_MENU LEFT_MENU1;
         
         /// <summary>
-        /// litBlogID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litBlogID;
-        
-        /// <summary>
-        /// litCreateDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litCreateDate;
-        
-        /// <summary>
         /// txtTitle control.
         /// </summary>
         /// <remarks>

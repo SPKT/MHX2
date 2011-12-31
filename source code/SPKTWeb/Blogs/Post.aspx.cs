@@ -16,23 +16,24 @@ namespace SPKTWeb.Blogs
         Blog blog;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             _presenter = new PostPresenter();
 
-            _presenter.Init(this);
+            _presenter.Init(this,IsPostBack);
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
             blog = new Blog();
-            if (litBlogID.Text != "")
-                blog.BlogID = Convert.ToInt64(litBlogID.Text);
+            if (ViewState["BlogID"] != null)
+                blog.BlogID = (long)ViewState["BlogID"];            
             blog.Title = txtTitle.Text;
             blog.Subject = txtSubject.Text;
             blog.PageName = txtTitle.Text;
             blog.IsPublished = ckPubic.Checked;
             blog.Post = editBody.Content;
-            if(litCreateDate.Text!="")
-                blog.CreateDate=DateTime.Parse(litCreateDate.Text);
+            if (ViewState["CreatedDate"] != null)
+                blog.CreateDate = (DateTime)ViewState["CreatedDate"];
             _presenter.SavePost(blog);
         }
 
@@ -42,8 +43,10 @@ namespace SPKTWeb.Blogs
             txtSubject.Text = blog.Subject;
             editBody.Content = blog.Post;
             ckPubic.Checked = blog.IsPublished;
-            litBlogID.Text = blog.BlogID.ToString();
-            litCreateDate.Text = blog.CreateDate.ToString();
+            //litBlogID.Text = blog.BlogID.ToString();
+            ViewState["BlogID"] = blog.BlogID;
+            //litCreateDate.Text = blog.CreateDate.ToString();
+            ViewState["CreatedDate"] = blog.CreateDate;
         }
 
         public void ShowError(string ErrorMessage)
@@ -54,8 +57,8 @@ namespace SPKTWeb.Blogs
         protected void ibDelete_Click(object sender, ImageClickEventArgs e)
         {
             blog = new Blog();
-            if (litBlogID.Text != "")
-                blog.BlogID = Convert.ToInt64(litBlogID.Text);
+            if (ViewState["BlogID"] != null)
+                blog.BlogID = (long)ViewState["BlogID"];
             _presenter.Delete(blog);
         }
     }

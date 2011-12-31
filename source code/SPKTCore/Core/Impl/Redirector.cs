@@ -71,6 +71,10 @@ namespace SPKTCore.Core.Impl
             Redirect("~/Profiles/UserProfile2.aspx");
         }
 
+        public string GetProfileURL(string username)
+        {
+            return "~/" + username;
+        }
         ///
         public void GoToAccountLoginPage(string FriendInvitationKey)
         {
@@ -207,5 +211,15 @@ namespace SPKTCore.Core.Impl
            Redirect(PathViewAllForums);
        }
 
+
+       #region IRedirector Members
+
+
+       public void GoToViewBlogPost(long p)
+       {
+           Redirect("~/Blogs/ViewPost.aspx?BlogID=" + p.ToString());
+       }
+
+       #endregion
     }
 }

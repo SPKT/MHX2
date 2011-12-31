@@ -11,6 +11,7 @@ namespace SPKTCore.Core.Impl
     public class AlertService:IAlertService
     {
         private IUserSession _userSession;
+        private IRedirector _redirector;
         private IStatusUpdateRepository _statusUpdateRepository;
         private IAlertRepository _alertRepository;
         private IWebContext _webContext;
@@ -33,7 +34,7 @@ namespace SPKTCore.Core.Impl
             _accountRepository = new AccountRepository();
             _groupMemberRepository = new GroupMemberRepository();
             _notifycationRepository = new NotificationRepository();
-            
+            _redirector = new Redirector();
         }
 
         private void Init()
@@ -167,6 +168,7 @@ namespace SPKTCore.Core.Impl
 
         private string GetProfileUrl(string UserName)
         {
+            
             return "<a href=\"[rootUrl]" + account.UserName + "\">" + account.UserName + "</a>";
         }
 
@@ -313,7 +315,7 @@ namespace SPKTCore.Core.Impl
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewBlogPost;
             alertMessage = "<div >" + GetProfileImage(_userSession.CurrentUser.AccountID) +
                            GetProfileUrl(_userSession.CurrentUser.UserName) + " vừa mới tạo bài blog: <b>" +
-                           "<a href=\"" + _webContext.RootUrl + "Blogs/ViewBlog" + ".aspx?BlogID=" + blog.BlogID + "\">"+
+                           "<a href=\"~/Blogs/ViewBlog" + ".aspx?BlogID=" + blog.BlogID + "\">"+
                            blog.Title + "</a>" + "</b></div>";
             alert.Message = alertMessage;
             SaveAlert(alert);

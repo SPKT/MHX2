@@ -26,14 +26,15 @@ namespace SPKTWeb.Blogs.Presenter
             _alertService = ObjectFactory.GetInstance<IAlertService>();
         }
 
-        public void Init(IPost View)
+        public void Init(IPost View,bool isPostBack)
         {
             _view = View;
             if (_userSession.LoggedIn)
             {
                 if (_webContext.BlogID > 0)
                 {
-                    _view.LoadPost(_blogRepository.GetBlogByBlogID(_webContext.BlogID));
+                    if (!isPostBack)
+                        _view.LoadPost(_blogRepository.GetBlogByBlogID(_webContext.BlogID));
                 }
             }
             else
@@ -44,14 +45,27 @@ namespace SPKTWeb.Blogs.Presenter
         {
             bool result = _blogRepository.CheckPageNameIsUnique(blog);
             if (result)
-            {
+            {                
                 blog.AccountID = _webContext.CurrentUser.AccountID;
-                _blogRepository.SaveBlog(blog);
-                if (_webContext.BlogID <= 0)
-                    _alertService.AddNewBlogPostAlert(blog);
-                else
+                if (blog.BlogID > 0)
+                {
+                    Blog orginBlog = _blogRepository.GetBlogByBlogID(blog.BlogID);
+                    orginBlog.Title = blog.Title;
+                    orginBlog.Subject = blog.Subject;
+                    orginBlog.PageName = blog.PageName;
+                    orginBlog.IsPublished = blog.IsPublished;
+                    orginBlog.Post = blog.Post;
+                    _blogRepository.SaveBlog(orginBlog);
                     _alertService.AddUpdatedBlogPostAlert(blog);
-                _redirector.Redirect("~/Blogs/ViewPost.aspx?BlogID=" + blog.BlogID);
+                    _redirector.GoToViewBlogPost(orginBlog.BlogID);
+                }
+                else
+                {
+                    long id =_blogRepository.SaveBlog(blog);
+                    _alertService.AddNewBlogPostAlert(blog);
+                    _redirector.GoToViewBlogPost(id);
+                }                
+                
             }
             else
             {

@@ -18,7 +18,7 @@ using SPKTCore.Core;
 
 namespace SPKTWeb.Friends
 {
-    public partial class FriendProfile : System.Web.UI.UserControl,IProfileDisplay
+    public partial class FriendProfile : System.Web.UI.UserControl, IProfileDisplay
     {
         private ProfileDisplayPresenter _presenter;
         protected Account _account;
@@ -48,40 +48,39 @@ namespace SPKTWeb.Friends
             }
             else
             {
-               
-                    if (_presenter.TestFriend(_account) == true || _presenter.TestFriend2(_account))
+                if (_presenter.TestFriend(_account) == true || _presenter.TestFriend2(_account))
+                {
+                    btn_add_de.Visible = false;
+                    btn_de.Visible = true;
+                    btn_ok.Visible = false;
+                    if (_webcontext.SearchText == _usersession.CurrentUser.UserName)
                     {
-                        btn_add_de.Visible = false;
-                        btn_de.Visible = true;
-                        btn_ok.Visible = false;
-                        if (_webcontext.SearchText ==_usersession.CurrentUser.UserName)
-                        {
-                            btn_de.Visible = false;
-                           
-                            btn_de.BackColor = System.Drawing.Color.Gray;
-                        }
-                    }
-
-                    else
-                    {
-                        btn_add_de.Visible = true;
                         btn_de.Visible = false;
-                        btn_ok.Visible = false;
-                        if (_webcontext.SearchText == _usersession.CurrentUser.UserName)
-                        {
-                            btn_de.Visible = false;
-                        }
+
+                        btn_de.BackColor = System.Drawing.Color.Gray;
                     }
-                    imgAvatar.ImageUrl = "~/Image/ProfileAvatar.aspx?AccountID=" + Int32.Parse(lblFriendID.Text);
-                
+                }
+
+                else
+                {
+                    btn_add_de.Visible = true;
+                    btn_de.Visible = false;
+                    btn_ok.Visible = false;
+                    if (_webcontext.SearchText == _usersession.CurrentUser.UserName)
+                    {
+                        btn_de.Visible = false;
+                    }
+                }
+                imgAvatar.ImageUrl = "~/Image/ProfileAvatar.aspx?AccountID=" + Int32.Parse(lblFriendID.Text);
+
             }
             more1.setacid(Int32.Parse(lblFriendID.Text));
         }
-        
+
         public bool ShowDeleteButton
         {
             set
-            {;}
+            { ;}
         }
 
         public bool ShowFriendRequestButton
@@ -91,10 +90,13 @@ namespace SPKTWeb.Friends
         }
         public void LoadDisplay(Account account)
         {
+            IRedirector r = new Redirector();
             _ac = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
             _account = account;
             lblName.Text = account.DisplayName;
+            linkAvatar.HRef = r.GetProfileURL(account.UserName);
             lblUsername.Text = account.UserName;
+            linkUsername.HRef = r.GetProfileURL(account.UserName);
             lblCreateDate.Text = account.CreateDate.ToString();
             lblFriendID.Text = account.AccountID.ToString();
             if (_ac.fullname(account.AccountID) == null)
@@ -122,7 +124,7 @@ namespace SPKTWeb.Friends
             _presenter = new ProfileDisplayPresenter();
             _presenter.Init(this);
             //moi
-            _email.SendInvitations1(_usersession.CurrentUser,lblemail.Text, " Mời bạn: ");
+            _email.SendInvitations1(_usersession.CurrentUser, lblemail.Text, " Mời bạn: ");
 
             btn_ok.Visible = true;
             btn_add_de.Visible = false;

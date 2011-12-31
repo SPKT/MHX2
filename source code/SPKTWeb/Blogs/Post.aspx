@@ -10,8 +10,6 @@
 <div>
     <div>
         <div>
-            <asp:Literal ID="litBlogID" runat="server" Visible="false"></asp:Literal>
-            <asp:Literal ID="litCreateDate" runat="server" Visible="false"></asp:Literal>
             Tiêu đề
 
         </div>

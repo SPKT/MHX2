@@ -13,6 +13,15 @@ namespace SPKTWeb.Friends {
     public partial class FriendProfile {
         
         /// <summary>
+        /// linkAvatar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkAvatar;
+        
+        /// <summary>
         /// imgAvatar control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace SPKTWeb.Friends {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgAvatar;
+        
+        /// <summary>
+        /// linkUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkUsername;
         
         /// <summary>
         /// lblUsername control.
