@@ -136,29 +136,29 @@ namespace SPKTCore.Core.DataAccess.Impl
         }
         public void GetFriend(Account account)
         {
-           // List<Account> Acfriend = new List<Account>();
-            using (SPKTDataContext dc = conn.GetContext())
-            {
-                IEnumerable<Friend> fi = from f in dc.Friends where f.MyFriendAccountID == account.AccountID || f.AccountID == account.AccountID select f;
-                fi.ToList();
-                foreach (Friend i in fi)
-                {
-                    FriendMutual mf = new FriendMutual();
-                    if (i.AccountID == account.AccountID)
-                    {
-                        mf.AccountID = i.AccountID;
-                        mf.AcMyFriendID = i.MyFriendAccountID;
-                        mf.AcMutual = 0;
-                    }
-                    if (i.MyFriendAccountID == account.AccountID)
-                    {
-                        mf.AccountID = i.MyFriendAccountID;
-                        mf.AcMyFriendID = i.AccountID;
-                        mf.AcMutual = 0;
-                    }
-                    saveMutual(mf);
-                }
-            }
+           //// List<Account> Acfriend = new List<Account>();
+           // using (SPKTDataContext dc = conn.GetContext())
+           // {
+           //     IEnumerable<Friend> fi = from f in dc.Friends where f.MyFriendAccountID == account.AccountID || f.AccountID == account.AccountID select f;
+           //     fi.ToList();
+           //     foreach (Friend i in fi)
+           //     {
+           //         FriendMutual mf = new FriendMutual();
+           //         if (i.AccountID == account.AccountID)
+           //         {
+           //             mf.AccountID = i.AccountID;
+           //             mf.AcMyFriendID = i.MyFriendAccountID;
+           //             mf.AcMutual = 0;
+           //         }
+           //         if (i.MyFriendAccountID == account.AccountID)
+           //         {
+           //             mf.AccountID = i.MyFriendAccountID;
+           //             mf.AcMyFriendID = i.AccountID;
+           //             mf.AcMutual = 0;
+           //         }
+           //         saveMutual(mf);
+           //     }
+           // }
         }
         public void GetF()
         {
@@ -200,21 +200,21 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return you;
         }
-        public void saveMutual(FriendMutual fm)
-        {
-            using (SPKTDataContext dc = conn.GetContext())
-            {
-                if (fm.FriendMutualID > 0)
-                {
-                    dc.FriendMutuals.Attach(fm, true);
-                }
-                else
-                {
+        //public void saveMutual(FriendMutual fm)
+        //{
+        //    using (SPKTDataContext dc = conn.GetContext())
+        //    {
+        //        if (fm.FriendMutualID > 0)
+        //        {
+        //            dc.FriendMutuals.Attach(fm, true);
+        //        }
+        //        else
+        //        {
                     
-                    dc.FriendMutuals.InsertOnSubmit(fm);
-                }
-                dc.SubmitChanges();
-            }
-        }
+        //            dc.FriendMutuals.InsertOnSubmit(fm);
+        //        }
+        //        dc.SubmitChanges();
+        //    }
+        //}
     }
 }

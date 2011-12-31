@@ -1,15 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadAvatar.aspx.cs" Inherits="SPKTWeb.Profiles.UploadAvatar" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH_E.Master" AutoEventWireup="true" CodeBehind="UploadAvatar.aspx.cs" Inherits="SPKTWeb.Profiles.UploadAvatar" %>
+<%@ Register src="../Styles/LEFT_MENU.ascx" tagname="LEFT_MENU" tagprefix="uc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language" content="en-us" />
 	<title>Test</title>
-	<script src="../js/cropper/lib/prototype.js" type="text/javascript"></script>	
- 	<script src="../js/cropper/lib/scriptaculous.js?load=builder,dragdrop" type="text/javascript"></script>
-	<script src="../js/cropper/cropper.js" type="text/javascript"></script>
+	<script src="/js/cropper/lib/prototype.js" type="text/javascript"></script>	
+ 	<script src="/js/cropper/lib/scriptaculous.js?load=builder,dragdrop" type="text/javascript"></script>
+	<script src="/js/cropper/cropper.js" type="text/javascript"></script>
 	
 	
 	<script type="text/javascript" charset="utf-8">
@@ -61,7 +58,9 @@
 		#previewArea {
 			margin: 20px; 0 0 20px;
 			float: left;
-		}
+            height: 83px;
+            width: 134px;
+        }
 		
 		#results {
 			clear: both;
@@ -73,10 +72,18 @@
 			float: left;
 		}  
 
+	    #testImage
+        {
+            height: 312px;
+            width: 398px;
+        }
+
 	</style>
-</head>
-<body>	
-	<form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="left" runat="server">
+    <uc1:LEFT_MENU ID="LEFT_MENU1" runat="server" />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Main" runat="server">
     <div>
 	<br /><asp:FileUpload ID="fuAvatarUpload" runat="server" />&nbsp;&nbsp;&nbsp;
       
@@ -86,7 +93,7 @@
     </div>
 	<asp:Panel ID="pnlUpload" Visible="true" runat="server">
 	<div id="testWrap">
-		<img src="~/Image/ProfileAvatar.aspx" alt="test image" id="testImage" width="500" height="350" runat="server" />
+		<img src="~/Image/ProfileAvatar.aspx" alt="test image" id="testImage" runat="server" />
 	</div>
     </asp:Panel>
 	 
@@ -125,8 +132,8 @@
 			<input type="text" name="height" id="height" runat="server" clientidmode="Static"  />
 		</p>
 	</div> 
-	
-    </form>
-	
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="right1" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="right" runat="server">
+</asp:Content>

@@ -22,6 +22,6 @@ namespace SPKTCore.Core.DataAccess
         Friend getfm1(Friend fs);
         Friend getfm2(Friend fs);
         Friend getfm3(Friend fs);
-        void saveMutual(FriendMutual fm);
+        //void saveMutual(FriendMutual fm);
     }
 }

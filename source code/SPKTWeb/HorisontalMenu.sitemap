@@ -11,6 +11,7 @@
           <siteMapNode url="~/Blogs/ViewBlog.aspx" title="BLOG">
             <siteMapNode url="~/Blogs/MyBlogs.aspx" title="Blog của tôi"/>
             <siteMapNode url="~/Blogs/Post.aspx" title="Đăng bài mới"/>
+            <siteMapNode url="~/Photo/ManagePhoto.aspx" title="Quản Lý Ảnh"/>
           </siteMapNode>
           <siteMapNode url="~/Forums/AllForum.aspx" title="DIỄN ĐÀN"  description="" >
             <siteMapNode url="~/Admins/Manage.aspx" title="Quản Lý Diễn Đàn"/>

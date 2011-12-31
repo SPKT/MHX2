@@ -148,6 +148,7 @@
                                                 <div style="float: left; width: 10%">
                                                     <img width="50" height="50" alt="avatar" src='../image/ProfileAvatar.aspx?AccountID=<%#Eval("SenderID")%>&w=50&h=50'
                                                         align="top" style="margin-top: 1px;" />
+                                                    
                                                 </div>
                                                 <div style="float: right; width: 90%">
                                                     <div class="AlertHeader">
@@ -155,6 +156,7 @@
                                                             <%#Eval("SenderName")%></a><a style="color: Black;"> trên tường nhà</a> <a href='UserProfile2.aspx?AccountID=<%# Eval("AccountID")%>'>
                                                                 <%#Eval("AccountName")%></a><a>:</a> <a style="color: Blue">"
                                                                     <%#Eval("Status") %>"</a>
+                                                                    <br />
                                                     </div>
                                                     <div style="color: #cc00cc; font-size: smaller">
                                                         Ngày:

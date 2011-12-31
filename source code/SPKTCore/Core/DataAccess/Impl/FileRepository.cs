@@ -9,6 +9,16 @@ namespace SPKTCore.Core.DataAccess.Impl
 {
     public class FileRepository : IFileRepository
     {
+        public long fileid;
+        public void setfileid(long id)
+        {
+            fileid = id;
+        }
+        public long Fileid
+        {
+            get { return fileid; }
+            set { fileid = value; }
+        }
         private Connection conn;
         private IWebContext _webContext;
         public FileRepository()
@@ -43,7 +53,29 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return file;
         }
-
+        public List<File> GetFilesByAccountID(int accountid)
+        {
+            List<File> result = new List<File>();
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                IEnumerable<File> files1 = (from f in dc.Files where f.AccountID == accountid && f.DefaultFolderID==10 select f);
+                result = files1.ToList();
+            }
+            return result;
+        }
+       
+        public List<File> GetFilesByFolderID1(Int64 FolderID)
+        {
+            List<File> result = new List<File>();
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                IEnumerable<File> files1 = (from f in dc.Files
+                                            where f.DefaultFolderID == FolderID
+                                            select f);
+                result = files1.ToList();
+            }
+            return result;
+        }
         public List<File> GetFilesByFolderID(Int64 FolderID)
         {
             List<File> result = new List<File>();
@@ -102,7 +134,22 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return file.FileID;
         }
-
+        public void Save(File file)
+        {
+            using (SPKTDataContext dc = conn.GetContext())
+            {
+                if (file.FileID > 0)
+                {
+                    dc.Files.Attach(file, true);
+                }
+                else
+                {
+                    file.CreateDate = DateTime.Now;
+                    dc.Files.InsertOnSubmit(file);
+                }
+                dc.SubmitChanges();
+            }
+        }
         public void DeleteFilesInFolder(Folder folder)
         {
             using (SPKTDataContext dc = conn.GetContext())

@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\DataAccess\IAccountFileShareRepository.cs" />
+    <Compile Include="Core\DataAccess\IAccountFolderShareRepository.cs" />
     <Compile Include="Core\DataAccess\IAlertRepository.cs" />
     <Compile Include="Core\DataAccess\IBlogRepository.cs" />
     <Compile Include="Core\DataAccess\IBoardCategoryRepository.cs" />
@@ -75,6 +77,8 @@
     <Compile Include="Core\DataAccess\IMessageFolderRepository.cs" />
     <Compile Include="Core\DataAccess\IMessageRecipientRepository.cs" />
     <Compile Include="Core\DataAccess\IMessageRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\AccountFileShareRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\AccountFolderShareRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\AccountRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\AlertRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\BlogRepository.cs" />

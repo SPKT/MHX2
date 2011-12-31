@@ -109,6 +109,131 @@
     <Content Include="Comments\UserControl\CommentFriend.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Error\FileLog.txt" />
+    <Content Include="Files\Photos\201112\011dc39e-7b78-4ee8-a41a-3cacf2eb20f6__L.gif" />
+    <Content Include="Files\Photos\201112\011dc39e-7b78-4ee8-a41a-3cacf2eb20f6__M.gif" />
+    <Content Include="Files\Photos\201112\011dc39e-7b78-4ee8-a41a-3cacf2eb20f6__O.gif" />
+    <Content Include="Files\Photos\201112\011dc39e-7b78-4ee8-a41a-3cacf2eb20f6__S.gif" />
+    <Content Include="Files\Photos\201112\011dc39e-7b78-4ee8-a41a-3cacf2eb20f6__T.gif" />
+    <Content Include="Files\Photos\201112\09588c0a-4141-4358-b414-32f0bc94e889__L.gif" />
+    <Content Include="Files\Photos\201112\09588c0a-4141-4358-b414-32f0bc94e889__M.gif" />
+    <Content Include="Files\Photos\201112\09588c0a-4141-4358-b414-32f0bc94e889__O.gif" />
+    <Content Include="Files\Photos\201112\09588c0a-4141-4358-b414-32f0bc94e889__S.gif" />
+    <Content Include="Files\Photos\201112\09588c0a-4141-4358-b414-32f0bc94e889__T.gif" />
+    <Content Include="Files\Photos\201112\0e0322ec-e5dd-47b9-bc2f-81cf15db8b82__L.gif" />
+    <Content Include="Files\Photos\201112\0e0322ec-e5dd-47b9-bc2f-81cf15db8b82__M.gif" />
+    <Content Include="Files\Photos\201112\0e0322ec-e5dd-47b9-bc2f-81cf15db8b82__O.gif" />
+    <Content Include="Files\Photos\201112\0e0322ec-e5dd-47b9-bc2f-81cf15db8b82__S.gif" />
+    <Content Include="Files\Photos\201112\0e0322ec-e5dd-47b9-bc2f-81cf15db8b82__T.gif" />
+    <Content Include="Files\Photos\201112\128572db-8d8a-48ef-b0e1-843777005a4f__L.gif" />
+    <Content Include="Files\Photos\201112\128572db-8d8a-48ef-b0e1-843777005a4f__M.gif" />
+    <Content Include="Files\Photos\201112\128572db-8d8a-48ef-b0e1-843777005a4f__O.gif" />
+    <Content Include="Files\Photos\201112\128572db-8d8a-48ef-b0e1-843777005a4f__S.gif" />
+    <Content Include="Files\Photos\201112\128572db-8d8a-48ef-b0e1-843777005a4f__T.gif" />
+    <Content Include="Files\Photos\201112\1ee79715-e0bc-4d25-a839-5c7f4634aeeb__L.jpg" />
+    <Content Include="Files\Photos\201112\1ee79715-e0bc-4d25-a839-5c7f4634aeeb__M.jpg" />
+    <Content Include="Files\Photos\201112\1ee79715-e0bc-4d25-a839-5c7f4634aeeb__O.jpg" />
+    <Content Include="Files\Photos\201112\1ee79715-e0bc-4d25-a839-5c7f4634aeeb__S.jpg" />
+    <Content Include="Files\Photos\201112\1ee79715-e0bc-4d25-a839-5c7f4634aeeb__T.jpg" />
+    <Content Include="Files\Photos\201112\2245ed19-7521-4c99-8225-d91536e0aeab__L.gif" />
+    <Content Include="Files\Photos\201112\2245ed19-7521-4c99-8225-d91536e0aeab__M.gif" />
+    <Content Include="Files\Photos\201112\2245ed19-7521-4c99-8225-d91536e0aeab__O.gif" />
+    <Content Include="Files\Photos\201112\2245ed19-7521-4c99-8225-d91536e0aeab__S.gif" />
+    <Content Include="Files\Photos\201112\2245ed19-7521-4c99-8225-d91536e0aeab__T.gif" />
+    <Content Include="Files\Photos\201112\29b4e7c5-7d47-4271-a75f-31742e417d7d__L.gif" />
+    <Content Include="Files\Photos\201112\29b4e7c5-7d47-4271-a75f-31742e417d7d__M.gif" />
+    <Content Include="Files\Photos\201112\29b4e7c5-7d47-4271-a75f-31742e417d7d__O.gif" />
+    <Content Include="Files\Photos\201112\29b4e7c5-7d47-4271-a75f-31742e417d7d__S.gif" />
+    <Content Include="Files\Photos\201112\29b4e7c5-7d47-4271-a75f-31742e417d7d__T.gif" />
+    <Content Include="Files\Photos\201112\3114e474-2045-490c-8dd1-c8c0d3b1f81c__L.gif" />
+    <Content Include="Files\Photos\201112\3114e474-2045-490c-8dd1-c8c0d3b1f81c__M.gif" />
+    <Content Include="Files\Photos\201112\3114e474-2045-490c-8dd1-c8c0d3b1f81c__O.gif" />
+    <Content Include="Files\Photos\201112\3114e474-2045-490c-8dd1-c8c0d3b1f81c__S.gif" />
+    <Content Include="Files\Photos\201112\3114e474-2045-490c-8dd1-c8c0d3b1f81c__T.gif" />
+    <Content Include="Files\Photos\201112\349d0e71-1613-4d1e-8957-712ec30c3977__L.jpg" />
+    <Content Include="Files\Photos\201112\349d0e71-1613-4d1e-8957-712ec30c3977__M.jpg" />
+    <Content Include="Files\Photos\201112\349d0e71-1613-4d1e-8957-712ec30c3977__O.jpg" />
+    <Content Include="Files\Photos\201112\349d0e71-1613-4d1e-8957-712ec30c3977__S.jpg" />
+    <Content Include="Files\Photos\201112\349d0e71-1613-4d1e-8957-712ec30c3977__T.jpg" />
+    <Content Include="Files\Photos\201112\47a7a73d-a81c-4e88-9659-266742b5fa12__L.gif" />
+    <Content Include="Files\Photos\201112\47a7a73d-a81c-4e88-9659-266742b5fa12__M.gif" />
+    <Content Include="Files\Photos\201112\47a7a73d-a81c-4e88-9659-266742b5fa12__O.gif" />
+    <Content Include="Files\Photos\201112\47a7a73d-a81c-4e88-9659-266742b5fa12__S.gif" />
+    <Content Include="Files\Photos\201112\47a7a73d-a81c-4e88-9659-266742b5fa12__T.gif" />
+    <Content Include="Files\Photos\201112\480667df-ba36-4f12-9999-450f25a3fd31__L.jpg" />
+    <Content Include="Files\Photos\201112\480667df-ba36-4f12-9999-450f25a3fd31__M.jpg" />
+    <Content Include="Files\Photos\201112\480667df-ba36-4f12-9999-450f25a3fd31__O.jpg" />
+    <Content Include="Files\Photos\201112\480667df-ba36-4f12-9999-450f25a3fd31__S.jpg" />
+    <Content Include="Files\Photos\201112\480667df-ba36-4f12-9999-450f25a3fd31__T.jpg" />
+    <Content Include="Files\Photos\201112\57a9aecd-719a-453c-80ba-0a028f7658df__L.GIF" />
+    <Content Include="Files\Photos\201112\57a9aecd-719a-453c-80ba-0a028f7658df__M.GIF" />
+    <Content Include="Files\Photos\201112\57a9aecd-719a-453c-80ba-0a028f7658df__O.GIF" />
+    <Content Include="Files\Photos\201112\57a9aecd-719a-453c-80ba-0a028f7658df__S.GIF" />
+    <Content Include="Files\Photos\201112\57a9aecd-719a-453c-80ba-0a028f7658df__T.GIF" />
+    <Content Include="Files\Photos\201112\597d3493-680e-435d-8790-9d1d17d96dfe__L.jpg" />
+    <Content Include="Files\Photos\201112\597d3493-680e-435d-8790-9d1d17d96dfe__M.jpg" />
+    <Content Include="Files\Photos\201112\597d3493-680e-435d-8790-9d1d17d96dfe__O.jpg" />
+    <Content Include="Files\Photos\201112\597d3493-680e-435d-8790-9d1d17d96dfe__S.jpg" />
+    <Content Include="Files\Photos\201112\597d3493-680e-435d-8790-9d1d17d96dfe__T.jpg" />
+    <Content Include="Files\Photos\201112\6cab2ed3-1832-44e4-a68c-967c8e1dc529__L.gif" />
+    <Content Include="Files\Photos\201112\6cab2ed3-1832-44e4-a68c-967c8e1dc529__M.gif" />
+    <Content Include="Files\Photos\201112\6cab2ed3-1832-44e4-a68c-967c8e1dc529__O.gif" />
+    <Content Include="Files\Photos\201112\6cab2ed3-1832-44e4-a68c-967c8e1dc529__S.gif" />
+    <Content Include="Files\Photos\201112\6cab2ed3-1832-44e4-a68c-967c8e1dc529__T.gif" />
+    <Content Include="Files\Photos\201112\708009a9-6b27-4e28-83a8-1b80d9d9c921__L.gif" />
+    <Content Include="Files\Photos\201112\708009a9-6b27-4e28-83a8-1b80d9d9c921__M.gif" />
+    <Content Include="Files\Photos\201112\708009a9-6b27-4e28-83a8-1b80d9d9c921__O.gif" />
+    <Content Include="Files\Photos\201112\708009a9-6b27-4e28-83a8-1b80d9d9c921__S.gif" />
+    <Content Include="Files\Photos\201112\708009a9-6b27-4e28-83a8-1b80d9d9c921__T.gif" />
+    <Content Include="Files\Photos\201112\7a94c791-7d67-4a7b-b8fc-43cc14a0c398__L.GIF" />
+    <Content Include="Files\Photos\201112\7a94c791-7d67-4a7b-b8fc-43cc14a0c398__M.GIF" />
+    <Content Include="Files\Photos\201112\7a94c791-7d67-4a7b-b8fc-43cc14a0c398__O.GIF" />
+    <Content Include="Files\Photos\201112\7a94c791-7d67-4a7b-b8fc-43cc14a0c398__S.GIF" />
+    <Content Include="Files\Photos\201112\7a94c791-7d67-4a7b-b8fc-43cc14a0c398__T.GIF" />
+    <Content Include="Files\Photos\201112\8c8d9eae-334a-46e2-b4f9-583ccb13e2f8__L.jpg" />
+    <Content Include="Files\Photos\201112\8c8d9eae-334a-46e2-b4f9-583ccb13e2f8__M.jpg" />
+    <Content Include="Files\Photos\201112\8c8d9eae-334a-46e2-b4f9-583ccb13e2f8__O.jpg" />
+    <Content Include="Files\Photos\201112\8c8d9eae-334a-46e2-b4f9-583ccb13e2f8__S.jpg" />
+    <Content Include="Files\Photos\201112\8c8d9eae-334a-46e2-b4f9-583ccb13e2f8__T.jpg" />
+    <Content Include="Files\Photos\201112\97e85e38-141f-410d-94e9-9da567c1182d__L.jpg" />
+    <Content Include="Files\Photos\201112\97e85e38-141f-410d-94e9-9da567c1182d__M.jpg" />
+    <Content Include="Files\Photos\201112\97e85e38-141f-410d-94e9-9da567c1182d__O.jpg" />
+    <Content Include="Files\Photos\201112\97e85e38-141f-410d-94e9-9da567c1182d__S.jpg" />
+    <Content Include="Files\Photos\201112\97e85e38-141f-410d-94e9-9da567c1182d__T.jpg" />
+    <Content Include="Files\Photos\201112\ca71471b-e535-4d11-9c69-0fd937e881b1__L.gif" />
+    <Content Include="Files\Photos\201112\ca71471b-e535-4d11-9c69-0fd937e881b1__M.gif" />
+    <Content Include="Files\Photos\201112\ca71471b-e535-4d11-9c69-0fd937e881b1__O.gif" />
+    <Content Include="Files\Photos\201112\ca71471b-e535-4d11-9c69-0fd937e881b1__S.gif" />
+    <Content Include="Files\Photos\201112\ca71471b-e535-4d11-9c69-0fd937e881b1__T.gif" />
+    <Content Include="Files\Photos\201112\cab9b23d-3d6e-4696-9519-35dfbff2143f__L.jpg" />
+    <Content Include="Files\Photos\201112\cab9b23d-3d6e-4696-9519-35dfbff2143f__M.jpg" />
+    <Content Include="Files\Photos\201112\cab9b23d-3d6e-4696-9519-35dfbff2143f__O.jpg" />
+    <Content Include="Files\Photos\201112\cab9b23d-3d6e-4696-9519-35dfbff2143f__S.jpg" />
+    <Content Include="Files\Photos\201112\cab9b23d-3d6e-4696-9519-35dfbff2143f__T.jpg" />
+    <Content Include="Files\Photos\201112\d05c49d6-1a1e-42ee-89d4-44ca7727420d__L.gif" />
+    <Content Include="Files\Photos\201112\d05c49d6-1a1e-42ee-89d4-44ca7727420d__M.gif" />
+    <Content Include="Files\Photos\201112\d05c49d6-1a1e-42ee-89d4-44ca7727420d__O.gif" />
+    <Content Include="Files\Photos\201112\d05c49d6-1a1e-42ee-89d4-44ca7727420d__S.gif" />
+    <Content Include="Files\Photos\201112\d05c49d6-1a1e-42ee-89d4-44ca7727420d__T.gif" />
+    <Content Include="Files\Photos\201112\d2b42f5f-9ff8-4f9a-a6a8-968f3f933295__L.gif" />
+    <Content Include="Files\Photos\201112\d2b42f5f-9ff8-4f9a-a6a8-968f3f933295__M.gif" />
+    <Content Include="Files\Photos\201112\d2b42f5f-9ff8-4f9a-a6a8-968f3f933295__O.gif" />
+    <Content Include="Files\Photos\201112\d2b42f5f-9ff8-4f9a-a6a8-968f3f933295__S.gif" />
+    <Content Include="Files\Photos\201112\d2b42f5f-9ff8-4f9a-a6a8-968f3f933295__T.gif" />
+    <Content Include="Files\Photos\201112\d3c71220-2f3c-463e-9a35-01a1a1c1b0df__L.jpg" />
+    <Content Include="Files\Photos\201112\d3c71220-2f3c-463e-9a35-01a1a1c1b0df__M.jpg" />
+    <Content Include="Files\Photos\201112\d3c71220-2f3c-463e-9a35-01a1a1c1b0df__O.jpg" />
+    <Content Include="Files\Photos\201112\d3c71220-2f3c-463e-9a35-01a1a1c1b0df__S.jpg" />
+    <Content Include="Files\Photos\201112\d3c71220-2f3c-463e-9a35-01a1a1c1b0df__T.jpg" />
+    <Content Include="Files\Photos\201112\dbce8574-db0e-4df2-b947-743cd511c8c3__L.jpg" />
+    <Content Include="Files\Photos\201112\dbce8574-db0e-4df2-b947-743cd511c8c3__M.jpg" />
+    <Content Include="Files\Photos\201112\dbce8574-db0e-4df2-b947-743cd511c8c3__O.jpg" />
+    <Content Include="Files\Photos\201112\dbce8574-db0e-4df2-b947-743cd511c8c3__S.jpg" />
+    <Content Include="Files\Photos\201112\dbce8574-db0e-4df2-b947-743cd511c8c3__T.jpg" />
+    <Content Include="Files\Photos\201112\efeb218d-b93e-45e9-a135-d36cee81a63b__L.jpg" />
+    <Content Include="Files\Photos\201112\efeb218d-b93e-45e9-a135-d36cee81a63b__M.jpg" />
+    <Content Include="Files\Photos\201112\efeb218d-b93e-45e9-a135-d36cee81a63b__O.jpg" />
+    <Content Include="Files\Photos\201112\efeb218d-b93e-45e9-a135-d36cee81a63b__S.jpg" />
+    <Content Include="Files\Photos\201112\efeb218d-b93e-45e9-a135-d36cee81a63b__T.jpg" />
     <Content Include="Forums\AllForum.aspx" />
     <Content Include="Forums\Forum.aspx" />
     <Content Include="Forums\Post.aspx" />
@@ -154,23 +279,6 @@
     <Content Include="Groups\ViewManageMember.aspx" />
     <Content Include="Handler\TestURL.aspx" />
     <Content Include="Homes\Home.aspx" />
-    <Content Include="Images\01.jpg" />
-    <Content Include="Images\02.jpg" />
-    <Content Include="Images\03.jpg" />
-    <Content Include="Images\04.jpg" />
-    <Content Include="Images\05.jpg" />
-    <Content Include="Images\06.jpg" />
-    <Content Include="Images\07.jpg" />
-    <Content Include="Images\08.jpg" />
-    <Content Include="Images\09.jpg" />
-    <Content Include="Images\10.jpg" />
-    <Content Include="Images\11.jpg" />
-    <Content Include="Images\12.jpg" />
-    <Content Include="Images\13.jpg" />
-    <Content Include="Images\14.jpg" />
-    <Content Include="Images\ALIEN_01_01.PNG" />
-    <Content Include="Images\ALIEN_03_01.PNG" />
-    <Content Include="Images\TENT_01_01.PNG" />
     <Content Include="Image\1.gif" />
     <Content Include="Image\110934_27850_48_email_forward_letter_send_icon1.png" />
     <Content Include="Image\123.jpg" />
@@ -325,6 +433,7 @@
     <Content Include="Image\pro_15_0.gif" />
     <Content Include="Image\pro_15_1.gif" />
     <Content Include="Image\pro_15_2.gif" />
+    <Content Include="Image\q1.jpg" />
     <Content Include="Image\r.gif" />
     <Content Include="Image\red-square-icon-social-media-logos-mail.png" />
     <Content Include="Image\redstyle-10-add.png" />
@@ -410,6 +519,24 @@
     <Content Include="Messages\WebForm1.aspx" />
     <Content Include="Messages\WebForm2.aspx" />
     <Content Include="NotificationTemp.aspx" />
+    <Content Include="Photo\CreateAlbum.aspx" />
+    <Content Include="Photo\ManagePhoto.aspx" />
+    <Content Include="Photo\ProfileAvatar.aspx" />
+    <Content Include="Photo\UserControl\AddFile.ascx" />
+    <Content Include="Photo\UserControl\CreateAlbum.ascx" />
+    <Content Include="Photo\UserControl\FileItem.ascx" />
+    <Content Include="Photo\UserControl\FileListItem.ascx" />
+    <Content Include="Photo\UserControl\FileListItemAlbum.ascx" />
+    <Content Include="Photo\UserControl\FolderItem.ascx" />
+    <Content Include="Photo\UserControl\ListFileShare.ascx" />
+    <Content Include="Photo\UserControl\ListFolderShare.ascx" />
+    <Content Include="Photo\UserControl\LoadAlbum.ascx" />
+    <Content Include="Photo\UserControl\NewAlbum.ascx" />
+    <Content Include="Photo\UserControl\ReadFile.ascx" />
+    <Content Include="Photo\UserControl\ShareBox.ascx" />
+    <Content Include="Photo\UserControl\ShareFileItem.ascx" />
+    <Content Include="Photo\UserControl\ShareFolderItem.ascx" />
+    <Content Include="Photo\WebForm1.aspx" />
     <Content Include="Picture\banner.jpg" />
     <Content Include="Picture\bg_img.png" />
     <Content Include="Picture\blog.jpg" />
@@ -2622,6 +2749,149 @@
     <Compile Include="NotificationTemp.aspx.designer.cs">
       <DependentUpon>NotificationTemp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Photo\CreateAlbum.aspx.cs">
+      <DependentUpon>CreateAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\CreateAlbum.aspx.designer.cs">
+      <DependentUpon>CreateAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\Interface\IAddAlbum.cs" />
+    <Compile Include="Photo\Interface\IAddFile.cs" />
+    <Compile Include="Photo\Interface\IFileAlbumList.cs" />
+    <Compile Include="Photo\Interface\IFileList.cs" />
+    <Compile Include="Photo\Interface\IFileShare.cs" />
+    <Compile Include="Photo\Interface\IFolderShare.cs" />
+    <Compile Include="Photo\Interface\ILoadAlbum.cs" />
+    <Compile Include="Photo\Interface\IUploadAvatar.cs" />
+    <Compile Include="Photo\ManagePhoto.aspx.cs">
+      <DependentUpon>ManagePhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\ManagePhoto.aspx.designer.cs">
+      <DependentUpon>ManagePhoto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\Presenter\AddAlbumcs.cs" />
+    <Compile Include="Photo\Presenter\AddFile.cs" />
+    <Compile Include="Photo\Presenter\FileAlbumList.cs" />
+    <Compile Include="Photo\Presenter\FileList.cs" />
+    <Compile Include="Photo\Presenter\FileShare.cs" />
+    <Compile Include="Photo\Presenter\FolderShare.cs" />
+    <Compile Include="Photo\Presenter\LoadFileAlbum.cs" />
+    <Compile Include="Photo\Presenter\Share.cs" />
+    <Compile Include="Photo\Presenter\UploadAvatarPresenter.cs" />
+    <Compile Include="Photo\ProfileAvatar.aspx.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\ProfileAvatar.aspx.designer.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\AddFile.ascx.cs">
+      <DependentUpon>AddFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\AddFile.ascx.designer.cs">
+      <DependentUpon>AddFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\CreateAlbum.ascx.cs">
+      <DependentUpon>CreateAlbum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\CreateAlbum.ascx.designer.cs">
+      <DependentUpon>CreateAlbum.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\FileItem.ascx.cs">
+      <DependentUpon>FileItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\FileItem.ascx.designer.cs">
+      <DependentUpon>FileItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\FileListItem.ascx.cs">
+      <DependentUpon>FileListItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\FileListItem.ascx.designer.cs">
+      <DependentUpon>FileListItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\FileListItemAlbum.ascx.cs">
+      <DependentUpon>FileListItemAlbum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\FileListItemAlbum.ascx.designer.cs">
+      <DependentUpon>FileListItemAlbum.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\FolderItem.ascx.cs">
+      <DependentUpon>FolderItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\FolderItem.ascx.designer.cs">
+      <DependentUpon>FolderItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\ListFileShare.ascx.cs">
+      <DependentUpon>ListFileShare.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\ListFileShare.ascx.designer.cs">
+      <DependentUpon>ListFileShare.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\ListFolderShare.ascx.cs">
+      <DependentUpon>ListFolderShare.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\ListFolderShare.ascx.designer.cs">
+      <DependentUpon>ListFolderShare.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\LoadAlbum.ascx.cs">
+      <DependentUpon>LoadAlbum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\LoadAlbum.ascx.designer.cs">
+      <DependentUpon>LoadAlbum.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\NewAlbum.ascx.cs">
+      <DependentUpon>NewAlbum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\NewAlbum.ascx.designer.cs">
+      <DependentUpon>NewAlbum.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\ReadFile.ascx.cs">
+      <DependentUpon>ReadFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\ReadFile.ascx.designer.cs">
+      <DependentUpon>ReadFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\ShareBox.ascx.cs">
+      <DependentUpon>ShareBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\ShareBox.ascx.designer.cs">
+      <DependentUpon>ShareBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\ShareFileItem.ascx.cs">
+      <DependentUpon>ShareFileItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\ShareFileItem.ascx.designer.cs">
+      <DependentUpon>ShareFileItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\UserControl\ShareFolderItem.ascx.cs">
+      <DependentUpon>ShareFolderItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\UserControl\ShareFolderItem.ascx.designer.cs">
+      <DependentUpon>ShareFolderItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\CommentPresenter.cs" />
     <Compile Include="Presenter\MXH1MasterPresenter.cs" />
     <Compile Include="MasterPage.Master.cs">
@@ -2982,7 +3252,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>13815</DevelopmentServerPort>
+          <DevelopmentServerPort>2367</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
